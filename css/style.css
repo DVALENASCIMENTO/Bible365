@@ -1,0 +1,641 @@
+/* =========================================================
+   MINISTÉRIO ATALAIA
+   LEITURA DA BÍBLIA EM 1 ANO
+   css/style.css
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f1e8;
+    color: #29251f;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho {
+    text-align: center;
+    padding: 45px 20px 35px;
+    background: #201b16;
+    color: #ffffff;
+}
+
+
+.logo {
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+
+.cabecalho h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d6b56d;
+    margin-bottom: 12px;
+}
+
+
+.descricao {
+    max-width: 650px;
+    margin: auto;
+    color: #ddd6ca;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+main {
+    width: min(1100px, 94%);
+    margin: 35px auto;
+}
+
+
+/* =========================================================
+   PROGRESSO GERAL
+========================================================= */
+
+.progresso-geral {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 35px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+.progresso-geral h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 15px;
+}
+
+
+.porcentagem-geral {
+    margin-bottom: 12px;
+}
+
+
+#porcentagem-geral {
+    font-size: 2.5rem;
+    color: #a47b28;
+}
+
+
+.progresso-geral progress {
+    width: 100%;
+    height: 18px;
+    margin-bottom: 12px;
+}
+
+
+.progresso-geral p {
+    color: #6b6258;
+}
+
+
+/* =========================================================
+   BARRAS DE PROGRESSO
+========================================================= */
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e7e0d4;
+}
+
+
+progress::-webkit-progress-bar {
+    background: #e7e0d4;
+    border-radius: 20px;
+}
+
+
+progress::-webkit-progress-value {
+    background: #b38a36;
+    border-radius: 20px;
+}
+
+
+progress::-moz-progress-bar {
+    background: #b38a36;
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.meses h2,
+.area-leituras h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   MESES
+========================================================= */
+
+.meses {
+    margin-bottom: 35px;
+}
+
+
+.meses > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.lista-meses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+/* =========================================================
+   BOTÕES DOS MESES
+========================================================= */
+
+.botao-mes {
+    border: none;
+    background: #ffffff;
+    color: #29251f;
+    border-radius: 12px;
+    padding: 18px;
+    cursor: pointer;
+    text-align: left;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.botao-mes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+    background: #fffdf9;
+}
+
+
+.botao-mes:active {
+    transform: translateY(0);
+}
+
+
+.botao-mes:focus-visible {
+    outline: 3px solid #b38a36;
+    outline-offset: 3px;
+}
+
+
+.nome-mes {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.botao-mes progress {
+    width: 100%;
+    height: 9px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+
+.botao-mes > span:last-child {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #8b6722;
+}
+
+
+/* =========================================================
+   ÁREA DE LEITURAS
+========================================================= */
+
+.area-leituras {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+.area-leituras[hidden] {
+    display: none;
+}
+
+
+.cabecalho-leituras {
+    border-bottom: 1px solid #e4ddd2;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+
+.cabecalho-leituras h2 {
+    font-size: 1.8rem;
+    color: #4d3b20;
+}
+
+
+#resumo-mes {
+    color: #756b5e;
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   LISTA DE LEITURAS
+========================================================= */
+
+.lista-leituras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.item-leitura {
+    border: 1px solid #e3ddd3;
+    border-radius: 10px;
+    padding: 17px;
+    background: #fcfaf6;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.item-leitura:hover {
+    border-color: #c8ad76;
+}
+
+
+.item-leitura.leitura-concluida {
+    background: #f0eadc;
+    border-color: #bca36d;
+}
+
+
+.cabecalho-dia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+
+.cabecalho-dia h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #4d3b20;
+}
+
+
+.item-leitura p {
+    margin: 4px 0;
+    color: #514b43;
+}
+
+
+.item-leitura strong {
+    color: #31291f;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.controle-leitura {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #e6dfd5;
+}
+
+
+.controle-leitura input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: #a47b28;
+    cursor: pointer;
+}
+
+
+.controle-leitura label {
+    cursor: pointer;
+    font-weight: bold;
+    color: #675b4d;
+}
+
+
+.leitura-concluida .controle-leitura label {
+    color: #73591f;
+}
+
+
+/* =========================================================
+   CONTROLES DO MÊS
+========================================================= */
+
+.controles-mes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e4ddd2;
+}
+
+
+.controles-mes button,
+#limpar-progresso {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#marcar-mes {
+    background: #a47b28;
+    color: #ffffff;
+}
+
+
+#marcar-mes:hover {
+    background: #89651f;
+}
+
+
+#desmarcar-mes {
+    background: #e2ddd5;
+    color: #403a33;
+}
+
+
+#desmarcar-mes:hover {
+    background: #d3cdc3;
+}
+
+
+.controles-mes button:hover,
+#limpar-progresso:hover {
+    transform: translateY(-1px);
+}
+
+
+.controles-mes button:focus-visible,
+#limpar-progresso:focus-visible {
+    outline: 3px solid #b38a36;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CONTROLE GERAL
+========================================================= */
+
+.controle-geral {
+    text-align: center;
+    margin: 25px 0 40px;
+}
+
+
+#limpar-progresso {
+    background: #5c5146;
+    color: #ffffff;
+}
+
+
+#limpar-progresso:hover {
+    background: #40382f;
+}
+
+
+/* =========================================================
+   BANNER MINISTÉRIO ATALAIA
+========================================================= */
+
+.banner-ministerio {
+    width: min(1100px, 94%);
+    margin: 20px auto 40px;
+}
+
+
+.banner-ministerio a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 120px;
+    padding: 20px;
+    border-radius: 14px;
+    background: #201b16;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.banner-ministerio a:hover {
+    transform: translateY(-2px);
+    background: #2c251e;
+}
+
+
+.banner-ministerio img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+.banner-ministerio span {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d6b56d;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.rodape {
+    text-align: center;
+    background: #17130f;
+    color: #cfc6b8;
+    padding: 30px 20px;
+}
+
+
+.rodape p:first-child {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #d6b56d;
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .lista-meses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cabecalho h1 {
+        font-size: 1.9rem;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .cabecalho {
+        padding: 30px 15px;
+    }
+
+
+    .cabecalho h1 {
+        font-size: 1.6rem;
+    }
+
+
+    .subtitulo {
+        font-size: 1.05rem;
+    }
+
+
+    main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+
+    .progresso-geral,
+    .area-leituras {
+        padding: 20px 15px;
+    }
+
+
+    .lista-meses {
+        grid-template-columns: 1fr;
+    }
+
+
+    .botao-mes {
+        padding: 16px;
+    }
+
+
+    .cabecalho-dia {
+        align-items: flex-start;
+    }
+
+
+    .controles-mes {
+        flex-direction: column;
+    }
+
+
+    .controles-mes button,
+    #limpar-progresso {
+        width: 100%;
+    }
+
+
+    .banner-ministerio a {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}

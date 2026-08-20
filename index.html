@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bible 365 | Ministério Atalaia</title>
+
+    <meta
+        name="description"
+        content="Calendário para leitura da Bíblia em um ano — Ministério Atalaia."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho">
+
+        <a
+            href="index.html"
+            class="logo"
+            aria-label="Ministério Atalaia"
+        >
+            <img
+                src="img/logo-ministerio-atalaia.png"
+                alt="Ministério Atalaia"
+            >
+        </a>
+
+        <h1>
+            Bible 365
+        </h1>
+
+        <p class="subtitulo">
+            Ministério Atalaia
+        </p>
+
+        <p class="descricao">
+            Leia a Palavra de Deus diariamente e acompanhe
+            seu progresso durante todo o ano.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+        <!-- PROGRESSO GERAL -->
+
+        <section
+            class="progresso-geral"
+            aria-labelledby="titulo-progresso"
+        >
+
+            <h2 id="titulo-progresso">
+                Meu Progresso
+            </h2>
+
+            <div class="porcentagem-geral">
+
+                <strong id="porcentagem-geral">
+                    0%
+                </strong>
+
+            </div>
+
+            <progress
+                id="progresso-geral-barra"
+                value="0"
+                max="100"
+            >
+                0%
+            </progress>
+
+            <p>
+                <span id="dias-concluidos">0</span>
+                de
+                <span id="total-dias">365</span>
+                dias concluídos
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             MESES
+        ================================================== -->
+
+        <section
+            class="meses"
+            aria-labelledby="titulo-meses"
+        >
+
+            <h2 id="titulo-meses">
+                Calendário de Leitura
+            </h2>
+
+            <div
+                id="lista-meses"
+                class="lista-meses"
+            >
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="0"
+                >
+                    <span class="nome-mes">
+                        Janeiro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-0"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-0">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="1"
+                >
+                    <span class="nome-mes">
+                        Fevereiro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-1"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-1">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="2"
+                >
+                    <span class="nome-mes">
+                        Março
+                    </span>
+
+                    <progress
+                        id="progresso-mes-2"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-2">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="3"
+                >
+                    <span class="nome-mes">
+                        Abril
+                    </span>
+
+                    <progress
+                        id="progresso-mes-3"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-3">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="4"
+                >
+                    <span class="nome-mes">
+                        Maio
+                    </span>
+
+                    <progress
+                        id="progresso-mes-4"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-4">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="5"
+                >
+                    <span class="nome-mes">
+                        Junho
+                    </span>
+
+                    <progress
+                        id="progresso-mes-5"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-5">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="6"
+                >
+                    <span class="nome-mes">
+                        Julho
+                    </span>
+
+                    <progress
+                        id="progresso-mes-6"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-6">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="7"
+                >
+                    <span class="nome-mes">
+                        Agosto
+                    </span>
+
+                    <progress
+                        id="progresso-mes-7"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-7">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="8"
+                >
+                    <span class="nome-mes">
+                        Setembro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-8"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-8">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="9"
+                >
+                    <span class="nome-mes">
+                        Outubro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-9"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-9">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="10"
+                >
+                    <span class="nome-mes">
+                        Novembro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-10"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-10">
+                        0%
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="botao-mes"
+                    data-mes="11"
+                >
+                    <span class="nome-mes">
+                        Dezembro
+                    </span>
+
+                    <progress
+                        id="progresso-mes-11"
+                        value="0"
+                        max="100"
+                    ></progress>
+
+                    <span id="porcentagem-mes-11">
+                        0%
+                    </span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LEITURAS
+        ================================================== -->
+
+        <section
+            id="area-leituras"
+            class="area-leituras"
+            hidden
+            aria-labelledby="titulo-mes"
+        >
+
+            <div class="cabecalho-leituras">
+
+                <h2 id="titulo-mes">
+                    Leituras
+                </h2>
+
+                <p id="resumo-mes">
+                    0 de 0 dias concluídos — 0%
+                </p>
+
+            </div>
+
+
+            <div
+                id="leituras"
+                class="lista-leituras"
+            >
+                <!-- As leituras serão inseridas pelo JavaScript -->
+            </div>
+
+
+            <div class="controles-mes">
+
+                <button
+                    type="button"
+                    id="marcar-mes"
+                >
+                    Marcar mês como concluído
+                </button>
+
+                <button
+                    type="button"
+                    id="desmarcar-mes"
+                >
+                    Desmarcar mês
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESET
+        ================================================== -->
+
+        <section class="controle-geral">
+
+            <button
+                type="button"
+                id="limpar-progresso"
+            >
+                Reiniciar todo o progresso
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MINISTÉRIO ATALAIA
+    ====================================================== -->
+
+    <section class="banner-ministerio">
+
+        <a
+            href="https://dvalenascimento.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <img
+                src="img/logo-ministerio-atalaia.png"
+                alt="Ministério Atalaia"
+            >
+
+            <span>
+                Conheça o Ministério Atalaia
+            </span>
+
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="rodape">
+
+        <p>
+            Ministério Atalaia
+        </p>
+
+        <p>
+            <small>
+                Bible 365
+            </small>
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
