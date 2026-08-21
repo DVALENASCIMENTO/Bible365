@@ -639,3 +639,93 @@ progress::-moz-progress-bar {
     }
 
 }
+
+
+
+/* =========================================================
+   BÍBLIA ONLINE
+========================================================= */
+
+.biblia-online {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 35px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e4ddd2;
+}
+
+.biblia-online h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #4d3b20;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.biblia-online p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+    color: #6b6258;
+}
+
+/* Botão Bíblia King James */
+
+.botao-biblia {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #a47b28;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 13px 24px;
+    border-radius: 9px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.botao-biblia:hover {
+    background: #89651f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+}
+
+.botao-biblia:active {
+    transform: translateY(0);
+}
+
+.botao-biblia:focus-visible {
+    outline: 3px solid #d6b56d;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .biblia-online {
+        padding: 22px 15px;
+    }
+
+    .biblia-online h2 {
+        font-size: 1.5rem;
+    }
+
+    .botao-biblia {
+        width: 100%;
+    }
+
+}
