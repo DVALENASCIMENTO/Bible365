@@ -27,7 +27,7 @@
 
 const CONFIG = {
     nomeBanco: "MinisterioAtalaiaLeituraBiblica",
-    versaoBanco: 1,
+    versaoBanco: 2,
     nomeStore: "leituras"
 };
 
@@ -1074,6 +1074,123 @@ async function calcularProgressoMes(
 
 
 /* =====================================================
+   CERTIFICADO DE CONCLUSÃO
+===================================================== */
+
+const ID_CERTIFICADO = "certificado-dados";
+
+function formatarCPF(valor) {
+    const numeros = valor.replace(/\D/g, "").slice(0, 11);
+    return numeros
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+}
+
+function validarCPF(cpf) {
+    const numeros = cpf.replace(/\D/g, "");
+    if (numeros.length !== 11 || /^([0-9])\1{10}$/.test(numeros)) return false;
+    let soma = 0;
+    for (let i = 0; i < 9; i++) soma += Number(numeros[i]) * (10 - i);
+    let resto = (soma * 10) % 11;
+    if (resto === 10) resto = 0;
+    if (resto !== Number(numeros[9])) return false;
+    soma = 0;
+    for (let i = 0; i < 10; i++) soma += Number(numeros[i]) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10) resto = 0;
+    return resto === Number(numeros[10]);
+}
+
+function gerarCodigoCertificado() {
+    const ano = new Date().getFullYear();
+    const array = new Uint32Array(1);
+    crypto.getRandomValues(array);
+    return `B365-${ano}-${String(array[0] % 1000000).padStart(6, "0")}`;
+}
+
+function salvarDadosCertificado(dados) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(CONFIG.nomeStore, "readwrite");
+        const store = transaction.objectStore(CONFIG.nomeStore);
+        store.put({ id: ID_CERTIFICADO, tipo: "certificado", ...dados });
+        transaction.oncomplete = () => resolve();
+        transaction.onerror = event => reject(event.target.error);
+    });
+}
+
+async function obterDadosCertificado() {
+    const registro = await obterLeitura(ID_CERTIFICADO);
+    return registro && registro.tipo === "certificado" ? registro : null;
+}
+
+function atualizarEstadoCertificado(percentual) {
+    const status = document.getElementById("certificado-status");
+    const botao = document.getElementById("emitir-certificado");
+    if (!status || !botao) return;
+    if (percentual >= 100) {
+        status.textContent = "🎉 Parabéns! Você concluiu os 365 dias. Preencha seu nome e CPF para emitir o certificado.";
+        botao.disabled = false;
+    } else {
+        status.textContent = `Complete os 365 dias de leitura para liberar a emissão do certificado. Progresso atual: ${percentual}%.`;
+        botao.disabled = true;
+    }
+}
+
+function preencherCertificado(dados) {
+    document.getElementById("certificado-nome").textContent = dados.nome;
+    document.getElementById("certificado-cpf").textContent = dados.cpf;
+    document.getElementById("certificado-data").textContent = dados.data;
+    document.getElementById("certificado-codigo").textContent = `Código de emissão: ${dados.codigo}`;
+    document.getElementById("certificado-impressao").hidden = false;
+    document.getElementById("imprimir-certificado").hidden = false;
+}
+
+async function carregarCertificado(percentual) {
+    atualizarEstadoCertificado(percentual);
+    const dados = await obterDadosCertificado();
+    if (dados && percentual >= 100) {
+        const nome = document.getElementById("nome-certificado");
+        const cpf = document.getElementById("cpf-certificado");
+        if (nome) nome.value = dados.nome;
+        if (cpf) cpf.value = dados.cpf;
+        preencherCertificado(dados);
+    }
+}
+
+async function emitirCertificado() {
+    const nome = document.getElementById("nome-certificado").value.trim();
+    const cpf = formatarCPF(document.getElementById("cpf-certificado").value);
+    if (nome.length < 3) {
+        alert("Digite seu nome completo.");
+        return;
+    }
+    if (!validarCPF(cpf)) {
+        alert("Digite um CPF válido.");
+        return;
+    }
+    const anterior = await obterDadosCertificado();
+    const dados = {
+        nome,
+        cpf,
+        data: anterior?.data || new Date().toLocaleDateString("pt-BR"),
+        codigo: anterior?.codigo || gerarCodigoCertificado()
+    };
+    await salvarDadosCertificado(dados);
+    preencherCertificado(dados);
+    alert("Certificado emitido com sucesso!");
+}
+
+function configurarCertificado() {
+    const cpf = document.getElementById("cpf-certificado");
+    const emitir = document.getElementById("emitir-certificado");
+    const imprimir = document.getElementById("imprimir-certificado");
+    if (cpf) cpf.addEventListener("input", () => { cpf.value = formatarCPF(cpf.value); });
+    if (emitir) emitir.addEventListener("click", emitirCertificado);
+    if (imprimir) imprimir.addEventListener("click", () => window.print());
+}
+
+/* =====================================================
    ATUALIZAR TODO O PROGRESSO
 ===================================================== */
 
@@ -1200,6 +1317,8 @@ async function atualizarProgresso() {
             totalDias;
 
     }
+
+    await carregarCertificado(percentualGeral);
 
 
     /*
@@ -1440,6 +1559,8 @@ if (botaoLimpar) {
 /* =====================================================
    INICIALIZAÇÃO
 ===================================================== */
+
+configurarCertificado();
 
 async function iniciarAplicacao() {
 
