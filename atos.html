@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172b43">
+<meta name="description" content="Plano de leitura bíblica de 30 dias no livro de Atos dos Apóstolos — Ministério Atalaia.">
+<title>Primeiros Passos com Jesus | Atos dos Apóstolos</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --navy:#172b43;
+    --navy2:#294764;
+    --gold:#c6a15b;
+    --paper:#f5f3ee;
+    --card:#fff;
+    --ink:#202a35;
+    --muted:#77818b;
+    --line:#e8e5dd;
+    --soft:#f8f6f1;
+    --green:#47745d;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+    line-height:1.6;
+}
+
+.topbar {
+    height:66px;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 max(20px,calc((100% - 900px)/2));
+    position:sticky;
+    top:0;
+    z-index:5;
+}
+
+.brand {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    text-decoration:none;
+    letter-spacing:.08em;
+    font-size:11px;
+}
+
+.brand small {
+    display:block;
+    color:#d8c49b;
+    font-size:9px;
+    letter-spacing:.18em;
+}
+
+.brand-mark {
+    color:var(--gold);
+    font-size:27px;
+}
+
+.icon-btn {
+    border:1px solid #53667b;
+    color:white;
+    background:transparent;
+    border-radius:50%;
+    width:38px;
+    height:38px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+main {
+    max-width:900px;
+    margin:auto;
+    padding:26px 20px 60px;
+}
+
+.view {
+    display:none;
+}
+
+.view.active {
+    display:block;
+}
+
+.hero {
+    background:linear-gradient(135deg,var(--navy),var(--navy2));
+    border-radius:22px;
+    padding:36px 32px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 12px 30px #172b431c;
+}
+
+.hero:after {
+    content:"✦";
+    position:absolute;
+    right:28px;
+    top:8px;
+    font-size:140px;
+    color:#ffffff0b;
+}
+
+.eyebrow,
+.section-kicker,
+.card-label {
+    font-size:10px;
+    letter-spacing:.17em;
+    font-weight:700;
+    color:var(--gold);
+}
+
+h1,h2 {
+    font-family:'Playfair Display',serif;
+    line-height:1.15;
+}
+
+.hero h1 {
+    font-size:clamp(34px,7vw,54px);
+    margin:18px 0 12px;
+}
+
+.hero h1 em {
+    font-style:normal;
+    color:#e0c27f;
+}
+
+.hero p {
+    max-width:460px;
+    color:#e0e6eb;
+    margin-bottom:22px;
+}
+
+.hero-meta {
+    font-size:10px;
+    letter-spacing:.13em;
+    color:#d8c49b;
+    margin-bottom:22px;
+}
+
+.primary-btn,
+.secondary-btn {
+    border:0;
+    border-radius:10px;
+    padding:13px 18px;
+    font:700 13px 'DM Sans';
+    cursor:pointer;
+}
+
+.primary-btn {
+    background:var(--gold);
+    color:#172b43;
+}
+
+.primary-btn span {
+    margin-left:18px;
+}
+
+.secondary-btn {
+    background:#eae6dc;
+    color:var(--navy);
+}
+
+.progress-card,
+.content-card {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:21px;
+    margin-top:18px;
+}
+
+.progress-heading,
+.section-heading {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.progress-heading h2,
+.section-heading h2 {
+    font-size:22px;
+    margin:3px 0;
+}
+
+.progress-heading strong {
+    font-size:24px;
+    color:var(--navy);
+}
+
+.progress-track {
+    height:8px;
+    background:#ece9e1;
+    border-radius:10px;
+    overflow:hidden;
+    margin:13px 0 8px;
+}
+
+.progress-track span {
+    display:block;
+    height:100%;
+    width:0;
+    background:var(--green);
+    border-radius:10px;
+    transition:width .25s;
+}
+
+.progress-card p,
+.muted {
+    color:var(--muted);
+    font-size:12px;
+}
+
+.section-heading {
+    margin:30px 0 12px;
+}
+
+.day-list {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.day-item {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:13px;
+    padding:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+    cursor:pointer;
+    color:var(--ink);
+    width:100%;
+}
+
+.day-item:hover {
+    border-color:var(--gold);
+}
+
+.day-number {
+    width:38px;
+    height:38px;
+    border-radius:11px;
+    background:#f0ede5;
+    color:var(--navy);
+    display:grid;
+    place-items:center;
+    font-weight:700;
+    font-size:12px;
+    flex-shrink:0;
+}
+
+.day-item.done .day-number {
+    background:#e3eee7;
+    color:var(--green);
+}
+
+.day-info strong {
+    display:block;
+    font-size:12px;
+}
+
+.day-info small {
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-top:3px;
+}
+
+.day-check {
+    margin-left:auto;
+    color:var(--green);
+}
+
+footer {
+    text-align:center;
+    color:var(--muted);
+    font-size:11px;
+    padding:35px 0 10px;
+}
+
+.back-btn {
+    border:0;
+    background:transparent;
+    color:var(--navy);
+    font-weight:700;
+    padding:5px 0 18px;
+    cursor:pointer;
+}
+
+.study-topline {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.pill {
+    background:#e8e1d2;
+    color:#6e5528;
+    border-radius:30px;
+    padding:5px 11px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+}
+
+.study-title {
+    font-size:clamp(30px,6vw,42px);
+    margin:16px 0 5px;
+    color:var(--navy);
+}
+
+.study-reference {
+    color:var(--muted);
+    margin:0 0 18px;
+}
+
+.study-content {
+    max-width:720px;
+}
+
+.content-card {
+    padding:22px;
+    margin:13px 0;
+}
+
+.content-card h2 {
+    font-size:21px;
+    margin:7px 0 10px;
+    color:var(--navy);
+}
+
+.content-card p {
+    font-size:14px;
+    margin:8px 0;
+}
+
+.reference-box {
+    padding:12px 14px;
+    background:var(--soft);
+    border-left:3px solid var(--gold);
+    font-weight:700;
+    color:var(--navy);
+    margin:12px 0;
+}
+
+.content-card label {
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin:16px 0 7px;
+    color:var(--navy);
+}
+
+textarea {
+    width:100%;
+    resize:vertical;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px;
+    font:13px/1.6 'DM Sans';
+    background:#fff;
+    color:#202a35;
+}
+
+textarea:focus {
+    outline:2px solid #c6a15b66;
+    border-color:var(--gold);
+}
+
+.tiny-note {
+    font-size:10px!important;
+    color:var(--muted);
+}
+
+.explain-point {
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+}
+
+.explain-point:last-child {
+    border:0;
+}
+
+.memory-verse {
+    font-family:'Playfair Display',serif;
+    font-size:18px!important;
+    color:var(--navy);
+}
+
+.scripture-text {
+    background:var(--soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    margin:14px 0;
+}
+
+.scripture-verse {
+    display:grid;
+    grid-template-columns:35px 1fr;
+    gap:8px;
+    padding:7px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    line-height:1.75;
+}
+
+.scripture-verse:last-child {
+    border:0;
+}
+
+.scripture-verse sup {
+    color:#9a793d;
+    font-weight:700;
+    font-size:10px;
+    padding-top:3px;
+}
+
+.scripture-status {
+    color:var(--muted);
+    font-size:12px;
+}
+
+.scripture-error {
+    color:#a33b32;
+    font-size:13px;
+}
+
+.prayer-card {
+    background:#f0eee7;
+}
+
+.study-actions {
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+
+.study-actions .primary-btn {
+    flex:1;
+}
+
+.dark {
+    --paper:#101b28;
+    --card:#1b2b3b;
+    --ink:#edf0f2;
+    --muted:#aab4bd;
+    --line:#344454;
+    --soft:#243649;
+}
+
+.dark .day-item,
+.dark textarea {
+    background:#1b2b3b;
+    color:#edf0f2;
+}
+
+.dark .day-number {
+    background:#2b4054;
+    color:#e4c987;
+}
+
+.dark .content-card h2,
+.dark .study-title,
+.dark .reference-box {
+    color:#e7d3a5;
+}
+
+.dark .reference-box,
+.dark .prayer-card {
+    background:#26394c;
+}
+
+.dark .secondary-btn {
+    background:#34485b;
+    color:#fff;
+}
+
+.dark .progress-track {
+    background:#344454;
+}
+
+.dark .scripture-text {
+    background:#26394c;
+}
+
+@media(max-width:560px) {
+    main {
+        padding:17px 14px 40px;
+    }
+
+    .hero {
+        padding:28px 22px;
+    }
+
+    .day-list {
+        grid-template-columns:1fr;
+    }
+
+    .progress-card,
+    .content-card {
+        padding:17px;
+    }
+
+    .study-actions {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .study-actions .primary-btn {
+        grid-column:1/-1;
+        grid-row:1;
+    }
+
+    .study-actions #prevBtn {
+        grid-column:1;
+    }
+
+    .study-actions #nextBtn {
+        grid-column:2;
+    }
+
+    .hero h1 {
+        font-size:37px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="#" id="homeLink">
+        <span class="brand-mark">✦</span>
+        <span>
+            <strong>MINISTÉRIO ATALAIA</strong>
+            <small>ESCOLA BÍBLICA</small>
+        </span>
+    </a>
+
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema">◐</button>
+</header>
+
+<main>
+
+<section id="homeView" class="view active">
+
+    <section class="hero">
+        <div class="eyebrow">PLANO DE LEITURA • 30 DIAS</div>
+
+        <h1>
+            PRIMEIROS PASSOS<br>
+            <em>COM JESUS</em>
+        </h1>
+
+        <p>
+            O nascimento e a expansão da Igreja.
+            Conheça a ação do Espírito Santo e a missão
+            dos primeiros discípulos de Jesus.
+        </p>
+
+        <div class="hero-meta">
+            ATOS DOS APÓSTOLOS • ALMEIDA 1819
+        </div>
+
+        <button class="primary-btn" id="continueBtn">
+            Continuar minha jornada <span>→</span>
+        </button>
+    </section>
+
+    <section class="progress-card">
+        <div class="progress-heading">
+            <div>
+                <span class="section-kicker">SUA CAMINHADA</span>
+                <h2>Seu progresso</h2>
+            </div>
+            <strong id="progressPercent">0%</strong>
+        </div>
+
+        <div class="progress-track">
+            <span id="progressBar"></span>
+        </div>
+
+        <p id="progressText">
+            Você ainda não concluiu nenhuma leitura. Comece pelo Dia 1.
+        </p>
+    </section>
+
+    <div class="section-heading">
+        <div>
+            <span class="section-kicker">PLANO DE LEITURA</span>
+            <h2>30 dias em Atos</h2>
+        </div>
+        <span class="muted">30 estudos</span>
+    </div>
+
+    <div id="dayList" class="day-list"></div>
+
+    <footer>
+        Ministério Atalaia • Escola Bíblica Atalaia
+    </footer>
+
+</section>
+
+<section id="studyView" class="view">
+
+    <button class="back-btn" id="backBtn">← Voltar ao plano</button>
+
+    <div class="study-topline">
+        <span id="studyDayLabel" class="pill">DIA 1</span>
+        <span id="studyWeek" class="muted"></span>
+    </div>
+
+    <h1 id="studyTitle" class="study-title"></h1>
+    <p id="studyReference" class="study-reference"></p>
+
+    <div class="study-content">
+
+        <article class="content-card">
+            <div class="card-label">01 • LEITURA BÍBLICA</div>
+            <h2>Texto bíblico</h2>
+            <p id="readingIntro"></p>
+            <div class="reference-box" id="readingReference"></div>
+
+            <div id="scriptureText" class="scripture-text" aria-live="polite">
+                <p>O texto bíblico será carregado automaticamente.</p>
+            </div>
+
+            <p id="scriptureCopyright" class="tiny-note">
+                Texto bíblico: Bíblia Livre (Almeida 1819). Requer conexão com a internet.
+            </p>
+        </article>
+
+        <article class="content-card">
+            <div class="card-label">02 • CONTEXTO</div>
+            <h2>Entendendo o contexto</h2>
+            <p id="contextText"></p>
+        </article>
+
+        <article class="content-card">
+            <div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+            <h2>O que o texto ensina?</h2>
+            <div id="explanationText"></div>
+        </article>
+
+        <article class="content-card">
+            <div class="card-label">04 • PARA A VIDA</div>
+            <h2>Aplicação prática</h2>
+            <p id="applicationText"></p>
+        </article>
+
+        <article class="content-card">
+            <div class="card-label">05 • MEMORIZAÇÃO</div>
+            <h2>Versículo para guardar (ARC)</h2>
+            <p id="memoryText" class="memory-verse"></p>
+            <span id="memoryReference" class="verse-ref"></span>
+        </article>
+
+        <article class="content-card">
+            <div class="card-label">06 • REFLEXÃO</div>
+            <h2>Examine sua caminhada</h2>
+            <div id="questions"></div>
+
+            <label for="notesInput">Minhas anotações</label>
+            <textarea id="notesInput" rows="4" placeholder="Escreva aqui suas reflexões..."></textarea>
+
+            <button class="secondary-btn" id="saveNotesBtn">
+                Salvar minhas anotações
+            </button>
+        </article>
+
+        <article class="content-card prayer-card">
+            <div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+            <h2>Ore ao Senhor</h2>
+            <p id="prayerText"></p>
+        </article>
+
+        <div class="study-actions">
+            <button class="primary-btn" id="completeBtn">
+                Marcar como concluído ✓
+            </button>
+
+            <button class="secondary-btn" id="prevBtn">← Anterior</button>
+            <button class="secondary-btn" id="nextBtn">Próximo →</button>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<script>
+const studies = [
+
+{
+day:1,
+title:"A promessa do Espírito Santo e a ascensão de Jesus",
+ref:"Atos 1:1-11",
+week:"Semana 1 • O início da Igreja",
+intro:"Leia a apresentação do livro de Atos, a promessa do Espírito Santo e a ascensão de Jesus Cristo.",
+context:"Atos começa dando continuidade ao relato do Evangelho de Lucas. Jesus, depois de sua ressurreição, apresenta-se vivo aos discípulos durante quarenta dias e fala sobre o Reino de Deus. Antes de subir ao céu, ordena que aguardem a promessa do Pai: o batismo com o Espírito Santo.",
+points:[
+"Jesus apresenta-se vivo aos discípulos depois de sua paixão.",
+"Ele fala sobre o Reino de Deus durante quarenta dias.",
+"Os discípulos recebem a promessa do batismo com o Espírito Santo.",
+"Jesus declara que os discípulos seriam suas testemunhas até os confins da terra.",
+"Jesus é elevado às alturas diante deles."
+],
+application:"A missão cristã não depende apenas da capacidade humana. Jesus prometeu o Espírito Santo e enviou seus discípulos para testemunhar. Conheça essa missão e esteja disposto a obedecer à Palavra.",
+memory:"Mas recebereis a virtude do Espírito Santo, que há de vir sobre vós; e ser-me-eis testemunhas.",
+memoryRef:"Atos 1:8 — confira o texto na ARC.",
+questions:[
+"Qual promessa Jesus fez aos discípulos?",
+"Qual seria a missão dos discípulos depois de receberem o Espírito Santo?",
+"O que Jesus declarou sobre o alcance do testemunho?"
+],
+prayer:"Senhor Jesus, ajuda-me a compreender tua missão e a viver como testemunha fiel do Evangelho. Ensina-me a depender do Espírito Santo e a obedecer à tua Palavra. Amém."
+},
+
+{
+day:2,
+title:"A escolha de Matias",
+ref:"Atos 1:12-26",
+week:"Semana 1 • O início da Igreja",
+intro:"Leia o retorno dos discípulos a Jerusalém, a perseverança em oração e a escolha de Matias para ocupar o lugar de Judas.",
+context:"Depois da ascensão de Jesus, os discípulos retornam a Jerusalém e permanecem reunidos em oração. Pedro explica a necessidade de escolher alguém para ocupar o lugar deixado por Judas Iscariotes entre os apóstolos.",
+points:[
+"Os discípulos retornam a Jerusalém conforme a orientação de Jesus.",
+"Os apóstolos e outros seguidores permanecem unidos em oração.",
+"Pedro apresenta as Escrituras ao tratar da substituição de Judas.",
+"Dois homens são apresentados como candidatos.",
+"Matias é escolhido e contado com os onze apóstolos."
+],
+application:"A Igreja nasceu em um ambiente de comunhão, oração e submissão às Escrituras. Aprenda a buscar a direção de Deus antes de tomar decisões importantes.",
+memory:"Todos estes perseveravam unanimemente em oração e súplicas.",
+memoryRef:"Atos 1:14 — confira o texto na ARC.",
+questions:[
+"Como os discípulos permaneceram depois da ascensão de Jesus?",
+"Por que foi necessário escolher outro apóstolo?",
+"Quem foi escolhido para ocupar o lugar de Judas?"
+],
+prayer:"Pai, ensina-me a perseverar em oração e a valorizar a comunhão com os irmãos. Que minhas decisões sejam orientadas pela tua Palavra. Amém."
+},
+
+{
+day:3,
+title:"O dia de Pentecostes e a descida do Espírito Santo",
+ref:"Atos 2:1-13",
+week:"Semana 1 • O nascimento da Igreja",
+intro:"Leia o acontecimento de Pentecostes e observe os sinais que acompanharam a descida do Espírito Santo.",
+context:"No dia de Pentecostes, os discípulos estavam reunidos quando veio do céu um som semelhante a um vento veemente e impetuoso. Línguas repartidas como que de fogo apareceram, e todos foram cheios do Espírito Santo, começando a falar em outras línguas conforme o Espírito lhes concedia.",
+points:[
+"Os discípulos estavam reunidos no dia de Pentecostes.",
+"Um som vindo do céu encheu a casa onde estavam assentados.",
+"Línguas repartidas como que de fogo foram vistas sobre eles.",
+"Todos foram cheios do Espírito Santo.",
+"Pessoas de diferentes nações ouviram os discípulos em seus próprios idiomas."
+],
+application:"Pentecostes demonstra que Deus cumpriu a promessa feita por Jesus. O Espírito Santo capacitou os discípulos para testemunhar. Leia o texto com atenção e reconheça a importância dessa promessa na história da Igreja.",
+memory:"E todos foram cheios do Espírito Santo.",
+memoryRef:"Atos 2:4 — confira o texto na ARC.",
+questions:[
+"O que aconteceu quando chegou o dia de Pentecostes?",
+"Quais sinais acompanharam aquele acontecimento?",
+"Como as pessoas de diferentes nações reagiram?"
+],
+prayer:"Senhor Deus, obrigado pelo cumprimento da promessa do Espírito Santo. Ajuda-me a compreender tua Palavra e a testemunhar de Jesus com fidelidade. Amém."
+},
+
+{
+day:4,
+title:"A pregação de Pedro e o chamado ao arrependimento",
+ref:"Atos 2:14-41",
+week:"Semana 1 • O nascimento da Igreja",
+intro:"Leia a primeira grande pregação de Pedro depois do Pentecostes e a resposta da multidão.",
+context:"Pedro se levanta com os onze e explica que o acontecimento não era embriaguez, mas cumprimento da profecia de Joel. Ele anuncia Jesus crucificado e ressuscitado, demonstrando pelas Escrituras que Deus o fez Senhor e Cristo. Os ouvintes são confrontados e perguntam o que devem fazer.",
+points:[
+"Pedro explica o acontecimento de Pentecostes à multidão.",
+"Ele apresenta a profecia de Joel sobre o derramamento do Espírito.",
+"Pedro anuncia a morte e a ressurreição de Jesus.",
+"Os ouvintes são chamados ao arrependimento e ao batismo em nome de Jesus Cristo.",
+"Quase três mil pessoas recebem a Palavra e são batizadas."
+],
+application:"A mensagem apostólica aponta para Jesus Cristo, sua morte e ressurreição. O Evangelho chama o ser humano ao arrependimento e à resposta de fé.",
+memory:"Arrependei-vos, e cada um de vós seja batizado em nome de Jesus Cristo.",
+memoryRef:"Atos 2:38 — confira o texto na ARC.",
+questions:[
+"Como Pedro explicou o acontecimento de Pentecostes?",
+"Qual foi o centro da pregação de Pedro?",
+"Qual orientação Pedro deu aos ouvintes que foram confrontados?"
+],
+prayer:"Senhor, dá-me um coração sensível à tua Palavra. Ajuda-me a compreender o Evangelho, arrepender-me dos meus pecados e viver em obediência a Cristo. Amém."
+},
+
+{
+day:5,
+title:"A comunhão e a vida da primeira comunidade cristã",
+ref:"Atos 2:42-47",
+week:"Semana 1 • O nascimento da Igreja",
+intro:"Leia como viviam os primeiros convertidos e quais práticas caracterizavam a comunidade cristã.",
+context:"Depois de receberem a Palavra e serem batizados, os novos discípulos perseveravam na doutrina dos apóstolos, na comunhão, no partir do pão e nas orações. A comunidade demonstrava cuidado mútuo, generosidade e louvor a Deus.",
+points:[
+"Os discípulos perseveravam na doutrina dos apóstolos.",
+"A comunhão e o partir do pão faziam parte da vida da Igreja.",
+"Eles permaneciam unidos em oração.",
+"Os irmãos compartilhavam seus bens conforme as necessidades.",
+"O Senhor acrescentava à Igreja aqueles que se haviam de salvar."
+],
+application:"A vida cristã não foi apresentada como uma caminhada isolada. Aprenda a valorizar o ensino bíblico, a comunhão, a oração e o cuidado com os irmãos.",
+memory:"E perseveravam na doutrina dos apóstolos, e na comunhão, e no partir do pão, e nas orações.",
+memoryRef:"Atos 2:42 — confira o texto na ARC.",
+questions:[
+"Quais eram as práticas fundamentais da primeira comunidade?",
+"Como os primeiros cristãos demonstravam comunhão?",
+"O que o Senhor fazia em relação à Igreja?"
+],
+prayer:"Pai, ajuda-me a crescer na doutrina, na comunhão e na oração. Ensina-me a servir os irmãos e a participar fielmente da vida da Igreja. Amém."
+},
+
+{
+day:6,
+title:"A cura do homem coxo na porta do templo",
+ref:"Atos 3:1-26",
+week:"Semana 1 • O testemunho apostólico",
+intro:"Leia a cura realizada por Pedro e João e a mensagem anunciada por Pedro ao povo que se reuniu admirado.",
+context:"Pedro e João sobem ao templo para orar. Na porta chamada Formosa, encontram um homem coxo desde o nascimento, que pedia esmolas. Pedro declara que não possui prata nem ouro, mas oferece o que tem: em nome de Jesus Cristo, ordena que o homem se levante e ande.",
+points:[
+"Pedro e João vão ao templo na hora da oração.",
+"O homem coxo pede esmola aos apóstolos.",
+"Pedro ordena que ele se levante em nome de Jesus Cristo.",
+"O homem é curado e entra no templo andando, saltando e louvando a Deus.",
+"Pedro anuncia Jesus e chama o povo ao arrependimento."
+],
+application:"O milagre direciona a atenção para Jesus, não para a exaltação dos apóstolos. O testemunho cristão deve conduzir as pessoas ao conhecimento de Cristo.",
+memory:"Em nome de Jesus Cristo, o Nazareno, levanta-te e anda.",
+memoryRef:"Atos 3:6 — confira o texto na ARC.",
+questions:[
+"Onde Pedro e João encontraram o homem coxo?",
+"Em nome de quem o homem foi curado?",
+"Qual mensagem Pedro anunciou depois do milagre?"
+],
+prayer:"Senhor Jesus, que minha vida conduza outras pessoas a ti. Ajuda-me a anunciar o Evangelho com humildade e fidelidade. Amém."
+},
+
+{
+day:7,
+title:"A prisão dos apóstolos e a coragem de testemunhar",
+ref:"Atos 4:1-22",
+week:"Semana 1 • O testemunho apostólico",
+intro:"Leia a prisão de Pedro e João e a resposta dos apóstolos diante das autoridades religiosas.",
+context:"Enquanto Pedro e João falavam ao povo, sacerdotes, o capitão do templo e saduceus se aproximaram e os prenderam. No dia seguinte, os apóstolos foram interrogados sobre a autoridade pela qual haviam curado o homem. Pedro, cheio do Espírito Santo, anuncia que a cura aconteceu pelo nome de Jesus Cristo.",
+points:[
+"Pedro e João são presos por anunciarem a ressurreição em Jesus.",
+"Pedro responde às autoridades cheio do Espírito Santo.",
+"Os apóstolos declaram que a salvação está em Jesus Cristo.",
+"As autoridades reconhecem a ousadia dos discípulos.",
+"Pedro e João afirmam que não podem deixar de falar do que viram e ouviram."
+],
+application:"A oposição não deve levar o discípulo a abandonar a verdade. Aprenda com os apóstolos a testemunhar de Jesus com coragem e respeito.",
+memory:"Não podemos deixar de falar do que temos visto e ouvido.",
+memoryRef:"Atos 4:20 — confira o texto na ARC.",
+questions:[
+"Por que Pedro e João foram presos?",
+"Como Pedro respondeu às autoridades?",
+"Qual foi a resposta dos apóstolos diante da proibição de falar?"
+],
+prayer:"Pai, fortalece minha fé para que eu não tenha vergonha do Evangelho. Dá-me sabedoria e coragem para testemunhar de Jesus. Amém."
+},
+
+{
+day:8,
+title:"A oração da Igreja e a generosidade dos irmãos",
+ref:"Atos 4:23-37",
+week:"Semana 2 • A vida da Igreja",
+intro:"Leia a oração da comunidade depois da libertação dos apóstolos e o testemunho de unidade entre os primeiros cristãos.",
+context:"Depois de serem libertados, Pedro e João procuram os irmãos e relatam o que aconteceu. A Igreja ora reconhecendo a soberania de Deus e pede ousadia para anunciar sua Palavra. O texto também apresenta a unidade e a generosidade dos primeiros discípulos.",
+points:[
+"A comunidade recebe o relato dos apóstolos.",
+"Os irmãos levantam a voz a Deus em oração.",
+"Eles pedem coragem para continuar anunciando a Palavra.",
+"A comunidade demonstra unidade e cuidado com os necessitados.",
+"Barnabé é apresentado como exemplo de generosidade."
+],
+application:"Quando enfrentar oposição, procure a comunhão dos irmãos e ore. A Igreja deve permanecer unida na missão e demonstrar amor por meio de atitudes concretas.",
+memory:"E todos foram cheios do Espírito Santo, e anunciavam com ousadia a palavra de Deus.",
+memoryRef:"Atos 4:31 — confira o texto na ARC.",
+questions:[
+"O que a Igreja fez quando ouviu o relato de Pedro e João?",
+"Qual foi o pedido apresentado a Deus?",
+"Como os primeiros cristãos demonstravam generosidade?"
+],
+prayer:"Senhor, une teu povo em oração e amor. Dá-nos ousadia para anunciar tua Palavra e disposição para ajudar quem necessita. Amém."
+},
+
+{
+day:9,
+title:"Ananias e Safira: a seriedade diante de Deus",
+ref:"Atos 5:1-16",
+week:"Semana 2 • A vida da Igreja",
+intro:"Leia o relato de Ananias e Safira e observe a seriedade com que a Igreja primitiva tratava a verdade e a santidade.",
+context:"Ananias e Safira vendem uma propriedade e apresentam parte do valor como se fosse o total recebido. Pedro confronta a mentira de Ananias, mostrando que ele havia mentido ao Espírito Santo. O mesmo acontece com Safira. O episódio provoca grande temor na comunidade.",
+points:[
+"Ananias e Safira decidem reter parte do valor da propriedade.",
+"Pedro confronta a mentira apresentada por Ananias.",
+"O texto afirma que a mentira foi contra o Espírito Santo.",
+"Safira confirma a versão falsa e também é confrontada.",
+"Grande temor vem sobre toda a Igreja e sobre os que ouvem o relato."
+],
+application:"Deus não aprova a falsidade nem a aparência de piedade. Viva com sinceridade diante do Senhor, lembrando que a verdade deve orientar sua vida cristã.",
+memory:"Não mentiste aos homens, mas a Deus.",
+memoryRef:"Atos 5:4 — confira o texto na ARC.",
+questions:[
+"Qual foi a atitude de Ananias e Safira?",
+"Como Pedro identificou a gravidade daquela mentira?",
+"O que aconteceu na comunidade depois do episódio?"
+],
+prayer:"Senhor, livra-me da falsidade e da hipocrisia. Ensina-me a viver com sinceridade, temor e integridade diante de ti. Amém."
+},
+
+{
+day:10,
+title:"Os apóstolos diante do Sinédrio",
+ref:"Atos 5:17-42",
+week:"Semana 2 • O testemunho apostólico",
+intro:"Leia a prisão dos apóstolos, sua libertação e a resposta diante da ordem de não ensinar em nome de Jesus.",
+context:"O sumo sacerdote e os saduceus prendem os apóstolos, mas durante a noite um anjo do Senhor abre as portas da prisão e os orienta a continuar anunciando a mensagem da vida. Levados novamente diante do conselho, os apóstolos afirmam que importa obedecer a Deus antes que aos homens.",
+points:[
+"Os apóstolos são presos por causa do testemunho público.",
+"Um anjo do Senhor abre as portas da prisão.",
+"Os apóstolos voltam a ensinar no templo.",
+"Pedro declara que é necessário obedecer a Deus antes que aos homens.",
+"Os apóstolos saem alegres por terem sido considerados dignos de padecer afronta pelo nome de Jesus."
+],
+application:"A fidelidade a Deus deve estar acima da aprovação humana. Permaneça firme na Palavra e não abandone o testemunho de Cristo diante das dificuldades.",
+memory:"Mais importa obedecer a Deus do que aos homens.",
+memoryRef:"Atos 5:29 — confira o texto na ARC.",
+questions:[
+"Como os apóstolos foram libertados da prisão?",
+"O que Pedro declarou diante do conselho?",
+"Como os apóstolos reagiram depois de serem açoitados?"
+],
+prayer:"Pai, dá-me coragem para obedecer à tua Palavra. Que nenhuma pressão humana me faça negar a verdade do Evangelho. Amém."
+},
+
+{
+day:11,
+title:"A escolha dos sete servidores",
+ref:"Atos 6:1-7",
+week:"Semana 2 • A organização da Igreja",
+intro:"Leia como a Igreja resolveu uma dificuldade relacionada à distribuição diária e escolheu sete homens para servir.",
+context:"Com o crescimento da comunidade, surgiu uma reclamação dos judeus de fala grega porque suas viúvas estavam sendo esquecidas na distribuição diária. Os apóstolos reuniram a multidão dos discípulos e orientaram a escolha de sete homens de boa reputação, cheios do Espírito Santo e de sabedoria.",
+points:[
+"Surge uma reclamação relacionada ao atendimento das viúvas.",
+"Os apóstolos reconhecem a necessidade de organizar o serviço.",
+"A comunidade recebe orientação para escolher sete homens.",
+"Os escolhidos deveriam ter boa reputação e ser cheios do Espírito Santo e de sabedoria.",
+"A Palavra de Deus crescia e o número dos discípulos se multiplicava."
+],
+application:"O crescimento da Igreja exige organização, responsabilidade e serviço. Valorize as pessoas, cuide dos necessitados e sirva com caráter e sabedoria.",
+memory:"Escolhei, pois, irmãos, dentre vós, sete varões de boa reputação, cheios do Espírito Santo e de sabedoria.",
+memoryRef:"Atos 6:3 — confira o texto na ARC.",
+questions:[
+"Qual problema surgiu na comunidade?",
+"Quais características deveriam ter os homens escolhidos?",
+"Qual foi o resultado do trabalho organizado?"
+],
+prayer:"Senhor, dá-me um coração disposto a servir. Ajuda tua Igreja a cuidar das pessoas com justiça, sabedoria e amor. Amém."
+},
+
+{
+day:12,
+title:"O testemunho e o martírio de Estêvão",
+ref:"Atos 6:8-7:60",
+week:"Semana 2 • A expansão da Igreja",
+intro:"Leia o testemunho de Estêvão, seu discurso diante do conselho e sua morte por apedrejamento.",
+context:"Estêvão, cheio de fé e do Espírito Santo, realiza sinais e prodígios. Alguns homens discutem com ele, mas não conseguem resistir à sabedoria com que fala. Levado diante do conselho, apresenta uma exposição da história de Israel e denuncia a resistência dos ouvintes ao Espírito Santo. Ao final, é apedrejado.",
+points:[
+"Estêvão é apresentado como homem cheio de fé e do Espírito Santo.",
+"Seus opositores não conseguem resistir à sabedoria de sua mensagem.",
+"Estêvão recorda a história de Abraão, José, Moisés e Israel.",
+"Ele denuncia a resistência dos ouvintes à mensagem de Deus.",
+"Estêvão morre apedrejado enquanto entrega seu espírito ao Senhor e pede perdão para seus perseguidores."
+],
+application:"Estêvão permaneceu fiel a Jesus mesmo diante da morte. Aprenda a conhecer as Escrituras e a manter a fidelidade a Cristo em todas as circunstâncias.",
+memory:"Senhor Jesus, recebe o meu espírito.",
+memoryRef:"Atos 7:59 — confira o texto na ARC.",
+questions:[
+"Quais características de Estêvão são destacadas no texto?",
+"Quais personagens da história de Israel ele menciona?",
+"Como Estêvão reagiu diante de sua morte?"
+],
+prayer:"Senhor Jesus, fortalece minha fé e ensina-me a permanecer fiel à tua Palavra. Ajuda-me a responder com amor mesmo diante da perseguição. Amém."
+},
+
+{
+day:13,
+title:"A perseguição e a evangelização em Samaria",
+ref:"Atos 8:1-25",
+week:"Semana 3 • A expansão do Evangelho",
+intro:"Leia a perseguição contra a Igreja em Jerusalém, a pregação de Filipe em Samaria e a conversão de muitos samaritanos.",
+context:"Depois da morte de Estêvão, inicia-se uma grande perseguição contra a Igreja em Jerusalém. Os discípulos se dispersam pelas regiões da Judeia e Samaria, anunciando a Palavra. Filipe chega a Samaria, prega Cristo e muitos recebem a mensagem.",
+points:[
+"Uma grande perseguição atinge a Igreja em Jerusalém.",
+"Os discípulos dispersos anunciam a Palavra por onde passam.",
+"Filipe prega Cristo em Samaria.",
+"Muitas pessoas creem e são batizadas.",
+"Pedro e João visitam Samaria e oram para que os novos convertidos recebam o Espírito Santo."
+],
+application:"A perseguição não impediu a expansão do Evangelho. Os discípulos continuaram anunciando a Palavra. Aprenda a compartilhar sua fé onde Deus permitir.",
+memory:"Mas os que andavam dispersos iam por toda parte, anunciando a palavra.",
+memoryRef:"Atos 8:4 — confira o texto na ARC.",
+questions:[
+"O que aconteceu com a Igreja depois da morte de Estêvão?",
+"Quem anunciou o Evangelho em Samaria?",
+"Qual foi a atitude de Simão diante do que aconteceu?"
+],
+prayer:"Pai, dá-me coragem para anunciar tua Palavra em todos os lugares. Que as dificuldades não me façam abandonar a missão de testemunhar de Jesus. Amém."
+},
+
+{
+day:14,
+title:"Filipe e o eunuco etíope",
+ref:"Atos 8:26-40",
+week:"Semana 3 • A expansão do Evangelho",
+intro:"Leia o encontro de Filipe com o eunuco etíope e como a explicação das Escrituras conduziu aquele homem à fé em Jesus.",
+context:"Um anjo do Senhor orienta Filipe a seguir pelo caminho de Gaza. Ali ele encontra um eunuco etíope que lia o profeta Isaías, mas não compreendia a passagem. Filipe se aproxima, explica que o texto anunciava Jesus e anuncia-lhe o Evangelho.",
+points:[
+"Filipe recebe orientação para seguir pelo caminho de Gaza.",
+"O eunuco etíope estava lendo o profeta Isaías.",
+"Filipe pergunta se ele compreende o que está lendo.",
+"A partir das Escrituras, Filipe anuncia Jesus.",
+"O eunuco crê, é batizado e segue seu caminho com alegria."
+],
+application:"A leitura da Bíblia precisa ser acompanhada de compreensão. Aprenda a estudar as Escrituras e esteja disposto a ajudar outras pessoas a conhecer Jesus por meio da Palavra.",
+memory:"Então Filipe, abrindo a sua boca, e começando nesta Escritura, lhe anunciou a Jesus.",
+memoryRef:"Atos 8:35 — confira o texto na ARC.",
+questions:[
+"O que o eunuco estava lendo?",
+"Como Filipe explicou a passagem?",
+"O que aconteceu depois que o eunuco creu?"
+],
+prayer:"Senhor, dá-me entendimento das Escrituras e disposição para ensinar tua Palavra com fidelidade. Ajuda-me a conduzir pessoas ao conhecimento de Jesus. Amém."
+},
+
+{
+day:15,
+title:"A conversão de Saulo",
+ref:"Atos 9:1-31",
+week:"Semana 3 • A transformação de vidas",
+intro:"Leia o encontro de Saulo com Jesus no caminho de Damasco e o início de sua nova caminhada.",
+context:"Saulo perseguia os discípulos de Jesus e viajava para Damasco com autorização para prender os que pertenciam ao Caminho. No caminho, uma luz do céu o envolve, e ele ouve a voz de Jesus. Depois de ficar cego, é conduzido à cidade, onde Ananias recebe a missão de visitá-lo.",
+points:[
+"Saulo persegue os discípulos de Jesus.",
+"Uma luz do céu o envolve no caminho de Damasco.",
+"Jesus se identifica a Saulo e questiona sua perseguição.",
+"Ananias recebe a missão de visitar Saulo.",
+"Saulo recupera a visão, é batizado e começa a anunciar Jesus."
+],
+application:"A conversão de Saulo demonstra que Jesus pode transformar profundamente uma vida. Não despreze ninguém nem limite o alcance da graça de Deus.",
+memory:"Este é para mim um vaso escolhido, para levar o meu nome diante dos gentios, e dos reis, e dos filhos de Israel.",
+memoryRef:"Atos 9:15 — confira o texto na ARC.",
+questions:[
+"Qual era a atitude de Saulo em relação aos discípulos?",
+"O que aconteceu no caminho de Damasco?",
+"Qual missão foi anunciada a Saulo?"
+],
+prayer:"Senhor Jesus, transforma meu coração e orienta meus passos. Ajuda-me a abandonar tudo o que se opõe à tua vontade e a viver para anunciar teu nome. Amém."
+},
+
+{
+day:16,
+title:"Pedro cura Eneias e Deus ressuscita Tabita",
+ref:"Atos 9:32-43",
+week:"Semana 3 • O testemunho apostólico",
+intro:"Leia os acontecimentos em Lida e Jope, nos quais Pedro é instrumento de cura e testemunha do poder de Deus.",
+context:"Pedro visita os irmãos e chega a Lida, onde encontra Eneias, que estava paralítico havia oito anos. Em nome de Jesus Cristo, ordena que ele se levante. Em Jope, uma discípula chamada Tabita morre. Pedro é chamado, ora e a apresenta viva aos irmãos.",
+points:[
+"Pedro visita os irmãos que habitavam em Lida.",
+"Eneias é curado em nome de Jesus Cristo.",
+"Tabita é apresentada como discípula conhecida por suas boas obras e esmolas.",
+"Pedro ora e Tabita volta à vida.",
+"Muitos creem no Senhor depois dos acontecimentos."
+],
+application:"O texto destaca o serviço de Tabita e o testemunho de Pedro. Use sua vida para servir às pessoas e apontar para o poder de Deus.",
+memory:"Tabita, levanta-te.",
+memoryRef:"Atos 9:40 — confira o texto na ARC.",
+questions:[
+"Qual era a condição de Eneias?",
+"Como Tabita era conhecida entre os discípulos?",
+"O que aconteceu depois que Pedro orou?"
+],
+prayer:"Pai, ajuda-me a servir com generosidade e a testemunhar de Jesus. Que minhas atitudes demonstrem amor ao próximo. Amém."
+},
+
+{
+day:17,
+title:"Pedro e Cornélio: o Evangelho alcança os gentios",
+ref:"Atos 10:1-48",
+week:"Semana 4 • O Evangelho para todas as nações",
+intro:"Leia o encontro de Pedro com Cornélio e observe como Deus conduz a proclamação do Evangelho também aos gentios.",
+context:"Cornélio, centurião romano, é descrito como homem piedoso e temente a Deus. Um anjo o orienta a chamar Pedro. Ao mesmo tempo, Pedro recebe uma visão que o prepara para compreender que não deveria considerar comum ou imundo aquilo que Deus purificou. Pedro vai à casa de Cornélio e anuncia Jesus.",
+points:[
+"Cornélio recebe uma orientação divina para chamar Pedro.",
+"Pedro tem uma visão que o leva a reconsiderar suas distinções religiosas.",
+"Pedro compreende que Deus não faz acepção de pessoas.",
+"Ele anuncia Jesus, sua morte e ressurreição.",
+"O Espírito Santo cai sobre os que ouvem a Palavra, e eles são batizados."
+],
+application:"O Evangelho não está limitado a um povo ou origem. Deus chama pessoas de todas as nações. Não permita que preconceitos impeçam você de anunciar Cristo.",
+memory:"Reconheço, por verdade, que Deus não faz acepção de pessoas.",
+memoryRef:"Atos 10:34 — confira o texto na ARC.",
+questions:[
+"Quem era Cornélio?",
+"Qual foi o significado da visão recebida por Pedro?",
+"O que aconteceu enquanto Pedro anunciava Jesus?"
+],
+prayer:"Senhor, tira do meu coração todo preconceito. Ajuda-me a anunciar o Evangelho a todas as pessoas, reconhecendo que todos precisam de Jesus. Amém."
+},
+
+{
+day:18,
+title:"A Igreja em Antioquia e o testemunho de Barnabé",
+ref:"Atos 11:1-30",
+week:"Semana 4 • A expansão do Evangelho",
+intro:"Leia a explicação de Pedro sobre a visita a Cornélio e o crescimento da comunidade cristã em Antioquia.",
+context:"Pedro retorna a Jerusalém e explica aos irmãos o que aconteceu na casa de Cornélio. A Igreja reconhece que Deus também concedeu aos gentios o arrependimento para a vida. O texto apresenta o crescimento da comunidade em Antioquia, onde os discípulos são chamados cristãos pela primeira vez.",
+points:[
+"Pedro relata aos irmãos sua experiência na casa de Cornélio.",
+"A Igreja reconhece que Deus concedeu aos gentios o arrependimento para a vida.",
+"Discípulos dispersos anunciam o Evangelho em diferentes regiões.",
+"A Igreja em Jerusalém envia Barnabé a Antioquia.",
+"Os discípulos são chamados cristãos pela primeira vez em Antioquia.",
+"Os irmãos enviam ajuda aos necessitados na Judeia."
+],
+application:"A Igreja deve reconhecer a obra de Deus, fortalecer novos convertidos e cuidar de quem passa por necessidades. Seja um instrumento de encorajamento e generosidade.",
+memory:"Em Antioquia foram os discípulos, pela primeira vez, chamados cristãos.",
+memoryRef:"Atos 11:26 — confira o texto na ARC.",
+questions:[
+"Como a Igreja reagiu ao relato de Pedro?",
+"Qual foi a contribuição de Barnabé em Antioquia?",
+"Onde os discípulos foram chamados cristãos pela primeira vez?"
+],
+prayer:"Pai, ajuda-me a fortalecer os irmãos e a servir com generosidade. Que minha vida seja identificada pelo compromisso com Jesus Cristo. Amém."
+},
+
+{
+day:19,
+title:"Pedro é libertado da prisão",
+ref:"Atos 12:1-25",
+week:"Semana 4 • A expansão do Evangelho",
+intro:"Leia a perseguição promovida por Herodes, a prisão de Pedro e sua libertação por intervenção de um anjo.",
+context:"Herodes começa a perseguir alguns membros da Igreja, manda matar Tiago, irmão de João, e prende Pedro. Enquanto Pedro está preso, a Igreja faz contínua oração por ele. Durante a noite, um anjo o desperta e o conduz para fora da prisão.",
+points:[
+"Herodes persegue membros da Igreja e manda matar Tiago.",
+"Pedro é preso e guardado por soldados.",
+"A Igreja permanece em oração por Pedro.",
+"Um anjo conduz Pedro para fora da prisão.",
+"Pedro procura os irmãos reunidos na casa de Maria.",
+"A Palavra de Deus cresce e se multiplica."
+],
+application:"A Igreja primitiva enfrentou perseguições, mas perseverou em oração. Aprenda a interceder pelos irmãos e a confiar em Deus em momentos difíceis.",
+memory:"Mas a palavra de Deus crescia e se multiplicava.",
+memoryRef:"Atos 12:24 — confira o texto na ARC.",
+questions:[
+"Quem foi morto por ordem de Herodes?",
+"Como a Igreja reagiu à prisão de Pedro?",
+"Quem ajudou Pedro a sair da prisão?"
+],
+prayer:"Senhor, fortalece os que enfrentam perseguição e sofrimento. Ensina-me a perseverar em oração e a confiar em tua vontade. Amém."
+},
+
+{
+day:20,
+title:"O primeiro envio missionário de Paulo e Barnabé",
+ref:"Atos 13:1-52",
+week:"Semana 5 • As viagens missionárias",
+intro:"Leia o envio de Paulo e Barnabé pela Igreja de Antioquia e o início da proclamação do Evangelho em Chipre e Antioquia da Pisídia.",
+context:"Na Igreja de Antioquia havia profetas e doutores. Enquanto serviam ao Senhor e jejuavam, o Espírito Santo orientou que separassem Barnabé e Saulo para a obra a que os havia chamado. Depois de orarem e jejuarem, impuseram as mãos sobre eles e os enviaram.",
+points:[
+"O Espírito Santo orienta a separação de Barnabé e Saulo.",
+"A Igreja ora, jejua e envia os missionários.",
+"Em Chipre, Paulo confronta Elimas, o mágico.",
+"Em Antioquia da Pisídia, Paulo anuncia a história da salvação em Jesus.",
+"Alguns recebem a mensagem, enquanto outros se opõem."
+],
+application:"A missão cristã envolve oração, direção do Espírito Santo e compromisso com a proclamação de Jesus. Valorize a participação da Igreja no envio e sustento da missão.",
+memory:"Apartai-me a Barnabé e a Saulo para a obra a que os tenho chamado.",
+memoryRef:"Atos 13:2 — confira o texto na ARC.",
+questions:[
+"Em qual Igreja Paulo e Barnabé foram separados para a missão?",
+"Qual foi a orientação do Espírito Santo?",
+"Como as pessoas reagiram à pregação em Antioquia da Pisídia?"
+],
+prayer:"Senhor, desperta em tua Igreja o compromisso missionário. Dá-me disposição para anunciar o Evangelho e apoiar aqueles que são enviados. Amém."
+},
+
+{
+day:21,
+title:"O Evangelho em Icônio, Listra e Derbe",
+ref:"Atos 14:1-28",
+week:"Semana 5 • As viagens missionárias",
+intro:"Leia a continuação da primeira viagem missionária e observe como Paulo e Barnabé enfrentaram oposição e fortaleceram os discípulos.",
+context:"Em Icônio, Paulo e Barnabé anunciam o Evangelho e muitos creem, mas a cidade se divide. Em Listra, Paulo cura um homem coxo, e a multidão tenta tratar os missionários como deuses. Depois, opositores apedrejam Paulo. Mesmo assim, ele continua a missão e fortalece os discípulos.",
+points:[
+"Paulo e Barnabé anunciam o Evangelho em Icônio.",
+"Em Listra, um homem coxo é curado pela palavra de Paulo.",
+"A multidão tenta oferecer sacrifícios aos missionários.",
+"Paulo é apedrejado, mas continua sua missão.",
+"Os missionários fortalecem os discípulos e estabelecem presbíteros nas igrejas."
+],
+application:"A missão pode envolver oposição e sofrimento. Permaneça firme na fé e ajude outros discípulos a crescer, lembrando que a caminhada cristã exige perseverança.",
+memory:"Por muitas tribulações nos importa entrar no Reino de Deus.",
+memoryRef:"Atos 14:22 — confira o texto na ARC.",
+questions:[
+"Como Paulo e Barnabé foram recebidos em Icônio?",
+"O que aconteceu depois da cura do homem em Listra?",
+"Qual orientação os missionários deram aos discípulos?"
+],
+prayer:"Pai, fortalece minha fé diante das dificuldades. Ajuda-me a perseverar e a encorajar outros irmãos na caminhada cristã. Amém."
+},
+
+{
+day:22,
+title:"O concílio de Jerusalém e a salvação pela graça",
+ref:"Atos 15:1-35",
+week:"Semana 5 • A doutrina da Igreja",
+intro:"Leia a discussão sobre a circuncisão dos gentios e a decisão dos apóstolos e presbíteros reunidos em Jerusalém.",
+context:"Alguns ensinavam que os gentios precisavam ser circuncidados para serem salvos. Paulo e Barnabé vão a Jerusalém para tratar da questão com os apóstolos e presbíteros. Depois de ouvir os testemunhos e considerar as Escrituras, a Igreja envia uma carta aos irmãos gentios.",
+points:[
+"A discussão surge por causa da exigência de circuncisão aos gentios.",
+"Os apóstolos e presbíteros se reúnem para examinar a questão.",
+"Pedro testemunha sobre a ação de Deus entre os gentios.",
+"Tiago apresenta sua compreensão a partir das Escrituras.",
+"A Igreja envia uma orientação aos irmãos gentios."
+],
+application:"A salvação não é conquistada por obras da lei, mas pela graça do Senhor Jesus. Aprenda a examinar questões doutrinárias à luz das Escrituras e a preservar a unidade da Igreja.",
+memory:"Mas cremos que seremos salvos pela graça do Senhor Jesus Cristo.",
+memoryRef:"Atos 15:11 — confira o texto na ARC.",
+questions:[
+"Qual questão provocou a reunião em Jerusalém?",
+"Qual foi o testemunho apresentado por Pedro?",
+"Qual verdade sobre a salvação é afirmada por Pedro?"
+],
+prayer:"Senhor, ajuda-me a compreender a salvação pela graça e a permanecer fiel às Escrituras. Dá sabedoria à tua Igreja para tratar suas questões com verdade e amor. Amém."
+},
+
+{
+day:23,
+title:"O início da segunda viagem missionária",
+ref:"Atos 15:36-16:15",
+week:"Semana 5 • As viagens missionárias",
+intro:"Leia a separação entre Paulo e Barnabé, a escolha de Silas e Timóteo e a chegada do Evangelho à Macedônia.",
+context:"Paulo propõe a Barnabé visitar novamente os irmãos das cidades onde haviam anunciado a Palavra. Surge um desacordo por causa de João Marcos, e os missionários seguem caminhos diferentes. Paulo escolhe Silas e, mais tarde, Timóteo se junta à equipe. Em Trôade, Paulo recebe uma visão de um homem da Macedônia.",
+points:[
+"Paulo e Barnabé discordam sobre levar João Marcos.",
+"Barnabé segue com Marcos, e Paulo escolhe Silas.",
+"Timóteo passa a acompanhar Paulo e Silas.",
+"Paulo recebe uma visão que o orienta a ir à Macedônia.",
+"Lídia ouve a mensagem em Filipos, e o Senhor abre seu coração."
+],
+application:"A obra missionária envolve decisões, mudanças de percurso e cooperação. Esteja disponível para servir e valorize as pessoas que Deus coloca ao seu lado.",
+memory:"Passa à Macedônia, e ajuda-nos.",
+memoryRef:"Atos 16:9 — confira o texto na ARC.",
+questions:[
+"Por que Paulo e Barnabé seguiram caminhos diferentes?",
+"Quem acompanhou Paulo na viagem?",
+"O que aconteceu com Lídia em Filipos?"
+],
+prayer:"Pai, guia meus passos e ensina-me a cooperar com outros irmãos. Abre portas para que tua Palavra alcance novas pessoas. Amém."
+},
+
+{
+day:24,
+title:"Paulo e Silas na prisão em Filipos",
+ref:"Atos 16:16-40",
+week:"Semana 6 • O Evangelho avança",
+intro:"Leia a libertação da jovem escravizada, a prisão de Paulo e Silas e a conversão do carcereiro.",
+context:"Em Filipos, Paulo expulsa um espírito de adivinhação de uma jovem escravizada. Seus senhores, ao perderem a fonte de lucro, levam Paulo e Silas às autoridades. Os missionários são açoitados e presos, mas oram e cantam louvores. Um terremoto abre as portas da prisão, e o carcereiro pergunta o que deve fazer para ser salvo.",
+points:[
+"Paulo liberta uma jovem que possuía espírito de adivinhação.",
+"Paulo e Silas são presos injustamente.",
+"À meia-noite, os dois oram e cantam louvores a Deus.",
+"Um terremoto abre as portas da prisão.",
+"O carcereiro pergunta sobre a salvação e recebe a mensagem de Jesus.",
+"Ele e sua família creem e são batizados."
+],
+application:"Paulo e Silas louvaram a Deus mesmo em uma prisão. Aprenda a manter sua confiança no Senhor nas dificuldades e a compartilhar o Evangelho com quem precisa ouvi-lo.",
+memory:"Crê no Senhor Jesus Cristo e serás salvo, tu e a tua casa.",
+memoryRef:"Atos 16:31 — confira o texto na ARC.",
+questions:[
+"Por que Paulo e Silas foram presos?",
+"O que eles faziam à meia-noite?",
+"Qual resposta Paulo deu à pergunta do carcereiro?"
+],
+prayer:"Senhor, ajuda-me a confiar em ti mesmo nas dificuldades. Dá-me oportunidades para anunciar Jesus e conduzir pessoas ao conhecimento da salvação. Amém."
+},
+
+{
+day:25,
+title:"O Evangelho em Tessalônica, Bereia e Atenas",
+ref:"Atos 17:1-34",
+week:"Semana 6 • O Evangelho avança",
+intro:"Leia a pregação de Paulo em diferentes cidades e observe as reações dos ouvintes à mensagem de Jesus.",
+context:"Em Tessalônica, Paulo anuncia que Jesus precisava padecer e ressuscitar. Alguns creem, mas outros promovem oposição. Em Bereia, os ouvintes examinam diariamente as Escrituras para verificar o que Paulo ensinava. Em Atenas, Paulo anuncia o Deus verdadeiro aos que adoravam divindades e desconheciam o Criador.",
+points:[
+"Paulo anuncia Jesus em Tessalônica a partir das Escrituras.",
+"Os bereanos recebem a Palavra com interesse e examinam as Escrituras diariamente.",
+"Paulo observa a idolatria presente em Atenas.",
+"No Areópago, anuncia o Deus Criador e chama todos ao arrependimento.",
+"Alguns zombam da ressurreição, outros demonstram interesse e alguns creem."
+],
+application:"Os bereanos são exemplo de pessoas que examinam as Escrituras. Não aceite ensinamentos sem verificar sua fidelidade à Palavra de Deus.",
+memory:"Ora, estes foram mais nobres do que os que estavam em Tessalônica, porque de bom grado receberam a palavra, examinando cada dia nas Escrituras se estas coisas eram assim.",
+memoryRef:"Atos 17:11 — confira o texto na ARC.",
+questions:[
+"Como Paulo anunciava Jesus em Tessalônica?",
+"O que os bereanos faziam diariamente?",
+"Qual mensagem Paulo anunciou no Areópago?"
+],
+prayer:"Pai, dá-me amor pelas Escrituras e discernimento para examinar tudo à luz da tua Palavra. Ajuda-me a anunciar o Evangelho com clareza. Amém."
+},
+
+{
+day:26,
+title:"Paulo em Corinto e o fortalecimento da Igreja",
+ref:"Atos 18:1-28",
+week:"Semana 6 • O Evangelho avança",
+intro:"Leia o ministério de Paulo em Corinto, a promessa de Deus durante a oposição e a chegada de Apolo.",
+context:"Em Corinto, Paulo conhece Áquila e Priscila e trabalha com eles na fabricação de tendas. Aos sábados, anuncia Jesus na sinagoga. Diante da oposição, o Senhor o encoraja em visão a continuar falando. Mais tarde, Apolo aparece em Éfeso e é instruído com mais precisão por Áquila e Priscila.",
+points:[
+"Paulo encontra Áquila e Priscila em Corinto.",
+"Ele trabalha e anuncia a Palavra aos judeus e gregos.",
+"O Senhor encoraja Paulo a continuar pregando.",
+"Paulo permanece em Corinto por um ano e seis meses, ensinando a Palavra.",
+"Áquila e Priscila ajudam Apolo a compreender melhor o caminho de Deus."
+],
+application:"A passagem mostra a importância do trabalho, da perseverança e do ensino bíblico. Esteja disposto a aprender e também a ajudar outros a crescer no conhecimento de Cristo.",
+memory:"Não temas, mas fala, e não te cales.",
+memoryRef:"Atos 18:9 — confira o texto na ARC.",
+questions:[
+"Com quem Paulo trabalhou em Corinto?",
+"Qual encorajamento o Senhor deu a Paulo?",
+"Como Áquila e Priscila ajudaram Apolo?"
+],
+prayer:"Senhor, fortalece-me para continuar anunciando tua Palavra. Dá-me humildade para aprender e disposição para ensinar com fidelidade. Amém."
+},
+
+{
+day:27,
+title:"Paulo em Éfeso e o crescimento da Palavra",
+ref:"Atos 19:1-41",
+week:"Semana 6 • O Evangelho avança",
+intro:"Leia o ministério de Paulo em Éfeso, os acontecimentos relacionados aos discípulos e a oposição provocada pelo crescimento do Evangelho.",
+context:"Paulo chega a Éfeso e encontra discípulos que ainda não conheciam o ensino sobre o Espírito Santo. Depois de instruí-los, eles são batizados em nome do Senhor Jesus. Paulo ensina na cidade, e Deus realiza sinais extraordinários. O crescimento da mensagem provoca reação dos que lucravam com a fabricação de imagens de Diana.",
+points:[
+"Paulo encontra discípulos em Éfeso e os instrui sobre Jesus.",
+"Eles são batizados em nome do Senhor Jesus.",
+"Paulo ensina durante longo período na região.",
+"Deus realiza sinais extraordinários por meio de Paulo.",
+"A mensagem do Senhor cresce poderosamente.",
+"A oposição dos fabricantes de imagens provoca tumulto na cidade."
+],
+application:"O Evangelho transforma pessoas e pode confrontar interesses contrários à verdade. Permaneça firme na Palavra e não coloque ganhos materiais acima da fidelidade a Cristo.",
+memory:"Assim a palavra do Senhor crescia poderosamente e prevalecia.",
+memoryRef:"Atos 19:20 — confira o texto na ARC.",
+questions:[
+"O que Paulo perguntou aos discípulos em Éfeso?",
+"Como a Palavra de Deus avançou naquela região?",
+"Por que Demétrio e outros artesãos ficaram preocupados?"
+],
+prayer:"Pai, faz tua Palavra crescer em minha vida. Ajuda-me a abandonar tudo o que concorre com minha fidelidade a Jesus. Amém."
+},
+
+{
+day:28,
+title:"A despedida de Paulo aos presbíteros de Éfeso",
+ref:"Atos 20:1-38",
+week:"Semana 6 • A missão e o cuidado da Igreja",
+intro:"Leia a viagem de Paulo pela Macedônia e Grécia e suas palavras de despedida aos presbíteros de Éfeso.",
+context:"Paulo percorre diferentes regiões fortalecendo os discípulos. Em Trôade, participa de uma reunião em que Êutico cai da janela e é restaurado. Depois, em Mileto, chama os presbíteros de Éfeso e recorda seu ministério, suas lágrimas, seu ensino e sua responsabilidade de cuidar do rebanho.",
+points:[
+"Paulo fortalece os discípulos durante suas viagens.",
+"Em Trôade, Êutico cai da janela e é restaurado.",
+"Paulo recorda seu serviço ao Senhor com humildade e lágrimas.",
+"Ele adverte os presbíteros a cuidarem de si mesmos e de todo o rebanho.",
+"Paulo ensina que é melhor dar do que receber."
+],
+application:"Quem serve na Igreja precisa cuidar da própria vida espiritual e também das pessoas confiadas aos seus cuidados. Sirva com humildade, responsabilidade e fidelidade à Palavra.",
+memory:"Mais bem-aventurada coisa é dar do que receber.",
+memoryRef:"Atos 20:35 — confira o texto na ARC.",
+questions:[
+"Como Paulo descreveu seu ministério entre os efésios?",
+"Qual responsabilidade ele entregou aos presbíteros?",
+"Que ensino sobre generosidade Paulo recordou?"
+],
+prayer:"Senhor, ensina-me a servir com humildade e dedicação. Ajuda-me a cuidar da minha vida espiritual e a tratar os irmãos com amor e responsabilidade. Amém."
+},
+
+{
+day:29,
+title:"A prisão de Paulo em Jerusalém e seu testemunho",
+ref:"Atos 21:1-23:35",
+week:"Semana 6 • O testemunho diante das autoridades",
+intro:"Leia a chegada de Paulo a Jerusalém, sua prisão no templo e seu testemunho diante da multidão e do conselho.",
+context:"Paulo segue para Jerusalém, mesmo diante dos avisos sobre o sofrimento que o aguardava. No templo, é acusado e a multidão se revolta contra ele. Os soldados romanos o prendem. Paulo recebe oportunidade de falar ao povo e apresenta seu testemunho de conversão. Depois, comparece diante do conselho e é conduzido a Cesareia por causa de uma conspiração contra sua vida.",
+points:[
+"Paulo chega a Jerusalém e encontra os irmãos.",
+"Uma multidão o acusa e provoca tumulto no templo.",
+"Os soldados romanos o prendem e impedem que seja morto pela multidão.",
+"Paulo relata sua experiência com Jesus no caminho de Damasco.",
+"Ele testemunha diante do conselho e enfrenta oposição.",
+"Uma conspiração é descoberta, e Paulo é enviado a Cesareia."
+],
+application:"Paulo aproveitou as oportunidades para testemunhar de Jesus, mesmo em circunstâncias difíceis. Aprenda a falar de sua fé com coragem, sabedoria e fidelidade.",
+memory:"Tem bom ânimo, Paulo; porque, como de mim testificaste em Jerusalém, assim importa que testifiques também em Roma.",
+memoryRef:"Atos 23:11 — confira o texto na ARC.",
+questions:[
+"Por que Paulo foi preso em Jerusalém?",
+"Como ele aproveitou a oportunidade diante da multidão?",
+"Qual encorajamento recebeu do Senhor?"
+],
+prayer:"Senhor, dá-me coragem para testemunhar de Jesus em qualquer circunstância. Fortalece-me quando enfrentar oposição e ajuda-me a permanecer fiel. Amém."
+},
+
+{
+day:30,
+title:"Paulo em Cesareia, a viagem a Roma e a chegada do Evangelho",
+ref:"Atos 24:1-28:31",
+week:"Semana 6 • Até os confins da terra",
+intro:"Leia a continuidade do testemunho de Paulo diante das autoridades, sua viagem a Roma, o naufrágio e a proclamação do Reino de Deus mesmo em prisão.",
+context:"Paulo apresenta sua defesa diante de Félix, Festo e Agripa. Depois de apelar para César, é enviado a Roma. Durante a viagem, enfrenta uma tempestade e um naufrágio, mas todos chegam à terra em segurança. Em Roma, Paulo permanece sob custódia e recebe todos os que o procuram, anunciando o Reino de Deus e ensinando sobre Jesus Cristo.",
+points:[
+"Paulo apresenta sua defesa diante de diferentes autoridades.",
+"Ele testemunha sobre sua fé e sobre a ressurreição dos mortos.",
+"Paulo apela para César e segue em direção a Roma.",
+"Durante a viagem, enfrenta uma tempestade e um naufrágio.",
+"Os passageiros chegam à ilha de Malta e recebem acolhimento.",
+"Paulo chega a Roma e continua anunciando o Reino de Deus.",
+"Atos termina mostrando Paulo pregando com liberdade, apesar de estar sob custódia."
+],
+application:"O livro de Atos mostra que a missão de anunciar Jesus continuou mesmo diante de prisões, perigos e oposição. Você também é chamado a conhecer a Palavra, viver como discípulo e testemunhar de Cristo.",
+memory:"Pregando o Reino de Deus e ensinando com toda a liberdade as coisas pertencentes ao Senhor Jesus Cristo, sem impedimento algum.",
+memoryRef:"Atos 28:31 — confira o texto na ARC.",
+questions:[
+"Quais autoridades ouviram a defesa de Paulo?",
+"O que aconteceu durante a viagem para Roma?",
+"Como termina o livro de Atos dos Apóstolos?"
+],
+prayer:"Senhor Deus, obrigado pelo testemunho dos primeiros discípulos. Ajuda-me a continuar essa caminhada, crescendo na Palavra, vivendo em comunhão e anunciando Jesus Cristo com fidelidade. Amém."
+}
+
+];
+
+const $ = id => document.getElementById(id);
+const KEY = "atalaia-primeiros-passos-atos-v1";
+
+let state;
+
+try {
+    state = JSON.parse(
+        localStorage.getItem(KEY) ||
+        '{"done":[],"notes":{},"dark":false}'
+    );
+} catch {
+    state = {
+        done:[],
+        notes:{},
+        dark:false
+    };
+}
+
+let current = 0;
+
+function persist() {
+    localStorage.setItem(KEY,JSON.stringify(state));
+}
+
+function updateProgress() {
+    const total = studies.length;
+    const completed = state.done.length;
+    const percent = Math.round(completed / total * 100);
+
+    $("progressPercent").textContent = percent + "%";
+    $("progressBar").style.width = percent + "%";
+
+    $("progressText").textContent =
+        completed === total
+            ? "Parabéns! Você concluiu os 30 estudos de Atos dos Apóstolos."
+            : `Você concluiu ${completed} de ${total} estudos. Continue firme em sua caminhada com Jesus.`;
+}
+
+function renderDays() {
+    $("dayList").innerHTML = studies.map(study => `
+        <button class="day-item ${
+            state.done.includes(study.day) ? "done" : ""
+        }" data-day="${study.day - 1}">
+
+            <span class="day-number">
+                ${
+                    state.done.includes(study.day)
+                        ? "✓"
+                        : String(study.day).padStart(2,"0")
+                }
+            </span>
+
+            <span class="day-info">
+                <strong>${escapeHTML(study.title)}</strong>
+                <small>${escapeHTML(study.ref)}</small>
+            </span>
+
+            <span class="day-check">
+                ${state.done.includes(study.day) ? "✓" : "›"}
+            </span>
+        </button>
+    `).join("");
+
+    document.querySelectorAll(".day-item").forEach(button => {
+        button.addEventListener("click",() => {
+            openStudy(Number(button.dataset.day));
+        });
+    });
+
+    updateProgress();
+}
+
+function openStudy(index) {
+    current = Math.max(0,Math.min(studies.length - 1,index));
+
+    const study = studies[current];
+
+    $("homeView").classList.remove("active");
+    $("studyView").classList.add("active");
+
+    $("studyDayLabel").textContent = "DIA " + study.day;
+    $("studyWeek").textContent = study.week;
+
+    $("studyTitle").textContent = study.title;
+    $("studyReference").textContent = "Leitura bíblica: " + study.ref;
+
+    $("readingIntro").textContent = study.intro;
+    $("readingReference").textContent =
+        study.ref + " • Bíblia Livre (Almeida 1819)";
+
+    loadScripture(study);
+
+    $("contextText").textContent = study.context;
+
+    $("explanationText").innerHTML = study.points.map(point => `
+        <div class="explain-point">
+            • ${escapeHTML(point)}
+        </div>
+    `).join("");
+
+    $("applicationText").textContent = study.application;
+    $("memoryText").textContent = study.memory;
+    $("memoryReference").textContent = study.memoryRef;
+
+    $("questions").innerHTML = study.questions.map((question,index) => `
+        <div class="question">
+            ${index + 1}. ${escapeHTML(question)}
+        </div>
+    `).join("");
+
+    $("prayerText").textContent = study.prayer;
+    $("notesInput").value = state.notes[study.day] || "";
+
+    $("completeBtn").textContent =
+        state.done.includes(study.day)
+            ? "Estudo concluído ✓"
+            : "Marcar como concluído ✓";
+
+    $("prevBtn").disabled = current === 0;
+    $("nextBtn").disabled = current === studies.length - 1;
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+const BIBLE_API = "https://api.midvash.com/v1";
+const BIBLE_VERSION = "almeida-livre";
+const scriptureCache = new Map();
+
+async function loadScripture(study) {
+    const container = $("scriptureText");
+
+    container.innerHTML = `
+        <p class="scripture-status">
+            Carregando o texto bíblico…
+        </p>
+    `;
+
+    if (scriptureCache.has(study.ref)) {
+        renderScripture(scriptureCache.get(study.ref));
+        return;
+    }
+
+    try {
+        const match = study.ref.match(
+            /^Atos\s+(\d+)(?::(\d+))?(?:-(?:(\d+):)?(\d+))?$/i
+        );
+
+        if (!match) {
+            throw new Error("Referência bíblica não reconhecida.");
+        }
+
+        const startChapter = Number(match[1]);
+        const startVerse = match[2] ? Number(match[2]) : 1;
+        const endChapter = match[3]
+            ? Number(match[3])
+            : startChapter;
+        const endVerse = match[4]
+            ? Number(match[4])
+            : null;
+
+        const allVerses = [];
+
+        for (
+            let chapter = startChapter;
+            chapter <= endChapter;
+            chapter++
+        ) {
+            const response = await fetch(
+                `${BIBLE_API}/${BIBLE_VERSION}/acts/${chapter}`
+            );
+
+            if (!response.ok) {
+                throw new Error("Não foi possível consultar a fonte bíblica.");
+            }
+
+            const body = await response.json();
+
+            if (body.error) {
+                throw new Error(
+                    body.error.message || "Erro ao carregar a passagem."
+                );
+            }
+
+            const data = body.data || body;
+            let verses = data.verses || [];
+
+            if (!Array.isArray(verses) || !verses.length) {
+                if (data.text) {
+                    verses = data.text.split(/\n+/).filter(Boolean);
+                } else {
+                    throw new Error("A fonte não retornou os versículos esperados.");
+                }
+            }
+
+            const normalized = verses.map((item,index) => {
+                if (typeof item === "string") {
+                    return {
+                        number:index + 1,
+                        text:item
+                    };
+                }
+
+                return {
+                    number:Number(
+                        item.verse ||
+                        item.number ||
+                        item.verseNumber ||
+                        index + 1
+                    ),
+                    text:item.text || item.content || ""
+                };
+            }).filter(verse => verse.text);
+
+            const selected = normalized.filter(verse =>
+                (chapter !== startChapter || verse.number >= startVerse) &&
+                (
+                    chapter !== endChapter ||
+                    endVerse === null ||
+                    verse.number <= endVerse
+                )
+            );
+
+            allVerses.push(
+                ...selected.map(verse => ({
+                    ...verse,
+                    chapter
+                }))
+            );
+        }
+
+        if (!allVerses.length) {
+            throw new Error("A passagem não foi encontrada nesta versão.");
+        }
+
+        const result = {
+            verses:allVerses,
+            reference:study.ref,
+            copyright:"Bíblia Livre (Almeida 1819) — texto consultado pela API Midvash."
+        };
+
+        scriptureCache.set(study.ref,result);
+        renderScripture(result);
+
+    } catch(error) {
+        container.innerHTML = `
+            <p class="scripture-error">
+                Não foi possível carregar o texto bíblico neste momento.
+                Verifique sua conexão e tente novamente.
+            </p>
+        `;
+
+        const retry = document.createElement("button");
+
+        retry.className = "secondary-btn";
+        retry.textContent = "Tentar novamente";
+
+        retry.addEventListener("click",() => {
+            loadScripture(study);
+        });
+
+        container.appendChild(retry);
+
+        console.error(error);
+    }
+}
+
+function renderScripture(result) {
+    $("scriptureText").innerHTML = result.verses.map(verse => `
+        <div class="scripture-verse">
+            <sup>
+                ${verse.chapter ? verse.chapter + ":" : ""}
+                ${verse.number}
+            </sup>
+            <span>${escapeHTML(verse.text)}</span>
+        </div>
+    `).join("");
+
+    $("scriptureCopyright").textContent = result.copyright;
+}
+
+function escapeHTML(value) {
+    return String(value).replace(
+        /[&<>"']/g,
+        char => ({
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#39;"
+        }[char])
+    );
+}
+
+function showHome() {
+    $("studyView").classList.remove("active");
+    $("homeView").classList.add("active");
+
+    renderDays();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+$("homeLink").addEventListener("click",event => {
+    event.preventDefault();
+    showHome();
+});
+
+$("backBtn").addEventListener("click",showHome);
+
+$("continueBtn").addEventListener("click",() => {
+    const next = studies.findIndex(
+        study => !state.done.includes(study.day)
+    );
+
+    openStudy(next < 0 ? studies.length - 1 : next);
+});
+
+$("prevBtn").addEventListener("click",() => {
+    openStudy(current - 1);
+});
+
+$("nextBtn").addEventListener("click",() => {
+    openStudy(current + 1);
+});
+
+$("completeBtn").addEventListener("click",() => {
+    const day = studies[current].day;
+
+    if (!state.done.includes(day)) {
+        state.done.push(day);
+    }
+
+    persist();
+
+    $("completeBtn").textContent = "Estudo concluído ✓";
+
+    renderDays();
+});
+
+$("saveNotesBtn").addEventListener("click",() => {
+    const day = studies[current].day;
+
+    state.notes[day] = $("notesInput").value;
+
+    persist();
+
+    $("saveNotesBtn").textContent = "Salvo ✓";
+
+    setTimeout(() => {
+        $("saveNotesBtn").textContent = "Salvar minhas anotações";
+    },1500);
+});
+
+$("themeBtn").addEventListener("click",() => {
+    state.dark = !state.dark;
+
+    document.body.classList.toggle("dark",state.dark);
+
+    persist();
+});
+
+if (state.dark) {
+    document.body.classList.add("dark");
+}
+
+renderDays();
+
+if (
+    "serviceWorker" in navigator &&
+    location.protocol.startsWith("http")
+) {
+    window.addEventListener("load",() => {
+        navigator.serviceWorker
+            .register("service-worker.js")
+            .catch(() => {});
+    });
+}
+</script>
+
+</body>
+</html>

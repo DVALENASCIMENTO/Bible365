@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b43">
+  <meta name="description" content="Plano de discipulado bíblico de 30 dias na Carta aos Filipenses — Ministério Atalaia.">
+  <title>Primeiros Passos na Fé | Filipenses — Ministério Atalaia</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+    :root {
+      --navy: #172b43;
+      --navy2: #294764;
+      --gold: #c6a15b;
+      --paper: #f5f3ee;
+      --card: #ffffff;
+      --ink: #202a35;
+      --muted: #77818b;
+      --line: #e8e5dd;
+      --soft: #f8f6f1;
+      --green: #47745d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    button, textarea { font: inherit; }
+
+    button { cursor: pointer; }
+
+    .topbar {
+      min-height: 70px;
+      background: var(--navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px max(18px, calc((100% - 900px)/2));
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+      letter-spacing: .08em;
+      font-size: 12px;
+    }
+
+    .brand small {
+      display: block;
+      color: #e0c27f;
+      font-size: 10px;
+      letter-spacing: .15em;
+    }
+
+    .brand-mark { color: var(--gold); font-size: 29px; }
+
+    .icon-btn {
+      border: 1px solid #53667b;
+      color: white;
+      background: transparent;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 21px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 26px 20px 60px;
+    }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .hero {
+      background: linear-gradient(135deg, #172b43, #294764);
+      border-radius: 22px;
+      padding: 38px 32px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 30px #172b431c;
+    }
+
+    .hero:after {
+      content: "✦";
+      position: absolute;
+      right: 20px;
+      top: 8px;
+      font-size: 140px;
+      color: #ffffff0b;
+      pointer-events: none;
+    }
+
+    .eyebrow, .section-kicker, .card-label {
+      font-size: 11px;
+      letter-spacing: .16em;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.25;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 54px);
+      margin: 18px 0 12px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #e0c27f;
+    }
+
+    .hero p {
+      max-width: 480px;
+      color: #e0e6eb;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: #e0c27f;
+      margin-bottom: 24px;
+    }
+
+    .primary-btn, .secondary-btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 46px;
+    }
+
+    .primary-btn {
+      background: var(--gold);
+      color: #172b43;
+    }
+
+    .primary-btn span { margin-left: 12px; }
+
+    .secondary-btn {
+      background: #eae6dc;
+      color: var(--navy);
+    }
+
+    button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    button:focus-visible, textarea:focus-visible {
+      outline: 3px solid #c6a15b88;
+      outline-offset: 3px;
+    }
+
+    .progress-card, .content-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .progress-heading, .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .progress-heading h2, .section-heading h2 {
+      font-size: 23px;
+      margin: 3px 0;
+    }
+
+    .progress-heading strong {
+      font-size: 25px;
+      color: var(--navy);
+    }
+
+    .progress-track {
+      height: 9px;
+      background: #ece9e1;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 14px 0 9px;
+    }
+
+    .progress-track span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      border-radius: 10px;
+      transition: width .25s;
+    }
+
+    .progress-card p, .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section-heading { margin: 32px 0 14px; }
+
+    .day-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+
+    .day-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      color: var(--ink);
+      width: 100%;
+      min-height: 76px;
+    }
+
+    .day-item:hover { border-color: var(--gold); }
+    .day-item.done { border-color: #b8d0c0; }
+
+    .day-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: #f0ede5;
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .day-item.done .day-number {
+      background: #e3eee7;
+      color: var(--green);
+    }
+
+    .day-info { min-width: 0; }
+
+    .day-info strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .day-info small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .day-check { margin-left: auto; color: var(--green); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 35px 0 10px;
+    }
+
+    .back-btn {
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-weight: 700;
+      padding: 5px 0 18px;
+      min-height: 44px;
+    }
+
+    .study-topline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #e8e1d2;
+      color: #6e5528;
+      border-radius: 30px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .study-title {
+      font-size: clamp(30px, 6vw, 42px);
+      margin: 16px 0 5px;
+      color: var(--navy);
+    }
+
+    .study-reference {
+      color: var(--muted);
+      margin: 0 0 20px;
+      font-size: 15px;
+    }
+
+    .study-content { max-width: 740px; }
+
+    .content-card { padding: 23px; margin: 14px 0; }
+
+    .content-card h2 {
+      font-size: 23px;
+      margin: 8px 0 12px;
+      color: var(--navy);
+    }
+
+    .content-card p { margin: 9px 0; }
+
+    .reference-box {
+      padding: 13px 15px;
+      background: var(--soft);
+      border-left: 4px solid var(--gold);
+      font-weight: 700;
+      color: var(--navy);
+      margin: 14px 0;
+    }
+
+    .content-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 18px 0 8px;
+      color: var(--navy);
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 13px;
+      line-height: 1.7;
+      background: white;
+      color: #202a35;
+      min-height: 120px;
+    }
+
+    .tiny-note { font-size: 12px !important; color: var(--muted); }
+
+    .explain-point {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .explain-point:last-child { border: 0; }
+
+    .memory-verse {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      color: var(--navy);
+    }
+
+    .verse-ref {
+      font-size: 12px;
+      color: #8a6b32;
+      font-weight: 700;
+    }
+
+    .question {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 15px 0 7px;
+    }
+
+    .prayer-card { background: #f0eee7; }
+
+    .study-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .study-actions .primary-btn { flex: 1; }
+
+    .scripture-text {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 15px 17px;
+      margin: 15px 0;
+    }
+
+    .scripture-verse {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 9px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .scripture-verse:last-child { border: 0; }
+
+    .scripture-verse sup {
+      color: #9a793d;
+      font-weight: 700;
+      font-size: 12px;
+      padding-top: 4px;
+    }
+
+    .scripture-status, .scripture-error {
+      font-size: 14px;
+    }
+
+    .scripture-error { color: #a33b32; }
+
+    .dark {
+      --paper: #101b28;
+      --card: #1b2b3b;
+      --ink: #edf0f2;
+      --muted: #b6c0c8;
+      --line: #344454;
+      --soft: #243649;
+      --green: #8fc3a2;
+    }
+
+    .dark .day-item, .dark textarea {
+      background: #1b2b3b;
+      color: #edf0f2;
+    }
+
+    .dark .day-number {
+      background: #2b4054;
+      color: #e4c987;
+    }
+
+    .dark .content-card h2, .dark .study-title,
+    .dark .reference-box, .dark .memory-verse,
+    .dark .content-card label {
+      color: #e7d3a5;
+    }
+
+    .dark .reference-box, .dark .prayer-card {
+      background: #26394c;
+    }
+
+    .dark .secondary-btn {
+      background: #34485b;
+      color: white;
+    }
+
+    .dark .progress-heading strong { color: #e7d3a5; }
+    .dark .progress-track { background: #344454; }
+    .dark .back-btn { color: #e7d3a5; }
+    .dark .scripture-text { background: #243649; }
+
+    @media (max-width: 600px) {
+      main { padding: 17px 14px 40px; }
+      .hero { padding: 28px 22px; }
+      .day-list { grid-template-columns: 1fr; }
+      .progress-card, .content-card { padding: 18px; }
+      .study-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .study-actions .primary-btn {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+      .study-actions #prevBtn { grid-column: 1; }
+      .study-actions #nextBtn { grid-column: 2; }
+      .hero h1 { font-size: 37px; }
+      .brand { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="Início">
+      <span class="brand-mark">✦</span>
+      <span>
+        <strong>MINISTÉRIO ATALAIA</strong>
+        <small>ESCOLA BÍBLICA</small>
+      </span>
+    </a>
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema" title="Alternar tema">◐</button>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <section class="hero">
+        <div class="eyebrow">GUIA DE DISCIPULADO • 30 DIAS</div>
+        <h1>CAMINHANDO<br><em>COM CRISTO</em></h1>
+        <p>Aprendendo a viver com alegria, humildade, fé e perseverança por meio da Carta de Paulo aos Filipenses.</p>
+        <div class="hero-meta">CARTA AOS FILIPENSES • 4 CAPÍTULOS</div>
+        <button class="primary-btn" id="continueBtn">Continuar minha jornada <span>→</span></button>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-heading">
+          <div>
+            <span class="section-kicker">SUA CAMINHADA</span>
+            <h2>Seu progresso</h2>
+          </div>
+          <strong id="progressPercent">0%</strong>
+        </div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <p id="progressText">Você ainda não concluiu nenhum estudo. Comece pelo Dia 1.</p>
+      </section>
+
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">PLANO DE LEITURA</span>
+          <h2>30 dias em Filipenses</h2>
+        </div>
+        <span class="muted">30 estudos</span>
+      </div>
+
+      <div id="dayList" class="day-list"></div>
+      <footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+    </section>
+
+    <section id="studyView" class="view">
+      <button class="back-btn" id="backBtn">← Voltar ao plano</button>
+
+      <div class="study-topline">
+        <span id="studyDayLabel" class="pill">DIA 1</span>
+        <span id="studyWeek" class="muted"></span>
+      </div>
+
+      <h1 id="studyTitle" class="study-title"></h1>
+      <p id="studyReference" class="study-reference"></p>
+
+      <div class="study-content">
+        <article class="content-card">
+          <div class="card-label">01 • LEITURA BÍBLICA</div>
+          <h2>Texto bíblico</h2>
+          <p id="readingIntro"></p>
+          <div class="reference-box" id="readingReference"></div>
+          <div id="scriptureText" class="scripture-text" aria-live="polite">
+            <p>O texto bíblico será carregado automaticamente.</p>
+          </div>
+          <p id="scriptureCopyright" class="tiny-note">
+            A leitura bíblica requer conexão com a internet.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <div class="card-label">02 • CONTEXTO</div>
+          <h2>Entendendo o contexto</h2>
+          <p id="contextText"></p>
+        </article>
+
+        <article class="content-card">
+          <div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+          <h2>O que o texto ensina?</h2>
+          <div id="explanationText"></div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-label">04 • PARA A VIDA</div>
+          <h2>Aplicação prática</h2>
+          <p id="applicationText"></p>
+        </article>
+
+        <article class="content-card">
+          <div class="card-label">05 • MEMORIZAÇÃO</div>
+          <h2>Versículo para guardar</h2>
+          <p id="memoryText" class="memory-verse"></p>
+          <span id="memoryReference" class="verse-ref"></span>
+        </article>
+
+        <article class="content-card">
+          <div class="card-label">06 • REFLEXÃO</div>
+          <h2>Pense e responda</h2>
+          <div id="questions"></div>
+          <label for="notesInput">Minhas anotações</label>
+          <textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+          <button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+        </article>
+
+        <article class="content-card prayer-card">
+          <div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+          <h2>Ore ao Senhor</h2>
+          <p id="prayerText"></p>
+        </article>
+      </div>
+
+      <div class="study-actions">
+        <button class="secondary-btn" id="prevBtn">← Anterior</button>
+        <button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+        <button class="secondary-btn" id="nextBtn">Próximo →</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const studies = [
+      {
+        day: 1,
+        title: "A alegria em Cristo",
+        ref: "Filipenses 1:1-11",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia a saudação de Paulo e sua oração pelos cristãos de Filipos.",
+        context: "Paulo escreve aos cristãos de Filipos com afeto e gratidão. A carta revela uma comunidade importante para o apóstolo e apresenta temas como alegria, comunhão no Evangelho e crescimento espiritual.",
+        points: [
+          "Paulo e Timóteo se apresentam como servos de Cristo Jesus.",
+          "Paulo agradece a Deus pela participação dos filipenses no Evangelho.",
+          "A comunhão cristã envolve parceria na proclamação e no serviço do Evangelho.",
+          "Deus começou uma boa obra nos crentes e continuará agindo até o Dia de Jesus Cristo.",
+          "Paulo ora para que o amor dos filipenses cresça em conhecimento e discernimento."
+        ],
+        application: "Comece sua caminhada cristã agradecendo a Deus e orando pelo crescimento espiritual. A maturidade cristã envolve amor, conhecimento da Palavra e capacidade de discernir o que agrada ao Senhor.",
+        memory: "Tendo por certo isto mesmo: que aquele que em vós começou a boa obra a aperfeiçoará até ao Dia de Jesus Cristo.",
+        memoryRef: "Filipenses 1:6 — confira o texto na tradução bíblica utilizada.",
+        questions: [
+          "Pelo que Paulo agradece a Deus?",
+          "O que Filipenses 1:6 ensina sobre a obra de Deus?",
+          "Como você pode crescer em amor e discernimento?"
+        ],
+        prayer: "Senhor Deus, obrigado pela tua obra em minha vida. Faz crescer em mim o amor, o conhecimento da tua Palavra e o desejo de viver para a tua glória. Amém."
+      },
+      {
+        day: 2,
+        title: "A oração que produz crescimento",
+        ref: "Filipenses 1:9-11",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Releia a oração de Paulo e observe o tipo de crescimento espiritual que ele deseja para os filipenses.",
+        context: "Paulo não ora apenas para que os cristãos tenham conforto ou que seus problemas desapareçam. Ele pede crescimento no amor, discernimento e uma vida que produza frutos de justiça.",
+        points: [
+          "O amor cristão deve crescer continuamente.",
+          "O amor precisa ser acompanhado de conhecimento e discernimento.",
+          "O discernimento ajuda o cristão a reconhecer o que é excelente.",
+          "A sinceridade e a ausência de tropeço devem marcar a caminhada cristã.",
+          "Os frutos de justiça existem por meio de Jesus Cristo e glorificam a Deus."
+        ],
+        application: "Ore por mais do que soluções imediatas. Peça ao Senhor sabedoria para amar corretamente, escolher o que é excelente e produzir frutos que glorifiquem seu nome.",
+        memory: "Cheios de frutos de justiça, que são por Jesus Cristo, para glória e louvor de Deus.",
+        memoryRef: "Filipenses 1:11 — confira o texto na sua Bíblia.",
+        questions: [
+          "Por que o amor precisa de conhecimento e discernimento?",
+          "O que significa escolher o que é excelente?",
+          "Que fruto de justiça você deseja ver crescer em sua vida?"
+        ],
+        prayer: "Pai, faz crescer meu amor e meu discernimento. Ajuda-me a escolher o que te agrada e a produzir frutos que glorifiquem teu nome. Amém."
+      },
+      {
+        day: 3,
+        title: "O Evangelho acima das circunstâncias",
+        ref: "Filipenses 1:12-18",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia como Paulo interpreta sua prisão e observa os efeitos que ela teve na divulgação do Evangelho.",
+        context: "Paulo escreve em circunstâncias difíceis. Mesmo preso, ele percebe que sua situação contribuiu para tornar conhecida a mensagem de Cristo. Sua perspectiva está voltada para o avanço do Evangelho.",
+        points: [
+          "As circunstâncias difíceis não impediram o avanço do Evangelho.",
+          "A situação de Paulo tornou mais conhecido o motivo de sua prisão por Cristo.",
+          "Outros cristãos foram encorajados a anunciar a Palavra com mais coragem.",
+          "Nem todos pregavam com motivações corretas.",
+          "Paulo se alegra porque Cristo estava sendo anunciado."
+        ],
+        application: "Não permita que as circunstâncias determinem sozinhas sua fidelidade. Busque servir a Cristo com integridade, lembrando que Deus pode usar situações difíceis para fortalecer o testemunho cristão.",
+        memory: "E quero, irmãos, que saibais que as coisas que me aconteceram contribuíram para maior proveito do evangelho.",
+        memoryRef: "Filipenses 1:12 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como a prisão de Paulo contribuiu para o Evangelho?",
+          "Por que Paulo se alegrou mesmo diante de motivações imperfeitas?",
+          "Como você pode testemunhar de Cristo em uma situação difícil?"
+        ],
+        prayer: "Senhor, ajuda-me a permanecer fiel em todas as circunstâncias. Que minha vida contribua para que outras pessoas conheçam Jesus. Amém."
+      },
+      {
+        day: 4,
+        title: "Viver é Cristo",
+        ref: "Filipenses 1:19-26",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia a declaração de Paulo sobre viver para Cristo e sua reflexão a respeito da vida e da morte.",
+        context: "Paulo enfrenta incertezas sobre o que acontecerá consigo, mas seu desejo principal é que Cristo seja engrandecido em sua vida. Ele considera sua existência a partir da missão de servir ao Senhor.",
+        points: [
+          "Paulo confia que suas circunstâncias podem resultar em testemunho e salvação conforme a vontade de Deus.",
+          "Sua expectativa é não ser envergonhado, mas glorificar a Cristo com coragem.",
+          "Cristo deve ser engrandecido tanto na vida quanto na morte.",
+          "A declaração de que viver é Cristo resume a prioridade do apóstolo.",
+          "Paulo reconhece que permanecer vivo significaria continuar servindo e ajudando os irmãos."
+        ],
+        application: "Avalie suas prioridades à luz de Cristo. O propósito da vida cristã não é apenas alcançar objetivos pessoais, mas honrar Jesus e servir ao próximo.",
+        memory: "Porque para mim o viver é Cristo, e o morrer é ganho.",
+        memoryRef: "Filipenses 1:21 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que significa, na prática, viver para Cristo?",
+          "Por que Paulo desejava que Cristo fosse engrandecido?",
+          "Como suas prioridades podem demonstrar que Cristo está em primeiro lugar?"
+        ],
+        prayer: "Senhor Jesus, que minha vida te honre. Ajuda-me a colocar tua vontade acima dos meus interesses e a servir com fidelidade. Amém."
+      },
+      {
+        day: 5,
+        title: "Viver de modo digno do Evangelho",
+        ref: "Filipenses 1:27-30",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia o chamado de Paulo para uma vida digna do Evangelho e para a firmeza diante da oposição.",
+        context: "Paulo deseja que a igreja permaneça firme mesmo que ele não possa visitá-la. A vida comunitária, a unidade e a perseverança diante das dificuldades são sinais importantes da fidelidade cristã.",
+        points: [
+          "A conduta cristã deve corresponder à mensagem do Evangelho.",
+          "Os crentes são chamados a permanecer firmes em um mesmo espírito.",
+          "A unidade exige esforço conjunto pela fé do Evangelho.",
+          "A coragem cristã não deve ser governada pelo medo dos adversários.",
+          "Sofrer por Cristo é apresentado como parte da experiência de seguir o Senhor."
+        ],
+        application: "Demonstre o Evangelho por suas atitudes. Trabalhe pela unidade da igreja, permaneça firme na verdade e não confunda fidelidade cristã com ausência de dificuldades.",
+        memory: "Portai-vos de modo que seja digno do evangelho de Cristo.",
+        memoryRef: "Filipenses 1:27 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que significa viver de modo digno do Evangelho?",
+          "Por que a unidade é importante para o testemunho cristão?",
+          "Como manter a firmeza em tempos de oposição?"
+        ],
+        prayer: "Pai, ajuda-me a viver de maneira digna do Evangelho. Dá-me coragem, humildade e amor para permanecer firme contigo e em comunhão com os irmãos. Amém."
+      },
+      {
+        day: 6,
+        title: "A unidade em Cristo",
+        ref: "Filipenses 2:1-4",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia o apelo de Paulo à unidade, ao amor fraternal e à humildade.",
+        context: "A comunhão cristã precisa refletir a obra de Cristo. Paulo pede que os filipenses tenham o mesmo amor e propósito, abandonando a rivalidade e a busca egoísta por reconhecimento.",
+        points: [
+          "O consolo em Cristo e a comunhão do Espírito fundamentam o apelo de Paulo.",
+          "A unidade cristã deve ser acompanhada de amor e compaixão.",
+          "A rivalidade e a vanglória prejudicam a comunhão.",
+          "A humildade leva o cristão a considerar os outros com respeito.",
+          "O discípulo deve olhar não somente para os próprios interesses, mas também para os interesses alheios."
+        ],
+        application: "Pratique a unidade por meio de atitudes concretas: ouça antes de responder, evite disputas por reconhecimento e procure compreender as necessidades dos outros.",
+        memory: "Nada façais por contenda ou por vanglória, mas por humildade.",
+        memoryRef: "Filipenses 2:3 — confira o texto na sua Bíblia.",
+        questions: [
+          "Quais atitudes ameaçam a unidade da igreja?",
+          "Como a humildade muda nossos relacionamentos?",
+          "Que necessidade de outra pessoa você pode considerar nesta semana?"
+        ],
+        prayer: "Senhor, livra-me do orgulho e da rivalidade. Ensina-me a amar os irmãos, servir com humildade e trabalhar pela unidade da tua igreja. Amém."
+      },
+      {
+        day: 7,
+        title: "O exemplo de Jesus Cristo",
+        ref: "Filipenses 2:5-11",
+        week: "Semana 1 • Conhecendo a carta",
+        intro: "Leia o ensino sobre a humildade de Cristo, sua obediência e sua exaltação.",
+        context: "Paulo apresenta Jesus como o exemplo supremo de humildade e obediência. O Filho não buscou sua própria exaltação, mas humilhou-se e foi obediente até a morte de cruz. Deus o exaltou soberanamente.",
+        points: [
+          "Os cristãos são chamados a cultivar a atitude que houve em Cristo Jesus.",
+          "Jesus assumiu a forma de servo e veio em verdadeira condição humana.",
+          "Sua humilhação foi demonstrada por obediência até a morte de cruz.",
+          "Deus exaltou Jesus soberanamente.",
+          "Toda a criação é chamada a reconhecer o senhorio de Jesus Cristo, para glória de Deus Pai."
+        ],
+        application: "Observe o caráter de Jesus e siga seu exemplo de serviço e obediência. A verdadeira grandeza no Reino de Deus não é construída por orgulho, mas por fidelidade ao Pai.",
+        memory: "De sorte que haja em vós o mesmo sentimento que houve também em Cristo Jesus.",
+        memoryRef: "Filipenses 2:5 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como Jesus demonstrou humildade?",
+          "O que a obediência de Cristo nos ensina?",
+          "Como imitar a atitude de Jesus em sua casa ou igreja?"
+        ],
+        prayer: "Jesus, forma em mim um coração humilde e obediente. Ensina-me a servir como tu serviste e a viver para a glória de Deus Pai. Amém."
+      },
+      {
+        day: 8,
+        title: "Deus opera em nós",
+        ref: "Filipenses 2:12-18",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia a exortação de Paulo sobre desenvolver a salvação, confiar na ação de Deus e viver sem murmuração.",
+        context: "Paulo chama os cristãos à obediência contínua. A responsabilidade humana não elimina a ação divina: Deus opera nos crentes tanto o querer quanto o efetuar segundo sua boa vontade.",
+        points: [
+          "A vida cristã exige obediência perseverante, não apenas entusiasmo inicial.",
+          "Desenvolver a salvação significa viver suas implicações, não comprar a salvação por mérito próprio.",
+          "Deus opera nos crentes o querer e o realizar segundo sua vontade.",
+          "Murmurações e contendas prejudicam o testemunho cristão.",
+          "Os discípulos são chamados a brilhar como luzes no mundo, mantendo firme a Palavra da vida."
+        ],
+        application: "Responda à graça de Deus com obediência. Peça ao Senhor que transforme seus desejos e atitudes, abandone a murmuração e viva de modo que sua fé seja visível.",
+        memory: "Porque Deus é o que opera em vós tanto o querer como o efetuar, segundo a sua boa vontade.",
+        memoryRef: "Filipenses 2:13 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como a ação de Deus se relaciona com nossa obediência?",
+          "O que significa desenvolver a salvação?",
+          "Que atitude de murmuração você precisa abandonar?"
+        ],
+        prayer: "Pai, opera em mim o querer e o realizar da tua vontade. Ajuda-me a obedecer com alegria e a brilhar como testemunha de Cristo. Amém."
+      },
+      {
+        day: 9,
+        title: "Timóteo: cuidado sincero",
+        ref: "Filipenses 2:19-24",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia o que Paulo diz sobre Timóteo e seu cuidado genuíno pelos filipenses.",
+        context: "Paulo apresenta Timóteo como um cooperador confiável. O apóstolo destaca a preocupação sincera dele com os interesses de Cristo e com o bem-estar da igreja.",
+        points: [
+          "Paulo deseja enviar Timóteo para conhecer a situação dos filipenses.",
+          "Timóteo demonstra interesse sincero pelo bem dos irmãos.",
+          "O cuidado cristão contrasta com a busca egoísta pelos próprios interesses.",
+          "Timóteo é reconhecido por seu serviço ao Evangelho junto de Paulo.",
+          "A fidelidade se demonstra ao longo do tempo, por meio do serviço."
+        ],
+        application: "Sirva sem buscar apenas reconhecimento. Demonstre interesse real pelas pessoas, acompanhe suas necessidades e seja confiável nas tarefas que Deus lhe confiou.",
+        memory: "Porque a ninguém tenho de igual sentimento, que sinceramente cuide do vosso estado.",
+        memoryRef: "Filipenses 2:20 — confira o texto na sua Bíblia.",
+        questions: [
+          "Que qualidade de Timóteo Paulo destaca?",
+          "Como diferenciar cuidado sincero de interesse egoísta?",
+          "Como você pode servir alguém de maneira prática?"
+        ],
+        prayer: "Senhor, dá-me um coração sincero para cuidar das pessoas. Ensina-me a servir com fidelidade, humildade e amor. Amém."
+      },
+      {
+        day: 10,
+        title: "Epafrodito: serviço e dedicação",
+        ref: "Filipenses 2:25-30",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia a descrição de Epafrodito e observe seu compromisso com a obra de Cristo.",
+        context: "Epafrodito foi enviado pelos filipenses para auxiliar Paulo. Durante o serviço, adoeceu gravemente, mas Deus teve misericórdia dele. Paulo recomenda que a igreja o receba com alegria e honre pessoas que servem dessa maneira.",
+        points: [
+          "Epafrodito é chamado de irmão, cooperador e companheiro de lutas.",
+          "Ele serviu como mensageiro e auxiliar da igreja de Filipos.",
+          "Sua enfermidade causou preocupação tanto a ele quanto a Paulo.",
+          "Deus teve misericórdia dele, e sua recuperação trouxe alívio.",
+          "A igreja deve honrar aqueles que arriscam a própria vida por amor à obra de Cristo."
+        ],
+        application: "Valorize os que servem discretamente. O serviço cristão pode envolver sacrifício, e a igreja deve demonstrar gratidão, cuidado e respeito pelos seus cooperadores.",
+        memory: "Recebei-o, pois, no Senhor, com todo o gozo, e tende-o em honra.",
+        memoryRef: "Filipenses 2:29 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como Paulo descreve Epafrodito?",
+          "O que esse relato ensina sobre o serviço cristão?",
+          "Quem merece receber sua gratidão e encorajamento?"
+        ],
+        prayer: "Pai, obrigado pelas pessoas que servem com dedicação. Ajuda-me a reconhecer, encorajar e apoiar aqueles que trabalham pela causa de Cristo. Amém."
+      },
+      {
+        day: 11,
+        title: "A verdadeira segurança em Cristo",
+        ref: "Filipenses 3:1-6",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia o alerta de Paulo contra a confiança na carne e sua descrição de privilégios religiosos anteriores.",
+        context: "Paulo alerta os filipenses contra ensinamentos que colocavam a confiança em sinais externos e credenciais humanas. Ele apresenta sua própria história para mostrar que nenhum privilégio pessoal pode substituir a justiça que vem de Deus.",
+        points: [
+          "Paulo chama os cristãos a se alegrarem no Senhor.",
+          "Ele alerta contra mestres que distorciam a mensagem do Evangelho.",
+          "A identidade do povo de Deus não se reduz a marcas externas.",
+          "Paulo possuía credenciais religiosas e familiares consideradas importantes em seu contexto.",
+          "A confiança na própria origem ou desempenho religioso não pode ocupar o lugar da confiança em Cristo."
+        ],
+        application: "Não baseie sua segurança espiritual em reputação, tradição familiar ou conquistas religiosas. Examine seu coração e coloque sua confiança na graça de Deus em Cristo.",
+        memory: "Porque a circuncisão somos nós, que servimos a Deus no Espírito, e nos gloriamos em Jesus Cristo.",
+        memoryRef: "Filipenses 3:3 — confira o texto na sua Bíblia.",
+        questions: [
+          "Contra que tipo de confiança Paulo alerta?",
+          "Por que credenciais religiosas não substituem a fé em Cristo?",
+          "Em que você tem colocado sua segurança espiritual?"
+        ],
+        prayer: "Senhor Jesus, livra-me de confiar no orgulho e nas conquistas humanas. Que minha segurança esteja em ti e na tua graça. Amém."
+      },
+      {
+        day: 12,
+        title: "Ganhar a Cristo",
+        ref: "Filipenses 3:7-11",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia como Paulo considera suas antigas vantagens diante do valor de conhecer Jesus Cristo.",
+        context: "Paulo reavalia seus privilégios anteriores à luz de Cristo. O conhecimento de Jesus passa a ocupar o lugar central, e a justiça desejada não é a que se constrói por mérito próprio, mas a que vem de Deus mediante a fé.",
+        points: [
+          "Paulo considera perda aquilo que antes julgava vantagem, por causa de Cristo.",
+          "Conhecer Cristo tem valor superior às conquistas pessoais.",
+          "A justiça que salva não é alcançada por mérito humano, mas recebida de Deus pela fé.",
+          "Paulo deseja conhecer Cristo, o poder de sua ressurreição e a comunhão de seus sofrimentos.",
+          "A esperança cristã inclui ser conformado a Cristo e alcançar a ressurreição dos mortos."
+        ],
+        application: "Faça de Cristo seu maior tesouro. Não transforme o desempenho religioso em motivo de orgulho; busque conhecer Jesus, confiar nele e crescer em fidelidade.",
+        memory: "E, na verdade, tenho também por perda todas as coisas, pela excelência do conhecimento de Cristo Jesus, meu Senhor.",
+        memoryRef: "Filipenses 3:8 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que Paulo passou a considerar perda?",
+          "Como recebemos a justiça que vem de Deus?",
+          "O que significa conhecer Cristo de maneira crescente?"
+        ],
+        prayer: "Senhor Jesus, quero conhecer-te cada vez mais. Ajuda-me a abandonar todo orgulho e a confiar na justiça que vem de Deus pela fé. Amém."
+      },
+      {
+        day: 13,
+        title: "Prosseguindo para o alvo",
+        ref: "Filipenses 3:12-16",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia a figura da corrida e o desejo de Paulo de prosseguir em direção ao alvo.",
+        context: "Paulo reconhece que ainda não alcançou a perfeição. Em vez de se acomodar, continua avançando para o propósito de Deus em Cristo Jesus.",
+        points: [
+          "Paulo não afirma ter alcançado a perfeição espiritual.",
+          "Ele prossegue porque foi alcançado por Cristo Jesus.",
+          "O apóstolo deixa para trás aquilo que o impediria de avançar.",
+          "O alvo representa o prêmio do chamado celestial de Deus em Cristo.",
+          "Os cristãos são chamados a caminhar de acordo com a maturidade que já receberam."
+        ],
+        application: "Não use suas falhas como desculpa para desistir nem suas conquistas como motivo para se acomodar. Aprenda com o passado, corrija o rumo e prossiga com os olhos em Cristo.",
+        memory: "Prossigo para o alvo, pelo prêmio da soberana vocação de Deus em Cristo Jesus.",
+        memoryRef: "Filipenses 3:14 — confira o texto na sua Bíblia.",
+        questions: [
+          "Por que Paulo continuava avançando?",
+          "Como aprender com o passado sem ficar preso a ele?",
+          "Qual é um passo concreto de crescimento que você pode dar?"
+        ],
+        prayer: "Pai, ajuda-me a prosseguir na fé. Dá-me perseverança para aprender, amadurecer e caminhar em direção ao propósito que tens para mim em Cristo. Amém."
+      },
+      {
+        day: 14,
+        title: "Nossa cidadania está nos céus",
+        ref: "Filipenses 3:17-21",
+        week: "Semana 2 • Vivendo o Evangelho",
+        intro: "Leia o contraste entre aqueles que vivem segundo valores terrenos e os que esperam o Salvador.",
+        context: "Paulo incentiva os filipenses a seguirem exemplos fiéis e alerta contra pessoas cuja maneira de viver contradizia a cruz de Cristo. A esperança do cristão está ligada à volta do Senhor e à transformação que ele realizará.",
+        points: [
+          "Os cristãos devem observar e imitar exemplos de vida coerentes com o Evangelho.",
+          "Paulo lamenta os que vivem como inimigos da cruz de Cristo.",
+          "A busca exclusiva por interesses terrenos distorce as prioridades espirituais.",
+          "A cidadania dos cristãos está nos céus, de onde aguardam o Salvador.",
+          "Jesus transformará o corpo de nossa humilhação para ser conforme seu corpo glorioso."
+        ],
+        application: "Viva com os olhos na esperança eterna, sem desprezar suas responsabilidades presentes. Escolha exemplos fiéis, examine suas prioridades e lembre-se de que Cristo voltará.",
+        memory: "Mas a nossa cidade está nos céus, donde também esperamos o Salvador, o Senhor Jesus Cristo.",
+        memoryRef: "Filipenses 3:20 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que significa ter cidadania nos céus?",
+          "Por que devemos escolher cuidadosamente nossos exemplos?",
+          "Como a esperança da volta de Cristo muda suas prioridades?"
+        ],
+        prayer: "Senhor Jesus, ajuda-me a viver como cidadão do teu Reino. Guarda meu coração das prioridades passageiras e fortalece minha esperança na tua volta. Amém."
+      },
+      {
+        day: 15,
+        title: "Permaneçam firmes no Senhor",
+        ref: "Filipenses 4:1-3",
+        week: "Semana 3 • A prática da fé",
+        intro: "Leia o apelo de Paulo à firmeza e sua orientação diante de um conflito entre duas irmãs da igreja.",
+        context: "Depois de falar sobre a esperança celestial, Paulo chama os filipenses a permanecerem firmes no Senhor. Ele também trata de uma dificuldade concreta de relacionamento e pede ajuda para restaurar a harmonia.",
+        points: [
+          "Paulo expressa profundo afeto pelos cristãos de Filipos.",
+          "A firmeza cristã deve estar fundamentada no Senhor.",
+          "Evódia e Síntique são exortadas a terem o mesmo sentimento no Senhor.",
+          "Os conflitos na igreja precisam ser tratados com seriedade e cuidado.",
+          "A comunidade deve apoiar pessoas que trabalharam fielmente pelo Evangelho."
+        ],
+        application: "Permaneça firme em Cristo e procure resolver conflitos de maneira bíblica. Não alimente divisões; ajude a construir reconciliação com verdade, humildade e amor.",
+        memory: "Estai assim firmes no Senhor, amados.",
+        memoryRef: "Filipenses 4:1 — confira o texto na sua Bíblia.",
+        questions: [
+          "Onde o cristão encontra firmeza?",
+          "Como a igreja pode ajudar na reconciliação?",
+          "Existe algum relacionamento que precisa de cuidado e oração?"
+        ],
+        prayer: "Senhor, firma-me em ti e ensina-me a trabalhar pela paz. Dá-me humildade para buscar reconciliação e amor para apoiar meus irmãos. Amém."
+      },
+      {
+        day: 16,
+        title: "A alegria no Senhor",
+        ref: "Filipenses 4:4",
+        week: "Semana 3 • A prática da fé",
+        intro: "Medite na breve ordem de Paulo para que os cristãos se alegrem no Senhor.",
+        context: "A carta inteira destaca a alegria em Cristo, mesmo diante das dificuldades. Paulo não apresenta a alegria como negação da dor, mas como uma disposição fundamentada no Senhor.",
+        points: [
+          "A alegria cristã tem sua fonte no Senhor.",
+          "Paulo repete a exortação, destacando sua importância.",
+          "A alegria não depende exclusivamente de circunstâncias favoráveis.",
+          "A comunhão com Cristo dá perspectiva para enfrentar tempos difíceis.",
+          "A alegria cristã pode coexistir com lágrimas, lutas e oração."
+        ],
+        application: "Cultive a alegria por meio da comunhão com Deus, da leitura bíblica e da gratidão. Não esconda sua dor, mas leve-a ao Senhor e recorde sua fidelidade.",
+        memory: "Regozijai-vos, sempre, no Senhor; outra vez digo: regozijai-vos.",
+        memoryRef: "Filipenses 4:4 — confira o texto na sua Bíblia.",
+        questions: [
+          "Qual é a fonte da alegria cristã?",
+          "Como a alegria pode existir em meio às dificuldades?",
+          "Pelo que você pode agradecer a Deus hoje?"
+        ],
+        prayer: "Pai, ensina-me a encontrar minha alegria em ti. Sustenta-me nos dias difíceis e ajuda-me a reconhecer tua bondade em cada etapa da caminhada. Amém."
+      },
+      {
+        day: 17,
+        title: "Mansidão e confiança em Deus",
+        ref: "Filipenses 4:5-7",
+        week: "Semana 3 • A prática da fé",
+        intro: "Leia as orientações de Paulo sobre moderação, oração, súplica e gratidão.",
+        context: "Paulo ensina os cristãos a apresentar suas necessidades a Deus em vez de serem dominados pela ansiedade. A promessa da paz divina está relacionada à oração e à confiança no Senhor.",
+        points: [
+          "A moderação ou mansidão cristã deve ser conhecida por todos.",
+          "A certeza da proximidade do Senhor dá esperança ao cristão.",
+          "Paulo orienta que as preocupações sejam apresentadas a Deus em oração.",
+          "A súplica deve vir acompanhada de ações de graças.",
+          "A paz de Deus guarda o coração e os pensamentos em Cristo Jesus."
+        ],
+        application: "Quando a ansiedade surgir, transforme suas preocupações em oração específica. Agradeça a Deus, procure apoio quando necessário e confie que sua paz pode guardar seu coração em Cristo.",
+        memory: "E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus.",
+        memoryRef: "Filipenses 4:7 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que Paulo recomenda fazer diante da ansiedade?",
+          "Por que a gratidão faz parte da oração?",
+          "Que preocupação você pode apresentar a Deus agora?"
+        ],
+        prayer: "Senhor, recebo teu convite para levar minhas preocupações a ti. Guarda meu coração e meus pensamentos em Cristo e ensina-me a orar com gratidão. Amém."
+      },
+      {
+        day: 18,
+        title: "Pensamentos que edificam",
+        ref: "Filipenses 4:8-9",
+        week: "Semana 3 • A prática da fé",
+        intro: "Leia a lista de virtudes em que Paulo orienta os cristãos a pensar e a praticar.",
+        context: "A vida cristã envolve tanto aquilo que fazemos quanto aquilo que alimentamos na mente. Paulo chama os filipenses a concentrar sua atenção no que é verdadeiro, honesto, justo, puro, amável e digno de louvor.",
+        points: [
+          "O cristão deve valorizar o que é verdadeiro e honesto.",
+          "A justiça e a pureza devem orientar pensamentos e atitudes.",
+          "O que é amável e digno de louvor merece consideração.",
+          "A prática deve acompanhar o ensino recebido.",
+          "O Deus da paz está com aqueles que seguem a orientação apostólica."
+        ],
+        application: "Examine o conteúdo que você consome, as conversas de que participa e os pensamentos que alimenta. Escolha o que contribui para a verdade, a pureza e a edificação.",
+        memory: "Quanto ao mais, irmãos, tudo o que é verdadeiro, tudo o que é honesto, tudo o que é justo, tudo o que é puro [...] nisso pensai.",
+        memoryRef: "Filipenses 4:8 — confira o versículo completo na sua Bíblia.",
+        questions: [
+          "Que qualidades devem orientar nossos pensamentos?",
+          "Como aquilo que consumimos influencia nossa vida espiritual?",
+          "Que hábito mental precisa ser substituído por algo edificante?"
+        ],
+        prayer: "Pai, purifica meus pensamentos e orienta minhas escolhas. Ajuda-me a ocupar minha mente com o que é verdadeiro, justo, puro e digno de louvor. Amém."
+      },
+      {
+        day: 19,
+        title: "Aprendendo a estar contente",
+        ref: "Filipenses 4:10-13",
+        week: "Semana 3 • A prática da fé",
+        intro: "Leia o testemunho de Paulo sobre contentamento em situações de abundância e necessidade.",
+        context: "Paulo agradece o cuidado dos filipenses, mas explica que aprendeu a viver contente em diferentes circunstâncias. Sua força vem de Cristo, que o capacita a perseverar tanto na escassez quanto na abundância.",
+        points: [
+          "Paulo reconhece com gratidão o cuidado que os filipenses demonstraram.",
+          "O contentamento é aprendido e amadurece com a experiência.",
+          "Paulo conheceu tanto a necessidade quanto a abundância.",
+          "Sua estabilidade não dependia de possuir muito ou pouco.",
+          "Cristo o fortalecia para enfrentar as circunstâncias que encontrava."
+        ],
+        application: "Aprenda a agradecer sem depender de ter tudo o que deseja. Filipenses 4:13 não é uma promessa de realizar qualquer objetivo, mas uma declaração da força de Cristo para perseverar nas circunstâncias.",
+        memory: "Posso todas as coisas naquele que me fortalece.",
+        memoryRef: "Filipenses 4:13 — leia o contexto para compreender a declaração.",
+        questions: [
+          "O que Paulo aprendeu sobre contentamento?",
+          "Por que Filipenses 4:13 deve ser lido em seu contexto?",
+          "Como você pode cultivar gratidão na situação atual?"
+        ],
+        prayer: "Senhor Jesus, ensina-me o contentamento. Fortalece-me na abundância e na necessidade e ajuda-me a confiar em ti em todas as circunstâncias. Amém."
+      },
+      {
+        day: 20,
+        title: "A generosidade que agrada a Deus",
+        ref: "Filipenses 4:14-20",
+        week: "Semana 3 • A prática da fé",
+        intro: "Leia a gratidão de Paulo pela contribuição dos filipenses e sua confiança na provisão de Deus.",
+        context: "Os cristãos de Filipos participaram do sustento de Paulo em seu ministério. Ele reconhece a generosidade deles como fruto espiritual e como oferta agradável a Deus.",
+        points: [
+          "Os filipenses compartilharam das aflições de Paulo por meio de seu apoio.",
+          "A igreja participou de maneira concreta do avanço do Evangelho.",
+          "Paulo não buscava apenas receber, mas reconhecia o fruto espiritual produzido pela generosidade.",
+          "A contribuição é descrita como sacrifício agradável e aceitável a Deus.",
+          "Paulo expressa confiança na provisão de Deus segundo suas riquezas em glória em Cristo Jesus."
+        ],
+        application: "Pratique generosidade com responsabilidade, amor e sinceridade. Apoie pessoas necessitadas e o trabalho cristão sem transformar a promessa da provisão divina em garantia de riqueza material.",
+        memory: "O meu Deus, segundo as suas riquezas, suprirá todas as vossas necessidades em glória, por Cristo Jesus.",
+        memoryRef: "Filipenses 4:19 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como os filipenses apoiaram o ministério de Paulo?",
+          "Por que a generosidade é também uma expressão de fé?",
+          "Como você pode ajudar alguém de maneira responsável?"
+        ],
+        prayer: "Pai, obrigado por teu cuidado. Dá-me um coração generoso e sábio, disposto a compartilhar e a apoiar a obra do Evangelho com amor. Amém."
+      },
+      {
+        day: 21,
+        title: "Saudações e comunhão cristã",
+        ref: "Filipenses 4:21-23",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Leia as saudações finais da carta e observe a comunhão entre os cristãos.",
+        context: "Paulo encerra a carta enviando saudações e mencionando os irmãos que estavam com ele. Mesmo separados geograficamente, os cristãos participavam de uma mesma fé e de uma mesma missão.",
+        points: [
+          "Paulo pede que os santos sejam saudados em Cristo Jesus.",
+          "Os irmãos que estavam com Paulo também enviam saudações.",
+          "A menção à casa de César indica que o Evangelho alcançava pessoas em ambientes ligados ao governo romano.",
+          "A comunhão cristã ultrapassa fronteiras e condições sociais.",
+          "A carta termina com a graça do Senhor Jesus Cristo."
+        ],
+        application: "Valorize a comunhão da igreja. Ore por cristãos de outras localidades, encoraje os irmãos e lembre-se de que todos os que pertencem a Cristo participam de uma mesma esperança.",
+        memory: "A graça de nosso Senhor Jesus Cristo seja com vós todos. Amém.",
+        memoryRef: "Filipenses 4:23 — confira o texto na sua Bíblia.",
+        questions: [
+          "O que as saudações finais revelam sobre a comunhão cristã?",
+          "Como o Evangelho ultrapassa barreiras sociais e geográficas?",
+          "Como você pode encorajar alguém da sua comunidade de fé?"
+        ],
+        prayer: "Senhor Jesus, obrigado pela família da fé. Abençoa tua igreja, fortalece a comunhão entre os irmãos e faz tua graça ser conhecida por meio de nós. Amém."
+      },
+      {
+        day: 22,
+        title: "A humildade que considera o outro",
+        ref: "Filipenses 2:1-4",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Retome o ensino sobre humildade e reflita sobre sua aplicação nos relacionamentos.",
+        context: "A unidade da igreja não é construída apenas por declarações de concordância. Ela exige humildade, disposição para ouvir e cuidado com os interesses do próximo.",
+        points: [
+          "A unidade nasce de uma vida orientada por Cristo.",
+          "O amor fraternal deve ser sincero e prático.",
+          "A vaidade transforma o serviço em competição.",
+          "A humildade permite reconhecer o valor dos outros.",
+          "Considerar o próximo não significa desprezar as próprias necessidades, mas abandonar o egoísmo."
+        ],
+        application: "Em uma conversa ou conflito, procure ouvir com atenção antes de defender sua posição. Pratique o respeito e busque soluções que promovam o bem comum.",
+        memory: "Cada um considere os outros superiores a si mesmo.",
+        memoryRef: "Filipenses 2:3 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como a vaidade pode prejudicar a igreja?",
+          "Qual é a diferença entre humildade e desvalorização pessoal?",
+          "Como você pode demonstrar consideração por alguém hoje?"
+        ],
+        prayer: "Pai, ensina-me a tratar os outros com humildade e respeito. Livra-me do egoísmo e ajuda-me a construir relacionamentos que honrem a Cristo. Amém."
+      },
+      {
+        day: 23,
+        title: "Brilhando como luzes no mundo",
+        ref: "Filipenses 2:12-18",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Releia o chamado para viver sem murmurações e para manter firme a Palavra da vida.",
+        context: "Paulo deseja que os filipenses sejam reconhecidos por uma vida íntegra em meio a uma geração corrompida. Sua conduta deveria tornar visível a transformação produzida pelo Evangelho.",
+        points: [
+          "A obediência cristã deve continuar mesmo na ausência de líderes conhecidos.",
+          "Deus opera no coração e capacita o cristão a obedecer.",
+          "Murmurações e contendas podem enfraquecer o testemunho.",
+          "Os discípulos são chamados a brilhar no mundo.",
+          "A Palavra da vida deve permanecer firme na comunidade cristã."
+        ],
+        application: "Seu testemunho aparece nas escolhas cotidianas. Pratique honestidade, evite reclamações destrutivas e mantenha a Palavra de Deus como referência para suas atitudes.",
+        memory: "Para que sejais irrepreensíveis e sinceros [...] resplandeceis como astros no mundo.",
+        memoryRef: "Filipenses 2:15 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como murmurações podem afetar o testemunho cristão?",
+          "O que significa brilhar como luz no mundo?",
+          "Que atitude sua pode tornar o Evangelho mais visível?"
+        ],
+        prayer: "Senhor, ajuda-me a viver com integridade. Que minhas palavras e ações reflitam a luz de Cristo e apontem outras pessoas para tua verdade. Amém."
+      },
+      {
+        day: 24,
+        title: "Conhecer Cristo acima de tudo",
+        ref: "Filipenses 3:7-11",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Reflita novamente sobre o valor de conhecer Jesus acima de qualquer conquista pessoal.",
+        context: "Paulo apresenta uma mudança radical de prioridades. Ele não encontra sua identidade final em seu passado religioso, mas na relação com Cristo e na justiça que vem de Deus pela fé.",
+        points: [
+          "Cristo tem valor superior a qualquer conquista humana.",
+          "O conhecimento de Jesus transforma as prioridades do discípulo.",
+          "A justiça que vem de Deus é recebida mediante a fé.",
+          "Conhecer Cristo envolve reconhecer o poder de sua ressurreição.",
+          "A esperança cristã inclui a ressurreição e a comunhão com Cristo."
+        ],
+        application: "Pergunte a si mesmo se alguma conquista, função ou reputação tem ocupado o lugar de Cristo. Reorganize suas prioridades para que Jesus seja o centro de sua fé.",
+        memory: "Para que possa ganhar a Cristo.",
+        memoryRef: "Filipenses 3:8 — leia o versículo completo na sua Bíblia.",
+        questions: [
+          "O que pode competir com Cristo em nossas prioridades?",
+          "Por que a justiça de Deus não é uma conquista humana?",
+          "Qual área da sua vida precisa ser reorganizada em torno de Jesus?"
+        ],
+        prayer: "Senhor Jesus, tu és mais precioso do que minhas conquistas. Ajuda-me a viver pela fé e a buscar acima de tudo o conhecimento de ti. Amém."
+      },
+      {
+        day: 25,
+        title: "Perseverança até o alvo",
+        ref: "Filipenses 3:12-16",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Releia a comparação entre a vida cristã e uma corrida que exige perseverança.",
+        context: "O crescimento espiritual é uma caminhada contínua. Paulo reconhece que ainda não chegou ao destino final, mas continua avançando porque pertence a Cristo.",
+        points: [
+          "A maturidade começa com o reconhecimento de que ainda precisamos crescer.",
+          "Cristo tomou a iniciativa de alcançar Paulo.",
+          "O passado não deve impedir o avanço em fidelidade.",
+          "O alvo é relacionado ao chamado de Deus em Cristo.",
+          "A maturidade se expressa em continuar caminhando na verdade já aprendida."
+        ],
+        application: "Estabeleça hábitos sustentáveis de leitura bíblica, oração e comunhão. Não compare sua caminhada com a de outras pessoas; permaneça fiel ao que Deus lhe ensinou.",
+        memory: "Prossigo para o alvo, pelo prêmio da soberana vocação de Deus em Cristo Jesus.",
+        memoryRef: "Filipenses 3:14 — confira o texto na sua Bíblia.",
+        questions: [
+          "Por que Paulo não se considerava perfeito?",
+          "Como evitar a comparação prejudicial com outros cristãos?",
+          "Que hábito espiritual você deseja manter?"
+        ],
+        prayer: "Pai, dá-me perseverança para continuar crescendo. Ajuda-me a deixar para trás o que me impede de avançar e a permanecer fiel a Cristo. Amém."
+      },
+      {
+        day: 26,
+        title: "Ansiedade transformada em oração",
+        ref: "Filipenses 4:4-7",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Releia o ensino de Paulo sobre alegria, oração e a paz de Deus.",
+        context: "Paulo orienta a igreja a apresentar suas necessidades ao Senhor com gratidão. A paz de Deus guarda o coração em Cristo, mesmo quando a situação externa ainda não mudou.",
+        points: [
+          "A alegria cristã está fundamentada no Senhor.",
+          "A mansidão deve marcar o relacionamento com as pessoas.",
+          "As preocupações podem ser apresentadas a Deus em oração.",
+          "A gratidão acompanha a súplica cristã.",
+          "A paz de Deus guarda o coração e os pensamentos em Cristo Jesus."
+        ],
+        application: "Escreva uma preocupação específica e transforme-a em oração. Agradeça por algo concreto e, quando necessário, procure ajuda sábia e apoio de pessoas confiáveis.",
+        memory: "Não estejais inquietos por coisa alguma; antes, as vossas petições sejam em tudo conhecidas diante de Deus.",
+        memoryRef: "Filipenses 4:6 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como Paulo orienta a lidar com preocupações?",
+          "Qual é o papel da gratidão na oração?",
+          "Que situação você precisa entregar ao Senhor?"
+        ],
+        prayer: "Pai, entrego a ti minhas preocupações. Ensina-me a orar com gratidão e guarda meu coração com tua paz em Cristo Jesus. Amém."
+      },
+      {
+        day: 27,
+        title: "Contentamento em todas as circunstâncias",
+        ref: "Filipenses 4:10-13",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Reflita sobre o contentamento que Paulo aprendeu em tempos de abundância e de necessidade.",
+        context: "O contentamento de Paulo não significa indiferença ou ausência de necessidades. Ele reconhece as dificuldades reais, mas confia que Cristo o fortalece para perseverar em diferentes condições.",
+        points: [
+          "Paulo agradece o cuidado dos filipenses.",
+          "O contentamento é aprendido com o tempo.",
+          "A abundância e a escassez apresentam desafios diferentes.",
+          "A força de Cristo sustenta o cristão nas circunstâncias.",
+          "A confiança em Deus não é uma garantia de que todos os desejos serão realizados."
+        ],
+        application: "Pratique a gratidão sem negar suas necessidades. Peça ajuda quando necessário, trabalhe com responsabilidade e confie em Cristo para atravessar cada etapa.",
+        memory: "Posso todas as coisas naquele que me fortalece.",
+        memoryRef: "Filipenses 4:13 — leia os versículos anteriores para compreender o contexto.",
+        questions: [
+          "O que Paulo aprendeu sobre contentamento?",
+          "Como a confiança em Cristo difere da busca por realizar todos os desejos?",
+          "Pelo que você pode agradecer mesmo em meio a uma dificuldade?"
+        ],
+        prayer: "Senhor Jesus, fortalece-me nas circunstâncias boas e difíceis. Ensina-me a viver com gratidão, responsabilidade e contentamento em ti. Amém."
+      },
+      {
+        day: 28,
+        title: "Generosidade e cuidado mútuo",
+        ref: "Filipenses 4:14-20",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Releia o exemplo dos filipenses no apoio a Paulo e reflita sobre a generosidade cristã.",
+        context: "A contribuição dos filipenses foi uma expressão concreta de comunhão e participação no Evangelho. Paulo reconhece o valor espiritual da oferta e dirige a glória a Deus.",
+        points: [
+          "A generosidade cristã se expressa em ações concretas.",
+          "A igreja participou das necessidades do ministério de Paulo.",
+          "A oferta é descrita como sacrifício agradável a Deus.",
+          "O apoio material pode ser uma expressão de amor e comunhão.",
+          "A confiança na provisão divina não elimina a responsabilidade de ajudar uns aos outros."
+        ],
+        application: "Considere formas responsáveis de compartilhar tempo, recursos e habilidades. A generosidade deve beneficiar pessoas reais e refletir o amor de Cristo.",
+        memory: "E não que procure dádivas, mas procuro o fruto que aumente a vossa conta.",
+        memoryRef: "Filipenses 4:17 — confira o texto na sua Bíblia.",
+        questions: [
+          "Como a contribuição dos filipenses expressou comunhão?",
+          "Quais formas de generosidade não dependem de dinheiro?",
+          "Quem pode ser beneficiado por uma atitude sua nesta semana?"
+        ],
+        prayer: "Pai, dá-me um coração generoso e responsável. Ajuda-me a compartilhar o que tenho e a servir ao próximo para a glória de Cristo. Amém."
+      },
+      {
+        day: 29,
+        title: "Uma mente renovada pela Palavra",
+        ref: "Filipenses 4:8-9",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Retome a lista de virtudes de Filipenses 4:8 e observe como ela pode orientar suas escolhas.",
+        context: "Paulo conecta o pensamento à prática. A comunidade deveria valorizar aquilo que é verdadeiro e justo e colocar em ação o ensino recebido, cultivando uma vida marcada pela paz de Deus.",
+        points: [
+          "A verdade deve orientar a forma de pensar.",
+          "A justiça e a pureza devem ser valorizadas.",
+          "O que é amável e digno de louvor merece atenção.",
+          "A fé bíblica exige colocar em prática o que aprendemos.",
+          "A renovação dos pensamentos contribui para escolhas mais coerentes com o Evangelho."
+        ],
+        application: "Escolha uma área concreta para praticar o que aprendeu. Pode ser uma conversa mais honesta, uma atitude de reconciliação ou a substituição de um hábito prejudicial por algo edificante.",
+        memory: "Nisso pensai.",
+        memoryRef: "Filipenses 4:8 — leia a lista completa na sua Bíblia.",
+        questions: [
+          "Que virtudes devem orientar os pensamentos cristãos?",
+          "Por que é necessário praticar o que aprendemos?",
+          "Que mudança concreta você fará nesta semana?"
+        ],
+        prayer: "Senhor, renova minha mente por tua verdade. Ajuda-me a escolher o que é bom e a colocar em prática os ensinamentos de Cristo. Amém."
+      },
+      {
+        day: 30,
+        title: "Continue caminhando com Cristo",
+        ref: "Filipenses 1–4",
+        week: "Semana 4 • Crescendo na fé",
+        intro: "Revise os quatro capítulos de Filipenses e recorde as principais lições aprendidas durante estes 30 dias.",
+        context: "A Carta aos Filipenses apresenta uma vida cristã centrada em Cristo, marcada pela alegria, humildade, unidade, perseverança, oração, contentamento e generosidade. Concluir o plano é o início de uma caminhada contínua de discipulado.",
+        points: [
+          "Cristo deve ocupar o centro da vida e das prioridades.",
+          "A humildade de Jesus é o modelo para nossos relacionamentos.",
+          "A maturidade cristã exige perseverança e crescimento contínuo.",
+          "A oração e a gratidão ajudam a enfrentar as preocupações com confiança em Deus.",
+          "O contentamento e a generosidade expressam uma vida fortalecida por Cristo."
+        ],
+        application: "Crie uma rotina realista de leitura bíblica e oração. Continue participando de uma comunidade cristã saudável, pratique o que aprendeu e compartilhe o Evangelho com amor e fidelidade.",
+        memory: "Porque para mim o viver é Cristo, e o morrer é ganho.",
+        memoryRef: "Filipenses 1:21 — releia o versículo e seu contexto.",
+        questions: [
+          "Qual foi a lição mais importante que você aprendeu em Filipenses?",
+          "Que hábito espiritual você pretende continuar praticando?",
+          "Como você pode compartilhar com outra pessoa o que aprendeu sobre Jesus?"
+        ],
+        prayer: "Senhor Jesus, obrigado por estes primeiros passos em tua Palavra. Ajuda-me a continuar crescendo em amor, humildade, alegria e perseverança. Que minha vida te glorifique e seja instrumento para que outros te conheçam. Amém."
+      }
+    ];
+
+    const $ = id => document.getElementById(id);
+    const KEY = "atalaia-filipenses-30-dias-v1";
+
+    function readState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+        return {
+          done: Array.isArray(saved.done) ? saved.done.filter(n => Number.isInteger(n) && n >= 1 && n <= 30) : [],
+          notes: saved.notes && typeof saved.notes === "object" ? saved.notes : {},
+          dark: saved.dark === true
+        };
+      } catch {
+        return { done: [], notes: {}, dark: false };
+      }
+    }
+
+    let state = readState();
+    let current = 0;
+
+    function persist() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+      } catch {
+        alert("Não foi possível salvar neste navegador. Verifique as configurações de armazenamento.");
+      }
+    }
+
+    function updateProgress() {
+      const n = state.done.length;
+      const p = Math.round(n / studies.length * 100);
+
+      $("progressPercent").textContent = p + "%";
+      $("progressBar").style.width = p + "%";
+      $("progressText").textContent = n === 30
+        ? "Parabéns! Você concluiu os 30 estudos. Continue crescendo na Palavra."
+        : `Você concluiu ${n} de 30 estudos. ${n === 0 ? "Comece pelo Dia 1." : "Continue firme em sua caminhada com Jesus."}`;
+    }
+
+    function renderDays() {
+      $("dayList").innerHTML = studies.map(s => {
+        const done = state.done.includes(s.day);
+        return `
+          <button class="day-item ${done ? "done" : ""}" data-day="${s.day - 1}">
+            <span class="day-number">${done ? "✓" : String(s.day).padStart(2, "0")}</span>
+            <span class="day-info">
+              <strong>${escapeHTML(s.title)}</strong>
+              <small>${escapeHTML(s.ref)}</small>
+            </span>
+            <span class="day-check">${done ? "✓" : "›"}</span>
+          </button>`;
+      }).join("");
+
+      document.querySelectorAll(".day-item").forEach(button => {
+        button.addEventListener("click", () => openStudy(Number(button.dataset.day)));
+      });
+
+      updateProgress();
+    }
+
+    function openStudy(index) {
+      current = Math.max(0, Math.min(studies.length - 1, index));
+      const s = studies[current];
+
+      $("homeView").classList.remove("active");
+      $("studyView").classList.add("active");
+
+      $("studyDayLabel").textContent = "DIA " + s.day;
+      $("studyWeek").textContent = s.week;
+      $("studyTitle").textContent = s.title;
+      $("studyReference").textContent = "Leitura bíblica: " + s.ref;
+      $("readingIntro").textContent = s.intro;
+      $("readingReference").textContent = s.ref;
+      $("contextText").textContent = s.context;
+
+      $("explanationText").innerHTML = s.points.map(point =>
+        `<div class="explain-point">${escapeHTML(point)}</div>`
+      ).join("");
+
+      $("applicationText").textContent = s.application;
+      $("memoryText").textContent = s.memory;
+      $("memoryReference").textContent = s.memoryRef;
+
+      $("questions").innerHTML = s.questions.map((question, index) =>
+        `<div class="question">${index + 1}. ${escapeHTML(question)}</div>`
+      ).join("");
+
+      $("prayerText").textContent = s.prayer;
+      $("notesInput").value = state.notes[s.day] || "";
+      $("completeBtn").textContent = state.done.includes(s.day)
+        ? "Estudo concluído ✓"
+        : "Marcar como concluído ✓";
+
+      $("prevBtn").disabled = current === 0;
+      $("nextBtn").disabled = current === studies.length - 1;
+      $("saveNotesBtn").textContent = "Salvar minhas anotações";
+
+      loadScripture(s);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    const BIBLE_API = "https://api.midvash.com/v1";
+    const BIBLE_VERSION = "almeida-livre";
+    const scriptureCache = new Map();
+    let scriptureRequest = 0;
+
+    async function loadScripture(study) {
+      const requestId = ++scriptureRequest;
+      const container = $("scriptureText");
+      const credit = $("scriptureCopyright");
+
+      container.innerHTML = "<p class='scripture-status'>Carregando o texto bíblico…</p>";
+      credit.textContent = "Texto bíblico: fonte externa. É necessária conexão com a internet.";
+
+      if (scriptureCache.has(study.ref)) {
+        if (requestId === scriptureRequest) renderScripture(scriptureCache.get(study.ref));
+        return;
+      }
+
+      try {
+        const match = study.ref.match(/^Filipenses\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+        if (!match) throw new Error("Referência bíblica não reconhecida.");
+
+        const chapter = Number(match[1]);
+        const start = match[2] ? Number(match[2]) : 1;
+        const end = match[3] ? Number(match[3]) : null;
+
+        const response = await fetch(`${BIBLE_API}/${BIBLE_VERSION}/philippians/${chapter}`);
+
+        if (!response.ok) throw new Error("Não foi possível consultar a fonte bíblica.");
+
+        const body = await response.json();
+        if (body.error) throw new Error(body.error.message || "Erro ao carregar a passagem.");
+
+        const data = body.data || body;
+        let verses = data.verses || [];
+
+        if (!Array.isArray(verses) || !verses.length) {
+          if (data.text) {
+            verses = data.text.split(/\n+/).filter(Boolean);
+          } else {
+            throw new Error("A fonte não retornou os versículos esperados.");
+          }
+        }
+
+        const normalized = verses.map((item, index) => {
+          if (typeof item === "string") return { number: index + 1, text: item };
+          return {
+            number: Number(item.verse || item.number || item.verseNumber || index + 1),
+            text: item.text || item.content || ""
+          };
+        }).filter(v => v.text);
+
+        const selected = normalized.filter(v =>
+          v.number >= start && (end === null || v.number <= end)
+        );
+
+        if (!selected.length) throw new Error("A passagem não foi encontrada nesta versão.");
+
+        const result = {
+          verses: selected,
+          reference: data.reference || study.ref,
+          copyright: body.meta?.copyright || "Texto fornecido por uma fonte bíblica externa."
+        };
+
+        scriptureCache.set(study.ref, result);
+
+        if (requestId === scriptureRequest) renderScripture(result);
+      } catch (error) {
+        if (requestId !== scriptureRequest) return;
+
+        container.innerHTML = `
+          <p class="scripture-error">
+            Não foi possível carregar o texto bíblico automaticamente.
+            Você pode consultar a referência indicada acima e tentar novamente.
+          </p>`;
+
+        const retry = document.createElement("button");
+        retry.className = "secondary-btn";
+        retry.textContent = "Tentar novamente";
+        retry.addEventListener("click", () => loadScripture(study));
+        container.appendChild(retry);
+
+        credit.textContent = "A leitura automática depende da disponibilidade da fonte externa.";
+        console.error("Erro ao carregar a passagem bíblica:", error);
+      }
+    }
+
+    function renderScripture(result) {
+      const container = $("scriptureText");
+
+      container.innerHTML = result.verses.map(verse => `
+        <div class="scripture-verse">
+          <sup>${escapeHTML(verse.number)}</sup>
+          <span>${escapeHTML(verse.text)}</span>
+        </div>
+      `).join("");
+
+      $("scriptureCopyright").textContent = result.copyright;
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function showHome() {
+      $("studyView").classList.remove("active");
+      $("homeView").classList.add("active");
+      renderDays();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    $("homeLink").addEventListener("click", event => {
+      event.preventDefault();
+      showHome();
+    });
+
+    $("backBtn").addEventListener("click", showHome);
+
+    $("continueBtn").addEventListener("click", () => {
+      const next = studies.findIndex(s => !state.done.includes(s.day));
+      openStudy(next < 0 ? studies.length - 1 : next);
+    });
+
+    $("prevBtn").addEventListener("click", () => openStudy(current - 1));
+    $("nextBtn").addEventListener("click", () => openStudy(current + 1));
+
+    $("completeBtn").addEventListener("click", () => {
+      const day = studies[current].day;
+
+      if (!state.done.includes(day)) {
+        state.done.push(day);
+        state.done.sort((a, b) => a - b);
+      }
+
+      persist();
+      $("completeBtn").textContent = "Estudo concluído ✓";
+      renderDays();
+    });
+
+    $("saveNotesBtn").addEventListener("click", () => {
+      const day = studies[current].day;
+      state.notes[day] = $("notesInput").value;
+      persist();
+      $("saveNotesBtn").textContent = "Anotações salvas ✓";
+    });
+
+    $("themeBtn").addEventListener("click", () => {
+      state.dark = !state.dark;
+      document.body.classList.toggle("dark", state.dark);
+      persist();
+    });
+
+    if (state.dark) document.body.classList.add("dark");
+
+    renderDays();
+  </script>
+</body>
+</html>

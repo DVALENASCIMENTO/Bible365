@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172b43">
+<meta name="description" content="Plano de estudo bíblico de 30 dias na Carta aos Romanos — Ministério Atalaia.">
+<title>Crescendo na Graça | Romanos — Ministério Atalaia</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+--navy:#172b43;
+--navy2:#203b59;
+--gold:#c6a15b;
+--paper:#f5f3ee;
+--card:#fff;
+--ink:#202a35;
+--muted:#77818b;
+--line:#e8e5dd;
+--soft:#f8f6f1;
+--green:#47745d;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:'DM Sans',sans-serif;
+line-height:1.6;
+}
+
+.topbar{
+height:66px;
+background:var(--navy);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 max(20px,calc((100% - 900px)/2));
+position:sticky;
+top:0;
+z-index:5;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+color:#fff;
+text-decoration:none;
+letter-spacing:.08em;
+font-size:11px;
+}
+
+.brand small{
+display:block;
+color:#d8c49b;
+font-size:9px;
+letter-spacing:.18em;
+}
+
+.brand-mark{
+color:var(--gold);
+font-size:27px;
+}
+
+.icon-btn{
+border:1px solid #53667b;
+color:white;
+background:transparent;
+border-radius:50%;
+width:38px;
+height:38px;
+font-size:20px;
+cursor:pointer;
+}
+
+main{
+max-width:900px;
+margin:auto;
+padding:26px 20px 60px;
+}
+
+.view{display:none}
+.view.active{display:block}
+
+.hero{
+background:linear-gradient(135deg,#172b43,#294764);
+border-radius:22px;
+padding:36px 32px;
+color:#fff;
+position:relative;
+overflow:hidden;
+box-shadow:0 12px 30px #172b431c;
+}
+
+.hero:after{
+content:"✦";
+position:absolute;
+right:28px;
+top:8px;
+font-size:140px;
+color:#ffffff0b;
+}
+
+.eyebrow,.section-kicker,.card-label{
+font-size:10px;
+letter-spacing:.17em;
+font-weight:700;
+color:var(--gold);
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+line-height:1.15;
+}
+
+.hero h1{
+font-size:clamp(34px,7vw,54px);
+margin:18px 0 12px;
+letter-spacing:.015em;
+}
+
+.hero h1 em{
+font-style:normal;
+color:#e0c27f;
+}
+
+.hero p{
+max-width:440px;
+color:#e0e6eb;
+margin-bottom:22px;
+}
+
+.hero-meta{
+font-size:10px;
+letter-spacing:.13em;
+color:#d8c49b;
+margin-bottom:22px;
+}
+
+.primary-btn,.secondary-btn{
+border:0;
+border-radius:10px;
+padding:13px 18px;
+font:700 13px 'DM Sans';
+cursor:pointer;
+}
+
+.primary-btn{
+background:var(--gold);
+color:#172b43;
+}
+
+.primary-btn span{margin-left:18px}
+
+.secondary-btn{
+background:#eae6dc;
+color:var(--navy);
+}
+
+.progress-card,.content-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:16px;
+padding:21px;
+margin-top:18px;
+}
+
+.progress-heading,.section-heading{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.progress-heading h2,.section-heading h2{
+font-size:22px;
+margin:3px 0;
+}
+
+.progress-heading strong{
+font-size:24px;
+color:var(--navy);
+}
+
+.progress-track{
+height:8px;
+background:#ece9e1;
+border-radius:10px;
+overflow:hidden;
+margin:13px 0 8px;
+}
+
+.progress-track span{
+display:block;
+height:100%;
+width:0;
+background:var(--green);
+border-radius:10px;
+transition:width .25s;
+}
+
+.progress-card p,.muted{
+color:var(--muted);
+font-size:12px;
+}
+
+.section-heading{margin:30px 0 12px}
+
+.day-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+}
+
+.day-item{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:13px;
+padding:14px;
+display:flex;
+align-items:center;
+gap:12px;
+text-align:left;
+cursor:pointer;
+color:var(--ink);
+width:100%;
+}
+
+.day-item:hover{border-color:var(--gold)}
+
+.day-number{
+width:38px;
+height:38px;
+border-radius:11px;
+background:#f0ede5;
+color:var(--navy);
+display:grid;
+place-items:center;
+font-weight:700;
+font-size:12px;
+flex-shrink:0;
+}
+
+.day-item.done .day-number{
+background:#e3eee7;
+color:var(--green);
+}
+
+.day-info strong{
+display:block;
+font-size:12px;
+}
+
+.day-info small{
+display:block;
+color:var(--muted);
+font-size:10px;
+margin-top:3px;
+}
+
+.day-check{
+margin-left:auto;
+color:var(--green);
+}
+
+footer{
+text-align:center;
+color:var(--muted);
+font-size:11px;
+padding:35px 0 10px;
+}
+
+.back-btn{
+border:0;
+background:transparent;
+color:var(--navy);
+font-weight:700;
+padding:5px 0 18px;
+cursor:pointer;
+}
+
+.study-topline{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.pill{
+background:#e8e1d2;
+color:#6e5528;
+border-radius:30px;
+padding:5px 11px;
+font-size:10px;
+font-weight:700;
+letter-spacing:.1em;
+}
+
+.study-title{
+font-size:clamp(30px,6vw,42px);
+margin:16px 0 5px;
+color:var(--navy);
+}
+
+.study-reference{
+color:var(--muted);
+margin:0 0 18px;
+}
+
+.study-content{max-width:720px}
+
+.content-card{
+padding:22px;
+margin:13px 0;
+}
+
+.content-card h2{
+font-size:21px;
+margin:7px 0 10px;
+color:var(--navy);
+}
+
+.content-card p{
+font-size:14px;
+margin:8px 0;
+}
+
+.reference-box{
+padding:12px 14px;
+background:var(--soft);
+border-left:3px solid var(--gold);
+font-weight:700;
+color:var(--navy);
+margin:12px 0;
+}
+
+.content-card label{
+display:block;
+font-size:12px;
+font-weight:700;
+margin:16px 0 7px;
+color:var(--navy);
+}
+
+textarea{
+width:100%;
+resize:vertical;
+border:1px solid var(--line);
+border-radius:10px;
+padding:12px;
+font:13px/1.6 'DM Sans';
+background:#fff;
+color:#202a35;
+}
+
+textarea:focus{
+outline:2px solid #c6a15b66;
+border-color:var(--gold);
+}
+
+.tiny-note{
+font-size:10px!important;
+color:var(--muted);
+}
+
+.explain-point{
+padding:10px 0;
+border-bottom:1px solid var(--line);
+font-size:14px;
+}
+
+.explain-point:last-child{border:0}
+
+.memory-verse{
+font-family:'Playfair Display',serif;
+font-size:18px!important;
+color:var(--navy);
+}
+
+.scripture-text{
+background:var(--soft);
+border:1px solid var(--line);
+border-radius:12px;
+padding:14px 16px;
+margin:14px 0;
+}
+
+.scripture-verse{
+display:grid;
+grid-template-columns:25px 1fr;
+gap:8px;
+padding:7px 0;
+border-bottom:1px solid var(--line);
+font-size:14px;
+line-height:1.75;
+}
+
+.scripture-verse:last-child{border:0}
+
+.scripture-verse sup{
+color:#9a793d;
+font-weight:700;
+font-size:10px;
+padding-top:3px;
+}
+
+.scripture-status{
+color:var(--muted);
+font-size:12px;
+}
+
+.scripture-error{
+color:#a33b32;
+font-size:13px;
+}
+
+.dark .scripture-text{background:#26394c}
+
+.verse-ref{
+font-size:11px;
+color:#8a6b32;
+font-weight:700;
+}
+
+.question{
+font-size:13px;
+font-weight:600;
+margin:13px 0 5px;
+}
+
+.prayer-card{background:#f0eee7}
+
+.study-actions{
+display:flex;
+gap:8px;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+margin-top:18px;
+}
+
+.study-actions .primary-btn{flex:1}
+
+.dark{
+--paper:#101b28;
+--card:#1b2b3b;
+--ink:#edf0f2;
+--muted:#aab4bd;
+--line:#344454;
+--soft:#243649;
+}
+
+.dark .day-item,.dark textarea{
+background:#1b2b3b;
+color:#edf0f2;
+}
+
+.dark .day-number{
+background:#2b4054;
+color:#e4c987;
+}
+
+.dark .content-card h2,
+.dark .study-title,
+.dark .reference-box{
+color:#e7d3a5;
+}
+
+.dark .reference-box,.dark .prayer-card{
+background:#26394c;
+}
+
+.dark .secondary-btn{
+background:#34485b;
+color:#fff;
+}
+
+.dark .progress-track{background:#344454}
+
+@media(max-width:560px){
+main{padding:17px 14px 40px}
+.hero{padding:28px 22px}
+.day-list{grid-template-columns:1fr}
+.progress-card,.content-card{padding:17px}
+.study-actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+.study-actions .primary-btn{
+grid-column:1/-1;
+grid-row:1;
+}
+.study-actions #prevBtn{grid-column:1}
+.study-actions #nextBtn{grid-column:2}
+.hero h1{font-size:37px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+<a class="brand" href="#" id="homeLink" aria-label="Início">
+<span class="brand-mark">✦</span>
+<span>
+<strong>MINISTÉRIO ATALAIA</strong>
+<small>ESCOLA BÍBLICA</small>
+</span>
+</a>
+<button class="icon-btn" id="themeBtn" aria-label="Alternar tema">◐</button>
+</header>
+
+<main>
+
+<section id="homeView" class="view active">
+
+<section class="hero">
+<div class="eyebrow">GUIA DE ESTUDO BÍBLICO • 30 DIAS</div>
+<h1>CRESCENDO<br><em>NA GRAÇA</em></h1>
+<p>Uma jornada de 30 estudos pela Carta aos Romanos, compreendendo o Evangelho, a justificação pela fé e a nova vida em Cristo.</p>
+<div class="hero-meta">CARTA AOS ROMANOS • ALMEIDA 1819</div>
+<button class="primary-btn" id="continueBtn">Continuar minha jornada <span>→</span></button>
+</section>
+
+<section class="progress-card">
+<div class="progress-heading">
+<div>
+<span class="section-kicker">SUA CAMINHADA</span>
+<h2>Seu progresso</h2>
+</div>
+<strong id="progressPercent">0%</strong>
+</div>
+<div class="progress-track"><span id="progressBar"></span></div>
+<p id="progressText">Você ainda não concluiu nenhum estudo. Comece pelo Dia 1.</p>
+</section>
+
+<div class="section-heading">
+<div>
+<span class="section-kicker">PLANO DE LEITURA</span>
+<h2>30 dias com Romanos</h2>
+</div>
+<span class="muted">30 estudos</span>
+</div>
+
+<div id="dayList" class="day-list"></div>
+
+<footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+</section>
+
+<section id="studyView" class="view">
+
+<button class="back-btn" id="backBtn">← Voltar ao plano</button>
+
+<div class="study-topline">
+<span id="studyDayLabel" class="pill">DIA 1</span>
+<span id="studyWeek" class="muted"></span>
+</div>
+
+<h1 id="studyTitle" class="study-title"></h1>
+<p id="studyReference" class="study-reference"></p>
+
+<div class="study-content">
+
+<article class="content-card scripture-card">
+<div class="card-label">01 • LEITURA BÍBLICA</div>
+<h2>Texto bíblico</h2>
+<p id="readingIntro"></p>
+<div class="reference-box" id="readingReference"></div>
+<div id="scriptureText" class="scripture-text" aria-live="polite">
+<p>O texto bíblico será carregado automaticamente.</p>
+</div>
+<p id="scriptureCopyright" class="tiny-note">Texto bíblico: Bíblia Livre (Almeida 1819), disponibilizada pela API Midvash. Requer conexão com a internet.</p>
+</article>
+
+<article class="content-card">
+<div class="card-label">02 • CONTEXTO</div>
+<h2>Entendendo o contexto</h2>
+<p id="contextText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+<h2>O que o texto ensina?</h2>
+<div id="explanationText"></div>
+</article>
+
+<article class="content-card">
+<div class="card-label">04 • PARA A VIDA</div>
+<h2>Aplicação prática</h2>
+<p id="applicationText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">05 • MEMORIZAÇÃO</div>
+<h2>Versículo para guardar</h2>
+<p id="memoryText" class="memory-verse"></p>
+<span id="memoryReference" class="verse-ref"></span>
+</article>
+
+<article class="content-card">
+<div class="card-label">06 • REFLEXÃO</div>
+<h2>Pense e responda</h2>
+<div id="questions"></div>
+<label for="notesInput">Minhas anotações</label>
+<textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+<button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+</article>
+
+<article class="content-card prayer-card">
+<div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+<h2>Ore ao Senhor</h2>
+<p id="prayerText"></p>
+</article>
+
+</div>
+
+<div class="study-actions">
+<button class="secondary-btn" id="prevBtn">← Anterior</button>
+<button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+<button class="secondary-btn" id="nextBtn">Próximo →</button>
+</div>
+
+</section>
+</main>
+
+<script>
+
+const studies = [
+
+{
+day:1,
+title:"O Evangelho de Deus",
+ref:"Romanos 1:1-17",
+week:"Semana 1 • A revelação do Evangelho",
+intro:"Leia Romanos 1:1-17. Observe como Paulo apresenta sua missão, a origem divina do Evangelho e a necessidade de viver pela fé.",
+context:"Paulo escreve aos cristãos que estavam em Roma. Antes de tratar dos grandes temas da salvação, apresenta sua identidade como servo de Jesus Cristo e apóstolo chamado para anunciar o Evangelho de Deus. A mensagem não é uma invenção humana: foi prometida nas Escrituras e tem Jesus Cristo como centro.",
+points:[
+"Paulo se apresenta como servo de Jesus Cristo e chamado para o apostolado.",
+"O Evangelho de Deus havia sido prometido anteriormente pelos profetas nas Escrituras.",
+"Jesus Cristo é o centro da mensagem: descendente de Davi segundo a carne e declarado Filho de Deus em poder pela ressurreição.",
+"Paulo reconhece que recebeu a graça e o apostolado para conduzir pessoas à obediência da fé.",
+"O Evangelho é o poder de Deus para salvação de todo aquele que crê, primeiro do judeu e também do grego.",
+"A justiça de Deus se revela no Evangelho, e o justo viverá pela fé."
+],
+application:"O Evangelho não deve ser tratado como uma filosofia humana ou apenas como uma tradição religiosa. É a mensagem de Deus sobre seu Filho. Conhecer Romanos começa reconhecendo que a salvação vem de Deus e é recebida pela fé.",
+memory:"O justo viverá da fé.",
+memoryRef:"Romanos 1:17",
+questions:[
+"Como Paulo se apresenta no início da carta?",
+"Quem é o centro do Evangelho anunciado por Paulo?",
+"O que significa dizer que o Evangelho é o poder de Deus para salvação?",
+"Por que a fé é fundamental na vida cristã?"
+],
+prayer:"Senhor Deus, ajuda-me a compreender o teu Evangelho. Que minha fé esteja firmada em Jesus Cristo e que minha vida demonstre obediência à tua Palavra. Amém."
+},
+
+{
+day:2,
+title:"A humanidade sem Deus",
+ref:"Romanos 1:18-32",
+week:"Semana 1 • A condição humana",
+intro:"Leia Romanos 1:18-32. Observe como Paulo descreve a rejeição da verdade de Deus e suas consequências.",
+context:"Depois de apresentar o poder salvador do Evangelho, Paulo mostra por que a humanidade necessita dessa salvação. O texto descreve pessoas que tiveram conhecimento suficiente da revelação de Deus na criação, mas não o glorificaram nem lhe deram graças.",
+points:[
+"A ira de Deus se manifesta contra a impiedade e a injustiça humanas.",
+"A criação testemunha o poder e a natureza divina do Criador.",
+"Conhecer a existência de Deus não significa necessariamente honrá-lo ou obedecer-lhe.",
+"A humanidade trocou a glória do Criador por imagens e coisas criadas.",
+"A rejeição de Deus produz desordem nos pensamentos, desejos e relacionamentos.",
+"Paulo descreve uma sociedade que não apenas pratica o mal, mas também aprova a prática do pecado."
+],
+application:"O texto nos chama a reconhecer a seriedade do pecado e a necessidade de voltar ao Criador. Em vez de justificar atitudes erradas, devemos examinar nossa vida diante da verdade de Deus.",
+memory:"Porquanto, tendo conhecido a Deus, não o glorificaram como Deus, nem lhe deram graças.",
+memoryRef:"Romanos 1:21",
+questions:[
+"O que a criação revela sobre Deus?",
+"Qual foi a atitude da humanidade diante do conhecimento de Deus?",
+"Quais são algumas consequências da rejeição da verdade?",
+"Como podemos honrar o Criador em nossa vida diária?"
+],
+prayer:"Senhor, livra-me de uma vida distante de ti. Ensina-me a reconhecer tua grandeza, honrar teu nome e viver de acordo com tua verdade. Amém."
+},
+
+{
+day:3,
+title:"Deus julga com justiça",
+ref:"Romanos 2:1-16",
+week:"Semana 1 • A condição humana",
+intro:"Leia Romanos 2:1-16. Observe o ensino sobre o julgamento justo de Deus e a responsabilidade de cada pessoa.",
+context:"Paulo volta sua atenção à pessoa que condena os outros, mas pratica coisas semelhantes. O conhecimento religioso não coloca ninguém acima do julgamento de Deus. O Senhor julga com justiça, sem parcialidade.",
+points:[
+"Quem julga o outro também precisa examinar a própria conduta.",
+"A bondade e a paciência de Deus devem conduzir ao arrependimento.",
+"Deus julga cada pessoa segundo a verdade, sem favoritismo.",
+"Ouvir a lei não é o mesmo que praticá-la.",
+"A consciência humana testemunha sobre a responsabilidade moral.",
+"O julgamento de Deus alcança também as intenções e os segredos do coração."
+],
+application:"Não use a Bíblia apenas para apontar os erros de outras pessoas. Permita que a Palavra examine sua própria vida. A resposta correta diante da paciência de Deus é arrependimento sincero.",
+memory:"A benignidade de Deus te leva ao arrependimento.",
+memoryRef:"Romanos 2:4",
+questions:[
+"Por que não devemos julgar os outros com hipocrisia?",
+"Qual deve ser nossa resposta à bondade de Deus?",
+"Deus julga com parcialidade?",
+"Por que ouvir a Palavra não é suficiente?"
+],
+prayer:"Pai, examina meu coração. Livra-me da hipocrisia e conduz-me ao arrependimento verdadeiro. Que eu pratique aquilo que aprendo em tua Palavra. Amém."
+},
+
+{
+day:4,
+title:"A verdadeira condição religiosa",
+ref:"Romanos 2:17-29",
+week:"Semana 1 • A condição humana",
+intro:"Leia Romanos 2:17-29. Observe a diferença entre aparência religiosa e transformação interior.",
+context:"Paulo dirige-se à pessoa que se orgulha de conhecer a lei e ensinar os outros. O problema não está em possuir a lei, mas em não praticá-la. A verdadeira identidade do povo de Deus não pode ser reduzida a sinais exteriores.",
+points:[
+"Conhecer a lei aumenta a responsabilidade de quem a recebeu.",
+"Ensinar outras pessoas exige coerência entre palavras e atitudes.",
+"A desobediência pode fazer com que o nome de Deus seja desonrado.",
+"A verdadeira transformação não é apenas exterior.",
+"A circuncisão física tinha significado na aliança, mas Paulo destaca a importância da realidade interior.",
+"O louvor verdadeiro vem de Deus, e não da aprovação humana."
+],
+application:"A vida cristã não deve ser construída sobre aparência, títulos ou reconhecimento. Deus deseja sinceridade, obediência e transformação no coração.",
+memory:"A circuncisão é a do coração, no espírito, e não na letra.",
+memoryRef:"Romanos 2:29",
+questions:[
+"Qual é o perigo de ensinar sem praticar?",
+"O que Paulo ensina sobre a aparência religiosa?",
+"O que significa ter o coração transformado?",
+"De quem devemos buscar aprovação?"
+],
+prayer:"Senhor, transforma meu interior. Que minhas atitudes confirmem aquilo que professo com meus lábios. Amém."
+},
+
+{
+day:5,
+title:"Todos estão debaixo do pecado",
+ref:"Romanos 3:1-20",
+week:"Semana 1 • A condição humana",
+intro:"Leia Romanos 3:1-20. Observe como Paulo demonstra que judeus e gentios estão igualmente necessitados da graça de Deus.",
+context:"Paulo reúne os argumentos anteriores para mostrar que todos estão debaixo do pecado. As vantagens recebidas por Israel não anulam a responsabilidade humana. A lei revela o pecado, mas não pode justificar o pecador diante de Deus.",
+points:[
+"Deus permanece fiel mesmo quando seres humanos demonstram infidelidade.",
+"Nenhuma vantagem religiosa elimina a necessidade de prestar contas a Deus.",
+"Paulo reúne textos do Antigo Testamento para demonstrar a universalidade do pecado.",
+"Não existe ser humano naturalmente justo diante de Deus.",
+"A lei revela o conhecimento do pecado, mas não oferece justificativa por mérito humano.",
+"Toda a humanidade precisa reconhecer sua necessidade de salvação."
+],
+application:"Reconhecer o pecado não deve produzir desespero, mas humildade diante de Deus. Ninguém pode se apresentar como superior aos demais. Todos necessitam da graça divina.",
+memory:"Não há um justo, nem um sequer.",
+memoryRef:"Romanos 3:10",
+questions:[
+"Qual era a vantagem dos judeus mencionada por Paulo?",
+"Deus deixa de ser fiel quando o ser humano é infiel?",
+"O que a lei revela sobre o pecado?",
+"Por que todos necessitam da graça de Deus?"
+],
+prayer:"Deus santo, reconheço que preciso de tua graça. Livra-me do orgulho e ajuda-me a confiar na salvação que vem de ti. Amém."
+},
+
+{
+day:6,
+title:"A justificação pela fé",
+ref:"Romanos 3:21-31",
+week:"Semana 1 • A graça de Deus",
+intro:"Leia Romanos 3:21-31. Este é um dos textos centrais da carta: observe como Deus oferece justiça por meio da fé em Jesus Cristo.",
+context:"Depois de demonstrar que todos pecaram, Paulo apresenta a justiça de Deus manifestada independentemente das obras da lei. A salvação é oferecida gratuitamente pela graça, mediante a redenção realizada em Cristo Jesus.",
+points:[
+"A justiça de Deus foi manifestada e testemunhada pela Lei e pelos Profetas.",
+"Todos pecaram e estão destituídos da glória de Deus.",
+"A justificação é oferecida gratuitamente pela graça de Deus.",
+"A redenção está em Cristo Jesus.",
+"A fé em Jesus é o meio pelo qual recebemos a justificação.",
+"Ninguém pode se gloriar diante de Deus como se tivesse conquistado a salvação por mérito próprio."
+],
+application:"A salvação não é um prêmio conquistado por boas obras. As boas obras são fruto de uma vida alcançada pela graça. Receba a justificação pela fé e viva em gratidão a Cristo.",
+memory:"Sendo justificados gratuitamente pela sua graça, pela redenção que há em Cristo Jesus.",
+memoryRef:"Romanos 3:24",
+questions:[
+"O que significa ser justificado?",
+"Por que ninguém pode se gloriar diante de Deus?",
+"Qual é o papel da graça na salvação?",
+"Qual é a relação entre fé e justificação?"
+],
+prayer:"Pai, obrigado pela graça revelada em Jesus Cristo. Ajuda-me a viver pela fé, sem confiar em meus próprios méritos. Amém."
+},
+
+{
+day:7,
+title:"Abraão: exemplo de fé",
+ref:"Romanos 4:1-12",
+week:"Semana 1 • A graça de Deus",
+intro:"Leia Romanos 4:1-12. Observe como Paulo usa a vida de Abraão para explicar a justificação pela fé.",
+context:"Paulo recorre à história de Abraão, personagem fundamental das Escrituras judaicas. Antes de apresentar qualquer obra como fundamento da justificação, o apóstolo lembra que Abraão creu em Deus, e isso lhe foi imputado como justiça.",
+points:[
+"Abraão não recebeu justificação como pagamento por obras.",
+"A justiça lhe foi imputada porque creu em Deus.",
+"Paulo utiliza o testemunho de Davi para mostrar a bênção do perdão.",
+"A justificação não depende de um sinal religioso exterior.",
+"Abraão foi considerado justo antes da circuncisão.",
+"A fé de Abraão torna-se exemplo para todos os que creem."
+],
+application:"A fé verdadeira confia na promessa de Deus. Não transforme práticas religiosas em motivo de orgulho. Os sinais exteriores devem acompanhar uma realidade de confiança e obediência ao Senhor.",
+memory:"Abraão creu em Deus, e isso lhe foi imputado como justiça.",
+memoryRef:"Romanos 4:3",
+questions:[
+"Como Abraão foi considerado justo?",
+"Qual é a diferença entre salário e graça?",
+"Por que Paulo menciona Davi?",
+"O que a história de Abraão ensina sobre a fé?"
+],
+prayer:"Senhor, ensina-me a confiar em tuas promessas como Abraão confiou. Que minha fé seja sincera e perseverante. Amém."
+},
+
+{
+day:8,
+title:"A promessa recebida pela fé",
+ref:"Romanos 4:13-25",
+week:"Semana 2 • Vivendo pela fé",
+intro:"Leia Romanos 4:13-25. Observe a confiança de Abraão diante de circunstâncias que pareciam impossíveis.",
+context:"Paulo explica que a promessa feita a Abraão não foi recebida por meio da lei, mas pela justiça da fé. Abraão creu no Deus que vivifica os mortos e chama à existência as coisas que não existem.",
+points:[
+"A promessa não depende da observância da lei como mérito humano.",
+"A herança é recebida pela fé, segundo a graça.",
+"A lei pode evidenciar a transgressão, mas não é a base da promessa.",
+"Abraão enfrentou circunstâncias humanamente impossíveis.",
+"Sua fé estava firmada no poder e na fidelidade de Deus.",
+"O exemplo de Abraão aponta para a fé naquele que ressuscitou Jesus dentre os mortos."
+],
+application:"A fé não significa negar a realidade das dificuldades. Significa confiar no caráter e no poder de Deus mesmo quando as circunstâncias parecem contrárias à promessa.",
+memory:"E não duvidou da promessa de Deus por incredulidade, mas foi fortificado na fé.",
+memoryRef:"Romanos 4:20",
+questions:[
+"Por que a promessa é recebida pela fé?",
+"Como Abraão reagiu diante das circunstâncias?",
+"Em quem a fé de Abraão estava firmada?",
+"Como esse exemplo pode fortalecer sua confiança em Deus?"
+],
+prayer:"Deus fiel, fortalece minha fé. Ajuda-me a confiar em tuas promessas mesmo quando não consigo compreender as circunstâncias. Amém."
+},
+
+{
+day:9,
+title:"Paz com Deus por meio de Cristo",
+ref:"Romanos 5:1-11",
+week:"Semana 2 • Vivendo pela fé",
+intro:"Leia Romanos 5:1-11. Observe os benefícios da justificação e o amor de Deus demonstrado na morte de Cristo.",
+context:"Depois de explicar a justificação pela fé, Paulo apresenta seus resultados: paz com Deus, acesso à graça e esperança da glória. A segurança cristã está fundamentada no amor de Deus demonstrado quando Cristo morreu pelos pecadores.",
+points:[
+"A justificação pela fé produz paz com Deus por meio de Jesus Cristo.",
+"Por Cristo, o cristão tem acesso à graça na qual permanece.",
+"A esperança da glória sustenta o cristão mesmo em meio às tribulações.",
+"A tribulação pode produzir perseverança, experiência e esperança.",
+"O amor de Deus é derramado no coração pelo Espírito Santo.",
+"Cristo morreu por nós quando ainda éramos pecadores."
+],
+application:"A paz com Deus não depende de uma vida sem dificuldades. Ela nasce da reconciliação realizada por Cristo. Em tempos difíceis, lembre-se de que o amor de Deus foi demonstrado na cruz.",
+memory:"Deus prova o seu amor para conosco em que Cristo morreu por nós, sendo nós ainda pecadores.",
+memoryRef:"Romanos 5:8",
+questions:[
+"Quais benefícios Paulo relaciona à justificação?",
+"Como a tribulação pode produzir perseverança?",
+"Quando Cristo morreu por nós?",
+"Em que está fundamentada a esperança cristã?"
+],
+prayer:"Pai, obrigado porque Cristo morreu por nós. Fortalece minha esperança e ajuda-me a permanecer firme na graça. Amém."
+},
+
+{
+day:10,
+title:"Adão e Cristo",
+ref:"Romanos 5:12-21",
+week:"Semana 2 • Vivendo pela fé",
+intro:"Leia Romanos 5:12-21. Observe o contraste entre a desobediência de Adão e a obediência de Jesus Cristo.",
+context:"Paulo apresenta Adão como figura daquele que havia de vir. Por meio de um homem entrou o pecado no mundo, e por meio da obra de Cristo é oferecida a graça que conduz à justificação e à vida.",
+points:[
+"O pecado entrou no mundo por meio de um homem, e a morte veio pelo pecado.",
+"A morte alcançou a humanidade, revelando a extensão do problema do pecado.",
+"A transgressão de Adão e o dom gratuito de Cristo produzem resultados contrastantes.",
+"A graça de Deus é maior que a transgressão humana.",
+"Jesus Cristo é apresentado como aquele por meio de quem a graça reina para a vida eterna.",
+"A obediência de Cristo ocupa lugar central na obra da salvação."
+],
+application:"Nossa esperança não está em nossa capacidade de corrigir o passado, mas na obra de Cristo. A graça de Deus oferece uma nova realidade para aqueles que recebem o dom da justiça.",
+memory:"Onde o pecado abundou, superabundou a graça.",
+memoryRef:"Romanos 5:20",
+questions:[
+"Como o pecado entrou no mundo?",
+"Qual é o contraste entre Adão e Cristo?",
+"O que significa dizer que a graça superabundou?",
+"Em quem está nossa esperança de vida eterna?"
+],
+prayer:"Senhor, obrigado pela graça que nos alcança por meio de Jesus. Ajuda-me a viver debaixo do teu governo e da tua justiça. Amém."
+},
+
+{
+day:11,
+title:"Mortos para o pecado",
+ref:"Romanos 6:1-14",
+week:"Semana 2 • A nova vida",
+intro:"Leia Romanos 6:1-14. Observe como a união com Cristo transforma a relação do cristão com o pecado.",
+context:"Paulo responde a uma possível distorção da mensagem da graça: se a graça aumenta onde o pecado abundou, o cristão poderia continuar pecando? O apóstolo rejeita essa conclusão e explica a união do crente com Cristo em sua morte e ressurreição.",
+points:[
+"A graça não é autorização para permanecer na prática do pecado.",
+"O batismo representa a identificação do cristão com a morte de Cristo.",
+"Assim como Cristo ressuscitou, o cristão é chamado a andar em novidade de vida.",
+"O velho homem foi crucificado com Cristo para que o domínio do pecado seja quebrado.",
+"O cristão deve considerar-se morto para o pecado e vivo para Deus.",
+"Os membros do corpo devem ser apresentados a Deus como instrumentos de justiça."
+],
+application:"A graça que salva também nos chama a uma vida transformada. Não use o perdão como desculpa para permanecer no pecado. Apresente diariamente sua vida a Deus.",
+memory:"Assim andemos nós também em novidade de vida.",
+memoryRef:"Romanos 6:4",
+questions:[
+"Por que a graça não é uma autorização para pecar?",
+"O que significa andar em novidade de vida?",
+"Como o cristão deve considerar sua relação com o pecado?",
+"De que maneira podemos apresentar nossa vida a Deus?"
+],
+prayer:"Senhor Jesus, ajuda-me a viver em novidade de vida. Que o pecado não domine minhas escolhas e que meus atos glorifiquem a Deus. Amém."
+},
+
+{
+day:12,
+title:"Servos da justiça",
+ref:"Romanos 6:15-23",
+week:"Semana 2 • A nova vida",
+intro:"Leia Romanos 6:15-23. Observe o contraste entre a escravidão do pecado e a vida de obediência a Deus.",
+context:"Paulo continua mostrando que a graça não conduz à indiferença moral. A pessoa se torna serva daquele a quem obedece. O apóstolo contrasta os resultados do serviço ao pecado com o fruto de uma vida entregue a Deus.",
+points:[
+"Estar debaixo da graça não significa viver sem responsabilidade.",
+"A obediência revela a quem a pessoa está servindo.",
+"A escravidão ao pecado conduz à morte.",
+"A obediência a Deus conduz a uma vida de justiça.",
+"A santificação é apresentada como fruto de uma vida entregue a Deus.",
+"O dom gratuito de Deus é a vida eterna em Cristo Jesus."
+],
+application:"Observe quais hábitos e escolhas estão governando sua vida. O cristão é chamado a abandonar o domínio do pecado e apresentar-se a Deus em obediência.",
+memory:"O salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna.",
+memoryRef:"Romanos 6:23",
+questions:[
+"O que significa ser servo da justiça?",
+"Quais são os resultados do serviço ao pecado?",
+"O que Paulo ensina sobre santificação?",
+"Por que a vida eterna é chamada de dom gratuito?"
+],
+prayer:"Pai, quero servir à tua justiça. Dá-me força para abandonar o pecado e viver em obediência à tua vontade. Amém."
+},
+
+{
+day:13,
+title:"A lei e o pecado",
+ref:"Romanos 7:1-13",
+week:"Semana 2 • A luta espiritual",
+intro:"Leia Romanos 7:1-13. Observe como Paulo explica a relação entre a lei, o pecado e a consciência da transgressão.",
+context:"Paulo utiliza a figura do casamento para explicar que a morte altera a relação com a lei. Ele esclarece que a lei não é pecado; ela revela o pecado e mostra a gravidade da transgressão.",
+points:[
+"A lei exerce autoridade sobre a pessoa enquanto ela vive.",
+"Paulo utiliza uma ilustração de casamento para explicar a mudança de relação com a lei.",
+"Por meio do corpo de Cristo, o cristão pertence àquele que ressuscitou.",
+"A lei não é pecado; ela revela o pecado.",
+"O mandamento torna evidente a transgressão.",
+"O pecado utiliza o mandamento para manifestar sua natureza destrutiva."
+],
+application:"A Palavra de Deus revela aquilo que precisa ser tratado em nosso coração. Não culpe a verdade por mostrar o pecado. Receba a correção e busque uma vida de obediência.",
+memory:"A lei é santa; e o mandamento, santo, justo e bom.",
+memoryRef:"Romanos 7:12",
+questions:[
+"Qual é a função da lei neste texto?",
+"A lei é apresentada como pecado?",
+"Como o pecado utiliza o mandamento?",
+"Por que precisamos da graça de Deus?"
+],
+prayer:"Senhor, dá-me humildade para reconhecer o pecado quando tua Palavra o revela. Conduze-me à obediência e à dependência de tua graça. Amém."
+},
+
+{
+day:14,
+title:"A luta contra o pecado",
+ref:"Romanos 7:14-25",
+week:"Semana 2 • A luta espiritual",
+intro:"Leia Romanos 7:14-25. Observe a descrição do conflito entre o desejo de fazer o bem e a presença do pecado.",
+context:"Paulo descreve um conflito profundo entre o reconhecimento do que é bom e a incapacidade humana de vencer o pecado por suas próprias forças. O texto termina apontando para a libertação por meio de Jesus Cristo.",
+points:[
+"A lei é espiritual, mas o ser humano é apresentado como vendido sob o pecado.",
+"O texto descreve o conflito entre querer fazer o bem e praticar o mal.",
+"O pecado é apresentado como uma força que atua na natureza humana.",
+"O reconhecimento do conflito não deve conduzir à acomodação.",
+"A pergunta sobre quem pode libertar o ser humano aponta para a necessidade de Cristo.",
+"Paulo agradece a Deus por Jesus Cristo, nosso Senhor."
+],
+application:"Reconheça suas lutas sem fazer do pecado uma desculpa. A vitória não vem da autoconfiança, mas da dependência de Deus e da obra de Jesus Cristo.",
+memory:"Dou graças a Deus por Jesus Cristo, nosso Senhor.",
+memoryRef:"Romanos 7:25",
+questions:[
+"Qual conflito Paulo descreve?",
+"Por que a força humana é insuficiente para vencer o pecado?",
+"Quem é apresentado como aquele que pode libertar?",
+"Como devemos responder às nossas lutas espirituais?"
+],
+prayer:"Senhor Jesus, reconheço minha necessidade de ti. Ajuda-me a vencer o pecado e a depender diariamente da tua graça. Amém."
+},
+
+{
+day:15,
+title:"Nenhuma condenação em Cristo",
+ref:"Romanos 8:1-11",
+week:"Semana 3 • A vida no Espírito",
+intro:"Leia Romanos 8:1-11. Observe a segurança daqueles que estão em Cristo e a obra do Espírito Santo.",
+context:"Depois de apresentar o conflito com o pecado, Paulo anuncia uma verdade central: não há condenação para os que estão em Cristo Jesus. A nova vida é marcada pela atuação do Espírito, que liberta do domínio do pecado e da morte.",
+points:[
+"Não há condenação para os que estão em Cristo Jesus.",
+"A lei do Espírito da vida liberta do domínio do pecado e da morte.",
+"A lei não podia produzir justiça por causa da fraqueza humana.",
+"Deus enviou seu próprio Filho para tratar do pecado.",
+"A inclinação da carne e a inclinação do Espírito produzem resultados diferentes.",
+"O Espírito de Deus habita nos que pertencem a Cristo."
+],
+application:"A segurança do cristão está em Cristo, não em sua própria perfeição. Viva segundo o Espírito, permitindo que a Palavra de Deus oriente seus pensamentos e atitudes.",
+memory:"Portanto, agora, nenhuma condenação há para os que estão em Cristo Jesus.",
+memoryRef:"Romanos 8:1",
+questions:[
+"Para quem não há condenação?",
+"O que o Espírito realiza na vida do cristão?",
+"Qual é a diferença entre a inclinação da carne e a do Espírito?",
+"Em quem está a segurança do cristão?"
+],
+prayer:"Pai, obrigado pela segurança que temos em Cristo. Enche minha vida com teu Espírito e guia meus pensamentos e atitudes. Amém."
+},
+
+{
+day:16,
+title:"Filhos de Deus e herdeiros",
+ref:"Romanos 8:12-17",
+week:"Semana 3 • A vida no Espírito",
+intro:"Leia Romanos 8:12-17. Observe a identidade dos filhos de Deus e o testemunho do Espírito Santo.",
+context:"Paulo apresenta a nova identidade daqueles que são conduzidos pelo Espírito de Deus. O cristão não vive mais como escravo do medo, mas recebeu o Espírito de adoção, pelo qual clama: Aba, Pai.",
+points:[
+"O cristão não tem obrigação de viver segundo a carne.",
+"Os que são guiados pelo Espírito de Deus são filhos de Deus.",
+"O Espírito recebido não é de escravidão para viver novamente com medo.",
+"O Espírito de adoção permite clamar: Aba, Pai.",
+"O próprio Espírito testifica com o nosso espírito que somos filhos de Deus.",
+"Os filhos de Deus são apresentados como herdeiros e participantes da esperança em Cristo."
+],
+application:"A identidade cristã não está baseada no medo, mas no relacionamento com Deus por meio de Cristo. Viva como filho, com confiança, reverência e obediência ao Pai.",
+memory:"Porque todos os que são guiados pelo Espírito de Deus, esses são filhos de Deus.",
+memoryRef:"Romanos 8:14",
+questions:[
+"Quem são os filhos de Deus segundo Paulo?",
+"O que significa o Espírito de adoção?",
+"O que o Espírito testifica ao cristão?",
+"Como a identidade de filho deve influenciar nossa vida?"
+],
+prayer:"Aba, Pai, obrigado por me receberes em Cristo. Ajuda-me a viver como teu filho, guiado pelo Espírito e firmado em tua Palavra. Amém."
+},
+
+{
+day:17,
+title:"A glória futura",
+ref:"Romanos 8:18-27",
+week:"Semana 3 • A esperança cristã",
+intro:"Leia Romanos 8:18-27. Observe a esperança da glória futura e o auxílio do Espírito em nossas fraquezas.",
+context:"Paulo reconhece que o sofrimento presente é real, mas não pode ser comparado à glória que será revelada. A criação aguarda a redenção, e os cristãos esperam a consumação da salvação.",
+points:[
+"Os sofrimentos do tempo presente não se comparam à glória futura.",
+"A criação aguarda a manifestação dos filhos de Deus.",
+"A esperança cristã aponta para uma realidade que ainda não vemos plenamente.",
+"Esperar exige perseverança.",
+"O Espírito Santo auxilia nossas fraquezas.",
+"Quando não sabemos orar como convém, o Espírito intercede segundo a vontade de Deus."
+],
+application:"Não interprete o sofrimento como ausência de Deus. A esperança cristã aponta para a glória futura e nos fortalece a perseverar enquanto aguardamos a redenção.",
+memory:"O mesmo Espírito intercede por nós com gemidos inexprimíveis.",
+memoryRef:"Romanos 8:26",
+questions:[
+"Como Paulo compara o sofrimento presente e a glória futura?",
+"O que a criação aguarda?",
+"Por que a esperança exige perseverança?",
+"Como o Espírito nos auxilia em nossas fraquezas?"
+],
+prayer:"Espírito Santo, ajuda-me em minhas fraquezas. Fortalece minha esperança e ensina-me a perseverar enquanto aguardo a glória que será revelada. Amém."
+},
+
+{
+day:18,
+title:"Todas as coisas cooperam para o bem",
+ref:"Romanos 8:28-30",
+week:"Semana 3 • A esperança cristã",
+intro:"Leia Romanos 8:28-30. Observe o propósito de Deus para aqueles que o amam e são chamados segundo seu propósito.",
+context:"Paulo apresenta a segurança dos que pertencem a Deus. O propósito divino não se limita ao conforto imediato, mas está relacionado à conformidade com a imagem de seu Filho.",
+points:[
+"Deus atua em todas as coisas para o bem daqueles que o amam.",
+"A promessa está relacionada aos que são chamados segundo o propósito de Deus.",
+"O propósito divino inclui ser conformado à imagem de Cristo.",
+"Paulo apresenta uma sequência relacionada ao propósito salvador de Deus.",
+"A salvação é apresentada como parte de uma obra divina que conduz à glória.",
+"A confiança cristã está firmada na fidelidade de Deus."
+],
+application:"Romanos 8:28 não promete que todas as situações serão agradáveis. Ensina que Deus trabalha segundo seu propósito para aqueles que o amam. Busque crescer à semelhança de Cristo em todas as circunstâncias.",
+memory:"Todas as coisas contribuem juntamente para o bem daqueles que amam a Deus.",
+memoryRef:"Romanos 8:28",
+questions:[
+"A quem se dirige a promessa de Romanos 8:28?",
+"O que significa ser conformado à imagem de Cristo?",
+"Essa promessa significa ausência de sofrimento?",
+"Como podemos confiar no propósito de Deus?"
+],
+prayer:"Pai, ajuda-me a confiar em teu propósito. Mesmo quando não compreendo o que acontece, ensina-me a crescer à semelhança de Jesus. Amém."
+},
+
+{
+day:19,
+title:"Mais que vencedores",
+ref:"Romanos 8:31-39",
+week:"Semana 3 • A esperança cristã",
+intro:"Leia Romanos 8:31-39. Observe as perguntas de Paulo e sua declaração sobre o amor inseparável de Deus em Cristo.",
+context:"Paulo conclui esta seção com uma declaração de confiança. Se Deus entregou seu próprio Filho, o cristão pode descansar na certeza de que nenhuma acusação ou circunstância poderá separar os que estão em Cristo do amor de Deus.",
+points:[
+"Se Deus é por nós, nenhuma oposição humana pode anular seu propósito.",
+"Deus não poupou seu próprio Filho, mas o entregou por todos nós.",
+"Cristo morreu, ressuscitou e intercede pelos seus.",
+"Tribulação, angústia e perseguição não significam separação do amor de Cristo.",
+"Em todas essas coisas, os cristãos são mais que vencedores por meio daquele que os amou.",
+"Nada pode separar o cristão do amor de Deus que está em Cristo Jesus."
+],
+application:"A segurança cristã não depende de circunstâncias favoráveis. Em momentos de medo ou sofrimento, lembre-se de que o amor de Deus em Cristo é maior que qualquer oposição.",
+memory:"Em todas estas coisas somos mais do que vencedores, por aquele que nos amou.",
+memoryRef:"Romanos 8:37",
+questions:[
+"Qual é a base da confiança apresentada por Paulo?",
+"Quem intercede pelos cristãos?",
+"Quais situações Paulo menciona como incapazes de nos separar do amor de Cristo?",
+"Como essa verdade fortalece nossa fé?"
+],
+prayer:"Senhor, obrigado por teu amor em Cristo. Fortalece meu coração para permanecer firme diante das dificuldades. Amém."
+},
+
+{
+day:20,
+title:"A soberania e a misericórdia de Deus",
+ref:"Romanos 9:1-18",
+week:"Semana 3 • O propósito de Deus",
+intro:"Leia Romanos 9:1-18. Observe a preocupação de Paulo por Israel e seu ensino sobre a misericórdia e a soberania divina.",
+context:"Paulo demonstra profunda tristeza pela situação de seus compatriotas que não receberam Cristo. Ele explica que a promessa de Deus não falhou e que a história da salvação revela a liberdade e a misericórdia do Senhor.",
+points:[
+"Paulo expressa grande tristeza pela condição espiritual de Israel.",
+"A descendência física, por si só, não define todos os aspectos da promessa.",
+"A Palavra de Deus não falhou.",
+"Paulo recorda exemplos da história de Israel para explicar o propósito divino.",
+"A eleição é apresentada como dependente daquele que chama.",
+"Deus demonstra misericórdia segundo sua própria vontade."
+],
+application:"A soberania de Deus deve conduzir à humildade, não à arrogância. Reconheça que a salvação é resultado da misericórdia divina e mantenha um coração sensível à necessidade espiritual das pessoas.",
+memory:"Terei misericórdia de quem eu tiver misericórdia.",
+memoryRef:"Romanos 9:15",
+questions:[
+"Qual era a preocupação de Paulo em relação a Israel?",
+"A Palavra de Deus falhou?",
+"O que o texto ensina sobre a misericórdia divina?",
+"Como devemos responder à soberania de Deus?"
+],
+prayer:"Senhor, reconheço tua soberania e tua misericórdia. Dá-me humildade e amor pelas pessoas que ainda precisam conhecer o Evangelho. Amém."
+},
+
+{
+day:21,
+title:"A justiça que vem pela fé",
+ref:"Romanos 9:19-33",
+week:"Semana 4 • Fé e salvação",
+intro:"Leia Romanos 9:19-33. Observe a imagem do oleiro e a diferença entre buscar justiça pela fé e tentar estabelecê-la por obras.",
+context:"Paulo continua tratando da soberania de Deus e da responsabilidade humana. Israel buscou a justiça, mas muitos tropeçaram porque não a buscaram pela fé. Os gentios, que não buscavam a justiça segundo a lei, alcançaram a justiça pela fé.",
+points:[
+"Paulo utiliza a figura do oleiro para destacar a autoridade do Criador.",
+"Deus demonstra paciência e revela a riqueza de sua glória.",
+"Os profetas anunciaram que pessoas de outras nações seriam alcançadas.",
+"Israel buscou uma justiça baseada na lei, mas não a alcançou pela fé.",
+"Cristo é apresentado como pedra de tropeço para os que não creem.",
+"Aquele que crê em Cristo não será confundido."
+],
+application:"Não tente estabelecer sua própria justiça diante de Deus. Aproxime-se de Cristo com fé e humildade, reconhecendo que a salvação depende da graça.",
+memory:"Todo aquele que nele crer não será confundido.",
+memoryRef:"Romanos 9:33",
+questions:[
+"O que a imagem do oleiro ensina?",
+"Como os gentios alcançaram a justiça?",
+"Por que muitos em Israel tropeçaram?",
+"Qual é a resposta correta diante de Cristo?"
+],
+prayer:"Pai, livra-me de confiar em minha própria justiça. Ensina-me a crer em Cristo e a descansar na tua graça. Amém."
+},
+
+{
+day:22,
+title:"A salvação está ao alcance de quem crê",
+ref:"Romanos 10:1-13",
+week:"Semana 4 • Fé e salvação",
+intro:"Leia Romanos 10:1-13. Observe a relação entre fé, confissão e a proclamação da mensagem de Cristo.",
+context:"Paulo expressa seu desejo de que Israel seja salvo. Ele reconhece o zelo religioso, mas mostra que o zelo sem conhecimento da justiça de Deus pode levar à tentativa de estabelecer uma justiça própria.",
+points:[
+"Paulo deseja a salvação de Israel e ora por seu povo.",
+"O zelo religioso precisa estar acompanhado do conhecimento da verdade.",
+"Cristo é o cumprimento e o alvo da lei para justiça de todo aquele que crê.",
+"A Palavra está próxima e anuncia a mensagem da fé.",
+"A confissão de Jesus como Senhor e a fé em sua ressurreição são apresentadas no caminho da salvação.",
+"Todo aquele que invocar o nome do Senhor será salvo."
+],
+application:"A salvação não está reservada a um grupo étnico ou posição social. O Evangelho é anunciado a todos. Creia em Cristo e compartilhe a mensagem com outras pessoas.",
+memory:"Todo aquele que invocar o nome do Senhor será salvo.",
+memoryRef:"Romanos 10:13",
+questions:[
+"Qual era o desejo de Paulo por Israel?",
+"Por que o zelo religioso precisa de conhecimento?",
+"Qual é a importância da fé na ressurreição de Jesus?",
+"Quem pode invocar o nome do Senhor?"
+],
+prayer:"Senhor, fortalece minha fé em Jesus. Coloca em meu coração amor pelas pessoas e coragem para anunciar o Evangelho. Amém."
+},
+
+{
+day:23,
+title:"A necessidade de anunciar o Evangelho",
+ref:"Romanos 10:14-21",
+week:"Semana 4 • Fé e salvação",
+intro:"Leia Romanos 10:14-21. Observe a sequência apresentada por Paulo entre ouvir, crer, invocar e anunciar.",
+context:"Paulo destaca a importância da proclamação. Para invocar o Senhor, é necessário crer; para crer, é necessário ouvir; e para ouvir, alguém precisa anunciar. A mensagem precisa ser levada às pessoas.",
+points:[
+"Invocar o Senhor está relacionado à fé nele.",
+"Crer exige ouvir a mensagem a respeito de Cristo.",
+"A proclamação depende de pessoas enviadas para anunciar.",
+"Os pés dos que anunciam boas-novas são apresentados como formosos.",
+"A fé vem pelo ouvir, e o ouvir pela Palavra de Deus.",
+"Paulo também demonstra que a mensagem foi anunciada a Israel, embora nem todos tenham obedecido."
+],
+application:"A igreja recebeu a responsabilidade de anunciar Cristo. Seu testemunho pode começar em casa, no trabalho, na comunidade e em seus relacionamentos.",
+memory:"A fé é pelo ouvir, e o ouvir pela palavra de Deus.",
+memoryRef:"Romanos 10:17",
+questions:[
+"Qual sequência Paulo apresenta para explicar a necessidade da pregação?",
+"Por que é importante anunciar o Evangelho?",
+"De onde vem a fé segundo o texto?",
+"Como você pode participar da proclamação?"
+],
+prayer:"Senhor, usa minha vida para anunciar tua Palavra. Dá-me sabedoria, amor e coragem para compartilhar o Evangelho. Amém."
+},
+
+{
+day:24,
+title:"Deus não rejeitou o seu povo",
+ref:"Romanos 11:1-24",
+week:"Semana 4 • O plano de Deus",
+intro:"Leia Romanos 11:1-24. Observe o ensino sobre o remanescente de Israel e a inclusão dos gentios.",
+context:"Paulo responde à pergunta sobre uma possível rejeição definitiva de Israel. Ele utiliza sua própria história e a imagem do remanescente para mostrar que Deus preservou pessoas pela graça. Em seguida, compara os gentios a ramos enxertados em uma oliveira.",
+points:[
+"Paulo afirma que Deus não rejeitou seu povo de maneira absoluta.",
+"Existe um remanescente escolhido segundo a graça.",
+"A eleição pela graça não depende de obras humanas.",
+"Os gentios são comparados a ramos enxertados na oliveira.",
+"A inclusão dos gentios não deve produzir orgulho ou desprezo por Israel.",
+"A permanência na bondade de Deus exige humildade e perseverança."
+],
+application:"Nunca transforme a graça recebida em motivo de superioridade. Quem foi alcançado por Deus deve permanecer humilde, agradecido e comprometido com a fé.",
+memory:"Pela graça sois salvos.",
+memoryRef:"Leia o princípio da graça em Romanos 11:6.",
+questions:[
+"O que Paulo ensina sobre a rejeição de Israel?",
+"O que significa o remanescente segundo a graça?",
+"Qual é o significado da imagem da oliveira?",
+"Por que os gentios não devem se orgulhar?"
+],
+prayer:"Pai, obrigado por tua graça. Guarda-me do orgulho e ajuda-me a permanecer firme, humilde e agradecido diante de ti. Amém."
+},
+
+{
+day:25,
+title:"A profundidade da sabedoria de Deus",
+ref:"Romanos 11:25-36",
+week:"Semana 4 • O plano de Deus",
+intro:"Leia Romanos 11:25-36. Observe como Paulo conclui esta parte da carta exaltando a sabedoria, a misericórdia e a soberania de Deus.",
+context:"Paulo apresenta o mistério relacionado a Israel e aos gentios e conclui com uma declaração de adoração. A profundidade dos caminhos de Deus ultrapassa a capacidade humana de compreender plenamente seus propósitos.",
+points:[
+"Paulo deseja que os leitores não sejam sábios aos próprios olhos.",
+"Deus conduz a história segundo seu propósito.",
+"A misericórdia divina é destacada no plano de salvação.",
+"Os caminhos e os juízos de Deus são profundos.",
+"Ninguém pode aconselhar o Senhor ou tornar-se seu credor.",
+"Todas as coisas existem por meio dele, por ele e para ele."
+],
+application:"O estudo da doutrina deve conduzir à adoração. Quanto mais compreendemos a grandeza de Deus, mais devemos reconhecer nossa dependência e glorificar seu nome.",
+memory:"Porque dele, e por ele, e para ele são todas as coisas.",
+memoryRef:"Romanos 11:36",
+questions:[
+"Por que Paulo alerta contra a sabedoria aos próprios olhos?",
+"O que o texto ensina sobre os caminhos de Deus?",
+"Podemos exigir algo de Deus como se ele fosse nosso devedor?",
+"Como o conhecimento de Deus deve influenciar nossa adoração?"
+],
+prayer:"Senhor, tua sabedoria é insondável. Recebe minha adoração e ensina-me a viver para tua glória. Amém."
+},
+
+{
+day:26,
+title:"Uma vida como sacrifício vivo",
+ref:"Romanos 12:1-8",
+week:"Semana 5 • A vida cristã prática",
+intro:"Leia Romanos 12:1-8. Observe como Paulo apresenta a resposta prática à misericórdia de Deus.",
+context:"Depois de apresentar a obra salvadora de Deus, Paulo começa a mostrar suas consequências para a vida diária. O cristão é chamado a oferecer o próprio corpo como sacrifício vivo, santo e agradável a Deus.",
+points:[
+"A vida cristã responde às misericórdias de Deus.",
+"O corpo deve ser apresentado como sacrifício vivo, santo e agradável.",
+"A adoração envolve a totalidade da vida.",
+"O cristão não deve se conformar com o padrão deste mundo.",
+"A renovação da mente permite discernir a vontade de Deus.",
+"Os dons devem ser exercidos com humildade e serviço ao corpo de Cristo."
+],
+application:"Adoração não se limita a momentos de culto. Suas decisões, trabalho, relacionamentos e atitudes também devem glorificar a Deus. Permita que a Palavra renove sua maneira de pensar.",
+memory:"Transformai-vos pela renovação do vosso entendimento.",
+memoryRef:"Romanos 12:2",
+questions:[
+"O que significa apresentar o corpo como sacrifício vivo?",
+"Como acontece a renovação da mente?",
+"Por que não devemos nos conformar com este mundo?",
+"Como devemos utilizar os dons recebidos?"
+],
+prayer:"Senhor, entrego minha vida a ti. Renova minha mente e ajuda-me a usar meus dons para servir e glorificar teu nome. Amém."
+},
+
+{
+day:27,
+title:"O amor sem hipocrisia",
+ref:"Romanos 12:9-21",
+week:"Semana 5 • A vida cristã prática",
+intro:"Leia Romanos 12:9-21. Observe as orientações de Paulo sobre amor, humildade, serviço e relacionamento com outras pessoas.",
+context:"A transformação apresentada no início do capítulo 12 deve aparecer nos relacionamentos. Paulo descreve uma vida marcada por amor sincero, dedicação ao serviço, paciência nas dificuldades e disposição para vencer o mal com o bem.",
+points:[
+"O amor deve ser sincero e acompanhado de rejeição ao mal.",
+"O cristão deve demonstrar afeto fraternal e honra aos outros.",
+"A dedicação ao serviço do Senhor deve ser constante.",
+"A esperança, a paciência e a oração sustentam o cristão nas dificuldades.",
+"Os cristãos são chamados a abençoar os que os perseguem.",
+"Não devemos pagar o mal com o mal, mas procurar viver em paz.",
+"O mal deve ser vencido com o bem."
+],
+application:"Pratique o amor nas situações comuns. Seja paciente, generoso e disposto a perdoar. Não permita que a atitude de outra pessoa determine sua resposta diante de Deus.",
+memory:"Não te deixes vencer do mal, mas vence o mal com o bem.",
+memoryRef:"Romanos 12:21",
+questions:[
+"Como deve ser o amor cristão?",
+"Como devemos agir diante da perseguição?",
+"Por que não devemos pagar o mal com o mal?",
+"O que significa vencer o mal com o bem?"
+],
+prayer:"Pai, ensina-me a amar com sinceridade. Dá-me humildade para perdoar e força para responder ao mal com o bem. Amém."
+},
+
+{
+day:28,
+title:"O cristão e as autoridades",
+ref:"Romanos 13:1-14",
+week:"Semana 5 • A vida cristã prática",
+intro:"Leia Romanos 13:1-14. Observe os ensinos sobre autoridades, amor ao próximo e vigilância espiritual.",
+context:"Paulo aborda a relação dos cristãos com as autoridades civis e apresenta o amor como cumprimento da lei. Em seguida, chama os leitores a despertarem e viverem de maneira coerente com a proximidade da salvação.",
+points:[
+"As autoridades civis exercem uma função dentro da ordem social.",
+"O cristão deve agir com responsabilidade e consciência.",
+"O pagamento de tributos e o respeito às autoridades são tratados no texto.",
+"O amor ao próximo cumpre o propósito dos mandamentos relacionados ao relacionamento humano.",
+"O cristão deve despertar espiritualmente e abandonar as obras das trevas.",
+"É necessário revestir-se do Senhor Jesus Cristo e não alimentar os desejos da carne."
+],
+application:"A fé deve produzir responsabilidade na sociedade e amor nas relações. Viva com honestidade, respeito e vigilância, mantendo Cristo como referência de suas atitudes.",
+memory:"Amarás o teu próximo como a ti mesmo.",
+memoryRef:"Romanos 13:9",
+questions:[
+"Como Paulo orienta os cristãos em relação às autoridades?",
+"Por que o amor é apresentado como cumprimento da lei?",
+"O que significa despertar espiritualmente?",
+"Como podemos nos revestir de Cristo?"
+],
+prayer:"Senhor, ajuda-me a viver com responsabilidade, amor e vigilância. Que minhas atitudes revelem que pertenço a Jesus Cristo. Amém."
+},
+
+{
+day:29,
+title:"Acolhendo o irmão com amor",
+ref:"Romanos 14:1-23",
+week:"Semana 5 • A comunhão cristã",
+intro:"Leia Romanos 14:1-23. Observe os ensinos sobre diferenças de consciência e o cuidado para não desprezar ou escandalizar um irmão.",
+context:"Paulo trata de diferenças entre cristãos relacionadas a alimentos e dias considerados especiais. O apóstolo orienta que essas questões não devem destruir a comunhão. Cada pessoa deve agir diante do Senhor com consciência e responsabilidade.",
+points:[
+"O cristão deve acolher aquele que possui uma consciência mais fraca.",
+"Não devemos desprezar nem condenar o irmão por diferenças discutíveis.",
+"Cada pessoa deve agir com convicção diante do Senhor.",
+"Cristo é Senhor dos vivos e dos mortos.",
+"Todos prestarão contas a Deus.",
+"O Reino de Deus não consiste em comida ou bebida, mas em justiça, paz e alegria no Espírito Santo.",
+"Não devemos colocar obstáculos diante de um irmão por causa de nossa liberdade."
+],
+application:"A liberdade cristã deve ser exercida com amor. Antes de insistir em um direito pessoal, considere se sua atitude ajuda ou prejudica a fé de outra pessoa.",
+memory:"O Reino de Deus não é comida nem bebida, mas justiça, e paz, e alegria no Espírito Santo.",
+memoryRef:"Romanos 14:17",
+questions:[
+"Como devemos tratar irmãos com opiniões diferentes?",
+"Por que não devemos desprezar ou condenar?",
+"O que caracteriza o Reino de Deus segundo o texto?",
+"Como a liberdade deve ser exercida?"
+],
+prayer:"Senhor, dá-me amor e maturidade para respeitar meus irmãos. Que minhas atitudes promovam a paz e edifiquem a igreja. Amém."
+},
+
+{
+day:30,
+title:"O propósito do Evangelho e a missão cristã",
+ref:"Romanos 15:1-16:27",
+week:"Semana 5 • A missão cristã",
+intro:"Leia Romanos 15:1-16:27. Observe a unidade da igreja, o propósito missionário de Paulo e as saudações finais da carta.",
+context:"Nos capítulos finais, Paulo reúne orientações sobre acolhimento, unidade e serviço. Ele apresenta seu desejo de anunciar o Evangelho onde Cristo ainda não havia sido conhecido e encerra reconhecendo a importância de muitos cooperadores na obra cristã.",
+points:[
+"Os mais fortes devem suportar as fraquezas dos que ainda não possuem a mesma maturidade.",
+"Cristo é o exemplo de serviço e acolhimento.",
+"As Escrituras oferecem perseverança e consolação.",
+"A igreja é chamada a glorificar a Deus em unidade.",
+"Paulo apresenta seu compromisso de anunciar Cristo onde o Evangelho ainda não havia sido proclamado.",
+"As saudações do capítulo 16 demonstram a importância dos cooperadores na missão.",
+"A carta termina exaltando Deus, que pode fortalecer os cristãos segundo o Evangelho de Jesus Cristo."
+],
+application:"Concluir este plano não significa encerrar o aprendizado. Continue estudando as Escrituras, servindo à igreja, acolhendo os irmãos e participando da missão de anunciar o Evangelho.",
+memory:"Ora, àquele que é poderoso para vos confirmar segundo o meu evangelho e a pregação de Jesus Cristo.",
+memoryRef:"Romanos 16:25",
+questions:[
+"Qual é a responsabilidade dos cristãos mais fortes?",
+"Por que a unidade da igreja é importante?",
+"Qual era o compromisso missionário de Paulo?",
+"O que as saudações de Romanos 16 ensinam sobre a cooperação?",
+"Como você pretende colocar em prática os ensinamentos desta carta?"
+],
+prayer:"Senhor Deus, obrigado por esta jornada pela Carta aos Romanos. Fortalece minha fé, transforma meu caráter e ajuda-me a viver o Evangelho com amor, santidade e compromisso com a missão de Cristo. Amém."
+}
+
+];
+
+const $ = id => document.getElementById(id);
+
+const KEY = "atalaia-romanos-primeiros-passos-v1";
+
+let state;
+
+try{
+state=JSON.parse(localStorage.getItem(KEY)||'{"done":[],"notes":{},"dark":false}');
+}catch(e){
+state={done:[],notes:{},dark:false};
+}
+
+let current=0;
+
+function persist(){
+localStorage.setItem(KEY,JSON.stringify(state));
+}
+
+function updateProgress(){
+const n=state.done.length;
+const p=Math.round(n/studies.length*100);
+
+$("progressPercent").textContent=p+"%";
+$("progressBar").style.width=p+"%";
+
+$("progressText").textContent=
+n===studies.length
+?"Parabéns! Você concluiu os 30 estudos em Romanos. Continue crescendo na Palavra."
+:`Você concluiu ${n} de ${studies.length} estudos. ${n===0?"Comece pelo Dia 1.":"Continue firme em sua caminhada com Deus."}`;
+}
+
+function renderDays(){
+
+$("dayList").innerHTML=studies.map(s=>`
+<button class="day-item ${state.done.includes(s.day)?"done":""}" data-day="${s.day-1}">
+<span class="day-number">${state.done.includes(s.day)?"✓":String(s.day).padStart(2,"0")}</span>
+<span class="day-info">
+<strong>${s.title}</strong>
+<small>${s.ref}</small>
+</span>
+<span class="day-check">${state.done.includes(s.day)?"✓":"›"}</span>
+</button>
+`).join("");
+
+document.querySelectorAll(".day-item").forEach(button=>{
+button.addEventListener("click",()=>{
+openStudy(Number(button.dataset.day));
+});
+});
+
+updateProgress();
+}
+
+function openStudy(i){
+
+current=Math.max(0,Math.min(studies.length-1,i));
+
+const s=studies[current];
+
+$("homeView").classList.remove("active");
+$("studyView").classList.add("active");
+
+$("studyDayLabel").textContent="DIA "+s.day;
+$("studyWeek").textContent=s.week;
+$("studyTitle").textContent=s.title;
+$("studyReference").textContent="Leitura bíblica: "+s.ref;
+
+$("readingIntro").textContent=s.intro;
+$("readingReference").textContent=s.ref+" • Bíblia Livre (Almeida 1819)";
+
+loadScripture(s);
+
+$("contextText").textContent=s.context;
+
+$("explanationText").innerHTML=s.points
+.map(x=>`<div class="explain-point">• ${escapeHTML(x)}</div>`)
+.join("");
+
+$("applicationText").textContent=s.application;
+$("memoryText").textContent=s.memory;
+$("memoryReference").textContent=s.memoryRef;
+
+$("questions").innerHTML=s.questions
+.map((q,n)=>`<div class="question">${n+1}. ${escapeHTML(q)}</div>`)
+.join("");
+
+$("prayerText").textContent=s.prayer;
+
+$("notesInput").value=state.notes[s.day]||"";
+
+$("completeBtn").textContent=
+state.done.includes(s.day)
+?"Estudo concluído ✓"
+:"Marcar como concluído ✓";
+
+$("prevBtn").disabled=current===0;
+$("nextBtn").disabled=current===studies.length-1;
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* CARREGAMENTO DO TEXTO BÍBLICO */
+
+const BIBLE_API="https://api.midvash.com/v1";
+const BIBLE_VERSION="almeida-livre";
+const BIBLE_BOOK="romans";
+
+const scriptureCache=new Map();
+
+async function loadScripture(study){
+
+const container=$("scriptureText");
+const credit=$("scriptureCopyright");
+
+container.innerHTML='<p class="scripture-status">Carregando o texto bíblico…</p>';
+
+credit.textContent="Tradução: Bíblia Livre (Almeida 1819).";
+
+if(scriptureCache.has(study.ref)){
+renderScripture(scriptureCache.get(study.ref));
+return;
+}
+
+try{
+
+const match=study.ref.match(/^Romanos\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+
+if(!match){
+throw new Error("Referência bíblica não reconhecida.");
+}
+
+const chapter=Number(match[1]);
+const start=match[2]?Number(match[2]):1;
+const end=match[3]?Number(match[3]):null;
+
+const response=await fetch(
+`${BIBLE_API}/${BIBLE_VERSION}/${BIBLE_BOOK}/${chapter}`
+);
+
+if(!response.ok){
+throw new Error("Não foi possível consultar a fonte bíblica.");
+}
+
+const body=await response.json();
+
+if(body.error){
+throw new Error(body.error.message||"Erro ao carregar a passagem.");
+}
+
+const data=body.data||body;
+
+let verses=data.verses||[];
+
+if(!Array.isArray(verses)||!verses.length){
+
+if(data.text){
+verses=data.text.split(/\n+/).filter(Boolean);
+}else{
+throw new Error("A fonte não retornou os versículos esperados.");
+}
+
+}
+
+const normalized=verses.map((item,index)=>{
+
+if(typeof item==="string"){
+return {number:index+1,text:item};
+}
+
+return {
+number:Number(item.verse||item.number||item.verseNumber||index+1),
+text:item.text||item.content||""
+};
+
+}).filter(v=>v.text);
+
+const selected=normalized.filter(v=>
+v.number>=start&&(end===null||v.number<=end)
+);
+
+if(!selected.length){
+throw new Error("A passagem não foi encontrada nesta versão.");
+}
+
+const result={
+verses:selected,
+reference:data.reference||study.ref,
+copyright:body.meta?.copyright||
+"Bíblia Livre (Almeida 1819) — versão de uso livre conforme os termos da fonte."
+};
+
+scriptureCache.set(study.ref,result);
+
+renderScripture(result);
+
+}catch(error){
+
+container.innerHTML=
+'<p class="scripture-error">Não foi possível carregar o texto bíblico neste momento. Verifique sua conexão e tente abrir o estudo novamente.</p>';
+
+const retry=document.createElement("button");
+
+retry.className="secondary-btn";
+retry.textContent="Tentar novamente";
+
+retry.addEventListener("click",()=>loadScripture(study));
+
+container.appendChild(retry);
+
+credit.textContent=
+"Fonte de consulta: API Midvash. O texto bíblico requer conexão com a internet.";
+
+console.error(error);
+
+}
+
+}
+
+function renderScripture(result){
+
+const container=$("scriptureText");
+
+container.innerHTML=result.verses.map(v=>`
+<div class="scripture-verse">
+<sup>${v.number}</sup>
+<span>${escapeHTML(v.text)}</span>
+</div>
+`).join("");
+
+$("scriptureCopyright").textContent=result.copyright;
+
+}
+
+function escapeHTML(value){
+
+return String(value).replace(/[&<>"']/g,char=>({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#39;"
+}[char]));
+
+}
+
+/* NAVEGAÇÃO */
+
+function showHome(){
+
+$("studyView").classList.remove("active");
+$("homeView").classList.add("active");
+
+renderDays();
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+$("homeLink").addEventListener("click",e=>{
+e.preventDefault();
+showHome();
+});
+
+$("backBtn").addEventListener("click",showHome);
+
+$("continueBtn").addEventListener("click",()=>{
+
+const next=studies.findIndex(s=>!state.done.includes(s.day));
+
+openStudy(next<0?studies.length-1:next);
+
+});
+
+$("prevBtn").addEventListener("click",()=>{
+openStudy(current-1);
+});
+
+$("nextBtn").addEventListener("click",()=>{
+openStudy(current+1);
+});
+
+$("completeBtn").addEventListener("click",()=>{
+
+const day=studies[current].day;
+
+if(!state.done.includes(day)){
+state.done.push(day);
+}
+
+persist();
+
+$("completeBtn").textContent="Estudo concluído ✓";
+
+renderDays();
+
+});
+
+$("saveNotesBtn").addEventListener("click",()=>{
+
+const day=studies[current].day;
+
+state.notes[day]=$("notesInput").value;
+
+persist();
+
+$("saveNotesBtn").textContent="Salvo ✓";
+
+setTimeout(()=>{
+$("saveNotesBtn").textContent="Salvar minhas anotações";
+},1500);
+
+});
+
+/* MODO ESCURO */
+
+$("themeBtn").addEventListener("click",()=>{
+
+state.dark=!state.dark;
+
+document.body.classList.toggle("dark",state.dark);
+
+persist();
+
+});
+
+if(state.dark){
+document.body.classList.add("dark");
+}
+
+/* INICIALIZAÇÃO */
+
+renderDays();
+
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+
+window.addEventListener("load",()=>{
+navigator.serviceWorker.register("service-worker.js").catch(()=>{});
+});
+
+}
+
+</script>
+</body>
+</html>

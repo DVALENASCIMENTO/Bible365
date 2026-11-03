@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b2d">
+<title>Primeiros Passos com Jesus | Escola Bíblica Atalaia</title>
+
+<style>
+:root {
+  --green: #123b2d;
+  --green-light: #1e5942;
+  --gold: #d6ad59;
+  --cream: #f7f5ef;
+  --white: #ffffff;
+  --text: #26352e;
+  --muted: #718078;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.5;
+}
+header {
+  background: linear-gradient(145deg, #102d24, #1e5942);
+  color: white;
+  text-align: center;
+  padding: 42px 20px 38px;
+  border-bottom: 5px solid var(--gold);
+}
+.brand {
+  color: #e9c978;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+header h1 {
+  font-size: clamp(28px, 6vw, 42px);
+  margin: 12px 0 8px;
+}
+header p {
+  margin: 0 auto;
+  max-width: 600px;
+  color: #e4eee8;
+}
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 28px 16px 50px;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.intro h2 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.intro p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: auto;
+}
+.books {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.book {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid #e5e9e3;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 14px #172f2008;
+}
+.book-number {
+  color: #a17a2e;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.book h3 {
+  color: var(--green);
+  font-size: 20px;
+  margin: 6px 0;
+}
+.book p {
+  color: var(--muted);
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+.book a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--green);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 9px;
+  font-weight: bold;
+  transition: background .2s, transform .2s;
+}
+.book a:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+}
+footer {
+  text-align: center;
+  background: var(--green);
+  color: #e4eee8;
+  padding: 24px 16px;
+  font-size: 13px;
+}
+footer strong {
+  color: #e9c978;
+}
+@media (min-width: 600px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">Escola Bíblica Atalaia</div>
+  <h1>Primeiros Passos com Jesus</h1>
+  <p>Uma jornada de leitura, aprendizado e crescimento na Palavra de Deus.</p>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>Escolha seu próximo plano de leitura</h2>
+
+<p>
+    Explore os livros da Bíblia por meio de planos de leitura
+    diária e estudos explicativos. Conheça Jesus, compreenda
+    a Palavra de Deus e aprenda a viver sua nova caminhada
+    cristã fundamentada nas Escrituras.
+</p>
+  </section>
+
+  <section class="books">
+
+    <article class="book">
+      <span class="book-number">Passo 01</span>
+      <h3>João</h3>
+      <p>Conhecendo quem é Jesus Cristo.</p>
+      <a href="evangelho__joao.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 02</span>
+      <h3>Marcos</h3>
+      <p>Conhecendo a vida, as obras e o ministério de Jesus.</p>
+      <a href="marcos.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 03</span>
+      <h3>Atos dos Apóstolos</h3>
+      <p>O nascimento e a expansão da Igreja.</p>
+      <a href="atos.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 04</span>
+      <h3>Efésios</h3>
+      <p>Nossa identidade e posição em Cristo.</p>
+      <a href="efesios.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 05</span>
+      <h3>Romanos</h3>
+      <p>O Evangelho, a salvação pela fé e a justificação.</p>
+      <a href="romanos.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 06</span>
+      <h3>1 Coríntios</h3>
+      <p>A vida cristã e os desafios da Igreja.</p>
+      <a href="1-corintios.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 07</span>
+      <h3>Gálatas</h3>
+      <p>A liberdade em Cristo e a salvação pela graça.</p>
+      <a href="galatas.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 08</span>
+      <h3>Filipenses</h3>
+      <p>A alegria e a perseverança em Cristo.</p>
+      <a href="filipenses.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 09</span>
+      <h3>Colossenses</h3>
+      <p>A supremacia e a suficiência de Cristo.</p>
+      <a href="colossenses.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 10</span>
+      <h3>Tiago</h3>
+      <p>Uma fé que se manifesta em atitudes.</p>
+      <a href="tiago.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 11</span>
+      <h3>1 Pedro</h3>
+      <p>Como permanecer firme nas provações.</p>
+      <a href="1-pedro.html">Abrir estudo</a>
+    </article>
+
+    <article class="book">
+      <span class="book-number">Passo 12</span>
+      <h3>1 João</h3>
+      <p>Como reconhecer a verdadeira vida cristã.</p>
+      <a href="1-joao.html">Abrir estudo</a>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  <strong>Escola Bíblica Atalaia</strong><br>
+  Primeiros Passos com Jesus<br>
+  Crescendo no conhecimento da Palavra de Deus.
+</footer>
+</body>
+</html>

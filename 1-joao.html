@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172b43">
+<meta name="description" content="Plano de discipulado bíblico de 30 dias na Primeira Epístola de João — Ministério Atalaia.">
+<title>Primeira Epístola de João | Ministério Atalaia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--navy:#172b43;--navy2:#203b59;--gold:#c6a15b;--paper:#f5f3ee;--card:#fff;--ink:#202a35;--muted:#77818b;--line:#e8e5dd;--soft:#f8f6f1;--green:#47745d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6}
+.topbar{height:66px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 900px)/2));position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;letter-spacing:.08em;font-size:11px}
+.brand small{display:block;color:#d8c49b;font-size:9px;letter-spacing:.18em}
+.brand-mark{color:var(--gold);font-size:27px}
+.icon-btn{border:1px solid #53667b;color:white;background:transparent;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+main{max-width:900px;margin:auto;padding:26px 20px 60px}
+.view{display:none}.view.active{display:block}
+.hero{background:linear-gradient(135deg,#172b43,#294764);border-radius:22px;padding:36px 32px;color:#fff;position:relative;overflow:hidden;box-shadow:0 12px 30px #172b431c}
+.hero:after{content:"✦";position:absolute;right:28px;top:8px;font-size:140px;color:#ffffff0b}
+.eyebrow,.section-kicker,.card-label{font-size:10px;letter-spacing:.17em;font-weight:700;color:var(--gold)}
+h1,h2{font-family:'Playfair Display',serif;line-height:1.15}
+.hero h1{font-size:clamp(34px,7vw,54px);margin:18px 0 12px;letter-spacing:.015em}
+.hero h1 em{font-style:normal;color:#e0c27f}
+.hero p{max-width:440px;color:#e0e6eb;margin-bottom:22px}
+.hero-meta{font-size:10px;letter-spacing:.13em;color:#d8c49b;margin-bottom:22px}
+.primary-btn,.secondary-btn{border:0;border-radius:10px;padding:13px 18px;font:700 13px 'DM Sans';cursor:pointer}
+.primary-btn{background:var(--gold);color:#172b43}
+.primary-btn span{margin-left:18px}
+.secondary-btn{background:#eae6dc;color:var(--navy)}
+.progress-card,.content-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:21px;margin-top:18px}
+.progress-heading,.section-heading{display:flex;align-items:center;justify-content:space-between}
+.progress-heading h2,.section-heading h2{font-size:22px;margin:3px 0}
+.progress-heading strong{font-size:24px;color:var(--navy)}
+.progress-track{height:8px;background:#ece9e1;border-radius:10px;overflow:hidden;margin:13px 0 8px}
+.progress-track span{display:block;height:100%;width:0;background:var(--green);border-radius:10px;transition:width .25s}
+.progress-card p,.muted{color:var(--muted);font-size:12px}
+.section-heading{margin:30px 0 12px}
+.day-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.day-item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:var(--ink);width:100%}
+.day-item:hover{border-color:var(--gold)}
+.day-number{width:38px;height:38px;border-radius:11px;background:#f0ede5;color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:12px;flex-shrink:0}
+.day-item.done .day-number{background:#e3eee7;color:var(--green)}
+.day-info strong{display:block;font-size:12px}
+.day-info small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.day-check{margin-left:auto;color:var(--green)}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:35px 0 10px}
+.back-btn{border:0;background:transparent;color:var(--navy);font-weight:700;padding:5px 0 18px;cursor:pointer}
+.study-topline{display:flex;align-items:center;gap:12px}
+.pill{background:#e8e1d2;color:#6e5528;border-radius:30px;padding:5px 11px;font-size:10px;font-weight:700;letter-spacing:.1em}
+.study-title{font-size:clamp(30px,6vw,42px);margin:16px 0 5px;color:var(--navy)}
+.study-reference{color:var(--muted);margin:0 0 18px}
+.study-content{max-width:720px}
+.content-card{padding:22px;margin:13px 0}
+.content-card h2{font-size:21px;margin:7px 0 10px;color:var(--navy)}
+.content-card p{font-size:14px;margin:8px 0}
+.reference-box{padding:12px 14px;background:var(--soft);border-left:3px solid var(--gold);font-weight:700;color:var(--navy);margin:12px 0}
+.content-card label{display:block;font-size:12px;font-weight:700;margin:16px 0 7px;color:var(--navy)}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px;font:13px/1.6 'DM Sans';background:#fff;color:#202a35}
+textarea:focus{outline:2px solid #c6a15b66;border-color:var(--gold)}
+.tiny-note{font-size:10px!important;color:var(--muted)}
+.explain-point{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.explain-point:last-child{border:0}
+.memory-verse{font-family:'Playfair Display',serif;font-size:18px!important;color:var(--navy)}
+.scripture-text{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+.scripture-verse{display:grid;grid-template-columns:25px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.75}
+.scripture-verse:last-child{border:0}
+.scripture-verse sup{color:#9a793d;font-weight:700;font-size:10px;padding-top:3px}
+.scripture-status{color:var(--muted);font-size:12px}
+.scripture-error{color:#a33b32;font-size:13px}
+.dark .scripture-text{background:#26394c}
+.verse-ref{font-size:11px;color:#8a6b32;font-weight:700}
+.question{font-size:13px;font-weight:600;margin:13px 0 5px}
+.prayer-card{background:#f0eee7}
+.study-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.study-actions .primary-btn{flex:1}
+.dark{--paper:#101b28;--card:#1b2b3b;--ink:#edf0f2;--muted:#aab4bd;--line:#344454;--soft:#243649}
+.dark .day-item,.dark textarea{background:#1b2b3b;color:#edf0f2}
+.dark .day-number{background:#2b4054;color:#e4c987}
+.dark .content-card h2,.dark .study-title,.dark .reference-box{color:#e7d3a5}
+.dark .reference-box,.dark .prayer-card{background:#26394c}
+.dark .secondary-btn{background:#34485b;color:#fff}
+.dark .progress-track{background:#344454}
+@media(max-width:560px){
+main{padding:17px 14px 40px}
+.hero{padding:28px 22px}
+.day-list{grid-template-columns:1fr}
+.progress-card,.content-card{padding:17px}
+.study-actions{display:grid;grid-template-columns:1fr 1fr}
+.study-actions .primary-btn{grid-column:1/-1;grid-row:1}
+.study-actions #prevBtn{grid-column:1}
+.study-actions #nextBtn{grid-column:2}
+.hero h1{font-size:37px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="#" id="homeLink" aria-label="Início">
+<span class="brand-mark">✦</span>
+<span><strong>MINISTÉRIO ATALAIA</strong><small>ESCOLA BÍBLICA</small></span>
+</a>
+<button class="icon-btn" id="themeBtn" aria-label="Alternar tema" title="Alternar tema">◐</button>
+</header>
+
+<main>
+<section id="homeView" class="view active">
+<section class="hero">
+<div class="eyebrow">GUIA DE DISCIPULADO • 30 DIAS</div>
+<h1>PRIMEIRA<br><em>EPÍSTOLA DE JOÃO</em></h1>
+<p>Conhecendo a Deus, vivendo em amor e permanecendo na verdade de Jesus Cristo.</p>
+<div class="hero-meta">1 JOÃO • MINISTÉRIO ATALAIA</div>
+<button class="primary-btn" id="continueBtn">Continuar minha jornada <span>→</span></button>
+</section>
+
+<section class="progress-card">
+<div class="progress-heading">
+<div><span class="section-kicker">SUA CAMINHADA</span><h2>Seu progresso</h2></div>
+<strong id="progressPercent">0%</strong>
+</div>
+<div class="progress-track"><span id="progressBar"></span></div>
+<p id="progressText">Você ainda não concluiu nenhuma leitura. Comece pelo Dia 1.</p>
+</section>
+
+<div class="section-heading">
+<div><span class="section-kicker">PLANO DE LEITURA</span><h2>30 dias com 1 João</h2></div>
+<span class="muted">30 estudos</span>
+</div>
+<div id="dayList" class="day-list"></div>
+<footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+</section>
+
+<section id="studyView" class="view">
+<button class="back-btn" id="backBtn">← Voltar ao plano</button>
+<div class="study-topline"><span id="studyDayLabel" class="pill">DIA 1</span><span id="studyWeek" class="muted"></span></div>
+<h1 id="studyTitle" class="study-title"></h1>
+<p id="studyReference" class="study-reference"></p>
+<div class="study-content">
+<article class="content-card scripture-card">
+<div class="card-label">01 • LEITURA BÍBLICA</div>
+<h2>Texto bíblico</h2>
+<p id="readingIntro"></p>
+<div class="reference-box" id="readingReference"></div>
+<div id="scriptureText" class="scripture-text" aria-live="polite"><p>O texto bíblico será carregado automaticamente.</p></div>
+<p id="scriptureCopyright" class="tiny-note">Consulte a passagem bíblica na tradução de sua preferência.</p>
+</article>
+
+<article class="content-card">
+<div class="card-label">02 • CONTEXTO</div>
+<h2>Entendendo o contexto</h2>
+<p id="contextText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+<h2>O que o texto ensina?</h2>
+<div id="explanationText"></div>
+</article>
+
+<article class="content-card">
+<div class="card-label">04 • PARA A VIDA</div>
+<h2>Aplicação prática</h2>
+<p id="applicationText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">05 • MEMORIZAÇÃO</div>
+<h2>Versículo para guardar</h2>
+<p id="memoryText" class="memory-verse"></p>
+<span id="memoryReference" class="verse-ref"></span>
+</article>
+
+<article class="content-card">
+<div class="card-label">06 • REFLEXÃO</div>
+<h2>Pense e responda</h2>
+<div id="questions"></div>
+<label for="notesInput">Minhas anotações</label>
+<textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+<button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+</article>
+
+<article class="content-card prayer-card">
+<div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+<h2>Ore ao Senhor</h2>
+<p id="prayerText"></p>
+</article>
+</div>
+
+<div class="study-actions">
+<button class="secondary-btn" id="prevBtn">← Anterior</button>
+<button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+<button class="secondary-btn" id="nextBtn">Próximo →</button>
+</div>
+</section>
+</main>
+
+<script>
+const studies = [
+{
+day:1,title:"A Palavra da vida",ref:"1 João 1:1-4",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 1:1-4. Observe como o apóstolo apresenta Jesus Cristo como a Palavra da vida e testemunha daquilo que viu e ouviu.",
+context:"A primeira carta de João começa com um testemunho sobre Jesus Cristo. O autor destaca a realidade da manifestação do Filho de Deus e a experiência dos apóstolos com aquele que é a vida eterna. O propósito é conduzir os leitores à comunhão com Deus e à alegria completa.",
+points:[
+"João apresenta Jesus como aquele que existia desde o princípio e foi manifestado aos homens.",
+"A expressão Palavra da vida aponta para a pessoa de Jesus Cristo, em quem está a vida eterna.",
+"O testemunho apostólico envolve aquilo que foi ouvido, visto e contemplado.",
+"A mensagem anunciada pelos apóstolos não é uma ideia abstrata, mas o testemunho sobre o Filho de Deus.",
+"A comunhão cristã está fundamentada na comunhão com o Pai e com seu Filho Jesus Cristo.",
+"João escreve para que a alegria dos leitores seja completa."
+],
+application:"A fé cristã está fundamentada na pessoa real de Jesus Cristo e no testemunho preservado nas Escrituras. Conhecer a Cristo conduz à comunhão com Deus e com os irmãos.",
+memory:"O que era desde o princípio, o que vimos com os nossos olhos, o que temos contemplado, e as nossas mãos tocaram da Palavra da vida.",
+memoryRef:"1 João 1:1 — leia o texto completo em sua Bíblia.",
+questions:["Como João apresenta Jesus nos primeiros versículos?","Por que o testemunho dos apóstolos é importante?","O que significa ter comunhão com Deus e com os irmãos?"],
+prayer:"Senhor, ajuda-me a conhecer verdadeiramente Jesus Cristo. Que tua Palavra fortaleça minha fé e me conduza a uma comunhão profunda contigo e com os irmãos. Amém."
+},
+{
+day:2,title:"Deus é luz",ref:"1 João 1:5-7",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 1:5-7. Observe a declaração de que Deus é luz e a relação entre essa verdade e a maneira de viver.",
+context:"Depois de apresentar o testemunho sobre Jesus, João anuncia uma mensagem recebida do próprio Cristo: Deus é luz, e nele não há treva alguma. Essa declaração revela a santidade de Deus e estabelece um padrão para a vida cristã.",
+points:[
+"A afirmação de que Deus é luz comunica sua santidade, pureza e verdade.",
+"Não existe treva alguma em Deus; o pecado não faz parte de seu caráter.",
+"Dizer que temos comunhão com Deus enquanto caminhamos nas trevas é contradizer a verdade.",
+"Andar na luz significa viver diante de Deus com sinceridade e obediência.",
+"A comunhão cristã está relacionada à vida transformada e à purificação pelo sangue de Jesus."
+],
+application:"Não basta afirmar que conhecemos a Deus. Nossa conduta precisa demonstrar essa relação. Procure viver com integridade, abandonar o pecado e andar na luz de Cristo.",
+memory:"Deus é luz, e não há nele treva nenhuma.",
+memoryRef:"1 João 1:5 — confira o texto completo na tradução escolhida.",
+questions:["O que significa dizer que Deus é luz?","Por que existe contradição em afirmar comunhão com Deus e viver nas trevas?","Que área da sua vida precisa refletir melhor a luz de Cristo?"],
+prayer:"Pai, ilumina meu coração e minhas atitudes. Ajuda-me a abandonar as trevas e a caminhar diariamente na tua verdade. Amém."
+},
+{
+day:3,title:"Confissão e perdão dos pecados",ref:"1 João 1:8-10",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 1:8-10. Observe o ensino sobre reconhecer o pecado, confessá-lo e confiar na fidelidade de Deus.",
+context:"João combate a ideia de que alguém possa afirmar não ter pecado. A vida cristã não é construída sobre a negação das falhas, mas sobre o reconhecimento sincero do pecado e a confiança no caráter justo e fiel de Deus.",
+points:[
+"Afirmar que não temos pecado é enganar a nós mesmos e rejeitar a verdade.",
+"O pecado precisa ser reconhecido diante de Deus, e não escondido por justificativas.",
+"Confessar significa admitir com sinceridade aquilo que está errado.",
+"Deus é fiel e justo para perdoar os pecados e purificar de toda injustiça.",
+"Afirmar que nunca pecamos significa tratar a Palavra de Deus como mentirosa."
+],
+application:"Não esconda seus erros atrás de aparência religiosa. Confesse seus pecados a Deus, arrependa-se e busque uma vida de transformação. O perdão não deve ser usado como desculpa para permanecer no pecado.",
+memory:"Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça.",
+memoryRef:"1 João 1:9 — confira o texto completo na tradução escolhida.",
+questions:["O que acontece quando alguém afirma que não tem pecado?","O que significa confessar os pecados?","Como a fidelidade de Deus nos dá esperança?"],
+prayer:"Senhor, reconheço que preciso da tua graça. Perdoa meus pecados, purifica meu coração e ensina-me a viver em arrependimento e obediência. Amém."
+},
+{
+day:4,title:"Jesus Cristo, nosso Advogado",ref:"1 João 2:1-2",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 2:1-2. Observe o equilíbrio entre o chamado para não pecar e a esperança oferecida por Jesus Cristo.",
+context:"João esclarece que escreve para que os cristãos não pequem. Entretanto, reconhece a realidade da fraqueza humana e apresenta Jesus Cristo como Advogado junto ao Pai. A obra de Cristo é a base da esperança do pecador arrependido.",
+points:[
+"O propósito do ensino apostólico é conduzir o cristão a uma vida que não pratique o pecado.",
+"João não trata o pecado como algo insignificante ou inevitável.",
+"Se alguém pecar, há um Advogado junto ao Pai: Jesus Cristo, o Justo.",
+"Jesus é apresentado como propiciação pelos pecados, destacando sua obra em favor dos pecadores.",
+"A obra de Cristo possui alcance que ultrapassa um único grupo ou comunidade."
+],
+application:"Não use a graça como autorização para pecar. Quando falhar, não permaneça no desespero: volte-se para Cristo, confesse seu pecado e busque viver em obediência.",
+memory:"Temos um Advogado para com o Pai, Jesus Cristo, o Justo.",
+memoryRef:"1 João 2:1 — confira o texto completo na tradução escolhida.",
+questions:["Qual é o propósito de João ao escrever essas orientações?","O que significa Jesus ser nosso Advogado?","Como evitar usar a graça como desculpa para pecar?"],
+prayer:"Senhor Jesus, obrigado por tua obra em meu favor. Ajuda-me a rejeitar o pecado e a viver com gratidão, arrependimento e fidelidade. Amém."
+},
+{
+day:5,title:"Conhecer a Deus é guardar seus mandamentos",ref:"1 João 2:3-6",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 2:3-6. Observe como João relaciona o conhecimento de Deus à obediência.",
+context:"Na carta, conhecer a Deus não é apenas possuir informação religiosa. O apóstolo apresenta a obediência aos mandamentos como evidência de uma relação verdadeira com o Senhor. A vida de Cristo é o modelo para seus seguidores.",
+points:[
+"Guardar os mandamentos é uma evidência de que conhecemos a Deus.",
+"Quem afirma conhecer a Deus, mas rejeita sua Palavra, contradiz sua própria declaração.",
+"O amor de Deus alcança sua expressão plena na vida de quem guarda sua Palavra.",
+"Permanecer em Cristo significa viver em comunhão e dependência dele.",
+"Quem afirma permanecer em Jesus deve andar como ele andou."
+],
+application:"Examine se sua fé está aparecendo nas escolhas diárias. Procure imitar Jesus no amor, na verdade, na humildade, no serviço e na obediência ao Pai.",
+memory:"Aquele que diz que está nele também deve andar como ele andou.",
+memoryRef:"1 João 2:6 — confira o texto completo na tradução escolhida.",
+questions:["Como João relaciona conhecer a Deus e obedecer?","O que significa permanecer em Cristo?","Em quais atitudes podemos imitar Jesus?"],
+prayer:"Pai, que meu conhecimento de ti não seja apenas de palavras. Ensina-me a obedecer à tua Palavra e a seguir o exemplo de Jesus. Amém."
+},
+{
+day:6,title:"O mandamento antigo e novo",ref:"1 João 2:7-11",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 2:7-11. Observe a relação entre a luz de Cristo e o amor aos irmãos.",
+context:"João apresenta o mandamento do amor como uma verdade antiga, já conhecida desde o princípio da mensagem cristã, e também novo em sua expressão na vida de Jesus e de seus seguidores. O contraste entre luz e trevas aparece novamente.",
+points:[
+"O mandamento do amor não é uma novidade sem ligação com as Escrituras anteriores.",
+"Jesus demonstrou o amor de maneira plena por meio de sua vida e entrega.",
+"Aquele que afirma estar na luz deve amar seu irmão.",
+"O ódio contra o irmão revela permanência nas trevas.",
+"Quem ama seu irmão permanece na luz e não encontra motivo de tropeço."
+],
+application:"O amor cristão precisa ser concreto. Rejeite o ódio, a inveja, a hostilidade e a indiferença. Procure tratar as pessoas com respeito e praticar o perdão.",
+memory:"Aquele que ama a seu irmão está na luz.",
+memoryRef:"1 João 2:10 — confira o texto completo na tradução escolhida.",
+questions:["Por que João chama o mandamento de antigo e novo?","Como o amor se relaciona com a luz?","Existe alguém a quem você precisa perdoar ou tratar com mais amor?"],
+prayer:"Senhor, tira de mim todo sentimento de ódio e amargura. Ensina-me a amar como Cristo amou e a viver na luz. Amém."
+},
+{
+day:7,title:"Não ameis o mundo",ref:"1 João 2:12-17",week:"Semana 1 • Conhecendo a Deus",
+intro:"Leia 1 João 2:12-17. Observe o contraste entre a vontade de Deus e os desejos que caracterizam o sistema do mundo.",
+context:"João dirige palavras de encorajamento a diferentes grupos de cristãos e depois alerta contra o amor ao mundo. Nesse contexto, mundo representa valores e desejos contrários à vontade de Deus, não a criação ou as pessoas que Deus ama.",
+points:[
+"João lembra os leitores de que seus pecados foram perdoados por causa do nome de Jesus.",
+"O conhecimento do Pai e a permanência na Palavra são marcas de maturidade espiritual.",
+"O amor ao mundo não pode ocupar o lugar do amor ao Pai.",
+"A concupiscência da carne, a concupiscência dos olhos e a soberba da vida representam desejos desordenados e orgulho.",
+"O mundo e seus desejos passam, mas aquele que faz a vontade de Deus permanece para sempre."
+],
+application:"Avalie o que tem ocupado seus desejos e prioridades. Não permita que dinheiro, aparência, status ou prazeres dominem seu coração. Coloque a vontade de Deus em primeiro lugar.",
+memory:"O mundo passa, e a sua concupiscência; mas aquele que faz a vontade de Deus permanece para sempre.",
+memoryRef:"1 João 2:17 — confira o texto completo na tradução escolhida.",
+questions:["O que João quer dizer com amar o mundo?","Quais são os desejos mencionados no versículo 16?","O que significa viver para aquilo que permanece?"],
+prayer:"Pai, guarda meu coração dos desejos que me afastam de ti. Ajuda-me a buscar tua vontade e a valorizar aquilo que é eterno. Amém."
+},
+{
+day:8,title:"Cuidado com os anticristos",ref:"1 João 2:18-23",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 2:18-23. Observe o alerta sobre os que negam a identidade de Jesus Cristo.",
+context:"João escreve em um contexto de falsos ensinos e divisões. Ele alerta que alguns haviam se afastado da comunidade e negavam verdades fundamentais sobre Jesus. O termo anticristo é relacionado à oposição e à negação do Filho.",
+points:[
+"João afirma que os leitores vivem em um tempo de oposição à verdade de Cristo.",
+"Alguns que antes estavam na comunidade se afastaram, revelando que não compartilhavam verdadeiramente de sua fé.",
+"A unção recebida dos leitores é mencionada como parte do discernimento espiritual.",
+"A mentira central apresentada por João é negar que Jesus é o Cristo.",
+"Negar o Filho significa rejeitar também o Pai; confessar o Filho é permanecer na relação com o Pai."
+],
+application:"Conheça as Escrituras para discernir ensinos que distorcem a identidade de Jesus. Não aceite qualquer mensagem apenas porque utiliza linguagem religiosa.",
+memory:"Todo aquele que nega o Filho também não tem o Pai.",
+memoryRef:"1 João 2:23 — confira o texto completo na tradução escolhida.",
+questions:["Qual era o problema dos falsos mestres mencionados?","Por que a identidade de Jesus é central à fé cristã?","Como podemos desenvolver discernimento bíblico?"],
+prayer:"Senhor, guarda-me do engano. Dá-me amor pela verdade e entendimento para reconhecer os ensinos que não confessam Jesus Cristo. Amém."
+},
+{
+day:9,title:"Permanecei em Cristo",ref:"1 João 2:24-27",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 2:24-27. Observe a importância de permanecer na mensagem recebida desde o princípio.",
+context:"Diante dos falsos ensinos, João orienta os cristãos a permanecerem naquilo que ouviram desde o começo. A promessa da vida eterna está ligada à permanência no Filho e no Pai. A referência à unção não elimina a necessidade de ensino e discernimento.",
+points:[
+"A mensagem apostólica recebida desde o princípio deve permanecer no coração dos cristãos.",
+"Quando a Palavra permanece, o cristão permanece em comunhão com o Filho e com o Pai.",
+"A promessa apresentada por João é a vida eterna.",
+"A unção é relacionada à ação do Espírito e ao discernimento da verdade.",
+"O ensino sobre a unção não deve ser usado para rejeitar a Escritura ou dispensar a instrução cristã."
+],
+application:"Permaneça no Evangelho anunciado pelos apóstolos. Estude a Bíblia, ore e procure uma comunidade cristã comprometida com a verdade de Cristo.",
+memory:"E esta é a promessa que ele nos fez: a vida eterna.",
+memoryRef:"1 João 2:25 — confira o texto completo na tradução escolhida.",
+questions:["O que deve permanecer no cristão?","Qual promessa João destaca?","Como equilibrar a dependência do Espírito e o estudo das Escrituras?"],
+prayer:"Espírito Santo, ajuda-me a permanecer na verdade de Cristo. Guarda meu coração e ensina-me a reconhecer e obedecer à Palavra de Deus. Amém."
+},
+{
+day:10,title:"A esperança da volta de Cristo",ref:"1 João 2:28-29",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 2:28-29. Observe a relação entre permanecer em Cristo, sua manifestação e a prática da justiça.",
+context:"João orienta os cristãos a permanecerem em Cristo para que tenham confiança quando ele se manifestar. A esperança da volta de Jesus não é apresentada como motivo de medo para quem vive em comunhão com ele, mas como incentivo à fidelidade.",
+points:[
+"Permanecer em Cristo é uma orientação contínua para a vida cristã.",
+"A manifestação de Jesus é uma realidade futura que deve orientar a esperança dos discípulos.",
+"João deseja que os cristãos tenham confiança e não sejam envergonhados diante de Cristo.",
+"A justiça está relacionada ao caráter daquele que é justo.",
+"A prática da justiça é apresentada como evidência de uma vida que nasceu de Deus."
+],
+application:"Viva preparado para encontrar-se com Cristo. Não transforme a esperança da volta de Jesus em especulação sobre datas, mas em compromisso com uma vida justa e fiel.",
+memory:"Permanecei nele, para que, quando ele se manifestar, tenhamos confiança.",
+memoryRef:"1 João 2:28 — confira o texto completo na tradução escolhida.",
+questions:["Por que João recomenda permanecer em Cristo?","Como a esperança da volta de Jesus deve influenciar nossa conduta?","O que significa praticar a justiça?"],
+prayer:"Senhor Jesus, ajuda-me a permanecer em ti. Que a esperança da tua manifestação produza em mim fidelidade, santidade e confiança. Amém."
+},
+{
+day:11,title:"Somos filhos de Deus",ref:"1 João 3:1-3",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 3:1-3. Observe o amor do Pai e a esperança da transformação futura dos filhos de Deus.",
+context:"João convida os leitores a contemplarem a grandeza do amor de Deus, que concede aos cristãos o privilégio de serem chamados filhos de Deus. A identidade presente está ligada à esperança futura de serem semelhantes a Cristo.",
+points:[
+"O amor do Pai é demonstrado ao conceder aos cristãos o nome e a identidade de filhos de Deus.",
+"O mundo pode não compreender essa identidade porque não conhece a Deus.",
+"A condição presente dos filhos de Deus é real, embora sua manifestação futura ainda não esteja completa.",
+"Quando Cristo se manifestar, os cristãos serão semelhantes a ele, porque o verão como ele é.",
+"A esperança em Cristo conduz à purificação e a uma vida de santidade."
+],
+application:"Sua identidade não deve depender da aprovação das pessoas. Viva como filho de Deus, procurando refletir o caráter de Cristo e crescer em pureza.",
+memory:"Vede quão grande caridade nos tem concedido o Pai: que fôssemos chamados filhos de Deus.",
+memoryRef:"1 João 3:1 — confira o texto completo na tradução escolhida.",
+questions:["O que revela o amor do Pai?","O que esperamos quando Cristo se manifestar?","Como a esperança futura influencia a santidade presente?"],
+prayer:"Pai, obrigado por me chamares para ser teu filho. Ajuda-me a viver de maneira digna dessa identidade e a crescer em santidade. Amém."
+},
+{
+day:12,title:"Cristo se manifestou para tirar os pecados",ref:"1 João 3:4-10",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 3:4-10. Observe o contraste entre a prática do pecado e a vida que procede de Deus.",
+context:"João apresenta uma linguagem forte sobre pecado e justiça para mostrar que a nova vida em Cristo não pode ser confundida com uma prática contínua e deliberada de desobediência. O texto trata de uma orientação de vida, não de uma afirmação de que o cristão nunca mais cometerá falhas.",
+points:[
+"O pecado é apresentado como transgressão da lei.",
+"Jesus se manifestou para tirar os pecados, e nele não há pecado.",
+"A obra de Cristo não autoriza o cristão a permanecer deliberadamente no pecado.",
+"Aquele que pratica a justiça demonstra uma vida orientada por Deus.",
+"João relaciona a prática persistente do pecado à influência do maligno.",
+"A nova vida é manifestada por uma conduta que busca a justiça e o amor."
+],
+application:"Não normalize práticas que a Palavra chama de pecado. Ao mesmo tempo, quando falhar, reconheça sua necessidade de perdão e transformação. Busque viver uma vida coerente com Cristo.",
+memory:"Para isto se manifestou o Filho de Deus: para desfazer as obras do diabo.",
+memoryRef:"1 João 3:8 — confira o contexto na tradução escolhida.",
+questions:["Por que Jesus se manifestou segundo o texto?","O que significa não viver na prática do pecado?","Como a nova vida em Cristo transforma nossa conduta?"],
+prayer:"Senhor Jesus, transforma meu coração e minhas atitudes. Ajuda-me a abandonar o pecado e a viver na justiça que vem de ti. Amém."
+},
+{
+day:13,title:"Amemo-nos uns aos outros",ref:"1 João 3:11-15",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 3:11-15. Observe o contraste entre o amor de Cristo e o ódio exemplificado por Caim.",
+context:"João retorna ao mandamento anunciado desde o princípio: amar uns aos outros. Ele usa o exemplo de Caim para mostrar que o ódio é incompatível com a vida de Deus. O amor é evidência da passagem da morte para a vida.",
+points:[
+"A mensagem cristã desde o princípio inclui o mandamento do amor fraternal.",
+"Caim é apresentado como exemplo de alguém cujas obras eram más e que matou seu irmão.",
+"O mundo pode odiar os cristãos, mas isso não deve levá-los a responder com ódio.",
+"O amor aos irmãos é evidência de que passamos da morte para a vida.",
+"O ódio é tratado com seriedade porque revela uma disposição contrária ao amor de Deus."
+],
+application:"Não permita que a inveja, o ressentimento e o ódio controlem suas relações. Procure reconciliação, pratique o perdão e trate os irmãos com amor verdadeiro.",
+memory:"Nós sabemos que passamos da morte para a vida, porque amamos os irmãos.",
+memoryRef:"1 João 3:14 — confira o texto completo na tradução escolhida.",
+questions:["O que o exemplo de Caim ensina?","Como o amor demonstra a vida espiritual?","Que atitude prática pode demonstrar amor a um irmão?"],
+prayer:"Pai, livra-me do ódio e da inveja. Ensina-me a amar meus irmãos com sinceridade, assim como Cristo me amou. Amém."
+},
+{
+day:14,title:"O amor demonstrado por atitudes",ref:"1 João 3:16-18",week:"Semana 2 • Permanecendo na verdade",
+intro:"Leia 1 João 3:16-18. Observe como o sacrifício de Jesus define o amor e como esse amor deve ser praticado.",
+context:"João apresenta a entrega de Cristo como a demonstração suprema do amor. A partir desse exemplo, ensina que o amor cristão não pode ficar limitado a palavras ou declarações, mas deve ser manifestado em atitudes concretas.",
+points:[
+"Conhecemos o amor porque Jesus entregou sua vida por nós.",
+"O amor cristão é chamado a seguir o exemplo de entrega de Cristo.",
+"Quem possui recursos e vê seu irmão em necessidade deve agir com compaixão.",
+"Fechar o coração diante da necessidade do próximo contradiz o amor de Deus.",
+"João ensina que o amor deve ser praticado em obras e em verdade."
+],
+application:"Procure oportunidades concretas de servir. Uma palavra de carinho é importante, mas o amor também se revela em ajuda, generosidade, presença e cuidado.",
+memory:"Não amemos de palavra, nem de língua, mas por obra e em verdade.",
+memoryRef:"1 João 3:18 — confira o texto completo na tradução escolhida.",
+questions:["Como Jesus demonstrou o amor?","Por que palavras sem atitudes são insuficientes?","Que necessidade de alguém você pode ajudar a atender?"],
+prayer:"Senhor, ensina-me a amar como Jesus. Dá-me sensibilidade para perceber as necessidades das pessoas e disposição para ajudar. Amém."
+},
+{
+day:15,title:"A segurança diante de Deus",ref:"1 João 3:19-24",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 3:19-24. Observe a relação entre consciência, confiança em Deus, mandamentos e permanência nele.",
+context:"Depois de ensinar sobre o amor prático, João fala da segurança que os cristãos podem encontrar diante de Deus. Mesmo quando o coração os acusa, Deus é maior que o coração e conhece todas as coisas.",
+points:[
+"A prática da verdade e do amor fortalece a convicção de que pertencemos à verdade.",
+"Deus conhece todas as coisas e é maior que o coração humano.",
+"A consciência pode acusar, mas o cristão é chamado a buscar segurança diante de Deus.",
+"A confiança na oração está relacionada a uma vida de comunhão e obediência.",
+"O mandamento de Deus inclui crer no nome de Jesus Cristo e amar uns aos outros.",
+"Aquele que guarda os mandamentos permanece em Deus, e Deus nele."
+],
+application:"Não confunda segurança espiritual com ausência de exame pessoal. Busque uma consciência orientada pela Palavra, confie na graça de Deus e demonstre sua fé por meio do amor.",
+memory:"E aquele que guarda os seus mandamentos nele está, e ele nele.",
+memoryRef:"1 João 3:24 — confira o texto completo na tradução escolhida.",
+questions:["Por que Deus é maior que o nosso coração?","Como a obediência se relaciona com a comunhão com Deus?","Quais mandamentos João destaca neste trecho?"],
+prayer:"Pai, dá-me uma consciência orientada por tua Palavra. Fortalece minha confiança em ti e ajuda-me a viver em fé e amor. Amém."
+},
+{
+day:16,title:"Provai se os espíritos são de Deus",ref:"1 João 4:1-3",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 4:1-3. Observe o alerta para não acreditar em qualquer mensagem espiritual sem discernimento.",
+context:"João escreve em meio à presença de falsos profetas e ensinos que distorciam a identidade de Jesus. Por isso, orienta a comunidade a examinar as mensagens espirituais à luz da confissão verdadeira sobre Cristo.",
+points:[
+"Nem todo espírito ou mensagem que se apresenta como espiritual procede de Deus.",
+"Os cristãos são chamados a examinar os ensinos, em vez de aceitá-los automaticamente.",
+"João apresenta a confissão de Jesus Cristo vindo em carne como critério importante de discernimento.",
+"A negação da verdadeira identidade de Jesus revela oposição à mensagem apostólica.",
+"O discernimento cristão deve estar fundamentado na verdade revelada sobre Cristo."
+],
+application:"Não aceite qualquer profecia, ensino ou manifestação apenas por sua aparência religiosa. Compare tudo com as Escrituras e avalie se a mensagem honra a identidade e a obra de Jesus.",
+memory:"Amados, não creiais em todo espírito, mas provai se os espíritos são de Deus.",
+memoryRef:"1 João 4:1 — confira o texto completo na tradução escolhida.",
+questions:["Por que João manda provar os espíritos?","Qual é o critério cristológico apresentado no texto?","Como examinar uma mensagem religiosa à luz da Bíblia?"],
+prayer:"Espírito Santo, concede-me discernimento. Guarda-me do engano e ajuda-me a permanecer fiel à verdade de Jesus Cristo. Amém."
+},
+{
+day:17,title:"Maior é o que está em vós",ref:"1 João 4:4-6",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 4:4-6. Observe a confiança dos cristãos em Deus diante dos falsos ensinos.",
+context:"Após orientar os leitores a examinar os espíritos, João os encoraja lembrando que pertencem a Deus. A vitória não está na capacidade humana isolada, mas naquele que habita nos cristãos e é maior do que o espírito que atua no mundo.",
+points:[
+"João chama os leitores de filhinhos e afirma que pertencem a Deus.",
+"Aquele que está nos cristãos é maior do que aquele que está no mundo.",
+"Os falsos ensinos recebem atenção daqueles que pertencem ao sistema contrário a Deus.",
+"Os que conhecem a Deus acolhem o testemunho apostólico.",
+"A verdade e o erro podem ser discernidos pela relação com a mensagem recebida dos apóstolos."
+],
+application:"Enfrente as pressões e os falsos ensinos com confiança em Deus. Não dependa de arrogância ou força própria; permaneça na Palavra e na comunhão com Cristo.",
+memory:"Maior é o que está em vós do que o que está no mundo.",
+memoryRef:"1 João 4:4 — confira o texto completo na tradução escolhida.",
+questions:["Qual é a fonte da confiança dos cristãos?","Como o texto relaciona discernimento e testemunho apostólico?","Como permanecer firme diante de ensinos contrários ao Evangelho?"],
+prayer:"Senhor, fortalece minha fé. Lembra-me de que tua presença é maior do que qualquer oposição e ajuda-me a permanecer na verdade. Amém."
+},
+{
+day:18,title:"Deus é amor",ref:"1 João 4:7-10",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 4:7-10. Observe a origem do amor cristão e a demonstração do amor de Deus por meio de Jesus.",
+context:"João aprofunda o tema do amor, mostrando que sua origem está em Deus. O amor não é definido apenas por sentimentos humanos, mas pela iniciativa divina de enviar seu Filho como propiciação pelos pecados.",
+points:[
+"O amor procede de Deus, e quem ama demonstra que nasceu de Deus e o conhece.",
+"Quem não ama não conhece verdadeiramente a Deus, porque Deus é amor.",
+"O amor de Deus foi manifestado ao enviar seu Filho unigênito ao mundo.",
+"A iniciativa da salvação pertence a Deus; não fomos nós que primeiro o amamos.",
+"Jesus foi enviado como propiciação pelos pecados, demonstrando a profundidade do amor divino."
+],
+application:"Aprenda a definir o amor a partir do caráter e da obra de Deus. Não reduza o amor a sentimentos: pratique cuidado, perdão, verdade, generosidade e serviço.",
+memory:"Nisto está o amor: não em que nós tenhamos amado a Deus, mas em que ele nos amou.",
+memoryRef:"1 João 4:10 — confira o texto completo na tradução escolhida.",
+questions:["De onde procede o amor verdadeiro?","Como Deus demonstrou seu amor?","Por que a cruz é a maior demonstração do amor divino?"],
+prayer:"Pai, obrigado por teu amor demonstrado em Jesus. Transforma meu coração para que eu ame as pessoas com sinceridade e verdade. Amém."
+},
+{
+day:19,title:"Amor perfeito e confiança",ref:"1 João 4:11-18",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 4:11-18. Observe a relação entre amar os irmãos, permanecer em Deus e ter confiança diante dele.",
+context:"João ensina que o amor recebido de Deus deve ser reproduzido nos relacionamentos. A presença de Deus é relacionada ao amor vivido na comunidade, e o amor aperfeiçoado produz confiança diante do juízo.",
+points:[
+"Se Deus nos amou dessa maneira, também devemos amar uns aos outros.",
+"Deus não é visto fisicamente, mas seu amor se torna perceptível na comunidade que ama.",
+"A permanência em Deus está relacionada à presença do Espírito.",
+"O testemunho apostólico afirma que o Pai enviou o Filho como Salvador do mundo.",
+"Quem confessa Jesus como Filho de Deus permanece em Deus.",
+"O amor aperfeiçoado lança fora o medo relacionado ao castigo, produzindo confiança diante de Deus."
+],
+application:"Permita que o amor de Deus transforme sua maneira de se relacionar. Cresça na confiança em Cristo, sem confundir essa segurança com orgulho ou desprezo pela santidade.",
+memory:"No amor não há temor; antes, o perfeito amor lança fora o temor.",
+memoryRef:"1 João 4:18 — confira o contexto na tradução escolhida.",
+questions:["Como o amor de Deus deve aparecer na comunidade?","O que significa permanecer em Deus?","Como o amor aperfeiçoado se relaciona com a confiança diante de Deus?"],
+prayer:"Senhor, aperfeiçoa teu amor em mim. Livra-me do medo que me paralisa e ensina-me a viver com confiança, santidade e amor. Amém."
+},
+{
+day:20,title:"Amamos porque ele nos amou primeiro",ref:"1 João 4:19-21",week:"Semana 3 • Fé, amor e discernimento",
+intro:"Leia 1 João 4:19-21. Observe como o amor a Deus está ligado ao amor aos irmãos.",
+context:"João conclui essa parte de seu ensino mostrando que não existe coerência em afirmar amor a Deus enquanto se odeia o irmão. O amor recebido de Deus deve se manifestar nas relações humanas.",
+points:[
+"O amor cristão tem sua origem na iniciativa de Deus.",
+"Amamos porque Deus nos amou primeiro.",
+"Quem afirma amar a Deus, mas odeia seu irmão, contradiz a verdade.",
+"O amor ao irmão é um mandamento recebido do próprio Deus.",
+"A relação com Deus não pode ser separada da maneira como tratamos as pessoas."
+],
+application:"Examine suas relações. Não use atividades religiosas para esconder ressentimentos. Procure viver o amor de Deus em atitudes concretas de respeito, perdão e cuidado.",
+memory:"Nós o amamos porque ele nos amou primeiro.",
+memoryRef:"1 João 4:19 — confira o texto completo na tradução escolhida.",
+questions:["Quem toma a iniciativa do amor?","Por que é incoerente dizer que amamos a Deus e odiamos o irmão?","Que relacionamento precisa ser tratado com mais amor?"],
+prayer:"Pai, obrigado porque me amaste primeiro. Ajuda-me a amar meus irmãos com sinceridade e a demonstrar esse amor em minhas atitudes. Amém."
+},
+{
+day:21,title:"A fé que vence o mundo",ref:"1 João 5:1-5",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:1-5. Observe a relação entre fé em Jesus, novo nascimento, amor e obediência.",
+context:"João retoma a ligação entre fé e amor. Aquele que crê que Jesus é o Cristo demonstra ter nascido de Deus. A fé verdadeira não é apenas uma declaração, mas uma confiança que produz amor e obediência.",
+points:[
+"Crer que Jesus é o Cristo está relacionado ao nascimento de Deus.",
+"Quem ama o Pai também deve amar aqueles que dele foram gerados.",
+"O amor a Deus se manifesta na guarda de seus mandamentos.",
+"Os mandamentos de Deus não são apresentados como um peso impossível para quem vive pela fé.",
+"A vitória que vence o mundo é a fé.",
+"João identifica o vencedor como aquele que crê que Jesus é o Filho de Deus."
+],
+application:"Permaneça firme na fé em Jesus. Não permita que as pressões do mundo determinem suas convicções. Demonstre sua fé por meio do amor e da obediência.",
+memory:"Esta é a vitória que vence o mundo: a nossa fé.",
+memoryRef:"1 João 5:4 — confira o texto completo na tradução escolhida.",
+questions:["Qual é a relação entre fé e novo nascimento?","Como o amor se relaciona com a obediência?","O que significa vencer o mundo pela fé?"],
+prayer:"Senhor, fortalece minha fé em Jesus. Ajuda-me a vencer as pressões do mundo e a viver em amor e obediência. Amém."
+},
+{
+day:22,title:"O testemunho a respeito do Filho",ref:"1 João 5:6-12",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:6-12. Observe o testemunho sobre Jesus Cristo e a relação entre o Filho e a vida eterna.",
+context:"João apresenta testemunhos relacionados à identidade e à obra de Jesus. O objetivo é mostrar que a vida eterna não está separada do Filho: quem tem o Filho tem a vida, e quem rejeita o Filho rejeita o testemunho de Deus.",
+points:[
+"Jesus Cristo é apresentado como aquele que veio por água e sangue.",
+"O testemunho do Espírito é destacado como verdadeiro.",
+"João afirma que Deus deu testemunho acerca de seu Filho.",
+"Rejeitar o testemunho de Deus sobre o Filho significa tratá-lo como mentiroso.",
+"A vida eterna é apresentada como dádiva que está no Filho.",
+"Quem tem o Filho tem a vida; quem não tem o Filho de Deus não tem a vida."
+],
+application:"A vida eterna não é uma conquista independente de Jesus. Coloque sua confiança no Filho de Deus e mantenha a centralidade de Cristo em sua fé.",
+memory:"Quem tem o Filho tem a vida; quem não tem o Filho de Deus não tem a vida.",
+memoryRef:"1 João 5:12 — confira o texto completo na tradução escolhida.",
+questions:["Quem é o centro do testemunho apresentado por João?","Onde está a vida eterna?","Por que Jesus não pode ser tratado como apenas mais um caminho religioso?"],
+prayer:"Pai, obrigado pelo testemunho que deste acerca de teu Filho. Ajuda-me a permanecer em Jesus, que é a fonte da vida eterna. Amém."
+},
+{
+day:23,title:"A certeza da vida eterna",ref:"1 João 5:13",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:13. Observe por que João escreveu sua carta e o que deseja que os cristãos saibam.",
+context:"Este versículo apresenta de maneira direta um dos propósitos da carta: oferecer aos que creem no nome do Filho de Deus a certeza de que possuem a vida eterna. A segurança cristã está fundamentada em Cristo e no testemunho de Deus.",
+points:[
+"João escreve aos que creem no nome do Filho de Deus.",
+"O propósito declarado é que os leitores saibam que têm a vida eterna.",
+"A certeza não se baseia em superioridade humana ou mérito pessoal.",
+"A confiança está relacionada à pessoa e à obra de Jesus Cristo.",
+"A segurança da salvação deve conduzir à perseverança e à gratidão."
+],
+application:"Não baseie sua esperança apenas em emoções passageiras. Conheça as promessas das Escrituras e mantenha sua confiança em Jesus Cristo.",
+memory:"Estas coisas vos escrevi, para que saibais que tendes a vida eterna.",
+memoryRef:"1 João 5:13 — confira o texto completo na tradução escolhida.",
+questions:["Qual é o propósito declarado por João?","Em quem está fundamentada a certeza da vida eterna?","Como essa certeza pode transformar sua caminhada cristã?"],
+prayer:"Senhor, firma minha confiança em Jesus. Que eu conheça tuas promessas e viva com gratidão pela vida eterna que ofereces. Amém."
+},
+{
+day:24,title:"A confiança na oração",ref:"1 João 5:14-15",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:14-15. Observe como João relaciona oração, confiança e submissão à vontade de Deus.",
+context:"João apresenta a confiança que os cristãos possuem diante de Deus. A oração não é uma ferramenta para impor desejos pessoais ao Senhor, mas uma expressão de comunhão e dependência de sua vontade.",
+points:[
+"A confiança diante de Deus está relacionada a pedir segundo sua vontade.",
+"Deus ouve os pedidos que estão de acordo com sua vontade.",
+"A certeza de que Deus ouve não significa que ele seja obrigado a atender todos os desejos humanos.",
+"A oração deve ser marcada por fé, dependência e submissão.",
+"João encoraja os cristãos a viverem com confiança na relação com o Pai."
+],
+application:"Ore com confiança, mas também com humildade. Apresente seus pedidos a Deus e esteja disposto a aceitar sua direção, sabendo que sua vontade é perfeita.",
+memory:"Se pedirmos alguma coisa, segundo a sua vontade, ele nos ouve.",
+memoryRef:"1 João 5:14 — confira o texto completo na tradução escolhida.",
+questions:["Qual é a condição destacada por João para a confiança na oração?","Deus é obrigado a atender todos os nossos desejos?","Como praticar uma oração submissa à vontade de Deus?"],
+prayer:"Pai, ensina-me a orar com fé e humildade. Que meus pedidos estejam alinhados à tua vontade e que eu confie em tua sabedoria. Amém."
+},
+{
+day:25,title:"O cuidado espiritual pelos irmãos",ref:"1 João 5:16-17",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:16-17. Observe o ensino sobre intercessão e a seriedade do pecado.",
+context:"Esta passagem contém a expressão pecado para morte, que possui diferentes interpretações entre os estudiosos cristãos. João mantém o foco na seriedade do pecado e na responsabilidade de interceder por irmãos que necessitam de restauração.",
+points:[
+"João orienta a interceder pelo irmão que é visto em pecado.",
+"A oração é apresentada como parte do cuidado espiritual da comunidade.",
+"O texto distingue pecado para morte e pecado que não é para morte.",
+"A expressão pecado para morte exige interpretação cuidadosa dentro do conjunto da carta.",
+"Toda injustiça é pecado, e o cristão não deve tratar o pecado com indiferença."
+],
+application:"Não seja indiferente à queda de um irmão. Ore, ofereça apoio e procure agir com verdade, amor e responsabilidade. Evite condenações precipitadas diante de uma passagem difícil.",
+memory:"Toda iniquidade é pecado.",
+memoryRef:"1 João 5:17 — confira o contexto na tradução escolhida.",
+questions:["Qual é a atitude recomendada diante do pecado de um irmão?","Por que a passagem exige interpretação cuidadosa?","Como unir verdade, oração e amor ao ajudar alguém?"],
+prayer:"Senhor, dá-me amor e discernimento para cuidar dos irmãos. Ensina-me a interceder, orientar com humildade e tratar o pecado com seriedade. Amém."
+},
+{
+day:26,title:"Sabemos que somos de Deus",ref:"1 João 5:18-20",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:18-20. Observe as afirmações de certeza que encerram os principais ensinamentos da carta.",
+context:"João apresenta declarações sobre a nova vida, a proteção de Deus e o conhecimento daquele que é verdadeiro. A carta termina apontando para Jesus Cristo, por meio de quem conhecemos o Deus verdadeiro.",
+points:[
+"João afirma que aquele que nasceu de Deus não vive na prática do pecado como orientação de vida.",
+"O texto apresenta a proteção de Deus contra o maligno.",
+"O mundo inteiro jaz no maligno, em contraste com aqueles que pertencem a Deus.",
+"O Filho de Deus veio e concedeu entendimento para conhecer aquele que é verdadeiro.",
+"Os cristãos estão no verdadeiro, em seu Filho Jesus Cristo.",
+"Jesus Cristo é identificado como o verdadeiro Deus e a vida eterna."
+],
+application:"Viva com a identidade de quem pertence a Deus. Reconheça a seriedade do pecado, confie na proteção do Senhor e mantenha Jesus no centro de sua fé.",
+memory:"Este é o verdadeiro Deus e a vida eterna.",
+memoryRef:"1 João 5:20 — confira o texto completo na tradução escolhida.",
+questions:["O que João afirma sobre os que nasceram de Deus?","Quem concede entendimento para conhecer o Deus verdadeiro?","Por que Jesus é central à vida eterna?"],
+prayer:"Pai, obrigado por nos revelares a verdade em Jesus Cristo. Guarda minha vida e ajuda-me a permanecer no verdadeiro. Amém."
+},
+{
+day:27,title:"Guardai-vos dos ídolos",ref:"1 João 5:21",week:"Semana 4 • Vitória e certeza da vida eterna",
+intro:"Leia 1 João 5:21. Observe a advertência final de João contra os ídolos.",
+context:"A carta termina com uma advertência curta e direta. Depois de ensinar sobre a identidade de Jesus, o amor, a verdade e a vida eterna, João chama os leitores a se guardarem dos ídolos. A fidelidade a Deus exige que nada ocupe o lugar que pertence somente a ele.",
+points:[
+"João chama os leitores de filhinhos, demonstrando cuidado pastoral.",
+"A ordem final é guardar-se dos ídolos.",
+"Ídolos podem envolver imagens de culto, falsas divindades e qualquer realidade que ocupe o lugar de Deus.",
+"A idolatria compromete a fidelidade ao Senhor.",
+"A vida cristã exige adoração exclusiva ao Deus verdadeiro."
+],
+application:"Examine o que ocupa o primeiro lugar em sua vida. Dinheiro, poder, fama, prazer ou qualquer outra coisa podem se tornar ídolos quando recebem a devoção que pertence a Deus.",
+memory:"Filhinhos, guardai-vos dos ídolos. Amém.",
+memoryRef:"1 João 5:21 — confira o texto completo na tradução escolhida.",
+questions:["Por que João encerra a carta com essa advertência?","O que pode se tornar um ídolo na vida moderna?","Existe algo ocupando o lugar de Deus em suas prioridades?"],
+prayer:"Senhor, guarda meu coração de toda idolatria. Que somente tu ocupes o primeiro lugar em minha vida e recebas minha adoração. Amém."
+},
+{
+day:28,title:"Revisão: luz, verdade e obediência",ref:"1 João 1:5-2:6",week:"Semana 4 • Revisão e compromisso",
+intro:"Releia 1 João 1:5-2:6. Revise os ensinamentos sobre Deus como luz, confissão, perdão e obediência.",
+context:"A primeira parte da carta apresenta a santidade de Deus e a necessidade de uma vida coerente com a comunhão que professamos. João ensina que o pecado deve ser confessado e que Jesus Cristo é nosso Advogado junto ao Pai.",
+points:[
+"Deus é luz, e não existe treva alguma nele.",
+"Andar na luz envolve viver em verdade e comunhão.",
+"Confessar os pecados é reconhecer nossa necessidade do perdão de Deus.",
+"Jesus Cristo é o Justo e nosso Advogado junto ao Pai.",
+"Conhecer a Deus deve produzir obediência aos seus mandamentos.",
+"Quem afirma permanecer em Cristo deve andar como ele andou."
+],
+application:"Faça uma avaliação sincera da sua caminhada. Procure abandonar a aparência religiosa e desenvolver uma vida de comunhão, confissão, obediência e transformação.",
+memory:"Aquele que diz que está nele também deve andar como ele andou.",
+memoryRef:"1 João 2:6 — confira o texto completo na tradução escolhida.",
+questions:["O que significa andar na luz?","Qual é a importância da confissão dos pecados?","Como demonstrar que permanecemos em Cristo?"],
+prayer:"Pai, ajuda-me a andar na luz. Que minha vida demonstre comunhão contigo, arrependimento sincero e obediência à tua Palavra. Amém."
+},
+{
+day:29,title:"Revisão: amor e discernimento",ref:"1 João 3:11-4:21",week:"Semana 4 • Revisão e compromisso",
+intro:"Releia 1 João 3:11-4:21. Revise os ensinamentos sobre amor fraternal, discernimento espiritual e o caráter de Deus.",
+context:"João demonstra que o amor é uma evidência essencial da vida cristã. Ao mesmo tempo, ensina que o amor precisa estar unido à verdade sobre Jesus. A comunidade deve amar os irmãos e rejeitar os falsos ensinos.",
+points:[
+"O amor fraternal é uma evidência da passagem da morte para a vida.",
+"O amor deve ser demonstrado por obras e em verdade.",
+"Os cristãos devem examinar os ensinos espirituais à luz da confissão verdadeira de Jesus.",
+"Deus é amor, e sua iniciativa é demonstrada no envio de seu Filho.",
+"O amor recebido de Deus deve ser reproduzido nos relacionamentos.",
+"O amor aperfeiçoado produz confiança diante de Deus."
+],
+application:"Procure unir amor e verdade em sua vida. Não seja indiferente às necessidades dos irmãos e não abandone o discernimento bíblico em nome de uma falsa tolerância.",
+memory:"Amados, amemo-nos uns aos outros, porque o amor é de Deus.",
+memoryRef:"1 João 4:7 — confira o texto completo na tradução escolhida.",
+questions:["Como o amor se manifesta em atitudes concretas?","Por que devemos examinar os ensinos espirituais?","Como unir amor e verdade na comunidade cristã?"],
+prayer:"Senhor, enche meu coração com teu amor e dá-me discernimento. Ajuda-me a servir meus irmãos e a permanecer fiel à verdade de Cristo. Amém."
+},
+{
+day:30,title:"A certeza da vida eterna em Jesus",ref:"1 João 5:1-21",week:"Semana 4 • Revisão e compromisso",
+intro:"Releia 1 João 5. Observe os ensinamentos sobre fé, vitória, testemunho, oração e certeza da vida eterna.",
+context:"O capítulo final reúne temas centrais da carta. João relaciona a fé em Jesus ao novo nascimento, apresenta o testemunho de Deus sobre o Filho e declara o propósito de oferecer certeza aos que creem. A carta termina chamando os cristãos à fidelidade exclusiva ao Senhor.",
+points:[
+"A fé em Jesus como o Cristo está ligada ao novo nascimento.",
+"O amor a Deus se manifesta na obediência e no amor aos filhos de Deus.",
+"A vitória que vence o mundo é a fé.",
+"O testemunho de Deus aponta para seu Filho e para a vida eterna que está nele.",
+"João escreve para que os cristãos saibam que têm a vida eterna.",
+"A oração deve estar alinhada à vontade de Deus.",
+"A carta encerra com uma advertência contra os ídolos."
+],
+application:"Conclua este plano assumindo o compromisso de continuar na Palavra. Creia em Jesus, ame os irmãos, pratique a justiça, examine os ensinos e mantenha Deus no primeiro lugar.",
+memory:"Estas coisas vos escrevi, para que saibais que tendes a vida eterna.",
+memoryRef:"1 João 5:13 — confira o texto completo na tradução escolhida.",
+questions:["Qual é o propósito central da Primeira Epístola de João?","Quais evidências demonstram uma vida de comunhão com Deus?","Que compromisso você assume para continuar crescendo na fé?"],
+prayer:"Pai, obrigado pelo ensino da Primeira Epístola de João. Ajuda-me a permanecer em Cristo, andar na luz, amar meus irmãos e guardar tua Palavra. Que minha vida demonstre a certeza da esperança que tenho em Jesus. Amém."
+}
+];
+
+const $ = id => document.getElementById(id);
+const KEY = "atalaia-primeira-joao-v1";
+let state;
+
+try {
+ state = JSON.parse(localStorage.getItem(KEY) || '{"done":[],"notes":{},"dark":false}');
+} catch {
+ state = {done:[],notes:{},dark:false};
+}
+
+let current = 0;
+
+function persist(){
+ localStorage.setItem(KEY,JSON.stringify(state));
+}
+
+function updateProgress(){
+ const n=state.done.length;
+ const p=Math.round(n/30*100);
+ $("progressPercent").textContent=p+"%";
+ $("progressBar").style.width=p+"%";
+ $("progressText").textContent=n===30
+ ? "Parabéns! Você concluiu os 30 estudos. Continue crescendo na Palavra."
+ : `Você concluiu ${n} de 30 estudos. ${n===0?"Comece pelo Dia 1.":"Continue firme em sua caminhada com Cristo."}`;
+}
+
+function renderDays(){
+ $("dayList").innerHTML=studies.map(s=>`
+ <button class="day-item ${state.done.includes(s.day)?"done":""}" data-day="${s.day-1}">
+ <span class="day-number">${state.done.includes(s.day)?"✓":String(s.day).padStart(2,"0")}</span>
+ <span class="day-info"><strong>${s.title}</strong><small>${s.ref}</small></span>
+ <span class="day-check">${state.done.includes(s.day)?"✓":"›"}</span>
+ </button>`).join("");
+
+ document.querySelectorAll(".day-item").forEach(b=>{
+  b.addEventListener("click",()=>openStudy(Number(b.dataset.day)));
+ });
+ updateProgress();
+}
+
+function openStudy(i){
+ current=Math.max(0,Math.min(29,i));
+ const s=studies[current];
+
+ $("homeView").classList.remove("active");
+ $("studyView").classList.add("active");
+
+ $("studyDayLabel").textContent="DIA "+s.day;
+ $("studyWeek").textContent=s.week;
+ $("studyTitle").textContent=s.title;
+ $("studyReference").textContent="Leitura bíblica: "+s.ref;
+ $("readingIntro").textContent=s.intro;
+ $("readingReference").textContent=s.ref+" • Bíblia Livre (Almeida 1819)";
+ loadScripture(s);
+
+ $("contextText").textContent=s.context;
+ $("explanationText").innerHTML=s.points.map(x=>
+  `<div class="explain-point">• ${escapeHTML(x)}</div>`
+ ).join("");
+
+ $("applicationText").textContent=s.application;
+ $("memoryText").textContent=s.memory;
+ $("memoryReference").textContent=s.memoryRef;
+
+ $("questions").innerHTML=s.questions.map((q,n)=>
+  `<div class="question">${n+1}. ${escapeHTML(q)}</div>`
+ ).join("");
+
+ $("prayerText").textContent=s.prayer;
+ $("notesInput").value=state.notes[s.day]||"";
+
+ $("completeBtn").textContent=state.done.includes(s.day)
+  ?"Estudo concluído ✓":"Marcar como concluído ✓";
+
+ $("prevBtn").disabled=i===0;
+ $("nextBtn").disabled=i===29;
+
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+const BIBLE_API="https://api.midvash.com/v1";
+const BIBLE_VERSION="almeida-livre";
+const BOOK_SLUG="1-john";
+const scriptureCache=new Map();
+
+async function loadScripture(study){
+ const container=$("scriptureText");
+ const credit=$("scriptureCopyright");
+
+ container.innerHTML='<p class="scripture-status">Carregando o texto bíblico…</p>';
+ credit.textContent="Tradução: Bíblia Livre (Almeida 1819).";
+
+ if(scriptureCache.has(study.ref)){
+  renderScripture(scriptureCache.get(study.ref));
+  return;
+ }
+
+ try{
+  const match=study.ref.match(/^1 João\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+  if(!match)throw new Error("Referência bíblica não reconhecida.");
+
+  const chapter=Number(match[1]);
+  const start=match[2]?Number(match[2]):1;
+  const end=match[3]?Number(match[3]):null;
+
+  const response=await fetch(`${BIBLE_API}/${BIBLE_VERSION}/${BOOK_SLUG}/${chapter}`);
+  if(!response.ok)throw new Error("Não foi possível consultar a fonte bíblica.");
+
+  const body=await response.json();
+  if(body.error)throw new Error(body.error.message||"Erro ao carregar a passagem.");
+
+  const data=body.data||body;
+  let verses=data.verses||[];
+
+  if(!Array.isArray(verses)||!verses.length){
+   if(data.text)verses=data.text.split(/\n+/).filter(Boolean);
+   else throw new Error("A fonte não retornou os versículos esperados.");
+  }
+
+  const normalized=verses.map((item,index)=>{
+   if(typeof item==="string")return {number:index+1,text:item};
+   return {
+    number:Number(item.verse||item.number||item.verseNumber||index+1),
+    text:item.text||item.content||""
+   };
+  }).filter(v=>v.text);
+
+  const selected=normalized.filter(v=>
+   v.number>=start&&(end===null||v.number<=end)
+  );
+
+  if(!selected.length)throw new Error("A passagem não foi encontrada.");
+
+  const result={
+   verses:selected,
+   reference:data.reference||study.ref,
+   copyright:body.meta?.copyright||"Bíblia Livre (Almeida 1819) — consulte os termos da fonte."
+  };
+
+  scriptureCache.set(study.ref,result);
+  renderScripture(result);
+
+ }catch(error){
+  container.innerHTML='<p class="scripture-error">Não foi possível carregar o texto bíblico automaticamente. Consulte a referência indicada em sua Bíblia e tente novamente.</p>';
+
+  const retry=document.createElement("button");
+  retry.className="secondary-btn";
+  retry.textContent="Tentar novamente";
+  retry.addEventListener("click",()=>loadScripture(study));
+  container.appendChild(retry);
+
+  credit.textContent="O texto bíblico requer conexão com a internet e disponibilidade da fonte.";
+  console.error(error);
+ }
+}
+
+function renderScripture(result){
+ $("scriptureText").innerHTML=result.verses.map(v=>`
+ <div class="scripture-verse">
+ <sup>${v.number}</sup>
+ <span>${escapeHTML(v.text)}</span>
+ </div>`).join("");
+
+ $("scriptureCopyright").textContent=result.copyright;
+}
+
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g,char=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+ }[char]));
+}
+
+function showHome(){
+ $("studyView").classList.remove("active");
+ $("homeView").classList.add("active");
+ renderDays();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("homeLink").addEventListener("click",e=>{
+ e.preventDefault();
+ showHome();
+});
+
+$("backBtn").addEventListener("click",showHome);
+
+$("continueBtn").addEventListener("click",()=>{
+ const next=studies.findIndex(s=>!state.done.includes(s.day));
+ openStudy(next<0?29:next);
+});
+
+$("prevBtn").addEventListener("click",()=>openStudy(current-1));
+$("nextBtn").addEventListener("click",()=>openStudy(current+1));
+
+$("completeBtn").addEventListener("click",()=>{
+ const d=studies[current].day;
+ if(!state.done.includes(d))state.done.push(d);
+ persist();
+ $("completeBtn").textContent="Estudo concluído ✓";
+ renderDays();
+});
+
+$("saveNotesBtn").addEventListener("click",()=>{
+ const d=studies[current].day;
+ state.notes[d]=$("notesInput").value;
+ persist();
+ $("saveNotesBtn").textContent="Salvo ✓";
+ setTimeout(()=>$("saveNotesBtn").textContent="Salvar minhas anotações",1500);
+});
+
+$("themeBtn").addEventListener("click",()=>{
+ state.dark=!state.dark;
+ document.body.classList.toggle("dark",state.dark);
+ persist();
+});
+
+if(state.dark)document.body.classList.add("dark");
+
+renderDays();
+
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+ window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>

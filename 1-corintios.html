@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172b43">
+<meta name="description" content="Plano de discipulado bíblico de 30 dias na Primeira Carta aos Coríntios — Ministério Atalaia.">
+<title>Primeiros Passos na Fé | 1 Coríntios — Ministério Atalaia</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+--navy:#172b43;--navy2:#294764;--gold:#c6a15b;
+--paper:#f5f3ee;--card:#fff;--ink:#202a35;
+--muted:#77818b;--line:#e8e5dd;--soft:#f8f6f1;--green:#47745d
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6}
+.topbar{height:66px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 900px)/2));position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;letter-spacing:.08em;font-size:11px}
+.brand small{display:block;color:#d8c49b;font-size:9px;letter-spacing:.18em}
+.brand-mark{color:var(--gold);font-size:27px}
+.icon-btn{border:1px solid #53667b;color:white;background:transparent;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+main{max-width:900px;margin:auto;padding:26px 20px 60px}
+.view{display:none}
+.view.active{display:block}
+.hero{background:linear-gradient(135deg,#172b43,#294764);border-radius:22px;padding:36px 32px;color:#fff;position:relative;overflow:hidden;box-shadow:0 12px 30px #172b431c}
+.hero:after{content:"✦";position:absolute;right:28px;top:8px;font-size:140px;color:#ffffff0b}
+.eyebrow,.section-kicker,.card-label{font-size:10px;letter-spacing:.17em;font-weight:700;color:var(--gold)}
+h1,h2{font-family:'Playfair Display',serif;line-height:1.15}
+.hero h1{font-size:clamp(34px,7vw,54px);margin:18px 0 12px}
+.hero h1 em{font-style:normal;color:#e0c27f}
+.hero p{max-width:500px;color:#e0e6eb;margin-bottom:22px}
+.hero-meta{font-size:10px;letter-spacing:.13em;color:#d8c49b;margin-bottom:22px}
+.primary-btn,.secondary-btn{border:0;border-radius:10px;padding:13px 18px;font:700 13px 'DM Sans';cursor:pointer}
+.primary-btn{background:var(--gold);color:#172b43}
+.primary-btn span{margin-left:18px}
+.secondary-btn{background:#eae6dc;color:var(--navy)}
+.progress-card,.content-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:21px;margin-top:18px}
+.progress-heading,.section-heading{display:flex;align-items:center;justify-content:space-between}
+.progress-heading h2,.section-heading h2{font-size:22px;margin:3px 0}
+.progress-heading strong{font-size:24px;color:var(--navy)}
+.progress-track{height:8px;background:#ece9e1;border-radius:10px;overflow:hidden;margin:13px 0 8px}
+.progress-track span{display:block;height:100%;width:0;background:var(--green);border-radius:10px;transition:width .25s}
+.progress-card p,.muted{color:var(--muted);font-size:12px}
+.section-heading{margin:30px 0 12px}
+.day-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.day-item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:var(--ink);width:100%}
+.day-item:hover{border-color:var(--gold)}
+.day-number{width:38px;height:38px;border-radius:11px;background:#f0ede5;color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:12px;flex-shrink:0}
+.day-item.done .day-number{background:#e3eee7;color:var(--green)}
+.day-info strong{display:block;font-size:12px}
+.day-info small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.day-check{margin-left:auto;color:var(--green)}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:35px 0 10px}
+.back-btn{border:0;background:transparent;color:var(--navy);font-weight:700;padding:5px 0 18px;cursor:pointer}
+.study-topline{display:flex;align-items:center;gap:12px}
+.pill{background:#e8e1d2;color:#6e5528;border-radius:30px;padding:5px 11px;font-size:10px;font-weight:700;letter-spacing:.1em}
+.study-title{font-size:clamp(30px,6vw,42px);margin:16px 0 5px;color:var(--navy)}
+.study-reference{color:var(--muted);margin:0 0 18px}
+.study-content{max-width:720px}
+.content-card{padding:22px;margin:13px 0}
+.content-card h2{font-size:21px;margin:7px 0 10px;color:var(--navy)}
+.content-card p{font-size:14px;margin:8px 0}
+.reference-box{padding:12px 14px;background:var(--soft);border-left:3px solid var(--gold);font-weight:700;color:var(--navy);margin:12px 0}
+.content-card label{display:block;font-size:12px;font-weight:700;margin:16px 0 7px;color:var(--navy)}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px;font:13px/1.6 'DM Sans';background:#fff;color:#202a35}
+textarea:focus{outline:2px solid #c6a15b66;border-color:var(--gold)}
+.tiny-note{font-size:10px!important;color:var(--muted)}
+.explain-point{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.explain-point:last-child{border:0}
+.memory-verse{font-family:'Playfair Display',serif;font-size:18px!important;color:var(--navy)}
+.scripture-text{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+.scripture-verse{display:grid;grid-template-columns:25px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.75}
+.scripture-verse:last-child{border:0}
+.scripture-verse sup{color:#9a793d;font-weight:700;font-size:10px;padding-top:3px}
+.scripture-status{color:var(--muted);font-size:12px}
+.scripture-error{color:#a33b32;font-size:13px}
+.verse-ref{font-size:11px;color:#8a6b32;font-weight:700}
+.question{font-size:13px;font-weight:600;margin:13px 0 5px}
+.prayer-card{background:#f0eee7}
+.study-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.study-actions .primary-btn{flex:1}
+.dark{--paper:#101b28;--card:#1b2b3b;--ink:#edf0f2;--muted:#aab4bd;--line:#344454;--soft:#243649}
+.dark .day-item,.dark textarea{background:#1b2b3b;color:#edf0f2}
+.dark .day-number{background:#2b4054;color:#e4c987}
+.dark .content-card h2,.dark .study-title,.dark .reference-box{color:#e7d3a5}
+.dark .reference-box,.dark .prayer-card{background:#26394c}
+.dark .secondary-btn{background:#34485b;color:#fff}
+.dark .progress-track{background:#344454}
+.dark .progress-heading strong{color:#e7d3a5}
+@media(max-width:560px){
+main{padding:17px 14px 40px}
+.hero{padding:28px 22px}
+.day-list{grid-template-columns:1fr}
+.progress-card,.content-card{padding:17px}
+.study-actions{display:grid;grid-template-columns:1fr 1fr}
+.study-actions .primary-btn{grid-column:1/-1;grid-row:1}
+.study-actions #prevBtn{grid-column:1}
+.study-actions #nextBtn{grid-column:2}
+.hero h1{font-size:37px}
+}
+</style>
+</head>
+
+<body>
+<header class="topbar">
+<a class="brand" href="#" id="homeLink" aria-label="Início">
+<span class="brand-mark">✦</span>
+<span><strong>MINISTÉRIO ATALAIA</strong><small>ESCOLA BÍBLICA</small></span>
+</a>
+<button class="icon-btn" id="themeBtn" aria-label="Alternar tema" title="Alternar tema">◐</button>
+</header>
+
+<main>
+<section id="homeView" class="view active">
+<section class="hero">
+<div class="eyebrow">GUIA DE DISCIPULADO • 30 DIAS</div>
+<h1>PRIMEIROS PASSOS<br><em>NA FÉ</em></h1>
+<p>Uma jornada de 30 dias pela Primeira Carta aos Coríntios: aprendendo sobre a unidade da igreja, a santidade, os dons espirituais, o amor e a esperança da ressurreição.</p>
+<div class="hero-meta">1ª CARTA AOS CORÍNTIOS • BÍBLIA LIVRE (ALMEIDA 1819)</div>
+<button class="primary-btn" id="continueBtn">Continuar minha jornada <span>→</span></button>
+</section>
+
+<section class="progress-card">
+<div class="progress-heading">
+<div><span class="section-kicker">SUA CAMINHADA</span><h2>Seu progresso</h2></div>
+<strong id="progressPercent">0%</strong>
+</div>
+<div class="progress-track"><span id="progressBar"></span></div>
+<p id="progressText">Você ainda não concluiu nenhum estudo. Comece pelo Dia 1.</p>
+</section>
+
+<div class="section-heading">
+<div><span class="section-kicker">PLANO DE LEITURA</span><h2>30 dias com 1 Coríntios</h2></div>
+<span class="muted">30 estudos</span>
+</div>
+<div id="dayList" class="day-list"></div>
+<footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+</section>
+
+<section id="studyView" class="view">
+<button class="back-btn" id="backBtn">← Voltar ao plano</button>
+<div class="study-topline">
+<span id="studyDayLabel" class="pill">DIA 1</span>
+<span id="studyWeek" class="muted"></span>
+</div>
+<h1 id="studyTitle" class="study-title"></h1>
+<p id="studyReference" class="study-reference"></p>
+
+<div class="study-content">
+<article class="content-card scripture-card">
+<div class="card-label">01 • LEITURA BÍBLICA</div>
+<h2>Texto bíblico</h2>
+<p id="readingIntro"></p>
+<div class="reference-box" id="readingReference"></div>
+<div id="scriptureText" class="scripture-text" aria-live="polite"><p>O texto bíblico será carregado automaticamente.</p></div>
+<p id="scriptureCopyright" class="tiny-note">Texto bíblico: Bíblia Livre (Almeida 1819), disponibilizada pela API Midvash. Requer conexão com a internet.</p>
+</article>
+
+<article class="content-card">
+<div class="card-label">02 • CONTEXTO</div>
+<h2>Entendendo o contexto</h2>
+<p id="contextText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+<h2>O que o texto ensina?</h2>
+<div id="explanationText"></div>
+</article>
+
+<article class="content-card">
+<div class="card-label">04 • PARA A VIDA</div>
+<h2>Aplicação prática</h2>
+<p id="applicationText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">05 • MEMORIZAÇÃO</div>
+<h2>Versículo para guardar</h2>
+<p id="memoryText" class="memory-verse"></p>
+<span id="memoryReference" class="verse-ref"></span>
+</article>
+
+<article class="content-card">
+<div class="card-label">06 • REFLEXÃO</div>
+<h2>Pense e responda</h2>
+<div id="questions"></div>
+<label for="notesInput">Minhas anotações</label>
+<textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+<button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+</article>
+
+<article class="content-card prayer-card">
+<div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+<h2>Ore ao Senhor</h2>
+<p id="prayerText"></p>
+</article>
+</div>
+
+<div class="study-actions">
+<button class="secondary-btn" id="prevBtn">← Anterior</button>
+<button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+<button class="secondary-btn" id="nextBtn">Próximo →</button>
+</div>
+</section>
+</main>
+
+<script>
+const studies = [
+{
+day:1,title:"A identidade e a missão de Paulo",ref:"1 Coríntios 1:1-3",week:"Semana 1 • A igreja e sua identidade",
+intro:"Leia a saudação da carta e observe como Paulo apresenta seu chamado e identifica a comunidade cristã.",
+context:"Paulo inicia a carta identificando-se como apóstolo de Jesus Cristo pela vontade de Deus. Ele escreve à igreja de Corinto, formada por pessoas santificadas em Cristo e chamadas para viver como povo de Deus.",
+points:[
+"Paulo reconhece que seu apostolado procede da vontade de Deus.",
+"A igreja pertence a Deus e está ligada a Jesus Cristo.",
+"Os cristãos são santificados em Cristo e chamados para uma vida dedicada ao Senhor.",
+"A expressão invocar o nome de Jesus demonstra a centralidade de Cristo na comunidade.",
+"A graça e a paz procedem de Deus Pai e do Senhor Jesus Cristo."
+],
+application:"Lembre-se de que sua identidade cristã está em Cristo. Você faz parte de um povo chamado por Deus para viver em santidade, comunhão e fidelidade.",
+memory:"À igreja de Deus que está em Corinto, aos santificados em Cristo Jesus, chamados santos.",
+memoryRef:"1 Coríntios 1:2 — confira o texto completo acima.",
+questions:["Como Paulo descreve seu chamado?","A quem pertence a igreja mencionada na saudação?","O que significa ser chamado para viver como santo?"],
+prayer:"Senhor, obrigado porque em Cristo somos chamados para pertencer a ti. Ajuda-me a viver de maneira santa e fiel, reconhecendo que minha vida pertence ao Senhor. Amém."
+},
+{
+day:2,title:"A graça de Deus concedida em Cristo",ref:"1 Coríntios 1:4-9",week:"Semana 1 • A igreja e sua identidade",
+intro:"Leia a gratidão de Paulo pelas bênçãos concedidas à igreja e pela fidelidade de Deus.",
+context:"Antes de tratar dos problemas existentes na igreja de Corinto, Paulo agradece pela graça de Deus. Ele reconhece que os cristãos receberam riquezas espirituais em Cristo e que Deus é fiel para conduzi-los até o fim.",
+points:[
+"Paulo agradece a Deus pela graça concedida à igreja em Cristo.",
+"Os cristãos foram enriquecidos em Cristo em palavra e conhecimento.",
+"O testemunho de Cristo foi confirmado entre os irmãos.",
+"Os dons recebidos devem servir à edificação da comunidade.",
+"Deus é fiel e chama seu povo à comunhão com Jesus Cristo."
+],
+application:"Reconheça as bênçãos que Deus concedeu a você. Use seus dons com responsabilidade e mantenha sua confiança na fidelidade do Senhor.",
+memory:"Fiel é Deus, pelo qual fostes chamados para a comunhão de seu Filho Jesus Cristo nosso Senhor.",
+memoryRef:"1 Coríntios 1:9 — confira o texto completo acima.",
+questions:["Por que Paulo agradece a Deus?","Quais riquezas espirituais são mencionadas?","O que aprendemos sobre a fidelidade de Deus?"],
+prayer:"Pai, obrigado por tua graça e fidelidade. Ajuda-me a valorizar os dons recebidos e a permanecer em comunhão com Jesus Cristo. Amém."
+},
+{
+day:3,title:"O perigo das divisões na igreja",ref:"1 Coríntios 1:10-17",week:"Semana 1 • A igreja e sua identidade",
+intro:"Leia o apelo de Paulo à unidade e sua preocupação com as divisões existentes na igreja.",
+context:"A igreja de Corinto estava enfrentando conflitos e grupos que se identificavam com diferentes líderes. Paulo corrige essa postura e lembra que Cristo não está dividido e que a igreja não deve transformar servos de Deus em motivo de competição.",
+points:[
+"Paulo pede que os irmãos falem a mesma coisa e evitem divisões.",
+"As contendas prejudicam a comunhão e o testemunho da igreja.",
+"Os cristãos não devem transformar líderes humanos em motivo de orgulho.",
+"Cristo é o centro da fé e não deve ser substituído por preferências pessoais.",
+"O Evangelho deve ser anunciado para que a cruz de Cristo não seja esvaziada."
+],
+application:"Evite alimentar disputas e comparações entre irmãos. Valorize a unidade em Cristo e coloque o Evangelho acima de preferências pessoais.",
+memory:"Rogo-vos, porém, irmãos, pelo nome de nosso Senhor Jesus Cristo, que digais todos uma mesma coisa.",
+memoryRef:"1 Coríntios 1:10 — confira o texto completo acima.",
+questions:["Qual problema Paulo identifica na igreja?","Por que não devemos exaltar líderes humanos?","Como podemos contribuir para a unidade da igreja?"],
+prayer:"Senhor Jesus, guarda meu coração contra o orgulho e as divisões. Ensina-me a promover a paz, a comunhão e a unidade do teu povo. Amém."
+},
+{
+day:4,title:"A mensagem da cruz",ref:"1 Coríntios 1:18-25",week:"Semana 1 • A igreja e sua identidade",
+intro:"Leia como Paulo apresenta a cruz de Cristo e contrasta a sabedoria de Deus com a sabedoria humana.",
+context:"Paulo ensina que a mensagem da cruz parece loucura para aqueles que se perdem, mas é o poder de Deus para os que são salvos. A salvação não depende da capacidade intelectual humana, mas da obra de Cristo.",
+points:[
+"A palavra da cruz é poder de Deus para os que são salvos.",
+"A sabedoria humana não consegue substituir a revelação de Deus.",
+"Cristo crucificado é o centro da mensagem apostólica.",
+"Deus demonstra sua sabedoria e poder de maneira diferente dos padrões humanos.",
+"A salvação deve conduzir à humildade diante da obra de Cristo."
+],
+application:"Não tenha vergonha da mensagem da cruz. Coloque sua confiança em Jesus e não na aparência de sabedoria, prestígio ou capacidade humana.",
+memory:"Porque a palavra da cruz é loucura para os que perecem; mas para nós, que somos salvos, é o poder de Deus.",
+memoryRef:"1 Coríntios 1:18 — confira o texto completo acima.",
+questions:["Como a mensagem da cruz é recebida pelos que perecem?","O que a cruz representa para os salvos?","Por que a sabedoria humana não substitui o poder de Deus?"],
+prayer:"Pai, obrigado pela obra de Jesus na cruz. Ajuda-me a confiar no teu poder e a anunciar o Evangelho com coragem e humildade. Amém."
+},
+{
+day:5,title:"A glória pertence ao Senhor",ref:"1 Coríntios 1:26-31",week:"Semana 1 • A igreja e sua identidade",
+intro:"Observe como Deus escolhe aquilo que o mundo considera fraco e desprezado para manifestar sua graça.",
+context:"Paulo lembra aos coríntios que muitos deles não eram considerados importantes segundo os padrões humanos. Deus, porém, manifesta sua graça e impede que alguém se glorie diante dele.",
+points:[
+"Deus não escolhe segundo os critérios de prestígio do mundo.",
+"O Senhor usa pessoas consideradas fracas para manifestar seu poder.",
+"A salvação não é motivo para orgulho pessoal.",
+"Em Cristo recebemos sabedoria, justiça, santificação e redenção.",
+"Aquele que se gloria deve gloriar-se no Senhor."
+],
+application:"Não compare seu valor com o reconhecimento que o mundo oferece. Sirva a Deus com humildade e reconheça que toda honra pertence ao Senhor.",
+memory:"Aquele que se gloria glorie-se no Senhor.",
+memoryRef:"1 Coríntios 1:31 — confira o texto completo acima.",
+questions:["Quais critérios humanos Deus contrasta neste texto?","O que recebemos por meio de Cristo?","Em quem devemos nos gloriar?"],
+prayer:"Senhor, livra-me do orgulho e da comparação. Que minha vida reconheça tua graça e que toda honra seja dada a ti. Amém."
+},
+{
+day:6,title:"A pregação de Paulo e o poder de Deus",ref:"1 Coríntios 2:1-5",week:"Semana 1 • A sabedoria de Deus",
+intro:"Leia como Paulo descreve sua maneira de anunciar o Evangelho em Corinto.",
+context:"Paulo não fundamentou sua mensagem em demonstrações de eloquência ou sabedoria humana. Sua pregação estava centrada em Jesus Cristo crucificado, para que a fé dos ouvintes estivesse firmada no poder de Deus.",
+points:[
+"Paulo anuncia o testemunho de Deus sem depender de ostentação humana.",
+"Jesus Cristo crucificado é o centro da pregação.",
+"A fraqueza humana não impede a manifestação do poder de Deus.",
+"A fé não deve depender da habilidade de quem anuncia.",
+"O fundamento da confiança cristã é o poder de Deus."
+],
+application:"Compartilhe o Evangelho com simplicidade e fidelidade. Não dependa apenas de técnicas ou palavras bonitas; confie no poder de Deus.",
+memory:"Para que a vossa fé não se apoiasse em sabedoria dos homens, mas no poder de Deus.",
+memoryRef:"1 Coríntios 2:5 — confira o texto completo acima.",
+questions:["Qual era o centro da pregação de Paulo?","Por que ele não queria depender da sabedoria humana?","Onde deve estar fundamentada a fé cristã?"],
+prayer:"Deus, ajuda-me a anunciar tua Palavra com fidelidade. Que minha confiança esteja no teu poder e não na capacidade humana. Amém."
+},
+{
+day:7,title:"A sabedoria revelada pelo Espírito",ref:"1 Coríntios 2:6-16",week:"Semana 1 • A sabedoria de Deus",
+intro:"Leia sobre a sabedoria de Deus e a ação do Espírito Santo na compreensão das coisas espirituais.",
+context:"Paulo explica que a sabedoria de Deus não é igual à sabedoria deste mundo. Deus revelou sua verdade pelo Espírito, que conhece as profundezas de Deus e capacita os cristãos a compreenderem as coisas espirituais.",
+points:[
+"A sabedoria de Deus é diferente dos valores passageiros deste mundo.",
+"O propósito de Deus estava oculto e foi revelado por sua graça.",
+"O Espírito Santo conhece as profundezas de Deus.",
+"A compreensão espiritual depende da revelação do Espírito.",
+"A mente de Cristo orienta a maneira cristã de pensar e discernir."
+],
+application:"Busque compreender a Palavra com humildade e dependência do Espírito Santo. Não avalie a verdade de Deus apenas pelos critérios deste mundo.",
+memory:"Nós temos a mente de Cristo.",
+memoryRef:"1 Coríntios 2:16 — confira o texto completo acima.",
+questions:["Como a sabedoria de Deus se diferencia da sabedoria do mundo?","Quem conhece as profundezas de Deus?","O que significa ter a mente de Cristo?"],
+prayer:"Espírito Santo, ilumina meu entendimento para compreender a Palavra. Ajuda-me a pensar e agir segundo a vontade de Deus. Amém."
+},
+{
+day:8,title:"Crescimento espiritual e maturidade",ref:"1 Coríntios 3:1-9",week:"Semana 2 • A edificação da igreja",
+intro:"Leia a correção de Paulo sobre a imaturidade espiritual e a importância de trabalhar em unidade.",
+context:"Paulo identifica ciúmes e contendas entre os coríntios como sinais de imaturidade. Ele explica que os ministros são cooperadores de Deus e que o crescimento espiritual vem do próprio Senhor.",
+points:[
+"A imaturidade espiritual pode ser percebida nas atitudes e relacionamentos.",
+"Ciúmes e contendas revelam problemas na comunhão.",
+"Os líderes são servos que trabalham na obra de Deus.",
+"Um planta e outro rega, mas Deus é quem dá o crescimento.",
+"A igreja é lavoura e edifício de Deus."
+],
+application:"Avalie suas atitudes e abandone comportamentos que produzem divisão. Cresça na fé e reconheça que o crescimento da igreja pertence a Deus.",
+memory:"Eu plantei, Apolo regou; mas Deus deu o crescimento.",
+memoryRef:"1 Coríntios 3:6 — confira o texto completo acima.",
+questions:["Quais atitudes demonstravam imaturidade em Corinto?","Qual é a função dos servos de Deus?","Quem concede o crescimento espiritual?"],
+prayer:"Senhor, amadurece minha fé. Livra-me de ciúmes e contendas e ajuda-me a cooperar com humildade na edificação da tua igreja. Amém."
+},
+{
+day:9,title:"O fundamento é Jesus Cristo",ref:"1 Coríntios 3:10-17",week:"Semana 2 • A edificação da igreja",
+intro:"Leia sobre o fundamento da igreja e a responsabilidade de construir sobre ele.",
+context:"Paulo compara a obra ministerial à construção de um edifício. Jesus Cristo é o fundamento, e cada pessoa deve ter cuidado com a maneira como edifica sobre esse fundamento.",
+points:[
+"Jesus Cristo é o único fundamento da igreja.",
+"Cada trabalhador deve ter cuidado com a qualidade de sua obra.",
+"As obras serão provadas e terão suas qualidades manifestadas.",
+"A igreja é apresentada como templo de Deus.",
+"Deus leva a sério a maneira como seu povo é tratado e edificado."
+],
+application:"Construa sua vida sobre Jesus Cristo e examine suas escolhas. Procure servir com fidelidade, responsabilidade e compromisso com a Palavra.",
+memory:"Porque ninguém pode pôr outro fundamento além do que já está posto, o qual é Jesus Cristo.",
+memoryRef:"1 Coríntios 3:11 — confira o texto completo acima.",
+questions:["Quem é o fundamento da igreja?","O que a imagem da construção ensina sobre o serviço cristão?","Como devemos tratar a igreja de Deus?"],
+prayer:"Jesus, sê o fundamento de minha vida. Ajuda-me a construir sobre tua Palavra e a servir com fidelidade. Amém."
+},
+{
+day:10,title:"Servos de Cristo e mordomos fiéis",ref:"1 Coríntios 4:1-5",week:"Semana 2 • A edificação da igreja",
+intro:"Leia como Paulo descreve os ministros de Cristo e a responsabilidade de serem encontrados fiéis.",
+context:"Paulo ensina que os ministros devem ser considerados servos de Cristo e despenseiros dos mistérios de Deus. A principal exigência de um mordomo é que seja encontrado fiel.",
+points:[
+"Os ministros são servos de Cristo, não donos da igreja.",
+"Os servos administram aquilo que pertence a Deus.",
+"A fidelidade é uma exigência fundamental no serviço cristão.",
+"O julgamento humano não é a avaliação final da vida de alguém.",
+"Deus conhece as intenções e os propósitos do coração."
+],
+application:"Seja fiel naquilo que Deus colocou sob sua responsabilidade. Sirva sem buscar reconhecimento humano e lembre-se de que o Senhor conhece suas motivações.",
+memory:"Além disso, requer-se dos despenseiros que cada um se ache fiel.",
+memoryRef:"1 Coríntios 4:2 — confira o texto completo acima.",
+questions:["Como Paulo descreve os ministros de Cristo?","Qual é a exigência principal para um mordomo?","Quem conhece as intenções do coração?"],
+prayer:"Senhor, ajuda-me a ser fiel em tudo o que colocares em minhas mãos. Purifica minhas intenções e ensina-me a servir para tua glória. Amém."
+},
+{
+day:11,title:"A disciplina e o cuidado com a igreja",ref:"1 Coríntios 5:1-13",week:"Semana 2 • Santidade na comunidade",
+intro:"Leia a orientação de Paulo diante de um caso grave de imoralidade na comunidade cristã.",
+context:"Paulo trata de uma situação de pecado público que estava sendo tolerada pela igreja. Sua orientação mostra que a comunidade cristã deve levar a santidade a sério e tratar o pecado com responsabilidade, visando a correção.",
+points:[
+"A igreja não deve tratar o pecado grave com indiferença.",
+"A disciplina tem relação com a santidade da comunidade.",
+"O orgulho espiritual pode impedir o reconhecimento de problemas.",
+"A imagem do fermento ensina como o pecado tolerado pode afetar o conjunto.",
+"A correção deve considerar a seriedade da comunhão com Deus."
+],
+application:"Não normalize aquilo que a Palavra de Deus chama de pecado. Pratique a verdade com amor, responsabilidade e compromisso com a restauração.",
+memory:"Alimpai-vos, pois, do fermento velho, para que sejais uma nova massa.",
+memoryRef:"1 Coríntios 5:7 — confira o texto completo acima.",
+questions:["Qual problema Paulo corrige na igreja?","O que a figura do fermento ensina?","Por que a santidade da comunidade deve ser preservada?"],
+prayer:"Pai, dá-nos discernimento para tratar o pecado com seriedade e amor. Ajuda tua igreja a viver em santidade e verdade. Amém."
+},
+{
+day:12,title:"O corpo pertence ao Senhor",ref:"1 Coríntios 6:1-11",week:"Semana 2 • Santidade na comunidade",
+intro:"Leia as orientações sobre conflitos entre irmãos e a nova identidade daqueles que foram lavados e santificados.",
+context:"Paulo repreende os cristãos por levarem disputas entre irmãos aos tribunais de maneira que prejudicava o testemunho da igreja. Ele recorda que a vida em Cristo transforma a identidade e a conduta dos que creem.",
+points:[
+"Os conflitos entre irmãos devem ser tratados com sabedoria e responsabilidade.",
+"A injustiça não combina com a identidade do Reino de Deus.",
+"Paulo lembra que alguns dos cristãos viviam anteriormente em práticas pecaminosas.",
+"Em Cristo, os crentes foram lavados, santificados e justificados.",
+"A nova identidade deve produzir uma nova maneira de viver."
+],
+application:"Procure resolver conflitos com justiça, humildade e disposição para a reconciliação. Lembre-se de que sua vida foi transformada por Cristo.",
+memory:"Mas haveis sido lavados, mas haveis sido santificados, mas haveis sido justificados em nome do Senhor Jesus.",
+memoryRef:"1 Coríntios 6:11 — confira o texto completo acima.",
+questions:["Que problema Paulo identifica nos conflitos entre irmãos?","O que significa ter sido lavado e santificado?","Como a nova identidade deve influenciar nossas atitudes?"],
+prayer:"Senhor, transforma minhas atitudes e ensina-me a buscar a reconciliação. Que minha vida demonstre a mudança que recebemos em Cristo. Amém."
+},
+{
+day:13,title:"O corpo como templo do Espírito Santo",ref:"1 Coríntios 6:12-20",week:"Semana 3 • A vida cristã no cotidiano",
+intro:"Leia sobre a liberdade cristã, a santidade do corpo e a responsabilidade de glorificar a Deus.",
+context:"Paulo ensina que a liberdade não deve ser usada como justificativa para qualquer comportamento. O corpo pertence ao Senhor e é templo do Espírito Santo, por isso a vida física também deve glorificar a Deus.",
+points:[
+"Nem tudo o que é permitido é necessariamente proveitoso.",
+"O cristão não deve ser dominado por qualquer prática ou desejo.",
+"O corpo pertence ao Senhor e tem valor diante de Deus.",
+"O corpo do cristão é templo do Espírito Santo.",
+"Os cristãos foram comprados por preço e devem glorificar a Deus."
+],
+application:"Cuide de sua vida física, moral e espiritual. Use sua liberdade com responsabilidade e tome decisões que honrem a Deus.",
+memory:"Ou não sabeis que o vosso corpo é o templo do Espírito Santo, que habita em vós?",
+memoryRef:"1 Coríntios 6:19 — confira o texto completo acima.",
+questions:["Por que nem tudo que é permitido é proveitoso?","O que significa dizer que o corpo é templo do Espírito Santo?","Como podemos glorificar a Deus com nosso corpo?"],
+prayer:"Espírito Santo, ajuda-me a honrar a Deus com meu corpo, minhas escolhas e meus pensamentos. Ensina-me a viver em santidade. Amém."
+},
+{
+day:14,title:"O casamento e a vida de consagração",ref:"1 Coríntios 7:1-16",week:"Semana 3 • A vida cristã no cotidiano",
+intro:"Leia as orientações de Paulo sobre o casamento, a responsabilidade conjugal e a vida familiar.",
+context:"Paulo responde a questões apresentadas pela igreja sobre casamento e relacionamento conjugal. O texto trata de responsabilidade, respeito mútuo e compromisso, sem transformar a condição civil em medida de valor espiritual.",
+points:[
+"O casamento envolve responsabilidade e cuidado mútuo.",
+"Marido e mulher devem considerar um ao outro com respeito.",
+"A intimidade conjugal não deve ser tratada com egoísmo.",
+"A separação exige seriedade e consideração diante de Deus.",
+"A fé cristã deve influenciar a maneira como os relacionamentos são vividos."
+],
+application:"Valorize o respeito, o diálogo, a fidelidade e o cuidado nos relacionamentos. Não use a fé como justificativa para negligenciar suas responsabilidades familiares.",
+memory:"Porque o marido descrente é santificado pela mulher; e a mulher descrente é santificada pelo marido.",
+memoryRef:"1 Coríntios 7:14 — leia o contexto completo acima.",
+questions:["Que responsabilidades aparecem no relacionamento conjugal?","Por que o respeito mútuo é importante?","Como a fé deve influenciar a vida familiar?"],
+prayer:"Senhor, abençoa os relacionamentos e as famílias. Ensina-nos a viver com fidelidade, respeito, paciência e amor. Amém."
+},
+{
+day:15,title:"Servir a Deus na condição em que fomos chamados",ref:"1 Coríntios 7:17-40",week:"Semana 3 • A vida cristã no cotidiano",
+intro:"Leia os ensinamentos de Paulo sobre contentamento, chamado e dedicação ao Senhor.",
+context:"Paulo orienta os cristãos a não considerarem sua condição social ou civil como impedimento para servir a Deus. O essencial é viver fielmente diante do Senhor e manter o coração dedicado a ele.",
+points:[
+"Cada cristão deve viver com fidelidade diante de Deus.",
+"A condição social não determina o valor espiritual de uma pessoa.",
+"O chamado de Deus deve orientar a maneira de viver.",
+"As preocupações da vida podem disputar espaço com a dedicação ao Senhor.",
+"A consagração envolve prioridades e escolhas feitas diante de Deus."
+],
+application:"Sirva a Deus onde você está e com as responsabilidades que possui. Organize suas prioridades para que Cristo permaneça no centro de sua vida.",
+memory:"Cada um fique na vocação em que foi chamado.",
+memoryRef:"1 Coríntios 7:20 — confira o texto completo acima.",
+questions:["O que Paulo ensina sobre a condição em que fomos chamados?","A posição social determina o valor espiritual?","Como podemos manter Cristo no centro das prioridades?"],
+prayer:"Pai, ajuda-me a servir com fidelidade na condição em que me encontro. Que minhas prioridades demonstrem dedicação ao Senhor. Amém."
+},
+{
+day:16,title:"Conhecimento, amor e cuidado com o irmão",ref:"1 Coríntios 8:1-13",week:"Semana 3 • Liberdade e responsabilidade",
+intro:"Leia a orientação de Paulo sobre conhecimento, amor e responsabilidade diante da consciência de outros irmãos.",
+context:"A igreja discutia a questão dos alimentos sacrificados aos ídolos. Paulo ensina que o conhecimento sem amor pode produzir orgulho, enquanto o amor edifica. A liberdade cristã deve considerar o bem espiritual do próximo.",
+points:[
+"O conhecimento pode produzir orgulho quando não é acompanhado de amor.",
+"O amor edifica e deve orientar a liberdade cristã.",
+"Há um só Deus e um só Senhor, Jesus Cristo.",
+"A consciência de um irmão mais fraco deve ser considerada.",
+"A liberdade não deve se tornar motivo de tropeço para outra pessoa."
+],
+application:"Não use seu conhecimento ou sua liberdade para desprezar outros irmãos. Considere o impacto de suas atitudes e escolha aquilo que edifica.",
+memory:"A ciência incha, mas o amor edifica.",
+memoryRef:"1 Coríntios 8:1 — confira o texto completo acima.",
+questions:["Qual é o perigo do conhecimento sem amor?","Como a liberdade cristã deve ser exercida?","Por que devemos considerar a consciência do irmão?"],
+prayer:"Senhor, ensina-me a usar o conhecimento com humildade e a liberdade com amor. Que minhas atitudes edifiquem meus irmãos. Amém."
+},
+{
+day:17,title:"O exemplo de renúncia de Paulo",ref:"1 Coríntios 9:1-18",week:"Semana 3 • Liberdade e responsabilidade",
+intro:"Leia como Paulo apresenta seus direitos apostólicos e explica por que escolheu não usar alguns deles.",
+context:"Paulo defende seu direito de receber sustento pelo trabalho ministerial, mas mostra que abriu mão desse direito em determinadas circunstâncias para não criar obstáculos ao Evangelho.",
+points:[
+"Paulo apresenta evidências de seu apostolado.",
+"Quem trabalha no ministério pode receber sustento pelo serviço realizado.",
+"O direito legítimo pode ser renunciado por amor ao Evangelho.",
+"Paulo deseja anunciar o Evangelho sem criar impedimentos desnecessários.",
+"A motivação do serviço cristão deve ser a fidelidade a Deus."
+],
+application:"Aprenda a colocar o avanço do Evangelho acima de interesses pessoais. Em algumas situações, abrir mão de um direito pode ser uma expressão de amor e serviço.",
+memory:"Fiz-me tudo para todos, para por todos os meios chegar a salvar alguns.",
+memoryRef:"1 Coríntios 9:22 — confira o texto completo acima.",
+questions:["Que direito Paulo apresenta neste capítulo?","Por que ele abriu mão de determinados direitos?","O que podemos aprender sobre renúncia e serviço?"],
+prayer:"Senhor, dá-me um coração disposto a servir. Ajuda-me a colocar o Evangelho acima dos interesses pessoais e a agir com amor. Amém."
+},
+{
+day:18,title:"A disciplina na caminhada cristã",ref:"1 Coríntios 9:19-27",week:"Semana 4 • Perseverança e fidelidade",
+intro:"Leia a comparação entre a vida cristã e a preparação de um atleta que busca alcançar o prêmio.",
+context:"Paulo utiliza a imagem dos atletas para ensinar sobre disciplina, domínio próprio e perseverança. A liberdade cristã não significa viver sem direção, mas caminhar com propósito e compromisso.",
+points:[
+"Paulo adapta sua abordagem para alcançar pessoas sem abandonar a fidelidade a Deus.",
+"A vida cristã exige propósito e disposição para servir.",
+"Os atletas exercem domínio próprio para alcançar um prêmio passageiro.",
+"O cristão busca uma recompensa incorruptível.",
+"A disciplina espiritual exige perseverança e domínio próprio."
+],
+application:"Estabeleça uma rotina de oração, leitura bíblica e serviço. Não abandone sua caminhada diante das dificuldades; prossiga com os olhos em Cristo.",
+memory:"Todo aquele que luta de tudo se abstém; eles o fazem para alcançar uma coroa corruptível, nós, porém, uma incorruptível.",
+memoryRef:"1 Coríntios 9:25 — confira o texto completo acima.",
+questions:["O que a figura do atleta ensina sobre a vida cristã?","Por que o domínio próprio é importante?","Qual é o objetivo da disciplina espiritual?"],
+prayer:"Pai, fortalece minha perseverança. Ajuda-me a desenvolver domínio próprio e a permanecer fiel até o fim. Amém."
+},
+{
+day:19,title:"Aprendendo com os erros de Israel",ref:"1 Coríntios 10:1-13",week:"Semana 4 • Perseverança e fidelidade",
+intro:"Leia os exemplos do povo de Israel e o alerta de Paulo contra a confiança excessiva em si mesmo.",
+context:"Paulo recorda acontecimentos da caminhada de Israel no deserto. Mesmo tendo recebido privilégios espirituais, muitos caíram em desobediência. O apóstolo usa esses exemplos para advertir a igreja e ensinar sobre vigilância e fidelidade.",
+points:[
+"Os acontecimentos do passado servem de advertência para o povo de Deus.",
+"Privilégios espirituais não devem produzir falsa segurança.",
+"A idolatria e a desobediência afastam o coração de Deus.",
+"O cristão deve vigiar para não cair em tentação.",
+"Deus é fiel e oferece escape para que possamos suportar a tentação."
+],
+application:"Não confie apenas em sua própria força. Vigie suas atitudes, fuja da idolatria e procure a direção de Deus diante das tentações.",
+memory:"Não veio sobre vós tentação, senão humana; mas fiel é Deus, que não vos deixará tentar acima do que podeis.",
+memoryRef:"1 Coríntios 10:13 — confira o texto completo acima.",
+questions:["Por que Paulo recorda os acontecimentos de Israel?","Quais perigos são mencionados?","O que aprendemos sobre a fidelidade de Deus diante da tentação?"],
+prayer:"Senhor, guarda meu coração e ajuda-me a permanecer vigilante. Dá-me força para resistir à tentação e fidelidade para obedecer à tua Palavra. Amém."
+},
+{
+day:20,title:"Fazer tudo para a glória de Deus",ref:"1 Coríntios 10:14-33",week:"Semana 4 • Perseverança e fidelidade",
+intro:"Leia as orientações sobre fugir da idolatria e agir de modo que Deus seja glorificado.",
+context:"Paulo conclui sua orientação sobre os alimentos sacrificados aos ídolos. Ele chama os cristãos a fugir da idolatria e a considerar a consciência do próximo, buscando sempre a glória de Deus.",
+points:[
+"O cristão deve fugir da idolatria.",
+"A comunhão com Cristo exige fidelidade e exclusividade.",
+"A liberdade precisa ser exercida com responsabilidade.",
+"O bem do próximo deve ser considerado nas decisões.",
+"Todas as atividades devem ser realizadas para a glória de Deus."
+],
+application:"Antes de tomar decisões, pergunte se sua atitude honra a Deus e edifica outras pessoas. Faça da glória do Senhor o objetivo de sua rotina.",
+memory:"Portanto, quer comais quer bebais, ou façais outra qualquer coisa, fazei tudo para glória de Deus.",
+memoryRef:"1 Coríntios 10:31 — confira o texto completo acima.",
+questions:["De que prática Paulo orienta os cristãos a fugir?","Como devemos considerar o próximo?","O que significa fazer tudo para a glória de Deus?"],
+prayer:"Pai, que minhas palavras, escolhas e atitudes glorifiquem teu nome. Livra-me da idolatria e ensina-me a agir com amor e responsabilidade. Amém."
+},
+{
+day:21,title:"A ordem e o respeito na reunião da igreja",ref:"1 Coríntios 11:1-16",week:"Semana 4 • A vida comunitária",
+intro:"Leia as orientações de Paulo sobre comportamento, respeito e ordem na reunião da comunidade cristã.",
+context:"Paulo trata de questões relacionadas à conduta dos homens e das mulheres nas reuniões da igreja de Corinto. O trecho deve ser considerado dentro de seu contexto histórico e do princípio de honra e respeito na adoração comunitária.",
+points:[
+"Paulo apresenta a imitação de seu exemplo na medida em que ele segue a Cristo.",
+"A adoração comunitária deve refletir respeito e consideração.",
+"O texto trata de costumes e sinais de honra presentes na comunidade de Corinto.",
+"A conduta dos cristãos deve evitar escândalo e desordem.",
+"A igreja deve buscar uma adoração que honre a Deus."
+],
+application:"Procure compreender as orientações bíblicas em seu contexto e pratique respeito, humildade e consideração nas reuniões da igreja.",
+memory:"Sede meus imitadores, como também eu de Cristo.",
+memoryRef:"1 Coríntios 11:1 — confira o texto completo acima.",
+questions:["Qual é o modelo que Paulo apresenta?","Por que o contexto da igreja de Corinto é importante?","Como podemos demonstrar respeito na adoração?"],
+prayer:"Senhor, ajuda-me a seguir o exemplo de Cristo e a participar da comunhão com humildade, respeito e reverência. Amém."
+},
+{
+day:22,title:"A Ceia do Senhor",ref:"1 Coríntios 11:17-34",week:"Semana 4 • A vida comunitária",
+intro:"Leia a correção de Paulo sobre a maneira como a igreja celebrava a Ceia do Senhor.",
+context:"A celebração da Ceia em Corinto estava marcada por divisões e atitudes egoístas. Paulo recorda a instituição da Ceia por Jesus e ensina que ela deve ser celebrada com discernimento, reverência e consideração pelos irmãos.",
+points:[
+"A Ceia do Senhor não deve ser marcada por divisões e egoísmo.",
+"Paulo recorda o ensino recebido sobre a instituição da Ceia por Jesus.",
+"O pão e o cálice apontam para a memória da morte do Senhor.",
+"A participação exige autoexame e discernimento.",
+"A igreja deve esperar uns pelos outros e demonstrar consideração."
+],
+application:"Participe da Ceia com reverência, gratidão e exame pessoal. Valorize a comunhão da igreja e não transforme esse momento em uma prática vazia.",
+memory:"Fazei isto em memória de mim.",
+memoryRef:"1 Coríntios 11:24 — confira o texto completo acima.",
+questions:["Qual problema existia na celebração da Ceia em Corinto?","O que a Ceia anuncia?","Por que o autoexame é importante?"],
+prayer:"Senhor Jesus, obrigado por teu sacrifício. Ensina-me a participar da Ceia com reverência, gratidão e amor pela tua igreja. Amém."
+},
+{
+day:23,title:"A diversidade dos dons espirituais",ref:"1 Coríntios 12:1-11",week:"Semana 5 • Os dons e o amor",
+intro:"Leia sobre a diversidade dos dons e a atuação do mesmo Espírito na igreja.",
+context:"Paulo orienta os coríntios a compreenderem corretamente os dons espirituais. Há diversidade de dons, serviços e operações, mas o mesmo Espírito, o mesmo Senhor e o mesmo Deus atuam na comunidade.",
+points:[
+"Os cristãos não devem permanecer ignorantes sobre os dons espirituais.",
+"Há diversidade de dons, mas o Espírito é o mesmo.",
+"Os serviços são diferentes, mas o Senhor é o mesmo.",
+"Os dons são concedidos para o que for útil à comunidade.",
+"O Espírito distribui os dons conforme sua vontade."
+],
+application:"Valorize os dons que Deus concede e procure utilizá-los para edificar a igreja. Não transforme os dons em motivo de comparação ou orgulho.",
+memory:"Mas a manifestação do Espírito é dada a cada um para o que for útil.",
+memoryRef:"1 Coríntios 12:7 — confira o texto completo acima.",
+questions:["Quem concede os dons espirituais?","Qual é a finalidade dos dons?","Por que a diversidade não deve produzir competição?"],
+prayer:"Espírito Santo, ensina-me a reconhecer e utilizar os dons com humildade. Que tudo o que fizer contribua para a edificação da igreja. Amém."
+},
+{
+day:24,title:"Um só corpo, muitos membros",ref:"1 Coríntios 12:12-31",week:"Semana 5 • Os dons e o amor",
+intro:"Leia a comparação da igreja com um corpo formado por muitos membros diferentes.",
+context:"Paulo utiliza a figura do corpo humano para ensinar que a igreja é uma unidade formada por muitos membros. Cada pessoa possui uma função e todas são importantes para o funcionamento saudável do corpo.",
+points:[
+"A igreja é comparada a um corpo com muitos membros.",
+"O batismo em um só Espírito aponta para a unidade dos cristãos.",
+"Nenhum membro deve considerar-se dispensável.",
+"Os membros devem cuidar uns dos outros.",
+"Os dons e funções são diferentes, mas devem contribuir para o bem comum."
+],
+application:"Não despreze sua participação na igreja e não menospreze a função dos outros. Procure servir com humildade e cuidar dos irmãos.",
+memory:"Assim nós, que somos muitos, somos um só corpo em Cristo, mas individualmente somos membros uns dos outros.",
+memoryRef:"Romanos 12:5 — texto complementar; leitura principal: 1 Coríntios 12:12-31.",
+questions:["O que representa a figura do corpo?","Por que todos os membros são importantes?","Como podemos demonstrar cuidado pelos outros membros?"],
+prayer:"Senhor, ajuda-me a valorizar cada pessoa da tua igreja. Ensina-me a servir com humildade e a contribuir para a unidade do corpo de Cristo. Amém."
+},
+{
+day:25,title:"O caminho sobremodo excelente: o amor",ref:"1 Coríntios 13:1-13",week:"Semana 5 • Os dons e o amor",
+intro:"Leia o capítulo conhecido como o ensino de Paulo sobre o amor e sua importância acima dos dons.",
+context:"Depois de ensinar sobre os dons espirituais, Paulo apresenta o amor como caminho indispensável para a vida cristã. Mesmo dons impressionantes perdem seu valor quando não são acompanhados pelo amor.",
+points:[
+"Os dons e capacidades não substituem o amor.",
+"O amor é paciente e benigno.",
+"O amor não se alegra com a injustiça, mas com a verdade.",
+"O amor suporta, crê, espera e persevera.",
+"Entre fé, esperança e amor, o amor é apresentado como o maior."
+],
+application:"Examine seus relacionamentos e atitudes. Pratique paciência, bondade, perdão e verdade, demonstrando o amor de Cristo nas situações cotidianas.",
+memory:"Agora, pois, permanecem a fé, a esperança e o amor, estes três; mas o maior destes é o amor.",
+memoryRef:"1 Coríntios 13:13 — confira o texto completo acima.",
+questions:["Por que os dons não substituem o amor?","Quais características do amor aparecem no capítulo?","Por que o amor é chamado de maior?"],
+prayer:"Pai, enche meu coração com teu amor. Ensina-me a agir com paciência, bondade, verdade e perseverança em meus relacionamentos. Amém."
+},
+{
+day:26,title:"Os dons e a edificação da igreja",ref:"1 Coríntios 14:1-25",week:"Semana 5 • Os dons e o amor",
+intro:"Leia as orientações sobre profecia, línguas e a necessidade de edificação na reunião da igreja.",
+context:"Paulo ensina que os dons devem ser exercidos com amor e visando a edificação da comunidade. A compreensão da mensagem é importante para que a igreja seja fortalecida e os visitantes possam reconhecer a presença de Deus.",
+points:[
+"O amor deve ser buscado com dedicação.",
+"Os dons espirituais devem servir à edificação da igreja.",
+"A mensagem compreendida fortalece a comunidade.",
+"A reunião cristã deve favorecer o crescimento espiritual dos participantes.",
+"A manifestação dos dons deve ser acompanhada de responsabilidade."
+],
+application:"Busque os dons com amor e maturidade. Ao participar da igreja, pense na edificação dos irmãos e na compreensão da mensagem.",
+memory:"Segui o amor, e procurai com zelo os dons espirituais.",
+memoryRef:"1 Coríntios 14:1 — confira o texto completo acima.",
+questions:["Qual deve ser a motivação no exercício dos dons?","Por que a edificação da igreja é importante?","Como a compreensão da mensagem ajuda a comunidade?"],
+prayer:"Senhor, ensina-me a buscar os dons com amor e responsabilidade. Que minha participação fortaleça a igreja e glorifique teu nome. Amém."
+},
+{
+day:27,title:"Ordem e edificação no culto",ref:"1 Coríntios 14:26-40",week:"Semana 5 • Os dons e o amor",
+intro:"Leia as orientações finais de Paulo sobre o uso dos dons e a ordem nas reuniões da igreja.",
+context:"Paulo apresenta orientações práticas para que a reunião da igreja seja edificante. As manifestações espirituais não devem produzir confusão, mas acontecer com responsabilidade, discernimento e ordem.",
+points:[
+"Cada participação deve contribuir para a edificação da igreja.",
+"As manifestações devem acontecer com ordem e responsabilidade.",
+"O discernimento é necessário para avaliar as mensagens.",
+"Deus não é Deus de confusão, mas de paz.",
+"Tudo deve ser feito com decência e ordem."
+],
+application:"Contribua para reuniões que promovam paz, reverência e edificação. Evite atitudes que provoquem confusão e valorize a responsabilidade coletiva.",
+memory:"Porque Deus não é Deus de confusão, senão de paz.",
+memoryRef:"1 Coríntios 14:33 — confira o texto completo acima.",
+questions:["Qual deve ser o objetivo das participações no culto?","Por que a ordem é importante?","O que o texto ensina sobre o caráter de Deus?"],
+prayer:"Pai, que nossas reuniões sejam marcadas pela paz, reverência e edificação. Dá-nos sabedoria para servir com responsabilidade. Amém."
+},
+{
+day:28,title:"A ressurreição de Cristo",ref:"1 Coríntios 15:1-19",week:"Semana 6 • A esperança da ressurreição",
+intro:"Leia a apresentação de Paulo sobre o Evangelho e a importância fundamental da ressurreição de Jesus.",
+context:"Paulo recorda o Evangelho que anunciou aos coríntios: Cristo morreu pelos pecados, foi sepultado e ressuscitou ao terceiro dia. A ressurreição não é um detalhe secundário, mas parte essencial da fé cristã.",
+points:[
+"O Evangelho é a mensagem recebida e anunciada por Paulo.",
+"Cristo morreu pelos nossos pecados, segundo as Escrituras.",
+"Jesus foi sepultado e ressuscitou ao terceiro dia.",
+"A ressurreição foi testemunhada por muitas pessoas.",
+"Se Cristo não ressuscitou, a fé cristã perde seu fundamento."
+],
+application:"Fundamente sua fé na morte e ressurreição de Jesus. Compartilhe o Evangelho com convicção e viva na esperança que Cristo conquistou.",
+memory:"Cristo morreu por nossos pecados, segundo as Escrituras; e que foi sepultado, e que ressuscitou ao terceiro dia.",
+memoryRef:"1 Coríntios 15:3-4 — confira o texto completo acima.",
+questions:["Quais acontecimentos formam o centro do Evangelho?","Por que a ressurreição é essencial?","Como a esperança da ressurreição influencia nossa fé?"],
+prayer:"Senhor Jesus, obrigado porque morreste por nossos pecados e ressuscitaste. Fortalece minha fé e ajuda-me a anunciar essa esperança. Amém."
+},
+{
+day:29,title:"A vitória sobre a morte",ref:"1 Coríntios 15:20-58",week:"Semana 6 • A esperança da ressurreição",
+intro:"Leia sobre a ressurreição dos mortos, a transformação do corpo e a vitória conquistada por Cristo.",
+context:"Paulo apresenta Cristo como as primícias dos que dormem e explica que a ressurreição dos cristãos está ligada à vitória de Jesus. O corpo corruptível será transformado, e a morte não terá a palavra final.",
+points:[
+"Cristo ressuscitou e é as primícias dos que dormem.",
+"A ressurreição de Cristo garante a esperança dos que pertencem a ele.",
+"O corpo corruptível será ressuscitado em incorruptibilidade.",
+"A morte será vencida por meio de Jesus Cristo.",
+"A esperança futura deve fortalecer a firmeza e o trabalho cristão."
+],
+application:"Não viva dominado pelo medo da morte. Mantenha sua esperança em Cristo e permaneça firme no serviço ao Senhor, sabendo que seu trabalho não é inútil.",
+memory:"Tragada foi a morte na vitória.",
+memoryRef:"1 Coríntios 15:54 — confira o texto completo acima.",
+questions:["O que significa Cristo ser as primícias dos que dormem?","Como Paulo descreve a transformação do corpo?","Que esperança temos diante da morte?"],
+prayer:"Pai, obrigado pela vitória de Cristo sobre a morte. Fortalece minha esperança e ajuda-me a permanecer firme e dedicado à tua obra. Amém."
+},
+{
+day:30,title:"Generosidade, serviço e despedida",ref:"1 Coríntios 16:1-24",week:"Semana 6 • Vivendo a fé com perseverança",
+intro:"Leia as orientações finais de Paulo sobre contribuição, serviço, vigilância, amor e comunhão entre os irmãos.",
+context:"Paulo encerra a carta tratando de uma coleta em favor dos santos, seus planos de viagem e a colaboração de outros servos. Ele conclui com orientações de vigilância, firmeza na fé, coragem e amor.",
+points:[
+"A contribuição cristã deve ser organizada e realizada com responsabilidade.",
+"O serviço missionário exige planejamento e cooperação.",
+"A igreja deve reconhecer e apoiar os que trabalham na obra do Senhor.",
+"Os cristãos são chamados a vigiar, permanecer firmes na fé e agir com coragem.",
+"Todas as atitudes devem ser realizadas com amor."
+],
+application:"Pratique a generosidade, apoie a obra de Deus e permaneça firme na fé. Faça tudo com amor e disposição para servir.",
+memory:"Todas as vossas coisas sejam feitas com amor.",
+memoryRef:"1 Coríntios 16:14 — confira o texto completo acima.",
+questions:["Que princípio Paulo apresenta sobre a contribuição?","Quais orientações aparecem no encerramento da carta?","Por que o amor deve acompanhar todas as nossas atitudes?"],
+prayer:"Senhor, ajuda-me a viver com generosidade, vigilância e amor. Que minha fé permaneça firme e que minhas atitudes contribuam para a edificação da tua igreja. Amém."
+}
+];
+
+const $ = id => document.getElementById(id);
+const KEY = "atalaia-1corintios-30-dias-v1";
+
+let state;
+try {
+state = JSON.parse(localStorage.getItem(KEY) || '{"done":[],"notes":{},"dark":false}');
+} catch {
+state = {done:[],notes:{},dark:false};
+}
+
+let current = 0;
+
+function persist(){
+localStorage.setItem(KEY,JSON.stringify(state));
+}
+
+function updateProgress(){
+const n=state.done.length;
+const p=Math.round(n/studies.length*100);
+
+$("progressPercent").textContent=p+"%";
+$("progressBar").style.width=p+"%";
+
+$("progressText").textContent=n===studies.length
+?"Parabéns! Você concluiu os 30 estudos em 1 Coríntios. Continue crescendo na Palavra."
+:`Você concluiu ${n} de 30 estudos. ${n===0?"Comece pelo Dia 1.":"Continue firme em sua caminhada com Cristo."}`;
+}
+
+function renderDays(){
+$("dayList").innerHTML=studies.map(s=>`
+<button class="day-item ${state.done.includes(s.day)?"done":""}" data-day="${s.day-1}">
+<span class="day-number">${state.done.includes(s.day)?"✓":String(s.day).padStart(2,"0")}</span>
+<span class="day-info">
+<strong>${s.title}</strong>
+<small>${s.ref}</small>
+</span>
+<span class="day-check">${state.done.includes(s.day)?"✓":"›"}</span>
+</button>
+`).join("");
+
+document.querySelectorAll(".day-item").forEach(b=>{
+b.addEventListener("click",()=>openStudy(Number(b.dataset.day)));
+});
+
+updateProgress();
+}
+
+function openStudy(i){
+current=Math.max(0,Math.min(studies.length-1,i));
+const s=studies[current];
+
+$("homeView").classList.remove("active");
+$("studyView").classList.add("active");
+
+$("studyDayLabel").textContent="DIA "+s.day;
+$("studyWeek").textContent=s.week;
+$("studyTitle").textContent=s.title;
+$("studyReference").textContent="Leitura bíblica: "+s.ref;
+
+$("readingIntro").textContent=s.intro;
+$("readingReference").textContent=s.ref+" • Bíblia Livre (Almeida 1819)";
+
+loadScripture(s);
+
+$("contextText").textContent=s.context;
+
+$("explanationText").innerHTML=s.points.map(x=>
+`<div class="explain-point">• ${escapeHTML(x)}</div>`
+).join("");
+
+$("applicationText").textContent=s.application;
+$("memoryText").textContent=s.memory;
+$("memoryReference").textContent=s.memoryRef;
+
+$("questions").innerHTML=s.questions.map((q,n)=>
+`<div class="question">${n+1}. ${escapeHTML(q)}</div>`
+).join("");
+
+$("prayerText").textContent=s.prayer;
+$("notesInput").value=state.notes[s.day]||"";
+
+$("completeBtn").textContent=state.done.includes(s.day)
+?"Estudo concluído ✓"
+:"Marcar como concluído ✓";
+
+$("prevBtn").disabled=current===0;
+$("nextBtn").disabled=current===studies.length-1;
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+const BIBLE_API="https://api.midvash.com/v1";
+const BIBLE_VERSION="almeida-livre";
+const BOOK_SLUG="1-corintios";
+const scriptureCache=new Map();
+
+async function loadScripture(study){
+const container=$("scriptureText");
+const credit=$("scriptureCopyright");
+
+container.innerHTML='<p class="scripture-status">Carregando o texto bíblico…</p>';
+credit.textContent="Tradução: Bíblia Livre (Almeida 1819).";
+
+if(scriptureCache.has(study.ref)){
+renderScripture(scriptureCache.get(study.ref));
+return;
+}
+
+try{
+const match=study.ref.match(/^1 Coríntios\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+
+if(!match)throw new Error("Referência bíblica não reconhecida.");
+
+const chapter=Number(match[1]);
+const start=match[2]?Number(match[2]):1;
+const end=match[3]?Number(match[3]):null;
+
+const response=await fetch(`${BIBLE_API}/${BIBLE_VERSION}/${BOOK_SLUG}/${chapter}`);
+
+if(!response.ok)throw new Error("Não foi possível consultar a fonte bíblica.");
+
+const body=await response.json();
+
+if(body.error)throw new Error(body.error.message||"Erro ao carregar a passagem.");
+
+const data=body.data||body;
+
+let verses=Array.isArray(data.verses)?data.verses:[];
+
+if(!verses.length&&data.text){
+verses=data.text.split(/\n+/).filter(Boolean);
+}
+
+if(!verses.length)throw new Error("A fonte não retornou os versículos esperados.");
+
+const normalized=verses.map((item,index)=>
+typeof item==="string"
+?{number:index+1,text:item}
+:{
+number:Number(item.verse||item.number||item.verseNumber||index+1),
+text:item.text||item.content||""
+}
+).filter(v=>v.text);
+
+const selected=normalized.filter(v=>
+v.number>=start&&(end===null||v.number<=end)
+);
+
+if(!selected.length)throw new Error("A passagem não foi encontrada nesta versão.");
+
+const result={
+verses:selected,
+reference:body.meta?.reference||study.ref,
+copyright:body.meta?.copyright||"Bíblia Livre (Almeida 1819)."
+};
+
+scriptureCache.set(study.ref,result);
+renderScripture(result);
+
+}catch(error){
+container.innerHTML='<p class="scripture-error">Não foi possível carregar o texto bíblico neste momento. Verifique sua conexão e tente novamente.</p>';
+
+const retry=document.createElement("button");
+retry.className="secondary-btn";
+retry.textContent="Tentar novamente";
+retry.addEventListener("click",()=>loadScripture(study));
+container.appendChild(retry);
+
+credit.textContent="Fonte: API Midvash. É necessária conexão com a internet.";
+console.error(error);
+}
+}
+
+function renderScripture(result){
+$("scriptureText").innerHTML=result.verses.map(v=>
+`<div class="scripture-verse"><sup>${v.number}</sup><span>${escapeHTML(v.text)}</span></div>`
+).join("");
+
+$("scriptureCopyright").textContent=result.copyright;
+}
+
+function escapeHTML(value){
+return String(value).replace(/[&<>"']/g,char=>({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#39;"
+}[char]));
+}
+
+function showHome(){
+$("studyView").classList.remove("active");
+$("homeView").classList.add("active");
+renderDays();
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("homeLink").addEventListener("click",e=>{
+e.preventDefault();
+showHome();
+});
+
+$("backBtn").addEventListener("click",showHome);
+
+$("continueBtn").addEventListener("click",()=>{
+const next=studies.findIndex(s=>!state.done.includes(s.day));
+openStudy(next<0?studies.length-1:next);
+});
+
+$("prevBtn").addEventListener("click",()=>openStudy(current-1));
+$("nextBtn").addEventListener("click",()=>openStudy(current+1));
+
+$("completeBtn").addEventListener("click",()=>{
+const d=studies[current].day;
+
+if(!state.done.includes(d)){
+state.done.push(d);
+}
+
+persist();
+$("completeBtn").textContent="Estudo concluído ✓";
+renderDays();
+});
+
+$("saveNotesBtn").addEventListener("click",()=>{
+const d=studies[current].day;
+
+state.notes[d]=$("notesInput").value;
+persist();
+
+$("saveNotesBtn").textContent="Salvo ✓";
+
+setTimeout(()=>{
+$("saveNotesBtn").textContent="Salvar minhas anotações";
+},1500);
+});
+
+$("themeBtn").addEventListener("click",()=>{
+state.dark=!state.dark;
+document.body.classList.toggle("dark",state.dark);
+persist();
+});
+
+if(state.dark){
+document.body.classList.add("dark");
+}
+
+renderDays();
+</script>
+</body>
+</html>

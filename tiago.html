@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172b43">
+<meta name="description" content="Estudo bíblico de 30 dias na Epístola de Tiago — Ministério Atalaia.">
+<title>Fé que Produz Frutos | Ministério Atalaia</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+--navy:#172b43;
+--navy2:#203b59;
+--gold:#c6a15b;
+--paper:#f5f3ee;
+--card:#fff;
+--ink:#202a35;
+--muted:#77818b;
+--line:#e8e5dd;
+--soft:#f8f6f1;
+--green:#47745d
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:'DM Sans',sans-serif;
+line-height:1.6
+}
+
+.topbar{
+height:66px;
+background:var(--navy);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 max(20px,calc((100% - 900px)/2));
+position:sticky;
+top:0;
+z-index:5
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+color:#fff;
+text-decoration:none;
+letter-spacing:.08em;
+font-size:11px
+}
+
+.brand small{
+display:block;
+color:#d8c49b;
+font-size:9px;
+letter-spacing:.18em
+}
+
+.brand-mark{color:var(--gold);font-size:27px}
+
+.icon-btn{
+border:1px solid #53667b;
+color:white;
+background:transparent;
+border-radius:50%;
+width:38px;
+height:38px;
+font-size:20px;
+cursor:pointer
+}
+
+main{
+max-width:900px;
+margin:auto;
+padding:26px 20px 60px
+}
+
+.view{display:none}
+.view.active{display:block}
+
+.hero{
+background:linear-gradient(135deg,#172b43,#294764);
+border-radius:22px;
+padding:36px 32px;
+color:#fff;
+position:relative;
+overflow:hidden;
+box-shadow:0 12px 30px #172b431c
+}
+
+.hero:after{
+content:"✦";
+position:absolute;
+right:28px;
+top:8px;
+font-size:140px;
+color:#ffffff0b
+}
+
+.eyebrow,.section-kicker,.card-label{
+font-size:10px;
+letter-spacing:.17em;
+font-weight:700;
+color:var(--gold)
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+line-height:1.15
+}
+
+.hero h1{
+font-size:clamp(34px,7vw,54px);
+margin:18px 0 12px
+}
+
+.hero h1 em{
+font-style:normal;
+color:#e0c27f
+}
+
+.hero p{
+max-width:460px;
+color:#e0e6eb;
+margin-bottom:22px
+}
+
+.hero-meta{
+font-size:10px;
+letter-spacing:.13em;
+color:#d8c49b;
+margin-bottom:22px
+}
+
+.primary-btn,.secondary-btn{
+border:0;
+border-radius:10px;
+padding:13px 18px;
+font:700 13px 'DM Sans';
+cursor:pointer
+}
+
+.primary-btn{
+background:var(--gold);
+color:#172b43
+}
+
+.primary-btn span{margin-left:18px}
+
+.secondary-btn{
+background:#eae6dc;
+color:var(--navy)
+}
+
+.progress-card,.content-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:16px;
+padding:21px;
+margin-top:18px
+}
+
+.progress-heading,.section-heading{
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.progress-heading h2,.section-heading h2{
+font-size:22px;
+margin:3px 0
+}
+
+.progress-heading strong{
+font-size:24px;
+color:var(--navy)
+}
+
+.progress-track{
+height:8px;
+background:#ece9e1;
+border-radius:10px;
+overflow:hidden;
+margin:13px 0 8px
+}
+
+.progress-track span{
+display:block;
+height:100%;
+width:0;
+background:var(--green);
+border-radius:10px;
+transition:width .25s
+}
+
+.progress-card p,.muted{
+color:var(--muted);
+font-size:12px
+}
+
+.section-heading{margin:30px 0 12px}
+
+.day-list{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px
+}
+
+.day-item{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:13px;
+padding:14px;
+display:flex;
+align-items:center;
+gap:12px;
+text-align:left;
+cursor:pointer;
+color:var(--ink);
+width:100%
+}
+
+.day-item:hover{border-color:var(--gold)}
+
+.day-number{
+width:38px;
+height:38px;
+border-radius:11px;
+background:#f0ede5;
+color:var(--navy);
+display:grid;
+place-items:center;
+font-weight:700;
+font-size:12px;
+flex-shrink:0
+}
+
+.day-item.done .day-number{
+background:#e3eee7;
+color:var(--green)
+}
+
+.day-info strong{
+display:block;
+font-size:12px
+}
+
+.day-info small{
+display:block;
+color:var(--muted);
+font-size:10px;
+margin-top:3px
+}
+
+.day-check{
+margin-left:auto;
+color:var(--green)
+}
+
+footer{
+text-align:center;
+color:var(--muted);
+font-size:11px;
+padding:35px 0 10px
+}
+
+.back-btn{
+border:0;
+background:transparent;
+color:var(--navy);
+font-weight:700;
+padding:5px 0 18px;
+cursor:pointer
+}
+
+.study-topline{
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.pill{
+background:#e8e1d2;
+color:#6e5528;
+border-radius:30px;
+padding:5px 11px;
+font-size:10px;
+font-weight:700;
+letter-spacing:.1em
+}
+
+.study-title{
+font-size:clamp(30px,6vw,42px);
+margin:16px 0 5px;
+color:var(--navy)
+}
+
+.study-reference{
+color:var(--muted);
+margin:0 0 18px
+}
+
+.study-content{max-width:720px}
+
+.content-card{
+padding:22px;
+margin:13px 0
+}
+
+.content-card h2{
+font-size:21px;
+margin:7px 0 10px;
+color:var(--navy)
+}
+
+.content-card p{
+font-size:14px;
+margin:8px 0
+}
+
+.reference-box{
+padding:12px 14px;
+background:var(--soft);
+border-left:3px solid var(--gold);
+font-weight:700;
+color:var(--navy);
+margin:12px 0
+}
+
+.content-card label{
+display:block;
+font-size:12px;
+font-weight:700;
+margin:16px 0 7px;
+color:var(--navy)
+}
+
+textarea{
+width:100%;
+resize:vertical;
+border:1px solid var(--line);
+border-radius:10px;
+padding:12px;
+font:13px/1.6 'DM Sans';
+background:#fff;
+color:#202a35
+}
+
+textarea:focus{
+outline:2px solid #c6a15b66;
+border-color:var(--gold)
+}
+
+.tiny-note{
+font-size:10px!important;
+color:var(--muted)
+}
+
+.explain-point{
+padding:10px 0;
+border-bottom:1px solid var(--line);
+font-size:14px
+}
+
+.explain-point:last-child{border:0}
+
+.memory-verse{
+font-family:'Playfair Display',serif;
+font-size:18px!important;
+color:var(--navy)
+}
+
+.scripture-text{
+background:var(--soft);
+border:1px solid var(--line);
+border-radius:12px;
+padding:14px 16px;
+margin:14px 0
+}
+
+.scripture-verse{
+display:grid;
+grid-template-columns:25px 1fr;
+gap:8px;
+padding:7px 0;
+border-bottom:1px solid var(--line);
+font-size:14px;
+line-height:1.75
+}
+
+.scripture-verse:last-child{border:0}
+
+.scripture-verse sup{
+color:#9a793d;
+font-weight:700;
+font-size:10px;
+padding-top:3px
+}
+
+.scripture-status{
+color:var(--muted);
+font-size:12px
+}
+
+.scripture-error{
+color:#a33b32;
+font-size:13px
+}
+
+.verse-ref{
+font-size:11px;
+color:#8a6b32;
+font-weight:700
+}
+
+.question{
+font-size:13px;
+font-weight:600;
+margin:13px 0 5px
+}
+
+.prayer-card{background:#f0eee7}
+
+.study-actions{
+display:flex;
+gap:8px;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+margin-top:18px
+}
+
+.study-actions .primary-btn{flex:1}
+
+.dark{
+--paper:#101b28;
+--card:#1b2b3b;
+--ink:#edf0f2;
+--muted:#aab4bd;
+--line:#344454;
+--soft:#243649
+}
+
+.dark .day-item,.dark textarea{
+background:#1b2b3b;
+color:#edf0f2
+}
+
+.dark .day-number{
+background:#2b4054;
+color:#e4c987
+}
+
+.dark .content-card h2,
+.dark .study-title,
+.dark .reference-box{
+color:#e7d3a5
+}
+
+.dark .reference-box,
+.dark .prayer-card{
+background:#26394c
+}
+
+.dark .secondary-btn{
+background:#34485b;
+color:#fff
+}
+
+.dark .progress-track{background:#344454}
+
+@media(max-width:560px){
+main{padding:17px 14px 40px}
+.hero{padding:28px 22px}
+.day-list{grid-template-columns:1fr}
+.progress-card,.content-card{padding:17px}
+.study-actions{
+display:grid;
+grid-template-columns:1fr 1fr
+}
+.study-actions .primary-btn{
+grid-column:1/-1;
+grid-row:1
+}
+.study-actions #prevBtn{grid-column:1}
+.study-actions #nextBtn{grid-column:2}
+.hero h1{font-size:37px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+<a class="brand" href="#" id="homeLink">
+<span class="brand-mark">✦</span>
+<span>
+<strong>MINISTÉRIO ATALAIA</strong>
+<small>ESCOLA BÍBLICA</small>
+</span>
+</a>
+<button class="icon-btn" id="themeBtn">◐</button>
+</header>
+
+<main>
+
+<section id="homeView" class="view active">
+
+<section class="hero">
+<div class="eyebrow">ESTUDO BÍBLICO • 30 DIAS</div>
+
+<h1>FÉ QUE<br><em>PRODUZ FRUTOS</em></h1>
+
+<p>
+Uma jornada de aprofundamento na Epístola de Tiago.
+Aprenda a viver uma fé verdadeira, prática e perseverante.
+</p>
+
+<div class="hero-meta">
+EPÍSTOLA DE TIAGO • ESTUDO BÍBLICO
+</div>
+
+<button class="primary-btn" id="continueBtn">
+Continuar minha jornada <span>→</span>
+</button>
+</section>
+
+<section class="progress-card">
+<div class="progress-heading">
+<div>
+<span class="section-kicker">SUA CAMINHADA</span>
+<h2>Seu progresso</h2>
+</div>
+<strong id="progressPercent">0%</strong>
+</div>
+
+<div class="progress-track">
+<span id="progressBar"></span>
+</div>
+
+<p id="progressText">
+Você ainda não concluiu nenhuma leitura. Comece pelo Dia 1.
+</p>
+</section>
+
+<div class="section-heading">
+<div>
+<span class="section-kicker">PLANO DE ESTUDO</span>
+<h2>30 dias com Tiago</h2>
+</div>
+<span class="muted">30 estudos</span>
+</div>
+
+<div id="dayList" class="day-list"></div>
+
+<footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+</section>
+
+<section id="studyView" class="view">
+
+<button class="back-btn" id="backBtn">← Voltar ao plano</button>
+
+<div class="study-topline">
+<span id="studyDayLabel" class="pill">DIA 1</span>
+<span id="studyWeek" class="muted"></span>
+</div>
+
+<h1 id="studyTitle" class="study-title"></h1>
+<p id="studyReference" class="study-reference"></p>
+
+<div class="study-content">
+
+<article class="content-card">
+<div class="card-label">01 • LEITURA BÍBLICA</div>
+<h2>Texto bíblico</h2>
+<p id="readingIntro"></p>
+<div class="reference-box" id="readingReference"></div>
+<div id="scriptureText" class="scripture-text">
+<p>O texto bíblico será carregado automaticamente.</p>
+</div>
+<p id="scriptureCopyright" class="tiny-note">
+Texto bíblico: Bíblia Livre (Almeida 1819). Requer conexão com a internet.
+</p>
+</article>
+
+<article class="content-card">
+<div class="card-label">02 • CONTEXTO</div>
+<h2>Entendendo o contexto</h2>
+<p id="contextText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div>
+<h2>O que o texto ensina?</h2>
+<div id="explanationText"></div>
+</article>
+
+<article class="content-card">
+<div class="card-label">04 • PARA A VIDA</div>
+<h2>Aplicação prática</h2>
+<p id="applicationText"></p>
+</article>
+
+<article class="content-card">
+<div class="card-label">05 • MEMORIZAÇÃO</div>
+<h2>Versículo para guardar</h2>
+<p id="memoryText" class="memory-verse"></p>
+<span id="memoryReference" class="verse-ref"></span>
+</article>
+
+<article class="content-card">
+<div class="card-label">06 • REFLEXÃO</div>
+<h2>Pense e responda</h2>
+<div id="questions"></div>
+<label for="notesInput">Minhas anotações</label>
+<textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+<button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+</article>
+
+<article class="content-card prayer-card">
+<div class="card-label">07 • MOMENTO DE ORAÇÃO</div>
+<h2>Ore ao Senhor</h2>
+<p id="prayerText"></p>
+</article>
+
+</div>
+
+<div class="study-actions">
+<button class="secondary-btn" id="prevBtn">← Anterior</button>
+<button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+<button class="secondary-btn" id="nextBtn">Próximo →</button>
+</div>
+
+</section>
+</main>
+
+<script>
+
+const studies = [
+
+{
+day:1,
+title:"A apresentação de Tiago e seus destinatários",
+ref:"Tiago 1:1",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:1. Observe como o autor se apresenta e a quem dirige sua carta.",
+context:"Tiago se apresenta como servo de Deus e do Senhor Jesus Cristo. A carta é dirigida às doze tribos que se encontram na dispersão. Seu conteúdo apresenta orientações práticas para a vida cristã, abordando fé, perseverança, sabedoria, domínio da língua, humildade e relacionamento com Deus.",
+points:[
+"Tiago escolhe identificar-se como servo, demonstrando humildade diante de Deus.",
+"A expressão Senhor Jesus Cristo apresenta a autoridade de Cristo sobre a vida do cristão.",
+"A carta é direcionada às doze tribos da dispersão, indicando comunidades judaicas espalhadas.",
+"Tiago escreve com forte preocupação pastoral: a fé professada precisa aparecer no comportamento.",
+"A mensagem da epístola une doutrina e prática, mostrando que o relacionamento com Deus transforma a conduta."
+],
+application:"Comece seu estudo reconhecendo que a vida cristã pertence ao Senhor. Não basta conhecer ensinamentos bíblicos; é necessário permitir que eles orientem suas decisões e atitudes.",
+memory:"Tiago 1:1",
+memoryRef:"Leia e memorize Tiago 1:1.",
+questions:[
+"Como Tiago se apresenta em sua carta?",
+"A quem a epístola é dirigida?",
+"Por que a fé cristã precisa transformar nossa maneira de viver?"
+],
+prayer:"Senhor Deus, dá-me humildade para aprender tua Palavra. Que minha vida seja marcada pela obediência a Cristo e pelo compromisso com a verdade. Amém."
+},
+
+{
+day:2,
+title:"A alegria em meio às provações",
+ref:"Tiago 1:2-4",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:2-4 e observe o propósito espiritual das provações.",
+context:"Tiago escreve a cristãos que enfrentavam dificuldades. Ele não ensina que o sofrimento seja agradável em si mesmo, mas que as provações podem produzir perseverança quando enfrentadas com fé.",
+points:[
+"A expressão diversas tentações ou provações indica que as dificuldades podem assumir diferentes formas.",
+"A fé é provada e sua autenticidade se manifesta na perseverança.",
+"A perseverança precisa realizar sua obra, conduzindo o cristão à maturidade.",
+"A maturidade espiritual não significa ausência de problemas, mas crescimento na confiança em Deus.",
+"Tiago ensina a olhar para as provações considerando também o resultado espiritual que Deus pode produzir."
+],
+application:"Não interprete toda dificuldade como abandono de Deus. Busque sabedoria nas Escrituras, permaneça firme e permita que sua fé amadureça durante os momentos difíceis.",
+memory:"Tiago 1:3-4",
+memoryRef:"Leia e memorize Tiago 1:3-4.",
+questions:[
+"O que a provação da fé produz?",
+"Qual é o papel da perseverança?",
+"Como podemos desenvolver maturidade espiritual nas dificuldades?"
+],
+prayer:"Pai, fortalece minha fé nos momentos difíceis. Dá-me perseverança para continuar confiando em ti e crescer espiritualmente. Amém."
+},
+
+{
+day:3,
+title:"Pedindo sabedoria a Deus",
+ref:"Tiago 1:5-8",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:5-8. Observe a orientação de buscar sabedoria diretamente em Deus.",
+context:"Depois de ensinar sobre as provações, Tiago apresenta a necessidade de sabedoria. O cristão não precisa enfrentar as dificuldades dependendo apenas de sua própria capacidade. Deus é apresentado como aquele que dá liberalmente.",
+points:[
+"A sabedoria mencionada envolve discernimento para viver de maneira que agrade a Deus.",
+"Tiago incentiva o cristão a pedir sabedoria ao Senhor.",
+"Deus é apresentado como generoso e não como alguém que humilha quem pede.",
+"O pedido deve ser acompanhado de fé, sem duplicidade de coração.",
+"O homem de ânimo dobre demonstra instabilidade e falta de firmeza em sua confiança."
+],
+application:"Antes de tomar decisões importantes, ore, examine as Escrituras e busque discernimento. Não permita que a dúvida permanente e a instabilidade controlem sua caminhada.",
+memory:"Tiago 1:5",
+memoryRef:"Leia e memorize Tiago 1:5.",
+questions:[
+"O que devemos pedir a Deus quando nos falta sabedoria?",
+"Como Tiago descreve a maneira de Deus conceder sabedoria?",
+"O que significa ser uma pessoa de ânimo dobre?"
+],
+prayer:"Senhor, concede-me sabedoria para compreender tua vontade e tomar decisões que estejam de acordo com tua Palavra. Amém."
+},
+
+{
+day:4,
+title:"Riqueza, pobreza e verdadeira dignidade",
+ref:"Tiago 1:9-11",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:9-11 e observe o contraste entre a condição humilde e a riqueza passageira.",
+context:"Tiago trata da maneira como o cristão deve compreender sua posição diante de Deus. A condição econômica não determina o valor espiritual de uma pessoa. A riqueza material é passageira, assim como a beleza da flor do campo.",
+points:[
+"O irmão de condição humilde pode gloriar-se na exaltação que recebe em Cristo.",
+"O rico deve reconhecer a fragilidade das riquezas e a transitoriedade da vida.",
+"A posição social não é critério para medir a dignidade diante de Deus.",
+"A imagem da flor que seca destaca a brevidade da prosperidade humana.",
+"A confiança do cristão deve estar em Deus, não em bens materiais."
+],
+application:"Não despreze quem possui poucos recursos nem coloque sua confiança no dinheiro. Em Cristo, aprendemos a enxergar as pessoas com dignidade e a viver com humildade.",
+memory:"Tiago 1:9",
+memoryRef:"Leia e memorize Tiago 1:9.",
+questions:[
+"O que Tiago ensina ao irmão de condição humilde?",
+"Por que as riquezas são consideradas passageiras?",
+"Como devemos tratar as pessoas independentemente de sua condição econômica?"
+],
+prayer:"Pai, livra-me do orgulho e da confiança nas riquezas. Ensina-me a encontrar minha verdadeira identidade em Cristo. Amém."
+},
+
+{
+day:5,
+title:"A tentação e a responsabilidade humana",
+ref:"Tiago 1:12-15",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:12-15. Observe a diferença entre provação e tentação.",
+context:"Tiago explica que Deus não é o autor da tentação para o mal. O texto descreve o processo pelo qual o desejo desordenado pode conduzir ao pecado e, posteriormente, à morte. Também apresenta a promessa da coroa da vida para os que perseveram.",
+points:[
+"Bem-aventurado é aquele que suporta a tentação e permanece fiel.",
+"A coroa da vida está associada à promessa de Deus aos que o amam.",
+"Deus não tenta ninguém para praticar o mal.",
+"A tentação encontra espaço quando desejos desordenados atraem e seduzem a pessoa.",
+"O pecado, quando consumado, produz morte, mostrando a gravidade de permitir que o desejo governe a vida."
+],
+application:"Reconheça suas áreas de vulnerabilidade e não alimente pensamentos que conduzam ao pecado. Busque a Deus, pratique a Palavra e procure ajuda espiritual quando necessário.",
+memory:"Tiago 1:12",
+memoryRef:"Leia e memorize Tiago 1:12.",
+questions:[
+"Qual promessa é apresentada aos que perseveram?",
+"Deus é o autor da tentação para o mal?",
+"Qual processo Tiago apresenta entre desejo, pecado e morte?"
+],
+prayer:"Senhor, fortalece-me contra a tentação. Ajuda-me a reconhecer minhas fraquezas e a escolher aquilo que te agrada. Amém."
+},
+
+{
+day:6,
+title:"Toda boa dádiva vem de Deus",
+ref:"Tiago 1:16-18",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:16-18. Observe como Tiago apresenta a bondade e a fidelidade de Deus.",
+context:"Após explicar a origem da tentação, Tiago direciona seus leitores à natureza de Deus. O Senhor é apresentado como o Pai das luzes, de quem procede toda boa dádiva. Ele também destaca a iniciativa divina na geração espiritual dos cristãos pela palavra da verdade.",
+points:[
+"Tiago adverte contra o engano em relação ao caráter de Deus.",
+"Deus é apresentado como fonte de toda boa dádiva e dom perfeito.",
+"O Pai das luzes não sofre mudança ou variação como as sombras.",
+"A nova vida espiritual é relacionada à vontade de Deus e à palavra da verdade.",
+"Os cristãos são apresentados como primícias de suas criaturas."
+],
+application:"Aprenda a reconhecer a bondade de Deus e não atribua a ele a origem do pecado. Valorize a Palavra que anuncia a verdade e conduz à nova vida.",
+memory:"Tiago 1:17",
+memoryRef:"Leia e memorize Tiago 1:17.",
+questions:[
+"Como Tiago descreve Deus no versículo 17?",
+"O que significa dizer que Deus não muda?",
+"Qual é a relação entre a palavra da verdade e a nova vida?"
+],
+prayer:"Pai celestial, obrigado por tua bondade e fidelidade. Ajuda-me a reconhecer teus dons e a permanecer na verdade da tua Palavra. Amém."
+},
+
+{
+day:7,
+title:"Prontos para ouvir e tardios para falar",
+ref:"Tiago 1:19-21",
+week:"Semana 1 • Os fundamentos da fé",
+intro:"Leia Tiago 1:19-21 e observe as orientações sobre ouvir, falar e controlar a ira.",
+context:"Tiago apresenta princípios fundamentais para os relacionamentos cristãos. A maneira como ouvimos, falamos e reagimos demonstra se estamos permitindo que a Palavra transforme nosso caráter.",
+points:[
+"O cristão deve estar pronto para ouvir, demonstrando disposição para compreender.",
+"Ser tardio para falar significa evitar palavras precipitadas e irresponsáveis.",
+"Ser tardio para se irar exige domínio próprio diante de conflitos.",
+"A ira humana não produz a justiça de Deus.",
+"É necessário abandonar a malícia e receber com mansidão a Palavra implantada."
+],
+application:"Pratique a escuta antes de responder. Evite discussões desnecessárias e não permita que a ira determine suas atitudes. Receba a Palavra com humildade.",
+memory:"Tiago 1:19",
+memoryRef:"Leia e memorize Tiago 1:19.",
+questions:[
+"Quais são as três orientações de Tiago no versículo 19?",
+"Por que a ira humana não produz a justiça de Deus?",
+"Como podemos receber a Palavra com mansidão?"
+],
+prayer:"Senhor, coloca guarda em minha boca e ensina-me a ouvir com atenção. Livra-me da ira e ajuda-me a viver em mansidão. Amém."
+},
+
+{
+day:8,
+title:"Praticantes da Palavra",
+ref:"Tiago 1:22-25",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 1:22-25. Observe a comparação entre ouvir a Palavra e praticá-la.",
+context:"Tiago confronta uma religiosidade que se limita ao conhecimento. A Palavra é comparada a um espelho que revela a condição da pessoa. O verdadeiro discípulo não apenas contempla a mensagem, mas permite que ela transforme sua conduta.",
+points:[
+"Ouvir a Palavra sem praticá-la é uma forma de autoengano.",
+"O espelho representa a capacidade de reconhecer a própria condição.",
+"A pessoa que apenas ouve esquece rapidamente aquilo que viu.",
+"A lei perfeita da liberdade está relacionada à Palavra de Deus.",
+"A perseverança na prática conduz à bem-aventurança naquilo que se faz."
+],
+application:"Transforme cada estudo bíblico em uma atitude concreta. Pergunte a si mesmo o que precisa mudar depois de ler determinado ensinamento.",
+memory:"Tiago 1:22",
+memoryRef:"Leia e memorize Tiago 1:22.",
+questions:[
+"Qual é o perigo de ouvir sem praticar?",
+"O que representa a comparação com o espelho?",
+"Como transformar conhecimento bíblico em obediência?"
+],
+prayer:"Senhor, não permitas que eu seja apenas ouvinte da tua Palavra. Dá-me coragem para praticar aquilo que aprendo. Amém."
+},
+
+{
+day:9,
+title:"A verdadeira religião",
+ref:"Tiago 1:26-27",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 1:26-27 e observe as evidências de uma religião pura diante de Deus.",
+context:"Tiago apresenta critérios práticos para avaliar a religiosidade. O controle da língua, o cuidado com os necessitados e a preservação da vida diante da corrupção do mundo aparecem como marcas da verdadeira devoção.",
+points:[
+"A pessoa que não controla sua língua engana o próprio coração.",
+"A religiosidade exterior perde seu valor quando não é acompanhada de transformação.",
+"Visitar órfãos e viúvas representa cuidado concreto com pessoas vulneráveis.",
+"A verdadeira fé não permanece indiferente ao sofrimento do próximo.",
+"Guardar-se da corrupção do mundo envolve uma vida de santidade e fidelidade a Deus."
+],
+application:"Avalie sua vida cristã não apenas pela frequência aos cultos, mas também pela maneira como fala, trata as pessoas e cuida dos necessitados.",
+memory:"Tiago 1:27",
+memoryRef:"Leia e memorize Tiago 1:27.",
+questions:[
+"Quais características Tiago apresenta para a religião pura?",
+"Por que o controle da língua é importante?",
+"Como podemos demonstrar cuidado pelos necessitados?"
+],
+prayer:"Pai, que minha fé seja verdadeira. Ensina-me a cuidar dos necessitados, controlar minhas palavras e viver em santidade. Amém."
+},
+
+{
+day:10,
+title:"Contra a acepção de pessoas",
+ref:"Tiago 2:1-7",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 2:1-7. Observe o tratamento dado a pessoas ricas e pobres na comunidade cristã.",
+context:"Tiago denuncia a discriminação dentro da comunidade de fé. Ele apresenta o exemplo de duas pessoas que entram na reunião: uma rica e outra pobre. O tratamento diferente demonstra favoritismo e contradiz a fé no Senhor Jesus Cristo.",
+points:[
+"A fé em Jesus Cristo não combina com acepção de pessoas.",
+"O tratamento baseado na aparência demonstra julgamento injusto.",
+"Tiago denuncia a preferência concedida aos ricos em detrimento dos pobres.",
+"Deus escolheu muitos pobres deste mundo para serem ricos na fé e herdeiros do Reino.",
+"A dignidade de uma pessoa não deve ser determinada por roupas, dinheiro ou posição social."
+],
+application:"Receba todas as pessoas com respeito. Não permita que aparência, condição financeira ou posição social determinem a maneira como você trata alguém na igreja.",
+memory:"Tiago 2:1",
+memoryRef:"Leia e memorize Tiago 2:1.",
+questions:[
+"O que significa acepção de pessoas?",
+"Por que Tiago condena o favoritismo?",
+"Como a igreja deve tratar pessoas de diferentes condições sociais?"
+],
+prayer:"Senhor, remove de mim todo preconceito e favoritismo. Ensina-me a amar e respeitar todas as pessoas. Amém."
+},
+
+{
+day:11,
+title:"A lei real: amar o próximo",
+ref:"Tiago 2:8-13",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 2:8-13. Observe a relação entre o amor ao próximo, a lei de Deus e a misericórdia.",
+context:"Tiago chama o mandamento de amar o próximo de lei real, conforme as Escrituras. Ele demonstra que não podemos escolher obedecer apenas aos mandamentos que consideramos convenientes. A misericórdia também ocupa lugar central na conduta cristã.",
+points:[
+"Amar o próximo como a si mesmo é apresentado como a lei real.",
+"Fazer acepção de pessoas constitui pecado.",
+"A lei de Deus não deve ser tratada como um conjunto de orientações independentes.",
+"A misericórdia deve marcar os relacionamentos entre os cristãos.",
+"O julgamento de Deus exige que o discípulo viva com responsabilidade e compaixão."
+],
+application:"Pratique o amor ao próximo nas situações comuns. Seja justo, evite favoritismo e ofereça misericórdia sem abandonar a verdade.",
+memory:"Tiago 2:13",
+memoryRef:"Leia e memorize Tiago 2:13.",
+questions:[
+"O que Tiago chama de lei real?",
+"Por que não podemos escolher quais mandamentos obedecer?",
+"Qual é a importância da misericórdia?"
+],
+prayer:"Deus, ensina-me a amar o próximo com sinceridade. Que minhas atitudes sejam marcadas pela justiça e pela misericórdia. Amém."
+},
+
+{
+day:12,
+title:"A fé sem obras está morta",
+ref:"Tiago 2:14-20",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 2:14-20. Observe a relação entre a fé professada e as atitudes práticas.",
+context:"Tiago apresenta uma questão central da carta: uma pessoa afirma possuir fé, mas não demonstra nenhuma evidência prática. O exemplo de alguém que necessita de alimento e roupas mostra que palavras religiosas não substituem o cuidado concreto.",
+points:[
+"Tiago questiona a utilidade de uma fé que não produz obras.",
+"Uma declaração de fé sem atitudes correspondentes é incapaz de demonstrar vida espiritual.",
+"O exemplo do irmão necessitado mostra a diferença entre desejar o bem e ajudar efetivamente.",
+"A fé verdadeira se manifesta por meio de atitudes coerentes.",
+"Até os demônios creem que Deus existe, mas esse conhecimento não significa submissão obediente."
+],
+application:"Não use palavras de fé para esconder a indiferença. Procure identificar necessidades reais ao seu redor e demonstre o amor de Cristo por meio de ações.",
+memory:"Tiago 2:17",
+memoryRef:"Leia e memorize Tiago 2:17.",
+questions:[
+"Qual é a questão levantada por Tiago sobre a fé sem obras?",
+"Que exemplo prático ele apresenta?",
+"Como nossas atitudes demonstram a autenticidade da fé?"
+],
+prayer:"Senhor, que minha fé seja viva e verdadeira. Ajuda-me a demonstrar teu amor por meio de atitudes concretas. Amém."
+},
+
+{
+day:13,
+title:"Abraão: a fé demonstrada pela obediência",
+ref:"Tiago 2:21-24",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 2:21-24 e examine o exemplo de Abraão.",
+context:"Tiago utiliza a experiência de Abraão para mostrar que a fé verdadeira não permanece isolada das obras. Sua obediência no episódio de Isaque demonstrou a confiança que ele possuía em Deus. O texto deve ser lido em conjunto com Gênesis 15 e 22.",
+points:[
+"Abraão é apresentado como exemplo de fé acompanhada de obediência.",
+"A disposição de oferecer Isaque demonstrou a profundidade de sua confiança em Deus.",
+"A fé cooperou com suas obras, e pelas obras sua fé foi aperfeiçoada.",
+"O exemplo de Abraão revela que a confiança em Deus influencia decisões concretas.",
+"Tiago enfatiza a evidência prática da fé, não a possibilidade de comprar a salvação por méritos humanos."
+],
+application:"A verdadeira confiança em Deus conduz à obediência. Não separe aquilo que você afirma crer da maneira como vive diariamente.",
+memory:"Tiago 2:22",
+memoryRef:"Leia e memorize Tiago 2:22.",
+questions:[
+"Por que Abraão é apresentado como exemplo?",
+"Como a fé e as obras cooperaram em sua experiência?",
+"O que aprendemos com sua obediência?"
+],
+prayer:"Pai, dá-me uma fé semelhante à confiança demonstrada por Abraão. Ajuda-me a obedecer mesmo quando não compreendo todas as circunstâncias. Amém."
+},
+
+{
+day:14,
+title:"Raabe e a fé que age",
+ref:"Tiago 2:25-26",
+week:"Semana 2 • Uma fé em ação",
+intro:"Leia Tiago 2:25-26 e observe o exemplo de Raabe.",
+context:"Depois de Abraão, Tiago apresenta Raabe como outro exemplo de fé demonstrada por ações. A comparação é significativa: Abraão era patriarca de Israel, enquanto Raabe era uma mulher gentia. Ambos ilustram a importância da confiança em Deus que se manifesta em atitudes.",
+points:[
+"Raabe demonstrou sua fé ao acolher os mensageiros.",
+"Suas atitudes revelaram uma mudança de posicionamento diante de Deus.",
+"Tiago apresenta exemplos diferentes para demonstrar a mesma verdade espiritual.",
+"A fé não é medida pela posição social ou pela história anterior de alguém.",
+"Assim como o corpo sem espírito está morto, a fé sem obras é morta."
+],
+application:"Não permita que seu passado seja um impedimento para obedecer a Deus. A fé verdadeira transforma escolhas e produz atitudes coerentes com a Palavra.",
+memory:"Tiago 2:26",
+memoryRef:"Leia e memorize Tiago 2:26.",
+questions:[
+"Como Raabe demonstrou sua fé?",
+"Por que Tiago apresenta Abraão e Raabe?",
+"O que significa a comparação entre corpo sem espírito e fé sem obras?"
+],
+prayer:"Senhor, transforma minha vida e minhas escolhas. Que minha fé seja demonstrada por atitudes de amor, coragem e obediência. Amém."
+},
+
+{
+day:15,
+title:"O perigo de ensinar",
+ref:"Tiago 3:1-2",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 3:1-2. Observe a responsabilidade de quem ensina a Palavra de Deus.",
+context:"Tiago adverte que nem todos devem desejar ser mestres, pois aqueles que ensinam possuem responsabilidade maior. O ensino influencia a vida de outras pessoas e exige fidelidade às Escrituras, maturidade e domínio próprio.",
+points:[
+"Os mestres possuem responsabilidade especial diante de Deus.",
+"O ensino bíblico não deve ser tratado como oportunidade de prestígio pessoal.",
+"Quem ensina precisa reconhecer sua própria necessidade de crescimento.",
+"Tiago relaciona maturidade espiritual ao controle das palavras.",
+"Todos tropeçam de muitas maneiras, mas a busca pela maturidade deve continuar."
+],
+application:"Quem ensina precisa estudar cuidadosamente a Bíblia, evitar interpretações irresponsáveis e reconhecer que suas palavras podem influenciar profundamente outras vidas.",
+memory:"Tiago 3:1",
+memoryRef:"Leia e memorize Tiago 3:1.",
+questions:[
+"Por que Tiago adverte aqueles que desejam ser mestres?",
+"Qual é a responsabilidade de quem ensina?",
+"Como podemos desenvolver maturidade no uso das palavras?"
+],
+prayer:"Senhor, dá-me responsabilidade e temor ao ensinar tua Palavra. Livra-me do orgulho e ajuda-me a transmitir fielmente as Escrituras. Amém."
+},
+
+{
+day:16,
+title:"O poder da língua",
+ref:"Tiago 3:3-6",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 3:3-6 e observe as comparações utilizadas para demonstrar o poder das palavras.",
+context:"Tiago utiliza três imagens: o freio colocado na boca dos cavalos, o leme dos navios e o pequeno fogo que incendeia uma grande floresta. Todas demonstram como algo pequeno pode exercer influência extraordinária.",
+points:[
+"O freio controla a direção de um animal de grande porte.",
+"O leme, embora pequeno, orienta a direção de um navio.",
+"A língua também é pequena, mas pode produzir consequências enormes.",
+"Palavras destrutivas podem contaminar relacionamentos e comunidades inteiras.",
+"O cristão precisa reconhecer o potencial destrutivo de uma fala irresponsável."
+],
+application:"Pense antes de falar. Evite fofocas, calúnias, humilhações e palavras que destroem a reputação de outras pessoas.",
+memory:"Tiago 3:5",
+memoryRef:"Leia e memorize Tiago 3:5.",
+questions:[
+"Quais são as três imagens utilizadas por Tiago?",
+"Como algo pequeno pode produzir grandes consequências?",
+"Que cuidados devemos ter com nossas palavras?"
+],
+prayer:"Senhor, guarda minha língua. Que minhas palavras promovam edificação, verdade e paz. Amém."
+},
+
+{
+day:17,
+title:"Bendizer e amaldiçoar",
+ref:"Tiago 3:7-12",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 3:7-12 e observe a incoerência de louvar a Deus e ferir pessoas com a mesma boca.",
+context:"Tiago aprofunda o ensino sobre o domínio da língua. Ele apresenta a dificuldade humana de controlá-la e denuncia a contradição de utilizar a boca para louvar o Criador e amaldiçoar pessoas feitas à sua imagem.",
+points:[
+"A língua é apresentada como um instrumento de grande dificuldade de domínio.",
+"A mesma boca não deveria ser utilizada para louvor e maldição.",
+"Os seres humanos foram feitos à semelhança de Deus.",
+"A fonte de água doce não produz naturalmente água amarga.",
+"A figueira não produz azeitonas, demonstrando a necessidade de coerência entre natureza e fruto."
+],
+application:"Sua maneira de tratar as pessoas precisa combinar com sua adoração a Deus. Não adianta louvar no culto e humilhar o próximo durante a semana.",
+memory:"Tiago 3:10",
+memoryRef:"Leia e memorize Tiago 3:10.",
+questions:[
+"Qual contradição Tiago denuncia?",
+"Por que devemos respeitar as pessoas?",
+"O que as comparações com árvores e fontes ensinam?"
+],
+prayer:"Pai, purifica meu coração e minhas palavras. Que minha boca seja instrumento de bênção e nunca de destruição. Amém."
+},
+
+{
+day:18,
+title:"A sabedoria que vem do alto",
+ref:"Tiago 3:13-18",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 3:13-18 e observe as diferenças entre a sabedoria terrena e a sabedoria que vem de Deus.",
+context:"Tiago mostra que a sabedoria não deve ser avaliada apenas pelo discurso de alguém. Ela se torna visível por meio de uma boa conduta, mansidão e frutos de justiça.",
+points:[
+"A verdadeira sabedoria é demonstrada por boas obras e comportamento correto.",
+"A inveja amarga e o sentimento faccioso não procedem da sabedoria celestial.",
+"A sabedoria terrena é caracterizada por confusão e práticas prejudiciais.",
+"A sabedoria do alto é pura, pacífica, moderada, tratável e cheia de misericórdia.",
+"O fruto da justiça é semeado em paz pelos que promovem a paz."
+],
+application:"Examine suas atitudes. A sabedoria espiritual não se manifesta em arrogância, inveja ou discussões, mas em humildade, misericórdia e compromisso com a paz.",
+memory:"Tiago 3:17",
+memoryRef:"Leia e memorize Tiago 3:17.",
+questions:[
+"Como a verdadeira sabedoria é demonstrada?",
+"Quais são as características da sabedoria que vem do alto?",
+"Qual é a diferença entre a sabedoria terrena e a celestial?"
+],
+prayer:"Senhor, concede-me a sabedoria que vem do alto. Que minhas atitudes sejam marcadas pela pureza, misericórdia e paz. Amém."
+},
+
+{
+day:19,
+title:"A origem das contendas",
+ref:"Tiago 4:1-3",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 4:1-3 e observe a origem dos conflitos apresentados pelo apóstolo.",
+context:"Tiago confronta os conflitos que surgiam entre os destinatários da carta. Ele direciona a atenção para os desejos e paixões que guerreiam no interior das pessoas. O problema não é apenas externo: há uma dimensão interior que precisa ser tratada.",
+points:[
+"As guerras e contendas são relacionadas aos desejos que lutam no interior das pessoas.",
+"A cobiça pode alimentar conflitos e insatisfação.",
+"A falta de oração impede que necessidades sejam apresentadas corretamente a Deus.",
+"Nem todo pedido é adequado: algumas pessoas pedem com motivações egoístas.",
+"A oração precisa estar alinhada com a vontade e os propósitos de Deus."
+],
+application:"Antes de responsabilizar outras pessoas por todo conflito, examine suas próprias motivações. Ore com sinceridade e peça a Deus que transforme seus desejos.",
+memory:"Tiago 4:3",
+memoryRef:"Leia e memorize Tiago 4:3.",
+questions:[
+"Segundo Tiago, de onde vêm as contendas?",
+"Por que algumas orações não são atendidas conforme desejamos?",
+"Como devemos examinar nossas motivações?"
+],
+prayer:"Pai, examina meu coração e transforma meus desejos. Livra-me do egoísmo e ensina-me a orar conforme tua vontade. Amém."
+},
+
+{
+day:20,
+title:"Amizade com o mundo e fidelidade a Deus",
+ref:"Tiago 4:4-6",
+week:"Semana 3 • A língua e a sabedoria",
+intro:"Leia Tiago 4:4-6 e observe o alerta sobre a infidelidade espiritual.",
+context:"Tiago utiliza uma linguagem forte para denunciar a amizade com o sistema de valores contrário a Deus. Sua preocupação é mostrar que não é possível viver dividido entre a fidelidade ao Senhor e a submissão aos desejos que se opõem à sua vontade.",
+points:[
+"A amizade com o mundo é apresentada como oposição à fidelidade a Deus.",
+"O texto denuncia a infidelidade espiritual.",
+"Deus exige devoção verdadeira e não uma lealdade dividida.",
+"A Escritura apresenta a seriedade do conflito entre o orgulho humano e a vontade divina.",
+"Deus concede maior graça e resiste aos soberbos, mas dá graça aos humildes."
+],
+application:"Examine os valores que orientam suas escolhas. Não permita que o orgulho, a ambição ou os desejos contrários à Palavra ocupem o lugar que pertence a Deus.",
+memory:"Tiago 4:6",
+memoryRef:"Leia e memorize Tiago 4:6.",
+questions:[
+"O que Tiago denuncia com a expressão amizade com o mundo?",
+"Por que a fidelidade a Deus exige compromisso?",
+"A quem Deus concede graça?"
+],
+prayer:"Senhor, quero pertencer inteiramente a ti. Livra-me da soberba e ensina-me a viver em humildade e fidelidade. Amém."
+},
+
+{
+day:21,
+title:"Sujeitai-vos a Deus",
+ref:"Tiago 4:7-10",
+week:"Semana 4 • Humildade e perseverança",
+intro:"Leia Tiago 4:7-10 e observe as orientações para resistir ao mal e aproximar-se de Deus.",
+context:"Depois de denunciar o orgulho e a infidelidade espiritual, Tiago apresenta uma sequência de orientações práticas: submissão a Deus, resistência ao diabo, aproximação do Senhor, purificação e humildade.",
+points:[
+"A submissão a Deus é o ponto de partida para uma vida de obediência.",
+"Resistir ao diabo exige firmeza espiritual e compromisso com a vontade divina.",
+"Aproximar-se de Deus está relacionado à promessa de sua aproximação.",
+"A purificação das mãos e do coração representa a necessidade de abandonar o pecado.",
+"A humildade diante do Senhor conduz à dependência de sua graça."
+],
+application:"Desenvolva uma vida de oração, arrependimento e obediência. Não trate o pecado como algo pequeno. Submeta suas decisões ao senhorio de Cristo.",
+memory:"Tiago 4:7",
+memoryRef:"Leia e memorize Tiago 4:7.",
+questions:[
+"Qual é a primeira orientação apresentada no versículo 7?",
+"O que significa resistir ao diabo?",
+"Como podemos nos aproximar de Deus?"
+],
+prayer:"Senhor, submeto minha vida à tua vontade. Fortalece-me para resistir ao mal e permanecer perto de ti. Amém."
+},
+
+{
+day:22,
+title:"Não falar mal uns dos outros",
+ref:"Tiago 4:11-12",
+week:"Semana 4 • Humildade e perseverança",
+intro:"Leia Tiago 4:11-12 e observe o ensino sobre julgamento e relacionamento entre irmãos.",
+context:"Tiago adverte contra falar mal dos irmãos e assumir uma posição de juiz sobre eles. O texto destaca que existe um único Legislador e Juiz, aquele que tem autoridade para salvar e destruir.",
+points:[
+"Falar mal do irmão é uma atitude incompatível com a obediência à lei do amor.",
+"O julgamento arrogante coloca a pessoa em posição que não lhe pertence.",
+"Deus é apresentado como Legislador e Juiz.",
+"O cristão deve tratar os irmãos com responsabilidade e respeito.",
+"Reconhecer a autoridade de Deus ajuda a abandonar a arrogância e a condenação precipitada."
+],
+application:"Evite fofocas, acusações precipitadas e julgamentos motivados por orgulho. Corrija com amor quando necessário e reconheça que o julgamento final pertence a Deus.",
+memory:"Tiago 4:12",
+memoryRef:"Leia e memorize Tiago 4:12.",
+questions:[
+"Qual comportamento Tiago condena?",
+"Quem é apresentado como Legislador e Juiz?",
+"Como podemos corrigir alguém sem agir com arrogância?"
+],
+prayer:"Senhor, guarda meu coração contra a maledicência. Ensina-me a agir com amor, justiça e humildade nos relacionamentos. Amém."
+},
+
+{
+day:23,
+title:"A fragilidade dos planos humanos",
+ref:"Tiago 4:13-17",
+week:"Semana 4 • Humildade e perseverança",
+intro:"Leia Tiago 4:13-17 e observe a advertência contra a arrogância no planejamento do futuro.",
+context:"Tiago apresenta pessoas que planejam viagens, negócios e lucros como se tivessem controle absoluto sobre o amanhã. Ele não condena o planejamento, mas a presunção de viver sem reconhecer a dependência de Deus.",
+points:[
+"A vida humana é breve e não está sob controle absoluto das pessoas.",
+"A comparação com a neblina destaca a fragilidade e a transitoriedade da existência.",
+"O cristão deve reconhecer a soberania de Deus sobre o futuro.",
+"A expressão se o Senhor quiser demonstra dependência e submissão à vontade divina.",
+"Saber o que é correto e deixar de praticá-lo também é apresentado como pecado."
+],
+application:"Planeje com responsabilidade, mas reconheça que sua vida pertence a Deus. Inclua a vontade do Senhor em suas decisões e pratique o bem que já conhece.",
+memory:"Tiago 4:15",
+memoryRef:"Leia e memorize Tiago 4:15.",
+questions:[
+"Por que Tiago compara a vida a uma neblina?",
+"O que significa dizer se o Senhor quiser?",
+"Qual é o ensino do versículo 17?"
+],
+prayer:"Pai, reconheço que meus dias estão em tuas mãos. Guia meus planos e ensina-me a viver de acordo com tua vontade. Amém."
+},
+
+{
+day:24,
+title:"A advertência aos ricos opressores",
+ref:"Tiago 5:1-6",
+week:"Semana 4 • Humildade e perseverança",
+intro:"Leia Tiago 5:1-6 e observe a denúncia contra o uso injusto das riquezas.",
+context:"Tiago apresenta uma severa advertência contra ricos que acumulam bens, retêm salários e vivem em luxo enquanto prejudicam trabalhadores. O texto não condena simplesmente a posse de recursos, mas a injustiça, a exploração e a confiança arrogante nas riquezas.",
+points:[
+"Tiago denuncia a acumulação egoísta e a confiança nas riquezas.",
+"A deterioração dos bens materiais demonstra sua natureza passageira.",
+"O salário retido injustamente é apresentado como testemunho contra os opressores.",
+"Deus ouve o clamor dos trabalhadores prejudicados.",
+"A vida de luxo e prazer construída sobre a exploração é confrontada pelo juízo divino."
+],
+application:"Seja honesto em suas relações financeiras e profissionais. Pague corretamente quem trabalha, não explore pessoas e utilize seus recursos com responsabilidade diante de Deus.",
+memory:"Tiago 5:4",
+memoryRef:"Leia e memorize Tiago 5:4.",
+questions:[
+"Que tipo de riqueza Tiago denuncia?",
+"O que o texto ensina sobre salários retidos?",
+"Como o cristão deve lidar com seus recursos?"
+],
+prayer:"Senhor, livra-me da ganância e da injustiça. Ensina-me a trabalhar honestamente e tratar todas as pessoas com dignidade. Amém."
+},
+
+{
+day:25,
+title:"A paciência até a vinda do Senhor",
+ref:"Tiago 5:7-11",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:7-11 e observe o exemplo do agricultor e dos profetas.",
+context:"Tiago dirige-se aos cristãos que enfrentam sofrimento e injustiça. Utiliza a imagem do lavrador que espera o fruto da terra para ensinar perseverança. Também apresenta os profetas e Jó como exemplos de resistência e confiança em Deus.",
+points:[
+"O agricultor espera pacientemente o fruto da terra.",
+"O cristão deve fortalecer seu coração enquanto aguarda a vinda do Senhor.",
+"A murmuração contra os irmãos deve ser evitada.",
+"Os profetas demonstraram perseverança mesmo enfrentando sofrimento.",
+"A experiência de Jó revela a compaixão e a misericórdia do Senhor."
+],
+application:"Não abandone sua fé por causa da demora de uma resposta. Continue servindo, orando e praticando a Palavra enquanto espera no Senhor.",
+memory:"Tiago 5:8",
+memoryRef:"Leia e memorize Tiago 5:8.",
+questions:[
+"Qual é a lição da imagem do agricultor?",
+"Por que Tiago apresenta os profetas?",
+"O que aprendemos com a perseverança de Jó?"
+],
+prayer:"Senhor, fortalece meu coração enquanto espero em ti. Dá-me paciência, fidelidade e esperança diante das dificuldades. Amém."
+},
+
+{
+day:26,
+title:"A responsabilidade das palavras",
+ref:"Tiago 5:12",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:12 e observe a orientação sobre juramentos e honestidade.",
+context:"Tiago retoma a importância do falar verdadeiro. A palavra do cristão deve ser confiável, sem a necessidade de utilizar juramentos para dar aparência de credibilidade às declarações.",
+points:[
+"A integridade deve caracterizar a comunicação do discípulo.",
+"O cristão deve evitar juramentos desnecessários.",
+"Sim deve significar sim, e não deve significar não.",
+"A honestidade precisa fazer parte da vida cotidiana.",
+"A responsabilidade pelas palavras está relacionada ao temor de Deus."
+],
+application:"Seja verdadeiro em seus compromissos. Cumpra o que promete e não utilize palavras religiosas para esconder falta de honestidade.",
+memory:"Tiago 5:12",
+memoryRef:"Leia e memorize Tiago 5:12.",
+questions:[
+"O que Tiago ensina sobre juramentos?",
+"O que significa ter uma palavra confiável?",
+"Como podemos demonstrar honestidade no cotidiano?"
+],
+prayer:"Senhor, que minhas palavras sejam verdadeiras. Ajuda-me a cumprir meus compromissos e viver com integridade. Amém."
+},
+
+{
+day:27,
+title:"A oração na aflição e na alegria",
+ref:"Tiago 5:13",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:13 e observe a orientação para diferentes situações da vida.",
+context:"Tiago apresenta a oração como resposta adequada tanto nos momentos difíceis quanto nos momentos de alegria. A vida cristã deve manter comunhão com Deus em todas as circunstâncias.",
+points:[
+"O aflito é orientado a orar.",
+"O alegre é incentivado a cantar louvores.",
+"A oração não deve ser limitada aos momentos de emergência.",
+"A adoração reconhece a bondade de Deus nas diferentes fases da vida.",
+"A comunhão com Deus precisa fazer parte da rotina do cristão."
+],
+application:"Crie o hábito de conversar com Deus diariamente. Ore nas dificuldades e não se esqueça de agradecer e louvar quando estiver vivendo momentos de alegria.",
+memory:"Tiago 5:13",
+memoryRef:"Leia e memorize Tiago 5:13.",
+questions:[
+"O que deve fazer aquele que está aflito?",
+"Qual é a orientação para quem está alegre?",
+"Como podemos desenvolver uma vida constante de oração?"
+],
+prayer:"Pai, ensina-me a buscar tua presença em todos os momentos. Que minha vida seja marcada pela oração e pela gratidão. Amém."
+},
+
+{
+day:28,
+title:"A oração da fé e a unção dos enfermos",
+ref:"Tiago 5:14-16",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:14-16. Observe as orientações sobre oração, presbíteros, confissão e cuidado espiritual.",
+context:"Tiago orienta que o enfermo chame os presbíteros da igreja para orarem por ele, ungindo-o com azeite em nome do Senhor. O texto também destaca a oração da fé, a confissão e a importância da intercessão. A passagem deve ser interpretada com responsabilidade, sem transformar a oração em promessa automática de cura.",
+points:[
+"O enfermo é orientado a buscar o cuidado espiritual da comunidade.",
+"Os presbíteros são chamados para orar em nome do Senhor.",
+"A unção com azeite aparece associada à oração pastoral.",
+"A confissão de pecados e a oração mútua são apresentadas como práticas importantes da comunidade cristã.",
+"A oração do justo é descrita como poderosa e eficaz."
+],
+application:"Não enfrente o sofrimento isoladamente. Procure apoio espiritual, ore com os irmãos e desenvolva uma comunidade marcada pelo cuidado, pela verdade e pela intercessão.",
+memory:"Tiago 5:16",
+memoryRef:"Leia e memorize Tiago 5:16.",
+questions:[
+"Quem deve ser chamado para orar pelo enfermo?",
+"Qual é o papel da comunidade cristã no cuidado espiritual?",
+"O que Tiago ensina sobre a oração do justo?"
+],
+prayer:"Senhor, ensina-nos a cuidar uns dos outros. Fortalece os enfermos, consola os aflitos e desenvolve em tua igreja uma vida de oração e comunhão. Amém."
+},
+
+{
+day:29,
+title:"Elias: um exemplo de oração",
+ref:"Tiago 5:17-18",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:17-18 e examine o exemplo de Elias.",
+context:"Tiago apresenta Elias como exemplo de alguém que orava com intensidade. Embora fosse um profeta, era um homem sujeito às mesmas limitações humanas. Sua experiência demonstra a importância da oração perseverante e da dependência de Deus.",
+points:[
+"Elias é apresentado como homem sujeito às mesmas paixões humanas.",
+"O profeta orou e houve uma interrupção das chuvas.",
+"Depois, orou novamente e o céu concedeu chuva.",
+"A passagem destaca a importância da oração perseverante.",
+"O poder não está na capacidade humana de controlar Deus, mas na dependência do Senhor que ouve e age segundo sua vontade."
+],
+application:"Não pense que somente pessoas extraordinárias podem desenvolver uma vida de oração. Busque a Deus com sinceridade, perseverança e submissão à sua vontade.",
+memory:"Tiago 5:17",
+memoryRef:"Leia e memorize Tiago 5:17.",
+questions:[
+"Por que Elias é um exemplo importante?",
+"O que Tiago destaca sobre a humanidade do profeta?",
+"Qual é a lição espiritual sobre a oração?"
+],
+prayer:"Senhor, ensina-me a orar com fé e perseverança. Que eu confie em teu poder e respeite tua vontade em todas as circunstâncias. Amém."
+},
+
+{
+day:30,
+title:"Restaurando quem se desviou",
+ref:"Tiago 5:19-20",
+week:"Semana 5 • A perseverança cristã",
+intro:"Leia Tiago 5:19-20 e observe a responsabilidade de ajudar aqueles que se desviam da verdade.",
+context:"Tiago encerra sua carta apresentando a responsabilidade da comunidade cristã em relação aos que se desviam. A restauração espiritual exige cuidado, compromisso com a verdade e amor pelo próximo.",
+points:[
+"O desvio da verdade é uma realidade que precisa ser tratada com seriedade.",
+"A comunidade cristã deve se preocupar com aqueles que se afastam.",
+"Ajudar alguém a retornar à verdade é uma atitude de amor e responsabilidade.",
+"A restauração espiritual está relacionada ao afastamento do caminho do pecado.",
+"A epístola termina enfatizando que a fé verdadeira também se manifesta no cuidado espiritual com outras pessoas."
+],
+application:"Não abandone quem está enfrentando dificuldades espirituais. Ore, aconselhe com amor e utilize as Escrituras para ajudar pessoas a retornarem ao caminho da verdade.",
+memory:"Tiago 5:19-20",
+memoryRef:"Leia e memorize Tiago 5:19-20.",
+questions:[
+"O que Tiago ensina sobre quem se desvia da verdade?",
+"Qual é a responsabilidade da comunidade cristã?",
+"Como podemos ajudar alguém a retornar ao caminho do Senhor?"
+],
+prayer:"Pai, dá-me amor e sabedoria para ajudar aqueles que estão se afastando de ti. Que minha vida seja instrumento de restauração e fidelidade à tua Palavra. Amém."
+}
+
+];
+
+const $ = id => document.getElementById(id);
+
+const KEY = "atalaia-tiago-estudo-v1";
+
+let state = JSON.parse(
+localStorage.getItem(KEY) || '{"done":[],"notes":{},"dark":false}'
+);
+
+let current = 0;
+
+function persist(){
+localStorage.setItem(KEY,JSON.stringify(state));
+}
+
+function updateProgress(){
+
+const n=state.done.length;
+const p=Math.round(n/30*100);
+
+$("progressPercent").textContent=p+"%";
+$("progressBar").style.width=p+"%";
+
+$("progressText").textContent=
+n===30
+?"Parabéns! Você concluiu os 30 estudos da Epístola de Tiago. Continue crescendo na Palavra."
+:`Você concluiu ${n} de 30 estudos. ${n===0?"Comece pelo Dia 1.":"Continue firme em sua caminhada com Deus."}`;
+
+}
+
+function renderDays(){
+
+$("dayList").innerHTML=studies.map(s=>`
+<button class="day-item ${state.done.includes(s.day)?"done":""}" data-day="${s.day-1}">
+<span class="day-number">${state.done.includes(s.day)?"✓":String(s.day).padStart(2,"0")}</span>
+<span class="day-info">
+<strong>${s.title}</strong>
+<small>${s.ref}</small>
+</span>
+<span class="day-check">${state.done.includes(s.day)?"✓":"›"}</span>
+</button>
+`).join("");
+
+document.querySelectorAll(".day-item").forEach(b=>{
+b.addEventListener("click",()=>openStudy(Number(b.dataset.day)));
+});
+
+updateProgress();
+
+}
+
+function openStudy(i){
+
+current=Math.max(0,Math.min(29,i));
+
+const s=studies[current];
+
+$("homeView").classList.remove("active");
+$("studyView").classList.add("active");
+
+$("studyDayLabel").textContent="DIA "+s.day;
+$("studyWeek").textContent=s.week;
+
+$("studyTitle").textContent=s.title;
+$("studyReference").textContent="Leitura bíblica: "+s.ref;
+
+$("readingIntro").textContent=s.intro;
+$("readingReference").textContent=s.ref+" • Bíblia Livre (Almeida 1819)";
+
+loadScripture(s);
+
+$("contextText").textContent=s.context;
+
+$("explanationText").innerHTML=s.points.map(x=>
+`<div class="explain-point">• ${x}</div>`
+).join("");
+
+$("applicationText").textContent=s.application;
+
+$("memoryText").textContent=s.memory;
+$("memoryReference").textContent=s.memoryRef;
+
+$("questions").innerHTML=s.questions.map((q,n)=>
+`<div class="question">${n+1}. ${q}</div>`
+).join("");
+
+$("prayerText").textContent=s.prayer;
+
+$("notesInput").value=state.notes[s.day]||"";
+
+$("completeBtn").textContent=
+state.done.includes(s.day)
+?"Estudo concluído ✓"
+:"Marcar como concluído ✓";
+
+$("prevBtn").disabled=i===0;
+$("nextBtn").disabled=i===29;
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+const BIBLE_API="https://api.midvash.com/v1";
+const BIBLE_VERSION="almeida-livre";
+const scriptureCache=new Map();
+
+async function loadScripture(study){
+
+const container=$("scriptureText");
+const credit=$("scriptureCopyright");
+
+container.innerHTML='<p class="scripture-status">Carregando o texto bíblico…</p>';
+
+credit.textContent="Tradução: Bíblia Livre (Almeida 1819).";
+
+if(scriptureCache.has(study.ref)){
+renderScripture(scriptureCache.get(study.ref));
+return;
+}
+
+try{
+
+const match=study.ref.match(/^Tiago\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+
+if(!match)throw new Error("Referência bíblica não reconhecida.");
+
+const chapter=Number(match[1]);
+const start=match[2]?Number(match[2]):1;
+const end=match[3]?Number(match[3]):null;
+
+const response=await fetch(
+`${BIBLE_API}/${BIBLE_VERSION}/james/${chapter}`
+);
+
+if(!response.ok){
+throw new Error("Não foi possível consultar a fonte bíblica.");
+}
+
+const body=await response.json();
+
+if(body.error){
+throw new Error(body.error.message||"Erro ao carregar a passagem.");
+}
+
+const data=body.data||body;
+
+let verses=data.verses||[];
+
+if(!Array.isArray(verses)||!verses.length){
+
+if(data.text){
+verses=data.text.split(/\n+/).filter(Boolean);
+}else{
+throw new Error("A fonte não retornou os versículos esperados.");
+}
+
+}
+
+const normalized=verses.map((item,index)=>{
+
+if(typeof item==="string"){
+return {number:index+1,text:item};
+}
+
+return {
+number:Number(item.verse||item.number||item.verseNumber||index+1),
+text:item.text||item.content||""
+};
+
+}).filter(v=>v.text);
+
+const selected=normalized.filter(v=>
+v.number>=start&&(end===null||v.number<=end)
+);
+
+if(!selected.length){
+throw new Error("A passagem não foi encontrada nesta versão.");
+}
+
+const result={
+verses:selected,
+reference:data.reference||study.ref,
+copyright:body.meta?.copyright||"Bíblia Livre (Almeida 1819) — conforme os termos da fonte."
+};
+
+scriptureCache.set(study.ref,result);
+renderScripture(result);
+
+}catch(error){
+
+container.innerHTML=
+'<p class="scripture-error">Não foi possível carregar o texto bíblico neste momento. Verifique sua conexão e tente novamente.</p>';
+
+const retry=document.createElement("button");
+
+retry.className="secondary-btn";
+retry.textContent="Tentar novamente";
+
+retry.addEventListener("click",()=>loadScripture(study));
+
+container.appendChild(retry);
+
+credit.textContent="Fonte de consulta: API Midvash. O texto bíblico requer conexão com a internet.";
+
+console.error(error);
+
+}
+
+}
+
+function renderScripture(result){
+
+const container=$("scriptureText");
+
+container.innerHTML=result.verses.map(v=>`
+<div class="scripture-verse">
+<sup>${v.number}</sup>
+<span>${escapeHTML(v.text)}</span>
+</div>
+`).join("");
+
+$("scriptureCopyright").textContent=result.copyright;
+
+}
+
+function escapeHTML(value){
+
+return String(value).replace(/[&<>"']/g,char=>({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#39;"
+}[char]));
+
+}
+
+function showHome(){
+
+$("studyView").classList.remove("active");
+$("homeView").classList.add("active");
+
+renderDays();
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+$("homeLink").addEventListener("click",e=>{
+e.preventDefault();
+showHome();
+});
+
+$("backBtn").addEventListener("click",showHome);
+
+$("continueBtn").addEventListener("click",()=>{
+
+const next=studies.findIndex(s=>!state.done.includes(s.day));
+
+openStudy(next<0?29:next);
+
+});
+
+$("prevBtn").addEventListener("click",()=>{
+openStudy(current-1);
+});
+
+$("nextBtn").addEventListener("click",()=>{
+openStudy(current+1);
+});
+
+$("completeBtn").addEventListener("click",()=>{
+
+const d=studies[current].day;
+
+if(!state.done.includes(d)){
+state.done.push(d);
+}
+
+persist();
+
+$("completeBtn").textContent="Estudo concluído ✓";
+
+renderDays();
+
+});
+
+$("saveNotesBtn").addEventListener("click",()=>{
+
+const d=studies[current].day;
+
+state.notes[d]=$("notesInput").value;
+
+persist();
+
+$("saveNotesBtn").textContent="Salvo ✓";
+
+setTimeout(()=>{
+$("saveNotesBtn").textContent="Salvar minhas anotações";
+},1500);
+
+});
+
+$("themeBtn").addEventListener("click",()=>{
+
+state.dark=!state.dark;
+
+document.body.classList.toggle("dark",state.dark);
+
+persist();
+
+});
+
+if(state.dark){
+document.body.classList.add("dark");
+}
+
+renderDays();
+
+if("serviceWorker" in navigator &&
+location.protocol.startsWith("http")){
+
+window.addEventListener("load",()=>{
+navigator.serviceWorker.register("service-worker.js").catch(()=>{});
+});
+
+}
+
+</script>
+</body>
+</html>

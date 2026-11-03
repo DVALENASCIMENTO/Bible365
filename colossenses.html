@@ -1,0 +1,689 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b43">
+  <meta name="description" content="Plano de discipulado bíblico de 30 dias na Carta aos Colossenses — Ministério Atalaia.">
+  <title>Primeiros Passos com Cristo | Colossenses — Ministério Atalaia</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--navy:#172b43;--navy2:#203b59;--gold:#c6a15b;--paper:#f5f3ee;--card:#fff;--ink:#202a35;--muted:#77818b;--line:#e8e5dd;--soft:#f8f6f1;--green:#47745d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6}
+.topbar{height:66px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100% - 900px)/2));position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;letter-spacing:.08em;font-size:11px}
+.brand small{display:block;color:#d8c49b;font-size:9px;letter-spacing:.18em}
+.brand-mark{color:var(--gold);font-size:27px}
+.icon-btn{border:1px solid #53667b;color:white;background:transparent;border-radius:50%;width:42px;height:42px;font-size:20px;cursor:pointer}
+main{max-width:900px;margin:auto;padding:26px 20px 60px}
+.view{display:none}.view.active{display:block}
+.hero{background:linear-gradient(135deg,#172b43,#294764);border-radius:22px;padding:36px 32px;color:#fff;position:relative;overflow:hidden;box-shadow:0 12px 30px #172b431c}
+.hero:after{content:"✦";position:absolute;right:28px;top:8px;font-size:140px;color:#ffffff0b}
+.eyebrow,.section-kicker,.card-label{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--gold)}
+h1,h2{font-family:'Playfair Display',serif;line-height:1.2}
+.hero h1{font-size:clamp(34px,7vw,54px);margin:18px 0 12px}
+.hero h1 em{font-style:normal;color:#e0c27f}
+.hero p{max-width:470px;color:#e0e6eb;margin-bottom:22px}
+.hero-meta{font-size:11px;letter-spacing:.1em;color:#d8c49b;margin-bottom:22px}
+.primary-btn,.secondary-btn{border:0;border-radius:10px;padding:13px 18px;font:700 14px 'DM Sans';cursor:pointer}
+.primary-btn{background:var(--gold);color:#172b43}
+.primary-btn span{margin-left:18px}
+.secondary-btn{background:#eae6dc;color:var(--navy)}
+.progress-card,.content-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:21px;margin-top:18px}
+.progress-heading,.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.progress-heading h2,.section-heading h2{font-size:23px;margin:3px 0}
+.progress-heading strong{font-size:25px;color:var(--navy)}
+.progress-track{height:9px;background:#ece9e1;border-radius:10px;overflow:hidden;margin:13px 0 8px}
+.progress-track span{display:block;height:100%;width:0;background:var(--green);border-radius:10px;transition:width .25s}
+.progress-card p,.muted{color:var(--muted);font-size:13px}
+.section-heading{margin:30px 0 12px}
+.day-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.day-item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;color:var(--ink);width:100%}
+.day-item:hover{border-color:var(--gold)}
+.day-number{width:42px;height:42px;border-radius:11px;background:#f0ede5;color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0}
+.day-item.done .day-number{background:#e3eee7;color:var(--green)}
+.day-info{min-width:0}.day-info strong{display:block;font-size:13px}.day-info small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.day-check{margin-left:auto;color:var(--green)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:35px 0 10px}
+.back-btn{border:0;background:transparent;color:var(--navy);font-weight:700;padding:5px 0 18px;cursor:pointer;font-size:14px}
+.study-topline{display:flex;align-items:center;gap:12px}
+.pill{background:#e8e1d2;color:#6e5528;border-radius:30px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.08em}
+.study-title{font-size:clamp(30px,6vw,42px);margin:16px 0 5px;color:var(--navy)}
+.study-reference{color:var(--muted);margin:0 0 18px;font-size:14px}
+.study-content{max-width:720px}
+.content-card{padding:22px;margin:13px 0}
+.content-card h2{font-size:23px;margin:7px 0 10px;color:var(--navy)}
+.content-card p{font-size:15px;margin:8px 0}
+.reference-box{padding:12px 14px;background:var(--soft);border-left:3px solid var(--gold);font-weight:700;color:var(--navy);margin:12px 0}
+.content-card label{display:block;font-size:14px;font-weight:700;margin:16px 0 7px;color:var(--navy)}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px;font:15px/1.6 'DM Sans';background:#fff;color:#202a35}
+textarea:focus{outline:2px solid #c6a15b66;border-color:var(--gold)}
+.tiny-note{font-size:12px!important;color:var(--muted)}
+.explain-point{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.explain-point:last-child{border:0}
+.memory-verse{font-family:'Playfair Display',serif;font-size:20px!important;color:var(--navy)}
+.scripture-text{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0}
+.scripture-verse{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.8}
+.scripture-verse:last-child{border:0}
+.scripture-verse sup{color:#9a793d;font-weight:700;font-size:12px;padding-top:3px}
+.scripture-status{color:var(--muted);font-size:13px}
+.scripture-error{color:#a33b32;font-size:14px}
+.dark .scripture-text{background:#26394c}
+.verse-ref{font-size:12px;color:#8a6b32;font-weight:700}
+.question{font-size:14px;font-weight:600;margin:15px 0 5px}
+.prayer-card{background:#f0eee7}
+.study-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.study-actions .primary-btn{flex:1}
+.dark{--paper:#101b28;--card:#1b2b3b;--ink:#edf0f2;--muted:#aab4bd;--line:#344454;--soft:#243649}
+.dark .day-item,.dark textarea{background:#1b2b3b;color:#edf0f2}
+.dark .day-number{background:#2b4054;color:#e4c987}
+.dark .content-card h2,.dark .study-title,.dark .reference-box{color:#e7d3a5}
+.dark .reference-box,.dark .prayer-card{background:#26394c}
+.dark .secondary-btn{background:#34485b;color:#fff}
+.dark .progress-track{background:#344454}
+.dark .back-btn{color:#e7d3a5}
+@media(max-width:560px){
+  main{padding:17px 14px 40px}
+  .hero{padding:28px 22px}
+  .day-list{grid-template-columns:1fr}
+  .progress-card,.content-card{padding:17px}
+  .study-actions{display:grid;grid-template-columns:1fr 1fr}
+  .study-actions .primary-btn{grid-column:1/-1;grid-row:1}
+  .study-actions #prevBtn{grid-column:1}
+  .study-actions #nextBtn{grid-column:2}
+  .hero h1{font-size:37px}
+}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" id="homeLink" aria-label="Início">
+    <span class="brand-mark">✦</span>
+    <span><strong>MINISTÉRIO ATALAIA</strong><small>ESCOLA BÍBLICA</small></span>
+  </a>
+  <button class="icon-btn" id="themeBtn" aria-label="Alternar tema" title="Alternar tema">◐</button>
+</header>
+
+<main>
+  <section id="homeView" class="view active">
+    <section class="hero">
+      <div class="eyebrow">GUIA DE DISCIPULADO • 30 DIAS</div>
+      <h1>CRISTO EM<br><em>TUDO E EM TODOS</em></h1>
+      <p>Conhecendo a supremacia de Cristo e aprendendo a viver uma nova vida nele.</p>
+      <div class="hero-meta">CARTA AOS COLOSSENSES • MINISTÉRIO ATALAIA</div>
+      <button class="primary-btn" id="continueBtn">Continuar minha jornada <span>→</span></button>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-heading">
+        <div><span class="section-kicker">SUA CAMINHADA</span><h2>Seu progresso</h2></div>
+        <strong id="progressPercent">0%</strong>
+      </div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+      <p id="progressText">Você ainda não concluiu nenhuma leitura. Comece pelo Dia 1.</p>
+    </section>
+
+    <div class="section-heading">
+      <div><span class="section-kicker">PLANO DE LEITURA</span><h2>30 dias em Colossenses</h2></div>
+      <span class="muted">30 estudos</span>
+    </div>
+    <div id="dayList" class="day-list"></div>
+    <footer>Ministério Atalaia • Escola Bíblica Atalaia</footer>
+  </section>
+
+  <section id="studyView" class="view">
+    <button class="back-btn" id="backBtn">← Voltar ao plano</button>
+    <div class="study-topline"><span id="studyDayLabel" class="pill">DIA 1</span><span id="studyWeek" class="muted"></span></div>
+    <h1 id="studyTitle" class="study-title"></h1>
+    <p id="studyReference" class="study-reference"></p>
+    <div class="study-content">
+      <article class="content-card scripture-card">
+        <div class="card-label">01 • LEITURA BÍBLICA</div>
+        <h2>Texto bíblico</h2>
+        <p id="readingIntro"></p>
+        <div class="reference-box" id="readingReference"></div>
+        <div id="scriptureText" class="scripture-text" aria-live="polite"><p>O texto bíblico será carregado automaticamente.</p></div>
+        <p id="scriptureCopyright" class="tiny-note">O texto bíblico requer conexão com a internet.</p>
+      </article>
+      <article class="content-card">
+        <div class="card-label">02 • CONTEXTO</div><h2>Entendendo o contexto</h2><p id="contextText"></p>
+      </article>
+      <article class="content-card">
+        <div class="card-label">03 • EXPLICAÇÃO BÍBLICA</div><h2>O que o texto ensina?</h2><div id="explanationText"></div>
+      </article>
+      <article class="content-card">
+        <div class="card-label">04 • PARA A VIDA</div><h2>Aplicação prática</h2><p id="applicationText"></p>
+      </article>
+      <article class="content-card">
+        <div class="card-label">05 • MEMORIZAÇÃO</div><h2>Versículo para guardar</h2><p id="memoryText" class="memory-verse"></p><span id="memoryReference" class="verse-ref"></span>
+      </article>
+      <article class="content-card">
+        <div class="card-label">06 • REFLEXÃO</div><h2>Pense e responda</h2><div id="questions"></div>
+        <label for="notesInput">Minhas anotações</label>
+        <textarea id="notesInput" rows="5" placeholder="O que aprendi? O que preciso colocar em prática?"></textarea>
+        <button class="secondary-btn" id="saveNotesBtn">Salvar minhas anotações</button>
+      </article>
+      <article class="content-card prayer-card">
+        <div class="card-label">07 • MOMENTO DE ORAÇÃO</div><h2>Ore ao Senhor</h2><p id="prayerText"></p>
+      </article>
+    </div>
+    <div class="study-actions">
+      <button class="secondary-btn" id="prevBtn">← Anterior</button>
+      <button class="primary-btn" id="completeBtn">Marcar como concluído ✓</button>
+      <button class="secondary-btn" id="nextBtn">Próximo →</button>
+    </div>
+  </section>
+</main>
+
+<script>
+const studies = [
+{
+day:1,title:"A supremacia de Cristo",ref:"Colossenses 1:1-8",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:1-8. Observe a saudação de Paulo, sua gratidão e a maneira como o evangelho produz fruto na vida dos que creem.",
+context:"Paulo escreve aos cristãos de Colossos para fortalecê-los na fé e ajudá-los a compreender a grandeza de Jesus Cristo. Desde o início, destaca a fé, o amor e a esperança que nascem da mensagem do evangelho.",
+points:["Paulo se apresenta como apóstolo de Cristo Jesus pela vontade de Deus.","A fé em Cristo e o amor pelos irmãos são sinais importantes da vida cristã.","A esperança está guardada nos céus e sustenta a caminhada dos cristãos.","O evangelho é uma mensagem verdadeira que alcança pessoas e produz fruto.","Epafras é apresentado como cooperador que anunciou fielmente o evangelho aos colossenses."],
+application:"Comece seu estudo lembrando que a fé cristã se fundamenta no evangelho de Jesus. Cultive a fé, o amor pelos irmãos e a esperança, permitindo que a Palavra produza fruto em suas atitudes.",
+memory:"A palavra da verdade do evangelho.",
+memoryRef:"Colossenses 1:5 — leia o versículo completo em sua Bíblia.",
+questions:["Quais três características Paulo destaca nos cristãos?","O que o evangelho produz na vida de quem o recebe?","Como você pode demonstrar amor cristão nesta semana?"],
+prayer:"Senhor Deus, fortalece minha fé em Jesus, ensina-me a amar os irmãos e renova minha esperança. Que tua Palavra produza fruto em minha vida. Amém."
+},
+{
+day:2,title:"Crescendo no conhecimento de Deus",ref:"Colossenses 1:9-14",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:9-14. Observe o conteúdo da oração de Paulo pelos cristãos e os resultados de uma vida que agrada ao Senhor.",
+context:"Paulo não ora apenas para que os colossenses tenham conhecimento, mas para que compreendam a vontade de Deus e vivam de maneira coerente com ela. O conhecimento cristão deve transformar o caráter e a prática.",
+points:["Paulo pede que os cristãos sejam cheios do conhecimento da vontade de Deus.","A sabedoria espiritual ajuda o discípulo a discernir como viver de modo agradável ao Senhor.","Uma vida digna de Cristo produz boas obras e crescimento no conhecimento de Deus.","A força recebida de Deus capacita a perseverar com paciência e alegria.","O Pai nos habilita a participar da herança dos santos e nos transporta para o Reino de seu Filho."],
+application:"Ore por sabedoria que transforme suas escolhas. Estude a Bíblia não apenas para adquirir informações, mas para conhecer a vontade de Deus e colocá-la em prática com perseverança.",
+memory:"Andando dignamente diante do Senhor, agradando-lhe em tudo.",
+memoryRef:"Colossenses 1:10 — leia o versículo completo em sua Bíblia.",
+questions:["Pelo que Paulo ora em favor dos colossenses?","Como o conhecimento da vontade de Deus deve influenciar a vida?","Em que área você precisa de sabedoria para agradar ao Senhor?"],
+prayer:"Pai, enche-me do conhecimento da tua vontade. Dá-me sabedoria, força para perseverar e disposição para praticar aquilo que te agrada. Amém."
+},
+{
+day:3,title:"Libertados e reconciliados por Cristo",ref:"Colossenses 1:13-14",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:13-14 e reflita sobre a libertação, o perdão e o novo domínio ao qual pertencem os que estão em Cristo.",
+context:"Paulo descreve a salvação como uma ação de Deus: ele liberta do poder das trevas e transporta os salvos para o Reino do Filho amado. A redenção e o perdão não são conquistas humanas, mas benefícios recebidos por meio de Cristo.",
+points:["Deus é apresentado como aquele que liberta do poder das trevas.","A salvação envolve uma nova condição e uma nova lealdade: pertencer ao Reino do Filho.","Em Cristo temos redenção, isto é, libertação realizada por meio dele.","O perdão dos pecados é central para a obra salvadora de Jesus.","A gratidão pela salvação deve conduzir a uma vida que honra aquele que nos resgatou."],
+application:"Não trate a salvação como simples mudança de comportamento. Ela envolve pertencer a Cristo, receber perdão e aprender a viver sob seu senhorio, com gratidão e obediência.",
+memory:"Em quem temos a redenção pelo seu sangue, a saber, a remissão dos pecados.",
+memoryRef:"Colossenses 1:14 — confira o texto em sua Bíblia.",
+questions:["Quem realiza a libertação descrita por Paulo?","O que significa ter redenção e perdão em Cristo?","Como a gratidão pela salvação pode aparecer em sua rotina?"],
+prayer:"Pai, obrigado por me libertares das trevas e me chamares para o Reino de teu Filho. Ajuda-me a viver com gratidão, fé e obediência. Amém."
+},
+{
+day:4,title:"Jesus Cristo, a imagem do Deus invisível",ref:"Colossenses 1:15-17",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:15-17. Observe o que Paulo afirma sobre a identidade de Cristo e sua relação com toda a criação.",
+context:"A igreja precisava compreender que Jesus não é apenas mais um mestre espiritual. Paulo apresenta Cristo como supremo sobre toda a criação e como aquele por meio de quem todas as coisas foram criadas e subsistem.",
+points:["Cristo é a imagem do Deus invisível e revela de modo singular quem Deus é.","A expressão 'primogênito de toda a criação' destaca sua supremacia e posição sobre a criação, não o apresenta como criatura.","Todas as coisas foram criadas por meio de Cristo e para Cristo.","Cristo é anterior a todas as coisas e nelas tudo subsiste.","A centralidade de Jesus impede que qualquer poder, filosofia ou criatura ocupe o lugar que pertence a ele."],
+application:"Construa sua compreensão de Deus a partir de Jesus revelado nas Escrituras. Não coloque tradições, filosofias ou experiências acima da autoridade de Cristo.",
+memory:"E ele é antes de todas as coisas, e todas as coisas subsistem por ele.",
+memoryRef:"Colossenses 1:17 — confira o texto em sua Bíblia.",
+questions:["Como Paulo descreve Cristo em relação ao Deus invisível?","O que a passagem ensina sobre a criação?","Que coisas podem competir com Cristo pelo primeiro lugar em sua vida?"],
+prayer:"Senhor Jesus, ajuda-me a reconhecer tua supremacia sobre todas as coisas. Que minhas decisões e prioridades demonstrem que tu ocupas o primeiro lugar. Amém."
+},
+{
+day:5,title:"Cristo, cabeça da Igreja",ref:"Colossenses 1:18",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:18 e o contexto ao redor. Reflita sobre a posição de Cristo na Igreja e sua relação com a ressurreição.",
+context:"Depois de falar da criação, Paulo dirige a atenção para a Igreja. Cristo é a cabeça do corpo, e sua ressurreição o coloca em posição de primazia. A comunidade cristã encontra nele sua direção e identidade.",
+points:["A Igreja é descrita como corpo, e Cristo é sua cabeça.","A liderança e a direção supremas da Igreja pertencem a Cristo.","Jesus é o princípio e o primogênito dentre os mortos, destacando sua vitória e primazia na ressurreição.","O propósito é que Cristo tenha a primazia em todas as coisas.","A vida comunitária cristã deve permanecer sujeita à Palavra e ao senhorio de Jesus."],
+application:"Valorize a comunhão da Igreja e procure servir de modo que Cristo seja honrado. Nenhum líder humano deve tomar para si a posição que pertence ao Senhor.",
+memory:"E ele é a cabeça do corpo da igreja.",
+memoryRef:"Colossenses 1:18 — confira o texto em sua Bíblia.",
+questions:["Quem é a cabeça da Igreja?","Por que a ressurreição é importante para a primazia de Cristo?","Como a Igreja pode demonstrar que Cristo é seu Senhor?"],
+prayer:"Senhor Jesus, governa minha vida e tua Igreja. Dá-nos humildade, unidade e fidelidade à tua Palavra. Amém."
+},
+{
+day:6,title:"A paz feita pelo sangue da cruz",ref:"Colossenses 1:19-23",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:19-23. Observe como a morte de Cristo está relacionada à reconciliação e à esperança do evangelho.",
+context:"Paulo explica que a plenitude de Deus habita em Cristo e que, por meio dele, Deus reconcilia consigo todas as coisas. A reconciliação é realizada mediante a cruz e transforma a condição daqueles que antes estavam alienados de Deus.",
+points:["A plenitude de Deus habita em Cristo.","A paz com Deus é realizada por meio do sangue da cruz.","Paulo descreve a antiga condição humana como afastamento de Deus e hostilidade expressa em obras más.","A morte de Cristo tem como propósito apresentar os crentes santos e irrepreensíveis diante de Deus.","Os cristãos são chamados a permanecer firmes na fé e na esperança do evangelho."],
+application:"A cruz mostra a gravidade do pecado e a grandeza da graça de Deus. Viva em gratidão pela reconciliação recebida e permaneça firme na esperança do evangelho.",
+memory:"Fazer a paz pelo sangue da sua cruz.",
+memoryRef:"Colossenses 1:20 — confira o contexto em sua Bíblia.",
+questions:["Por meio de quem Deus realiza a reconciliação?","O que a cruz revela sobre o pecado e a graça?","Como você pode permanecer firme na esperança do evangelho?"],
+prayer:"Pai, obrigado pela reconciliação realizada por meio de Jesus. Ajuda-me a permanecer firme na fé e a viver de maneira digna da graça recebida. Amém."
+},
+{
+day:7,title:"Cristo em nós, esperança da glória",ref:"Colossenses 1:24-29",week:"Semana 1 • Conhecendo Cristo",
+intro:"Leia Colossenses 1:24-29. Reflita sobre o serviço de Paulo e a mensagem do mistério agora revelado aos santos.",
+context:"Paulo descreve seu trabalho como serviço à Igreja e proclamação da Palavra. O mistério revelado não é um segredo reservado a uma elite espiritual: é anunciado entre as nações e está resumido na presença de Cristo entre os seus, esperança da glória.",
+points:["Paulo serve a Igreja e trabalha para anunciar plenamente a Palavra de Deus.","O evangelho revela o propósito de Deus antes oculto e agora anunciado aos santos.","A mensagem alcança também os gentios, mostrando o alcance universal do plano de Deus.","Cristo em vós é apresentado como esperança da glória.","O ministério cristão procura apresentar cada pessoa madura em Cristo, dependendo do poder que ele concede."],
+application:"Não procure um conhecimento secreto que substitua o evangelho. Cresça na Palavra, compartilhe Cristo e ajude outras pessoas a amadurecerem na fé.",
+memory:"Cristo em vós, esperança da glória.",
+memoryRef:"Colossenses 1:27 — confira o texto em sua Bíblia.",
+questions:["Qual é o mistério anunciado entre as nações?","Qual é o objetivo do serviço de Paulo?","Como você pode ajudar alguém a crescer em Cristo?"],
+prayer:"Senhor, faz de mim uma testemunha fiel de Cristo. Ajuda-me a crescer espiritualmente e a servir outras pessoas com amor e perseverança. Amém."
+},
+{
+day:8,title:"Firmes em Cristo",ref:"Colossenses 2:1-5",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:1-5. Observe a preocupação pastoral de Paulo e seu desejo de que os cristãos permaneçam unidos e fortalecidos na verdade.",
+context:"Paulo deseja que os colossenses tenham o coração consolado, permaneçam unidos em amor e alcancem segurança no conhecimento de Deus e de Cristo. Ele os alerta contra discursos persuasivos que poderiam afastá-los da verdade.",
+points:["O cuidado pastoral de Paulo alcança pessoas que ele não conhecia pessoalmente de modo próximo.","A união em amor fortalece a comunidade cristã.","A verdadeira riqueza espiritual está no conhecimento de Deus e de Cristo.","Paulo alerta para argumentos persuasivos que podem enganar os cristãos.","A ordem e a firmeza da fé da comunidade são motivo de alegria para o apóstolo."],
+application:"Examine os ensinamentos que recebe à luz das Escrituras. Procure uma comunidade marcada pelo amor, pela verdade e pela centralidade de Cristo.",
+memory:"Para que os seus corações sejam consolados e estejam unidos em amor.",
+memoryRef:"Colossenses 2:2 — leia a passagem completa em sua Bíblia.",
+questions:["O que Paulo deseja para o coração dos colossenses?","Por que o amor e a verdade devem caminhar juntos?","Como você avalia ensinamentos que parecem convincentes?"],
+prayer:"Senhor, fortalece meu coração na verdade e no amor. Dá-me discernimento para reconhecer o erro e firmeza para permanecer em Cristo. Amém."
+},
+{
+day:9,title:"Enraizados e edificados em Cristo",ref:"Colossenses 2:6-7",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:6-7. Observe as imagens de andar, criar raízes, ser edificado e crescer na fé.",
+context:"Paulo chama os colossenses a continuar vivendo em Cristo da mesma maneira que o receberam: pela fé. A vida cristã não termina no início da conversão; ela continua sendo formada e fortalecida no Senhor.",
+points:["Receber Cristo Jesus como Senhor implica continuar andando nele.","A imagem das raízes aponta para estabilidade e nutrição espiritual.","Ser edificado em Cristo significa crescer sobre um fundamento seguro.","A fé deve ser confirmada conforme o ensino recebido.","A gratidão é uma marca de uma vida fortalecida em Cristo."],
+application:"Estabeleça hábitos consistentes de leitura bíblica, oração e comunhão cristã. O crescimento espiritual é uma caminhada contínua, não apenas uma experiência inicial.",
+memory:"Arraigados e edificados nele e confirmados na fé.",
+memoryRef:"Colossenses 2:7 — confira o versículo completo em sua Bíblia.",
+questions:["O que significa andar em Cristo?","Quais hábitos ajudam suas raízes espirituais a crescer?","Como a gratidão pode fazer parte de sua caminhada?"],
+prayer:"Jesus, firma minhas raízes em ti. Ajuda-me a crescer na fé, a praticar tua Palavra e a viver com um coração agradecido. Amém."
+},
+{
+day:10,title:"Cuidado com filosofias enganosas",ref:"Colossenses 2:8",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:8 no contexto de Colossenses 2:6-10. Observe o alerta contra ensinos que afastam de Cristo.",
+context:"Paulo alerta a Igreja para que não seja levada cativa por filosofias e tradições humanas que não estão fundamentadas em Cristo. O problema não é pensar com cuidado, mas aceitar sistemas de pensamento que substituam ou diminuam o Senhor.",
+points:["O cristão deve examinar cuidadosamente os ensinamentos que recebe.","Tradições humanas não podem ocupar o lugar da verdade de Cristo.","Paulo identifica o perigo de princípios que não estão de acordo com Cristo.","O discernimento exige conhecer as Escrituras e compreender o evangelho.","Cristo é o critério central para avaliar doutrinas e práticas espirituais."],
+application:"Não aceite um ensino apenas porque é popular, antigo, novo ou apresentado com segurança. Compare-o com as Escrituras e pergunte se ele permanece fiel à pessoa e à obra de Cristo.",
+memory:"Tende cuidado para que ninguém vos faça presa sua, por meio de filosofias e vãs sutilezas.",
+memoryRef:"Colossenses 2:8 — confira o texto em sua Bíblia.",
+questions:["Qual é o perigo mencionado por Paulo?","Como distinguir reflexão cuidadosa de ensino enganoso?","Que lugar Cristo deve ocupar na avaliação de doutrinas?"],
+prayer:"Deus, concede-me discernimento e amor pela verdade. Guarda-me de ensinamentos que me afastem de Cristo e firma-me em tua Palavra. Amém."
+},
+{
+day:11,title:"A plenitude está em Cristo",ref:"Colossenses 2:9-10",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:9-10. Observe a afirmação sobre a plenitude da divindade em Cristo e a condição dos crentes nele.",
+context:"Paulo responde aos ensinos que ameaçavam a suficiência de Cristo. A plenitude da divindade habita corporalmente nele, e os que pertencem a Cristo encontram nele a suficiência para sua vida espiritual.",
+points:["A passagem afirma a plenitude da divindade em Cristo.","Jesus não é apresentado como um ser espiritual incompleto que precise ser complementado por outras forças.","Os cristãos são descritos como completos nele.","Cristo é a cabeça de todo principado e potestade.","A segurança cristã está em pertencer a Cristo, não em buscar poderes espirituais paralelos."],
+application:"Não procure completar a obra de Cristo por meio de práticas que prometam acesso a poderes superiores. Cresça na compreensão de quem Jesus é e confie na suficiência dele.",
+memory:"E estais perfeitos nele, que é a cabeça de todo principado e potestade.",
+memoryRef:"Colossenses 2:10 — confira o texto em sua Bíblia.",
+questions:["O que Paulo afirma sobre a divindade de Cristo?","O que significa estar completo nele?","Que promessas espirituais precisam ser avaliadas com discernimento?"],
+prayer:"Senhor Jesus, ajuda-me a confiar na tua suficiência. Que minha fé esteja firmada em ti, acima de qualquer promessa que tente ocupar teu lugar. Amém."
+},
+{
+day:12,title:"A nova vida e o batismo",ref:"Colossenses 2:11-12",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:11-12. Reflita sobre a linguagem da circuncisão espiritual, do sepultamento e da ressurreição com Cristo.",
+context:"Paulo utiliza imagens de transformação e união com Cristo para explicar a nova condição dos crentes. A passagem relaciona a obra espiritual de Deus com a fé no poder que ressuscitou Jesus dentre os mortos.",
+points:["Paulo descreve uma transformação que não depende apenas de um sinal físico.","A linguagem de despir-se do corpo da carne aponta para uma obra espiritual relacionada a Cristo.","O batismo aparece como imagem de sepultamento com Cristo e ressurreição com ele.","A nova vida está ligada à fé na ação poderosa de Deus.","Os sinais externos não substituem a realidade espiritual de pertencer a Cristo."],
+application:"Lembre-se de que a vida cristã envolve união com Cristo e transformação. Viva de modo coerente com a nova identidade recebida pela fé.",
+memory:"Sepultados com ele no batismo, nele também ressuscitastes pela fé no poder de Deus.",
+memoryRef:"Colossenses 2:12 — confira o versículo completo em sua Bíblia.",
+questions:["Que imagens Paulo usa para descrever a união com Cristo?","Qual é a importância da fé na passagem?","Como a nova identidade deve influenciar sua conduta?"],
+prayer:"Pai, ajuda-me a viver a nova vida que recebi em Cristo. Fortalece minha fé e transforma minhas atitudes para que eu te honre. Amém."
+},
+{
+day:13,title:"Perdoados e vivificados por Deus",ref:"Colossenses 2:13-15",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:13-15. Observe como Paulo relaciona perdão, cancelamento da dívida e vitória de Cristo.",
+context:"Paulo recorda que os seres humanos estavam mortos em seus pecados, mas Deus os vivificou juntamente com Cristo. A imagem de uma dívida cancelada mostra que a obra da cruz trata a culpa e anuncia a vitória de Cristo sobre os poderes hostis.",
+points:["A condição humana é descrita como morte espiritual por causa dos pecados.","Deus vivifica os que estavam mortos, juntamente com Cristo.","O perdão dos pecados é apresentado como ação graciosa de Deus.","A dívida contrária aos seres humanos é descrita como cancelada e removida por meio da cruz.","Cristo triunfa sobre os poderes, mostrando que a cruz não foi uma derrota definitiva."],
+application:"Confesse seus pecados e receba com gratidão o perdão oferecido por Deus em Cristo. Não viva escravizado pela culpa já confessada, mas caminhe em arrependimento e obediência.",
+memory:"E, quando vós estáveis mortos nos pecados, vos vivificou juntamente com ele.",
+memoryRef:"Colossenses 2:13 — confira o texto em sua Bíblia.",
+questions:["Como Paulo descreve a condição anterior dos crentes?","O que a imagem da dívida cancelada comunica?","Como a cruz revela a vitória de Cristo?"],
+prayer:"Pai, obrigado pelo perdão e pela vida que recebo em Cristo. Ajuda-me a abandonar o pecado e a viver na liberdade que vem de tua graça. Amém."
+},
+{
+day:14,title:"Não se deixe julgar por regras humanas",ref:"Colossenses 2:16-17",week:"Semana 2 • Raízes profundas",
+intro:"Leia Colossenses 2:16-17. Observe o alerta de Paulo sobre julgamentos relacionados a comida, bebida, festas e dias especiais.",
+context:"Paulo enfrenta pressões religiosas que ameaçavam desviar a atenção da Igreja da suficiência de Cristo. Ele distingue práticas que serviam como sombra de realidades futuras da realidade que encontra seu centro em Cristo.",
+points:["Paulo orienta os cristãos a não permitirem que sejam condenados por julgamentos sobre comida e bebida.","A passagem menciona festas, luas novas e sábados em seu contexto religioso.","Essas coisas são descritas como sombra; a realidade pertence a Cristo.","O texto deve ser lido com cuidado, respeitando o contexto da carta e a centralidade de Jesus.","A liberdade cristã não é licença para pecar, mas rejeição de exigências humanas que diminuam a suficiência de Cristo."],
+application:"Não meça a espiritualidade de alguém apenas por regras externas. Procure discernir a vontade de Deus pelas Escrituras e mantenha Cristo no centro da fé e da comunhão.",
+memory:"O corpo é de Cristo.",
+memoryRef:"Colossenses 2:17 — leia o versículo completo em sua Bíblia.",
+questions:["Sobre quais assuntos Paulo alerta contra julgamentos?","O que significa a imagem da sombra e da realidade?","Como evitar tanto o legalismo quanto a indiferença espiritual?"],
+prayer:"Senhor, dá-me discernimento para viver segundo tua Palavra sem impor aos outros exigências humanas. Que Cristo seja o centro da minha fé. Amém."
+},
+{
+day:15,title:"A verdadeira espiritualidade",ref:"Colossenses 2:18-19",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 2:18-19. Observe o alerta contra falsas formas de humildade, culto aos anjos e práticas que afastam da cabeça, que é Cristo.",
+context:"Paulo alerta contra uma espiritualidade que parece profunda, mas não permanece ligada a Cristo. Experiências extraordinárias, visões ou aparência de humildade não substituem a dependência do Senhor.",
+points:["Paulo alerta contra a desqualificação imposta por pessoas que promovem práticas religiosas enganosas.","A aparência de humildade não garante fidelidade à verdade.","O texto menciona culto aos anjos e experiências que podem alimentar o orgulho espiritual.","A pessoa que se afasta da cabeça perde a referência que sustenta o corpo.","O crescimento da Igreja depende de estar ligada a Cristo e receber dele o sustento."],
+application:"Avalie experiências e ensinamentos pela Palavra de Deus. A espiritualidade bíblica conduz à humildade, à verdade, ao amor e à dependência de Cristo.",
+memory:"E não ligado à cabeça, da qual todo o corpo, provido e organizado pelas juntas e ligaduras, vai crescendo em aumento de Deus.",
+memoryRef:"Colossenses 2:19 — confira o texto em sua Bíblia.",
+questions:["Por que uma aparência de humildade pode enganar?","Qual é o papel de Cristo na vida da Igreja?","Como avaliar experiências espirituais à luz das Escrituras?"],
+prayer:"Senhor Jesus, guarda-me do orgulho espiritual e de práticas que me afastem de ti. Ensina-me a crescer em humildade e verdade. Amém."
+},
+{
+day:16,title:"Morrendo para os princípios do mundo",ref:"Colossenses 2:20-23",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 2:20-23. Reflita sobre a diferença entre regras humanas rigorosas e a transformação profunda do coração.",
+context:"Paulo questiona a submissão a regulamentos humanos que parecem sábios, mas não conseguem vencer os desejos pecaminosos. A disciplina externa, isolada de uma transformação interior, não produz a vida que Deus deseja.",
+points:["Os cristãos são chamados a considerar sua união com Cristo em relação aos princípios elementares do mundo.","Paulo questiona regulamentos humanos que tratam de coisas perecíveis.","A aparência de sabedoria pode vir acompanhada de religiosidade exterior e severidade com o corpo.","Regras humanas não conseguem, por si mesmas, transformar o coração e vencer os desejos pecaminosos.","A verdadeira mudança exige uma vida submetida a Cristo e transformada por Deus."],
+application:"Práticas de disciplina podem ter lugar na vida cristã, mas não substituem a transformação do coração. Busque santidade com dependência de Deus, não apenas com regras externas.",
+memory:"Têm, na verdade, alguma aparência de sabedoria, em devoção voluntária, humildade e em disciplina do corpo.",
+memoryRef:"Colossenses 2:23 — confira o contexto em sua Bíblia.",
+questions:["Por que regras externas não são suficientes para transformar o coração?","Qual é a diferença entre disciplina e aparência de santidade?","Que mudança interior você precisa buscar diante de Deus?"],
+prayer:"Pai, transforma meu coração e minhas motivações. Ajuda-me a buscar santidade com sinceridade e dependência de ti. Amém."
+},
+{
+day:17,title:"Buscai as coisas que são de cima",ref:"Colossenses 3:1-4",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 3:1-4. Observe o chamado a buscar as coisas do alto e a viver com a esperança da manifestação de Cristo.",
+context:"Depois de explicar a suficiência de Cristo, Paulo apresenta consequências práticas para a vida diária. A união com Cristo muda a orientação dos desejos e a maneira como os cristãos compreendem sua identidade.",
+points:["Os que foram ressuscitados com Cristo são chamados a buscar as coisas do alto.","Buscar as coisas do alto significa viver sob o senhorio de Cristo, não desprezar as responsabilidades terrenas.","A vida do cristão está escondida com Cristo em Deus.","Cristo é a vida do crente e a esperança de sua manifestação futura.","A esperança da glória futura deve influenciar as escolhas presentes."],
+application:"Organize suas prioridades à luz do Reino de Deus. Trabalhe, cuide da família e cumpra suas responsabilidades, mas faça tudo sob o senhorio de Cristo.",
+memory:"Pensai nas coisas que são de cima e não nas que são da terra.",
+memoryRef:"Colossenses 3:2 — confira o texto em sua Bíblia.",
+questions:["O que significa buscar as coisas do alto?","Como a esperança futura influencia as escolhas presentes?","Que prioridade precisa ser reorganizada em sua vida?"],
+prayer:"Senhor Jesus, orienta meus pensamentos e desejos. Ajuda-me a viver com os olhos voltados para ti e com fidelidade nas responsabilidades de cada dia. Amém."
+},
+{
+day:18,title:"Fazei morrer o que pertence à velha vida",ref:"Colossenses 3:5-7",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 3:5-7. Observe os pecados que Paulo manda abandonar e a seriedade com que trata a santidade.",
+context:"O chamado à nova vida inclui uma ruptura com práticas que contradizem o senhorio de Cristo. Paulo não apresenta a santidade como mero ajuste de aparência, mas como abandono de desejos e condutas incompatíveis com a nova identidade.",
+points:["Paulo chama os cristãos a fazer morrer as práticas pecaminosas.","A lista inclui imoralidade sexual, impureza, paixões desordenadas, desejos maus e avareza.","A avareza é identificada como idolatria porque transforma o desejo por bens em um senhor concorrente de Deus.","Essas práticas pertencem à antiga maneira de viver e estão sob o juízo de Deus.","A graça não torna o pecado irrelevante; ela nos chama a uma vida transformada."],
+application:"Identifique hábitos e desejos que precisam ser abandonados. Procure ajuda pastoral confiável quando necessário e estabeleça limites concretos para viver em pureza e fidelidade.",
+memory:"Mortificai, pois, os vossos membros que estão sobre a terra.",
+memoryRef:"Colossenses 3:5 — leia a lista completa em sua Bíblia.",
+questions:["Quais práticas Paulo manda abandonar?","Por que a avareza é chamada de idolatria?","Que atitude concreta pode ajudar você a resistir à tentação?"],
+prayer:"Senhor, revela o que precisa mudar em mim. Dá-me força para abandonar o pecado e viver em pureza, contentamento e obediência. Amém."
+},
+{
+day:19,title:"Abandonando a ira e a mentira",ref:"Colossenses 3:8-11",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 3:8-11. Observe a relação entre abandonar atitudes antigas, falar a verdade e vestir a nova identidade em Cristo.",
+context:"Paulo amplia a lista de práticas que devem ser deixadas para trás. A nova vida exige mudanças nas emoções, nas palavras e nas relações, porque os cristãos estão sendo renovados segundo a imagem de seu Criador.",
+points:["Ira pecaminosa, malícia, blasfêmia e palavras vergonhosas devem ser abandonadas.","A mentira é incompatível com a nova vida cristã.","O velho homem e suas práticas devem ser deixados para trás.","O novo homem é renovado no conhecimento segundo a imagem daquele que o criou.","Em Cristo, distinções étnicas e sociais não determinam o valor espiritual das pessoas; Cristo é tudo em todos."],
+application:"Cuide da maneira como fala, reage e trata as pessoas. A nova identidade em Cristo deve aparecer na honestidade, no domínio próprio e no respeito ao próximo.",
+memory:"Vos despistes do velho homem com os seus feitos.",
+memoryRef:"Colossenses 3:9 — confira o contexto em sua Bíblia.",
+questions:["Quais atitudes e palavras devem ser abandonadas?","O que significa despir-se do velho homem?","Como sua fala pode refletir melhor a nova vida em Cristo?"],
+prayer:"Pai, purifica minhas palavras e atitudes. Ajuda-me a abandonar a mentira, a ira pecaminosa e toda forma de malícia. Amém."
+},
+{
+day:20,title:"Revestidos de compaixão e amor",ref:"Colossenses 3:12-14",week:"Semana 3 • Vivendo a nova vida",
+intro:"Leia Colossenses 3:12-14. Observe as virtudes que devem caracterizar os escolhidos de Deus e o lugar do amor entre elas.",
+context:"Depois de falar do que precisa ser abandonado, Paulo apresenta o que deve caracterizar a nova vida. As virtudes cristãs não são apenas traços de personalidade: são atitudes coerentes com a identidade recebida de Deus.",
+points:["Os cristãos são chamados a viver como eleitos, santos e amados de Deus.","Compaixão, bondade, humildade, mansidão e longanimidade devem marcar suas relações.","Suportar uns aos outros exige paciência e disposição para conviver com diferenças.","O perdão cristão deve refletir o perdão recebido do Senhor.","O amor é apresentado como o vínculo da perfeição que une as virtudes cristãs."],
+application:"Pratique deliberadamente a compaixão, a paciência e o perdão. O amor cristão não é apenas sentimento: aparece em ações concretas, palavras cuidadosas e disposição para buscar reconciliação.",
+memory:"E, sobre tudo isto, revesti-vos de amor, que é o vínculo da perfeição.",
+memoryRef:"Colossenses 3:14 — confira o texto em sua Bíblia.",
+questions:["Quais virtudes Paulo recomenda?","Como o perdão recebido de Cristo influencia o perdão que oferecemos?","Que atitude de amor você pode praticar hoje?"],
+prayer:"Senhor, reveste-me de compaixão, humildade, mansidão e paciência. Ensina-me a perdoar e a amar de maneira sincera. Amém."
+},
+{
+day:21,title:"A paz de Cristo e a Palavra",ref:"Colossenses 3:15-17",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 3:15-17. Observe como a paz, a Palavra, a gratidão e o nome de Jesus devem orientar a vida da comunidade.",
+context:"Paulo mostra que a nova vida afeta tanto o interior quanto a convivência da Igreja. A paz de Cristo deve governar os corações, a Palavra deve habitar abundantemente e a gratidão deve marcar palavras e ações.",
+points:["A paz de Cristo deve governar os corações dos cristãos.","A Igreja é chamada a viver como um só corpo, cultivando gratidão.","A Palavra de Cristo deve habitar abundantemente entre os crentes.","Ensino, aconselhamento, salmos, hinos e cânticos espirituais podem servir à edificação e à gratidão.","Tudo o que se faz em palavra ou ação deve ser realizado em nome do Senhor Jesus, dando graças ao Pai."],
+application:"Deixe a Palavra orientar suas conversas, decisões e adoração. Antes de agir, pergunte se aquilo pode ser feito de maneira coerente com o nome de Jesus e com gratidão a Deus.",
+memory:"E, quanto fizerdes por palavras ou por obras, fazei tudo em nome do Senhor Jesus.",
+memoryRef:"Colossenses 3:17 — confira o versículo completo em sua Bíblia.",
+questions:["O que deve governar o coração do cristão?","Como a Palavra deve habitar na comunidade?","Como fazer tudo em nome de Jesus transforma suas escolhas?"],
+prayer:"Pai, enche meu coração com a paz de Cristo e faz tua Palavra habitar em mim. Que minhas palavras e ações glorifiquem Jesus. Amém."
+},
+{
+day:22,title:"Cristo no relacionamento familiar",ref:"Colossenses 3:18-21",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 3:18-21. Observe as orientações para os relacionamentos entre cônjuges e entre pais e filhos.",
+context:"Paulo aplica o senhorio de Cristo à vida doméstica. Suas instruções devem ser lidas à luz do caráter de Jesus, do amor, da responsabilidade mútua e da rejeição de atitudes que provocam ou ferem injustamente os outros.",
+points:["As orientações para os cônjuges devem ser compreendidas no contexto do compromisso com o Senhor.","O marido é chamado a amar a esposa e a não tratá-la com amargura.","Os filhos são orientados a obedecer aos pais no Senhor.","Os pais são advertidos a não provocar os filhos, para que não desanimem.","A vida familiar cristã deve refletir cuidado, respeito, amor e responsabilidade diante de Deus."],
+application:"Pratique o respeito e o amor dentro de casa. Liderança nunca deve ser usada para justificar violência, humilhação ou abuso; o senhorio de Cristo chama todos a agir com responsabilidade e cuidado.",
+memory:"Vós, maridos, amai a vossas mulheres e não vos irriteis contra elas.",
+memoryRef:"Colossenses 3:19 — confira o texto em sua Bíblia.",
+questions:["Como o amor deve orientar os relacionamentos familiares?","Por que Paulo adverte os pais a não desanimarem os filhos?","Que atitude pode melhorar a convivência em sua casa?"],
+prayer:"Senhor, fortalece os relacionamentos de minha família. Ensina-nos a tratar uns aos outros com amor, respeito, paciência e responsabilidade. Amém."
+},
+{
+day:23,title:"Trabalhando para o Senhor",ref:"Colossenses 3:22-25",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 3:22-25. Observe como Paulo orienta a conduta no trabalho e a responsabilidade diante do Senhor.",
+context:"As instruções foram dadas em um contexto antigo que incluía a escravidão doméstica. Elas não devem ser usadas para legitimar a escravidão ou a exploração. O princípio central é que Cristo é o Senhor e que as ações humanas estão sujeitas à justiça de Deus.",
+points:["Paulo chama à integridade e à sinceridade no serviço, não apenas ao trabalho feito para impressionar pessoas.","O serviço deve ser realizado de coração, como para o Senhor.","A esperança de recompensa vem do Senhor, não apenas do reconhecimento humano.","Cristo é o Senhor a quem os cristãos prestam contas.","A injustiça não é ignorada por Deus; ele não faz acepção de pessoas."],
+application:"Trabalhe com honestidade e responsabilidade, sem depender apenas da vigilância de outras pessoas. Não use esta passagem para aceitar abusos: ela também lembra que Deus julga a injustiça.",
+memory:"E tudo quanto fizerdes, fazei-o de todo o coração, como ao Senhor e não aos homens.",
+memoryRef:"Colossenses 3:23 — confira o texto em sua Bíblia.",
+questions:["Como a fé deve influenciar a maneira de trabalhar?","A quem o cristão presta contas em última instância?","Como agir com integridade mesmo sem reconhecimento?"],
+prayer:"Senhor, ajuda-me a trabalhar com honestidade e dedicação. Dá-me sabedoria para agir com justiça e coragem para não participar de práticas desonestas. Amém."
+},
+{
+day:24,title:"Liderança justa e responsável",ref:"Colossenses 4:1",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 4:1 em conexão com as instruções anteriores. Observe a responsabilidade daqueles que exercem autoridade sobre outras pessoas.",
+context:"Paulo dirige uma palavra aos senhores, exigindo justiça e equidade. A instrução limita o poder humano ao lembrar que quem exerce autoridade também tem um Senhor nos céus.",
+points:["Quem exerce autoridade deve agir com justiça e equidade.","A posição social não coloca ninguém acima da responsabilidade diante de Deus.","O Senhor celestial é a referência final para avaliar o uso da autoridade.","A passagem não deve ser usada para justificar a escravidão, mas lida considerando seu contexto histórico e o princípio de justiça.","A liderança cristã deve rejeitar exploração, favoritismo e tratamento desumano."],
+application:"Se você lidera pessoas, trate-as com respeito, justiça e transparência. Use sua autoridade para servir e proteger, nunca para humilhar, explorar ou controlar indevidamente.",
+memory:"Sabendo que também tendes um Senhor nos céus.",
+memoryRef:"Colossenses 4:1 — confira o texto em sua Bíblia.",
+questions:["O que Paulo exige de quem exerce autoridade?","Por que os líderes também precisam prestar contas a Deus?","Como você pode exercer influência com mais justiça?"],
+prayer:"Deus justo, ensina-me a tratar as pessoas com dignidade. Corrige qualquer abuso de autoridade em mim e ajuda-me a agir com justiça e compaixão. Amém."
+},
+{
+day:25,title:"Perseverando na oração",ref:"Colossenses 4:2",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 4:2. Observe os três elementos destacados por Paulo: perseverança, vigilância e gratidão.",
+context:"Depois de orientar os relacionamentos cotidianos, Paulo chama a Igreja à oração constante. A oração não é apenas uma reação a crises; é uma prática contínua de dependência de Deus, acompanhada de atenção espiritual e gratidão.",
+points:["A oração deve ser perseverante, não abandonada diante de dificuldades.","Vigiar na oração envolve atenção, discernimento e consciência das necessidades espirituais.","A gratidão acompanha os pedidos e reconhece a bondade de Deus.","A oração sustenta a fidelidade e a comunhão da comunidade cristã.","Perseverar não significa exigir que Deus cumpra nossos desejos, mas continuar buscando sua vontade."],
+application:"Separe um horário realista para orar diariamente. Apresente suas necessidades, interceda por outras pessoas e mantenha uma lista de motivos de gratidão.",
+memory:"Perseverai em oração, velando nela com ação de graças.",
+memoryRef:"Colossenses 4:2 — confira o versículo em sua Bíblia.",
+questions:["Quais atitudes devem acompanhar a oração?","O que significa vigiar em oração?","Por quais motivos você pode agradecer hoje?"],
+prayer:"Pai, ensina-me a perseverar em oração. Dá-me vigilância espiritual e um coração agradecido, mesmo quando ainda espero respostas. Amém."
+},
+{
+day:26,title:"Orando pela missão do evangelho",ref:"Colossenses 4:3-4",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 4:3-4. Observe que Paulo pede oração para que uma porta se abra para a Palavra e que ele anuncie o mistério de Cristo com clareza.",
+context:"Paulo estava preso quando escreveu a carta, mas sua preocupação continuava voltada à proclamação do evangelho. Ele pede oração não apenas por conforto pessoal, mas por oportunidades de anunciar Cristo e comunicar a mensagem com clareza.",
+points:["Paulo pede que Deus abra uma porta para a Palavra.","A missão do evangelho continua importante mesmo em circunstâncias difíceis.","Paulo reconhece a necessidade de oração para anunciar o mistério de Cristo.","A mensagem deve ser comunicada de modo claro e fiel.","A Igreja participa da missão ao interceder por quem anuncia o evangelho."],
+application:"Ore por missionários, evangelistas, pastores e por pessoas que ainda não conhecem Cristo. Peça oportunidades para falar do evangelho com clareza, respeito e coragem.",
+memory:"Para que Deus nos abra a porta da palavra, a fim de falarmos do mistério de Cristo.",
+memoryRef:"Colossenses 4:3 — confira o texto em sua Bíblia.",
+questions:["Pelo que Paulo pede oração?","Por que a clareza é importante ao anunciar o evangelho?","Por quem você pode interceder nesta semana?"],
+prayer:"Senhor, abre portas para a proclamação do evangelho. Dá coragem, sabedoria e clareza a quem anuncia Cristo e usa também minha vida como testemunho. Amém."
+},
+{
+day:27,title:"Sabedoria no falar e no agir",ref:"Colossenses 4:5-6",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 4:5-6. Observe como Paulo orienta a conduta diante dos de fora e a maneira de responder a cada pessoa.",
+context:"A vida cristã é testemunho público. Paulo chama os crentes a agir com sabedoria diante de quem ainda não compartilha da fé e a manter uma fala marcada pela graça, sem abandonar a verdade.",
+points:["Os cristãos devem agir com sabedoria diante dos que estão fora da comunidade de fé.","A expressão 'remindo o tempo' aponta para aproveitar as oportunidades com responsabilidade.","A fala deve ser sempre agradável e temperada com sal, imagem de uma comunicação cuidadosa e apropriada.","Cada pessoa pode exigir uma resposta adequada e respeitosa.","Testemunhar de Cristo envolve tanto o conteúdo da mensagem quanto a maneira de comunicá-la."],
+application:"Antes de responder, especialmente em situações de discordância, escolha palavras que expressem verdade e graça. Escute com respeito e procure aproveitar oportunidades para testemunhar de Cristo.",
+memory:"A vossa palavra seja sempre agradável, temperada com sal, para que saibais como vos convém responder a cada um.",
+memoryRef:"Colossenses 4:6 — confira o versículo em sua Bíblia.",
+questions:["Como devemos agir diante das pessoas que não compartilham da fé?","O que significa falar com graça e sabedoria?","Como você pode responder melhor em uma conversa difícil?"],
+prayer:"Senhor, guarda minhas palavras e atitudes. Dá-me sabedoria para comunicar a verdade com graça, respeito e coragem. Amém."
+},
+{
+day:28,title:"Cooperadores na obra de Deus",ref:"Colossenses 4:7-11",week:"Semana 4 • Cristo em toda a vida",
+intro:"Leia Colossenses 4:7-11. Observe as pessoas mencionadas por Paulo e o valor da cooperação na missão cristã.",
+context:"A carta termina com notícias e saudações de cooperadores. Paulo reconhece pessoas que levam informações, encorajam a Igreja e trabalham pelo Reino de Deus. A missão cristã não é obra isolada de um único indivíduo.",
+points:["Tíquico é apresentado como irmão amado, ministro fiel e cooperador no Senhor.","Onésimo é descrito como irmão fiel e amado, mostrando a inclusão de pessoas na comunidade cristã.","As saudações demonstram que a Igreja é formada por relacionamentos e cooperação.","Marcos aparece entre os cooperadores, lembrando que pessoas podem continuar servindo após dificuldades anteriores.","O trabalho cristão é fortalecido por encorajamento, fidelidade e serviço mútuo."],
+application:"Valorize as pessoas que servem ao seu lado. Encoraje os cooperadores, reconheça suas contribuições e procure resolver conflitos de maneira que favoreça a missão do evangelho.",
+memory:"Irmãos amados e fiéis ministros e conservos no Senhor.",
+memoryRef:"Colossenses 4:7 — leia a passagem completa em sua Bíblia.",
+questions:["Quais características Paulo destaca nos cooperadores?","Por que a missão cristã não deve ser tratada como trabalho isolado?","Quem você pode encorajar em seu serviço cristão?"],
+prayer:"Pai, obrigado pelas pessoas que cooperam na tua obra. Ajuda-me a servir com fidelidade, humildade e disposição para encorajar meus irmãos. Amém."
+},
+{
+day:29,title:"A Igreja que ora e persevera",ref:"Colossenses 4:12-15",week:"Semana 5 • Uma fé que permanece",
+intro:"Leia Colossenses 4:12-15. Observe o cuidado de Epafras, seu trabalho em oração e as saudações às comunidades cristãs.",
+context:"Paulo destaca Epafras, que trabalha em oração para que os colossenses permaneçam firmes e maduros na vontade de Deus. A carta também mostra a comunhão entre diferentes comunidades e a importância de compartilhar notícias e encorajamento.",
+points:["Epafras é identificado como servo de Cristo e alguém que luta em oração pelos colossenses.","A oração busca que os cristãos permaneçam firmes, maduros e convictos na vontade de Deus.","Paulo reconhece o esforço de Epafras por outras comunidades da região.","As saudações revelam uma rede de comunhão entre igrejas e cooperadores.","A fé cristã amadurece em comunidade, por meio de oração, ensino e cuidado mútuo."],
+application:"Interceda por pessoas e igrejas, especialmente para que cresçam em maturidade e discernimento. Procure fortalecer a comunhão e compartilhar encorajamento com outros cristãos.",
+memory:"Para que vos conserveis firmes, perfeitos e consumados em toda a vontade de Deus.",
+memoryRef:"Colossenses 4:12 — confira o texto em sua Bíblia.",
+questions:["Pelo que Epafras luta em oração?","Como podemos apoiar outras comunidades cristãs?","Por quem você pode orar para que cresça em maturidade?"],
+prayer:"Senhor, fortalece tua Igreja. Ensina-me a interceder com perseverança e a ajudar meus irmãos a crescerem na fé e no conhecimento da tua vontade. Amém."
+},
+{
+day:30,title:"Cumpre o ministério que recebeste",ref:"Colossenses 4:16-18",week:"Semana 5 • Uma fé que permanece",
+intro:"Leia Colossenses 4:16-18. Observe as instruções finais, a referência a Arquipo e o pedido de Paulo para que se lembrem de suas prisões.",
+context:"A conclusão da carta mostra que a mensagem deveria circular entre as igrejas e ser lida em comunidade. Paulo também exorta Arquipo a cumprir o ministério recebido no Senhor. A carta termina lembrando o custo do serviço cristão e a necessidade da graça.",
+points:["A carta deveria ser lida e compartilhada entre as comunidades cristãs.","A Palavra de Deus fortalece a Igreja quando é recebida, estudada e praticada em conjunto.","Arquipo é exortado a cumprir o ministério que recebeu no Senhor.","Paulo pede que se lembrem de suas prisões, lembrando que a missão pode envolver sofrimento.","A carta termina com a graça, fundamento da vida e do serviço cristão."],
+application:"Conclua este plano assumindo o compromisso de continuar estudando a Palavra, orando e servindo. Identifique a responsabilidade que Deus colocou diante de você e cumpra-a com fidelidade, sem buscar reconhecimento.",
+memory:"Atenta para o ministério que recebeste no Senhor, para que o cumpras.",
+memoryRef:"Colossenses 4:17 — confira o texto em sua Bíblia.",
+questions:["Por que as cartas eram compartilhadas entre as igrejas?","O que significa cumprir o ministério recebido no Senhor?","Qual será seu próximo passo para continuar crescendo em Cristo?"],
+prayer:"Senhor Jesus, obrigado por me conduzires neste estudo. Ajuda-me a permanecer na tua Palavra, a servir com fidelidade e a cumprir as responsabilidades que recebi de ti. Amém."
+}
+];
+
+const $ = id => document.getElementById(id);
+const KEY = "atalaia-colossenses-30-dias-v1";
+let state;
+try {
+  state = JSON.parse(localStorage.getItem(KEY) || '{"done":[],"notes":{},"dark":false}');
+} catch {
+  state = {done:[],notes:{},dark:false};
+}
+let current = 0;
+
+function persist(){
+  try { localStorage.setItem(KEY,JSON.stringify(state)); } catch {}
+}
+
+function updateProgress(){
+  const n=state.done.length,p=Math.round(n/studies.length*100);
+  $("progressPercent").textContent=p+"%";
+  $("progressBar").style.width=p+"%";
+  $("progressText").textContent=n===studies.length
+    ?"Parabéns! Você concluiu os 30 estudos. Continue crescendo na Palavra."
+    :`Você concluiu ${n} de ${studies.length} estudos. ${n===0?"Comece pelo Dia 1.":"Continue firme em sua caminhada com Cristo."}`;
+}
+
+function renderDays(){
+  $("dayList").innerHTML=studies.map(s=>`
+    <button class="day-item ${state.done.includes(s.day)?"done":""}" data-day="${s.day-1}">
+      <span class="day-number">${state.done.includes(s.day)?"✓":String(s.day).padStart(2,"0")}</span>
+      <span class="day-info"><strong>${s.title}</strong><small>${s.ref}</small></span>
+      <span class="day-check">${state.done.includes(s.day)?"✓":"›"}</span>
+    </button>`).join("");
+  document.querySelectorAll(".day-item").forEach(b=>b.addEventListener("click",()=>openStudy(Number(b.dataset.day))));
+  updateProgress();
+}
+
+function openStudy(i){
+  current=Math.max(0,Math.min(studies.length-1,i));
+  const s=studies[current];
+  $("homeView").classList.remove("active");
+  $("studyView").classList.add("active");
+  $("studyDayLabel").textContent="DIA "+s.day;
+  $("studyWeek").textContent=s.week;
+  $("studyTitle").textContent=s.title;
+  $("studyReference").textContent="Leitura bíblica: "+s.ref;
+  $("readingIntro").textContent=s.intro;
+  $("readingReference").textContent=s.ref;
+  loadScripture(s);
+  $("contextText").textContent=s.context;
+  $("explanationText").innerHTML=s.points.map(x=>`<div class="explain-point">• ${x}</div>`).join("");
+  $("applicationText").textContent=s.application;
+  $("memoryText").textContent=s.memory;
+  $("memoryReference").textContent=s.memoryRef;
+  $("questions").innerHTML=s.questions.map((q,n)=>`<div class="question">${n+1}. ${q}</div>`).join("");
+  $("prayerText").textContent=s.prayer;
+  $("notesInput").value=state.notes[s.day]||"";
+  $("completeBtn").textContent=state.done.includes(s.day)?"Estudo concluído ✓":"Marcar como concluído ✓";
+  $("prevBtn").disabled=current===0;
+  $("nextBtn").disabled=current===studies.length-1;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+const BIBLE_API="https://api.midvash.com/v1";
+const BIBLE_VERSION="almeida-livre";
+const scriptureCache=new Map();
+const bookSlugs={1:"colossians",2:"colossians",3:"colossians",4:"colossians"};
+
+function parseReference(ref){
+  const match=ref.match(/^Colossenses\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/i);
+  if(!match)return null;
+  return {chapter:Number(match[1]),start:match[2]?Number(match[2]):1,end:match[3]?Number(match[3]):null};
+}
+
+async function loadScripture(study){
+  const container=$("scriptureText"),credit=$("scriptureCopyright");
+  container.innerHTML='<p class="scripture-status">Carregando o texto bíblico…</p>';
+  credit.textContent="Texto bíblico consultado por meio de uma fonte externa. Requer conexão com a internet.";
+  if(scriptureCache.has(study.ref)){
+    renderScripture(scriptureCache.get(study.ref));
+    return;
+  }
+  const parsed=parseReference(study.ref);
+  if(!parsed){
+    container.innerHTML='<p class="scripture-error">Referência bíblica não reconhecida.</p>';
+    return;
+  }
+  try{
+    const response=await fetch(`${BIBLE_API}/${BIBLE_VERSION}/colossians/${parsed.chapter}`);
+    if(!response.ok)throw new Error("Não foi possível consultar a fonte bíblica.");
+    const body=await response.json();
+    if(body.error)throw new Error(body.error.message||"Erro ao carregar a passagem.");
+    const data=body.data||body;
+    let verses=data.verses||[];
+    if(!Array.isArray(verses)||!verses.length){
+      if(data.text)verses=data.text.split(/\n+/).filter(Boolean);
+      else throw new Error("A fonte não retornou os versículos esperados.");
+    }
+    const normalized=verses.map((item,index)=>{
+      if(typeof item==="string")return {number:index+1,text:item};
+      return {number:Number(item.verse||item.number||item.verseNumber||index+1),text:item.text||item.content||""};
+    }).filter(v=>v.text);
+    const selected=normalized.filter(v=>v.number>=parsed.start&&(parsed.end===null||v.number<=parsed.end));
+    if(!selected.length)throw new Error("A passagem não foi encontrada nesta versão.");
+    const result={
+      verses:selected,
+      reference:data.reference||study.ref,
+      copyright:body.meta?.copyright||"Texto bíblico carregado por serviço externo."
+    };
+    scriptureCache.set(study.ref,result);
+    renderScripture(result);
+  }catch(error){
+    container.innerHTML='<p class="scripture-error">Não foi possível carregar automaticamente o texto bíblico. Confira sua conexão ou leia a referência indicada em sua Bíblia.</p>';
+    const retry=document.createElement("button");
+    retry.className="secondary-btn";
+    retry.textContent="Tentar novamente";
+    retry.addEventListener("click",()=>loadScripture(study));
+    container.appendChild(retry);
+    credit.textContent="A leitura e os estudos continuam disponíveis mesmo quando o serviço externo está indisponível.";
+    console.error(error);
+  }
+}
+
+function renderScripture(result){
+  $("scriptureText").innerHTML=result.verses.map(v=>`
+    <div class="scripture-verse"><sup>${v.number}</sup><span>${escapeHTML(v.text)}</span></div>
+  `).join("");
+  $("scriptureCopyright").textContent=result.copyright;
+}
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,char=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[char]));
+}
+
+function showHome(){
+  $("studyView").classList.remove("active");
+  $("homeView").classList.add("active");
+  renderDays();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("homeLink").addEventListener("click",e=>{e.preventDefault();showHome();});
+$("backBtn").addEventListener("click",showHome);
+$("continueBtn").addEventListener("click",()=>{
+  const next=studies.findIndex(s=>!state.done.includes(s.day));
+  openStudy(next<0?studies.length-1:next);
+});
+$("prevBtn").addEventListener("click",()=>openStudy(current-1));
+$("nextBtn").addEventListener("click",()=>openStudy(current+1));
+$("completeBtn").addEventListener("click",()=>{
+  const d=studies[current].day;
+  if(!state.done.includes(d))state.done.push(d);
+  persist();
+  $("completeBtn").textContent="Estudo concluído ✓";
+  renderDays();
+});
+$("saveNotesBtn").addEventListener("click",()=>{
+  const d=studies[current].day;
+  state.notes[d]=$("notesInput").value;
+  persist();
+  $("saveNotesBtn").textContent="Salvo ✓";
+  setTimeout(()=>$("saveNotesBtn").textContent="Salvar minhas anotações",1500);
+});
+$("themeBtn").addEventListener("click",()=>{
+  state.dark=!state.dark;
+  document.body.classList.toggle("dark",state.dark);
+  persist();
+});
+if(state.dark)document.body.classList.add("dark");
+renderDays();
+
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+}
+</script>
+</body>
+</html>
